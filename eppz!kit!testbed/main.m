@@ -1,6 +1,6 @@
 //
 //  main.m
-//  eppz!kit
+//  eppz!kit!testbed
 //
 //  Created by Gardrobe on 7/15/13.
 //  Copyright (c) 2013 eppz!. All rights reserved.
