@@ -1,5 +1,5 @@
 ## ![eppz!kit](http://www.eppz.eu/beacons/eppz!.png) eppz!kit
-The collection of the usefuls.
+The collection of the usefuls. Objective-C everydayers.
 
 #### EPPZUserDefaults
 A really convenient way to store objects in NSUserDefault without any piece of boilerplate code. See the testbed project and the corresponding article on design at [eppz!settings](https://github.com/eppz/eppz-settings).
@@ -28,7 +28,7 @@ A pretty thin block-based reachability implementation. See the testbed project a
 ```
 
 #### EPPZFlatButton
-A helper class that works well with a darkgrey colored Custom button in Interface Builder. I use it mainly in prototype project, not relly meant for production.
+A helper class that works well with a darkgrey colored Custom button in Interface Builder. I use it mainly in prototype projects, not relly meant for production.
 
 #### EPPZFileManager
 Actually a wrapper around `NSFileManager`, some aliases that keeps controller codes clean. See header file for feature set so far.
@@ -63,3 +63,5 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### License
 > Licensed under the [Open Source MIT license](http://en.wikipedia.org/wiki/MIT_License).
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/005a730f8a23bffdb3ce994cc12e4e32 "githalytics.com")](http://githalytics.com/eppz/eppz-kit)
