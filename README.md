@@ -1,5 +1,7 @@
 ## ![eppz!kit](http://www.eppz.eu/beacons/eppz!.png) eppz!kit
-The collection of the usefuls. Objective-C everydayers. Use it like you would do with any other static library: [Using Static Libraries in iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1) 
+The collection of the usefuls. Objective-C everydayers.
+
+Use it like you would do with any other static library: [Using Static Libraries in iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1) 
 
 #### EPPZUserDefaults
 A really convenient way to store objects in NSUserDefault without any piece of boilerplate code. See the testbed project and the corresponding article on design at [eppz!settings](https://github.com/eppz/eppz-settings).
