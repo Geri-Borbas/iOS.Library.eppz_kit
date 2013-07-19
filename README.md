@@ -1,6 +1,41 @@
 ## ![eppz!kit](http://www.eppz.eu/beacons/eppz!.png) eppz!kit
 **The collection of the usefuls. Objective-C everydayers.** You could use it like you would do with any other static library (as Apple recommends [Using Static Libraries in iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)), or just grab some individual class, they are not that coupled.
 
+
+#### EPPZAppStore
+App Store with blocks, multiple async requests, restoring purchases, store recipes.
+```
+//Populate UI with check on purchased state.
+-(void)refreshStoreUI
+{
+    self.levelPackView.purchased = [APPSTORE isProductPurchased:kLevelPackIdentifier];
+}
+
+//Get product details.
+[APPSTORE requestProductDetails:kLevelPackIdentifier
+                        success:^(SKProduct *product)
+{
+    [self.levelPackView refreshWithProduct:product];
+} error:nil];
+
+//Purchase (with encapsulated network error handling).
+[APPSTORE purchaseProduct:kLevelPackIdentifier
+                  success:^(NSString *productIdentifier)
+{
+    [self refreshStoreUI];
+} error:nil];
+
+//Same for restore purchases.
+[APPSTORE restorePurchasesWithSuccess:^
+{
+    [self refreshStoreUI];
+} error:nil];
+```
+
+#### EPPZViewOwner
+A handy helper object to assis encapsulation of Xib loading. More on [http://eppz.eu/blog/uiview-from-xib/](http://eppz.eu/blog/uiview-from-xib/) about this method.
+
+
 #### EPPZUserDefaults
 A really convenient way to store objects in NSUserDefault without any piece of boilerplate code. See the testbed project and the corresponding article on design at [eppz!settings](https://github.com/eppz/eppz-settings).
 ```
@@ -16,6 +51,7 @@ A really convenient way to store objects in NSUserDefault without any piece of b
 @end
 ```
 
+
 #### EPPZReachability
 A pretty thin block-based reachability implementation. See the testbed project and the corresponding article on design at [eppz!reachability](https://github.com/eppz/eppz-reachability).
 ```
@@ -30,6 +66,7 @@ A pretty thin block-based reachability implementation. See the testbed project a
 #### EPPZFlatButton
 A helper class that works well with a darkgrey colored Custom button in Interface Builder. I use it mainly in prototype projects, not relly meant for production.
 
+
 #### EPPZFileManager
 Actually a wrapper around `NSFileManager`, some aliases that keeps controller codes clean. See header file for feature set so far.
 ```
@@ -42,10 +79,17 @@ NSArray *documents = [FILES filesOfType:extension inDirectory:FILES.documentsDir
 #### NSString+EPPZKit
 Some useful `NSString` extension especially for network applications, for HTTP request issues. Class- and instance methods goes like `md5`, `urlEncode`, `urlDecode`.
 
+
 #### EPPZSingleton
 A singleton base class from the pre-ARC era. Main feature is that this class is safe to subclass it, and can have multiple delegates. Will rewrite to ARC compilant using `dispathc_once` with far less code soon.
 
+
 #### Version tracking
+
+* 1.2.0
+    + Awesome Drop-In App Store wrapper
+        + EPPZAppStore
+        + EPPZViewOwner
 
 * 1.0.1
     + New members on the board

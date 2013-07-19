@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE83531B1796317D005EE0DC /* EPPZAppStore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8353141796317D005EE0DC /* EPPZAppStore.m */; };
+		AE83531E1796317D005EE0DC /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE83531A1796317D005EE0DC /* SKProduct+LocalizedPrice.m */; };
 		AE922F79179381280088E5E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE922F4317937A1A0088E5E5 /* Foundation.framework */; };
 		AE922F87179381D60088E5E5 /* EPPZSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE922F6D17937B4D0088E5E5 /* EPPZSingleton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AE922F88179381E70088E5E5 /* EPPZFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE922F6917937B2C0088E5E5 /* EPPZFileManager.m */; };
@@ -24,10 +26,14 @@
 		AE922FBC179385300088E5E5 /* EPPZViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE922FBA179385300088E5E5 /* EPPZViewController_iPhone.xib */; };
 		AE922FBF179385300088E5E5 /* EPPZViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE922FBD179385300088E5E5 /* EPPZViewController_iPad.xib */; };
 		AE922FC5179389D30088E5E5 /* lib!eppz!kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE922FC4179389D30088E5E5 /* lib!eppz!kit.a */; };
+		AE9C3D6A1797522100D01536 /* EPPZViewOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C3D691797522100D01536 /* EPPZViewOwner.m */; };
+		AE9C3D7017975DB500D01536 /* EPPZAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C3D6D17975DB500D01536 /* EPPZAlert.m */; };
+		AE9C3D7117975DB500D01536 /* EPPZAlert+Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C3D6F17975DB500D01536 /* EPPZAlert+Factory.m */; };
 		AE9C40B81794A0A700090A82 /* EPPZReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C40B71794A0A700090A82 /* EPPZReachability.m */; };
 		AE9C40BB1794A0C800090A82 /* NSString+EPPZReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C40BA1794A0C800090A82 /* NSString+EPPZReachability.m */; };
 		AE9C411C1794A4D600090A82 /* EPPZUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C411B1794A4D600090A82 /* EPPZUserDefaults.m */; };
 		AE9C41431794CA4A00090A82 /* EPPZFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C41421794CA4A00090A82 /* EPPZFlatButton.m */; };
+		AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +49,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AE8353131796317D005EE0DC /* EPPZAppStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZAppStore.h; sourceTree = "<group>"; };
+		AE8353141796317D005EE0DC /* EPPZAppStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAppStore.m; sourceTree = "<group>"; };
+		AE8353191796317D005EE0DC /* SKProduct+LocalizedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+LocalizedPrice.h"; sourceTree = "<group>"; };
+		AE83531A1796317D005EE0DC /* SKProduct+LocalizedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+LocalizedPrice.m"; sourceTree = "<group>"; };
 		AE922F4117937A1A0088E5E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE922F4317937A1A0088E5E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE922F4517937A1A0088E5E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,6 +82,12 @@
 		AE922FBE179385300088E5E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EPPZViewController_iPad.xib; sourceTree = "<group>"; };
 		AE922FC3179385ED0088E5E5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		AE922FC4179389D30088E5E5 /* lib!eppz!kit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "lib!eppz!kit.a"; sourceTree = SOURCE_ROOT; };
+		AE9C3D681797522100D01536 /* EPPZViewOwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZViewOwner.h; sourceTree = "<group>"; };
+		AE9C3D691797522100D01536 /* EPPZViewOwner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZViewOwner.m; sourceTree = "<group>"; };
+		AE9C3D6C17975DB500D01536 /* EPPZAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZAlert.h; sourceTree = "<group>"; };
+		AE9C3D6D17975DB500D01536 /* EPPZAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAlert.m; sourceTree = "<group>"; };
+		AE9C3D6E17975DB500D01536 /* EPPZAlert+Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EPPZAlert+Factory.h"; sourceTree = "<group>"; };
+		AE9C3D6F17975DB500D01536 /* EPPZAlert+Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EPPZAlert+Factory.m"; sourceTree = "<group>"; };
 		AE9C40B61794A0A700090A82 /* EPPZReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZReachability.h; sourceTree = "<group>"; };
 		AE9C40B71794A0A700090A82 /* EPPZReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZReachability.m; sourceTree = "<group>"; };
 		AE9C40B91794A0C800090A82 /* NSString+EPPZReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EPPZReachability.h"; sourceTree = "<group>"; };
@@ -80,6 +96,8 @@
 		AE9C411B1794A4D600090A82 /* EPPZUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZUserDefaults.m; sourceTree = "<group>"; };
 		AE9C41411794CA4A00090A82 /* EPPZFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZFlatButton.h; sourceTree = "<group>"; };
 		AE9C41421794CA4A00090A82 /* EPPZFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZFlatButton.m; sourceTree = "<group>"; };
+		AED953151798B9B50000A0B6 /* EPPZAppStoreCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZAppStoreCallbacks.h; sourceTree = "<group>"; };
+		AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAppStoreCallbacks.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +123,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE83531217963126005EE0DC /* App Store */ = {
+			isa = PBXGroup;
+			children = (
+				AE8353131796317D005EE0DC /* EPPZAppStore.h */,
+				AE8353141796317D005EE0DC /* EPPZAppStore.m */,
+				AED953181798BF900000A0B6 /* Callbacks */,
+				AE83532117963195005EE0DC /* Localized price */,
+			);
+			name = "App Store";
+			sourceTree = "<group>";
+		};
+		AE83532117963195005EE0DC /* Localized price */ = {
+			isa = PBXGroup;
+			children = (
+				AE8353191796317D005EE0DC /* SKProduct+LocalizedPrice.h */,
+				AE83531A1796317D005EE0DC /* SKProduct+LocalizedPrice.m */,
+			);
+			name = "Localized price";
+			sourceTree = "<group>";
+		};
 		AE922F3517937A1A0088E5E5 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				AE922F841793817C0088E5E5 /* EPPZKit.h */,
+				AE9C3D671797520600D01536 /* Owners */,
+				AE83531217963126005EE0DC /* App Store */,
 				AE9C41401794CA3C00090A82 /* UI */,
 				AE9C41191794A4C800090A82 /* User defaults */,
 				AE9C40B51794A09000090A82 /* Reachability */,
@@ -223,6 +263,26 @@
 			name = "eppz!kit";
 			sourceTree = "<group>";
 		};
+		AE9C3D671797520600D01536 /* Owners */ = {
+			isa = PBXGroup;
+			children = (
+				AE9C3D681797522100D01536 /* EPPZViewOwner.h */,
+				AE9C3D691797522100D01536 /* EPPZViewOwner.m */,
+			);
+			name = Owners;
+			sourceTree = "<group>";
+		};
+		AE9C3D6B17975DAD00D01536 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				AE9C3D6C17975DB500D01536 /* EPPZAlert.h */,
+				AE9C3D6D17975DB500D01536 /* EPPZAlert.m */,
+				AE9C3D6E17975DB500D01536 /* EPPZAlert+Factory.h */,
+				AE9C3D6F17975DB500D01536 /* EPPZAlert+Factory.m */,
+			);
+			name = Alert;
+			sourceTree = "<group>";
+		};
 		AE9C40B51794A09000090A82 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +314,7 @@
 		AE9C41401794CA3C00090A82 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				AE9C3D6B17975DAD00D01536 /* Alert */,
 				AE9C41441794CA6F00090A82 /* Flat button */,
 			);
 			name = UI;
@@ -266,6 +327,15 @@
 				AE9C41421794CA4A00090A82 /* EPPZFlatButton.m */,
 			);
 			name = "Flat button";
+			sourceTree = "<group>";
+		};
+		AED953181798BF900000A0B6 /* Callbacks */ = {
+			isa = PBXGroup;
+			children = (
+				AED953151798B9B50000A0B6 /* EPPZAppStoreCallbacks.h */,
+				AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */,
+			);
+			name = Callbacks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,6 +448,12 @@
 				AE9C40BB1794A0C800090A82 /* NSString+EPPZReachability.m in Sources */,
 				AE9C411C1794A4D600090A82 /* EPPZUserDefaults.m in Sources */,
 				AE9C41431794CA4A00090A82 /* EPPZFlatButton.m in Sources */,
+				AE83531B1796317D005EE0DC /* EPPZAppStore.m in Sources */,
+				AE83531E1796317D005EE0DC /* SKProduct+LocalizedPrice.m in Sources */,
+				AE9C3D6A1797522100D01536 /* EPPZViewOwner.m in Sources */,
+				AE9C3D7017975DB500D01536 /* EPPZAlert.m in Sources */,
+				AE9C3D7117975DB500D01536 /* EPPZAlert+Factory.m in Sources */,
+				AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
