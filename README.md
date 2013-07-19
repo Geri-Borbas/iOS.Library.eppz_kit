@@ -4,7 +4,7 @@
 
 #### EPPZAppStore
 App Store with blocks, multiple async requests, restoring purchases, store recipes.
-```
+```Objective-C
 //Populate UI with check on purchased state.
 -(void)refreshStoreUI
 {
@@ -38,7 +38,7 @@ A handy helper object to assis encapsulation of Xib loading. More on [http://epp
 
 #### EPPZUserDefaults
 A really convenient way to store objects in NSUserDefault without any piece of boilerplate code. See the testbed project and the corresponding article on design at [eppz!settings](https://github.com/eppz/eppz-settings).
-```
+```Objective-C
 //Just create a model object, and done.
 @interface EPPZSettings : EPPZUserDefaults
 
