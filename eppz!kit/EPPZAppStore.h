@@ -46,6 +46,7 @@ SKPaymentTransactionObserver>
 -(void)isAppStoreReachable:(EPPZReachabilityCompletitionBlock) completition;
 
 -(BOOL)isProductPurchased:(NSString*) productID;
+-(void)saveReceipeForProduct:(NSString*) productID;
 -(void)clearReceipeForProduct:(NSString*) productID;
 
 -(void)requestProductDetails:(NSString*) productID

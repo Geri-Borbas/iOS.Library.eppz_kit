@@ -33,6 +33,7 @@
 		AE9C40BB1794A0C800090A82 /* NSString+EPPZReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C40BA1794A0C800090A82 /* NSString+EPPZReachability.m */; };
 		AE9C411C1794A4D600090A82 /* EPPZUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C411B1794A4D600090A82 /* EPPZUserDefaults.m */; };
 		AE9C41431794CA4A00090A82 /* EPPZFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C41421794CA4A00090A82 /* EPPZFlatButton.m */; };
+		AEA0B27F179DF68200439EB0 /* EPPZPagingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA0B27E179DF68200439EB0 /* EPPZPagingScrollViewController.m */; };
 		AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +97,8 @@
 		AE9C411B1794A4D600090A82 /* EPPZUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZUserDefaults.m; sourceTree = "<group>"; };
 		AE9C41411794CA4A00090A82 /* EPPZFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZFlatButton.h; sourceTree = "<group>"; };
 		AE9C41421794CA4A00090A82 /* EPPZFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZFlatButton.m; sourceTree = "<group>"; };
+		AEA0B27D179DF68200439EB0 /* EPPZPagingScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZPagingScrollViewController.h; sourceTree = "<group>"; };
+		AEA0B27E179DF68200439EB0 /* EPPZPagingScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZPagingScrollViewController.m; sourceTree = "<group>"; };
 		AED953151798B9B50000A0B6 /* EPPZAppStoreCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZAppStoreCallbacks.h; sourceTree = "<group>"; };
 		AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAppStoreCallbacks.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -314,6 +317,7 @@
 		AE9C41401794CA3C00090A82 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				AEA0B27C179DF66B00439EB0 /* Paging scroll view controller */,
 				AE9C3D6B17975DAD00D01536 /* Alert */,
 				AE9C41441794CA6F00090A82 /* Flat button */,
 			);
@@ -327,6 +331,15 @@
 				AE9C41421794CA4A00090A82 /* EPPZFlatButton.m */,
 			);
 			name = "Flat button";
+			sourceTree = "<group>";
+		};
+		AEA0B27C179DF66B00439EB0 /* Paging scroll view controller */ = {
+			isa = PBXGroup;
+			children = (
+				AEA0B27D179DF68200439EB0 /* EPPZPagingScrollViewController.h */,
+				AEA0B27E179DF68200439EB0 /* EPPZPagingScrollViewController.m */,
+			);
+			name = "Paging scroll view controller";
 			sourceTree = "<group>";
 		};
 		AED953181798BF900000A0B6 /* Callbacks */ = {
@@ -454,6 +467,7 @@
 				AE9C3D7017975DB500D01536 /* EPPZAlert.m in Sources */,
 				AE9C3D7117975DB500D01536 /* EPPZAlert+Factory.m in Sources */,
 				AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */,
+				AEA0B27F179DF68200439EB0 /* EPPZPagingScrollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
