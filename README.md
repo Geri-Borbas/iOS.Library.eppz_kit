@@ -4,7 +4,7 @@
 
 #### EPPZAppStore
 App Store with blocks, multiple async requests, restoring purchases, store recipes.
-```
+```Objective-C
 //Populate UI with check on purchased state.
 -(void)refreshStoreUI
 {
@@ -38,7 +38,7 @@ A handy helper object to assis encapsulation of Xib loading. More on [http://epp
 
 #### EPPZUserDefaults
 A really convenient way to store objects in NSUserDefault without any piece of boilerplate code. See the testbed project and the corresponding article on design at [eppz!settings](https://github.com/eppz/eppz-settings).
-```
+```Objective-C
 //Just create a model object, and done.
 @interface EPPZSettings : EPPZUserDefaults
 
@@ -54,7 +54,7 @@ A really convenient way to store objects in NSUserDefault without any piece of b
 
 #### EPPZReachability
 A pretty thin block-based reachability implementation. See the testbed project and the corresponding article on design at [eppz!reachability](https://github.com/eppz/eppz-reachability).
-```
+```Objective-C
 //Get status on-demand.
 [EPPZReachability reachHost:hostNameOrIPaddress
                completition:^(EPPZReachability *reachability)
@@ -69,7 +69,7 @@ A helper class that works well with a darkgrey colored Custom button in Interfac
 
 #### EPPZFileManager
 Actually a wrapper around `NSFileManager`, some aliases that keeps controller codes clean. See header file for feature set so far.
-```
+```Objective-C
 NSString *documentPath = [FILES pathForNewFileNameInDocumentsDirectory:documentFileName];
 BOOL exists = [FILES fileExistsAtPath:documentPath];
 BOOL aged = [FILES file:documentPath modifiedAfterDate:lastWeek];
