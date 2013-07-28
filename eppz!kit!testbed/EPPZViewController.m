@@ -11,6 +11,7 @@
 //
 
 #import "EPPZViewController.h"
+#import "NSDate+EPPZKit.h"
 
 
 @implementation EPPZViewController
@@ -21,6 +22,7 @@
     
     //Testbed seems to be implemented at a distant point in the future.
     NSLog(@"%@", FILES.documentsDirectory);
+    [NSDate testDisplayStringOfInterval];
 }
 
 @end

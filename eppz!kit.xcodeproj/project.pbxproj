@@ -35,6 +35,11 @@
 		AE9C411C1794A4D600090A82 /* EPPZUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C411B1794A4D600090A82 /* EPPZUserDefaults.m */; };
 		AE9C41431794CA4A00090A82 /* EPPZFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C41421794CA4A00090A82 /* EPPZFlatButton.m */; };
 		AEA0B27F179DF68200439EB0 /* EPPZPagingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA0B27E179DF68200439EB0 /* EPPZPagingScrollViewController.m */; };
+		AECCD94D17A5D80E001CAAFD /* NSDate+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */; };
+		AECCD95217A5DE4C001CAAFD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95017A5DE4C001CAAFD /* StoreKit.framework */; };
+		AECCD95317A5DE4C001CAAFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */; };
+		AECCD95417A5DE90001CAAFD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95017A5DE4C001CAAFD /* StoreKit.framework */; };
+		AECCD95517A5DE90001CAAFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */; };
 		AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +107,10 @@
 		AE9C41421794CA4A00090A82 /* EPPZFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZFlatButton.m; sourceTree = "<group>"; };
 		AEA0B27D179DF68200439EB0 /* EPPZPagingScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZPagingScrollViewController.h; sourceTree = "<group>"; };
 		AEA0B27E179DF68200439EB0 /* EPPZPagingScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZPagingScrollViewController.m; sourceTree = "<group>"; };
+		AECCD94B17A5D80E001CAAFD /* NSDate+EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+EPPZKit.h"; sourceTree = "<group>"; };
+		AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+EPPZKit.m"; sourceTree = "<group>"; };
+		AECCD95017A5DE4C001CAAFD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AED953151798B9B50000A0B6 /* EPPZAppStoreCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZAppStoreCallbacks.h; sourceTree = "<group>"; };
 		AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAppStoreCallbacks.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +121,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE922F79179381280088E5E5 /* Foundation.framework in Frameworks */,
+				AECCD95217A5DE4C001CAAFD /* StoreKit.framework in Frameworks */,
+				AECCD95317A5DE4C001CAAFD /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +130,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AECCD95417A5DE90001CAAFD /* StoreKit.framework in Frameworks */,
+				AECCD95517A5DE90001CAAFD /* SystemConfiguration.framework in Frameworks */,
 				AE922FA21793852F0088E5E5 /* UIKit.framework in Frameworks */,
 				AE922FA31793852F0088E5E5 /* Foundation.framework in Frameworks */,
 				AE922FA41793852F0088E5E5 /* CoreGraphics.framework in Frameworks */,
@@ -173,6 +186,8 @@
 		AE922F4017937A1A0088E5E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AECCD95017A5DE4C001CAAFD /* StoreKit.framework */,
+				AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */,
 				AE922F4117937A1A0088E5E5 /* UIKit.framework */,
 				AE922F4317937A1A0088E5E5 /* Foundation.framework */,
 				AE922F4517937A1A0088E5E5 /* CoreGraphics.framework */,
@@ -212,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				AE922F841793817C0088E5E5 /* EPPZKit.h */,
+				AECCD94717A5D7A5001CAAFD /* Dates */,
 				AE9C3D671797520600D01536 /* Owners */,
 				AE83531217963126005EE0DC /* App Store */,
 				AE9C41401794CA3C00090A82 /* UI */,
@@ -347,6 +363,15 @@
 			name = "Paging scroll view controller";
 			sourceTree = "<group>";
 		};
+		AECCD94717A5D7A5001CAAFD /* Dates */ = {
+			isa = PBXGroup;
+			children = (
+				AECCD94B17A5D80E001CAAFD /* NSDate+EPPZKit.h */,
+				AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */,
+			);
+			name = Dates;
+			sourceTree = "<group>";
+		};
 		AED953181798BF900000A0B6 /* Callbacks */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +499,7 @@
 				AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */,
 				AEA0B27F179DF68200439EB0 /* EPPZPagingScrollViewController.m in Sources */,
 				AE0F38BA17A459C500552157 /* NSDecimalNumber+LocalizedPrice.m in Sources */,
+				AECCD94D17A5D80E001CAAFD /* NSDate+EPPZKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,7 +608,7 @@
 				EXECUTABLE_PREFIX = "lib!";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "eppz!kit/eppz!kit-Prefix.pch";
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -595,7 +621,7 @@
 				EXECUTABLE_PREFIX = "lib!";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "eppz!kit/eppz!kit-Prefix.pch";
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -613,6 +639,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"/**",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
@@ -631,6 +658,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"/**",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
