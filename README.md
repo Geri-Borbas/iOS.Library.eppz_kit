@@ -90,6 +90,10 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.2.5
+    + EPPZAppStore tuning
+        + Product details callbacks stored by SKProductsRequest (ensure multiply requests to the same product at once)
+
 * 1.2.0
     + Awesome Drop-In App Store wrapper
         + EPPZAppStore

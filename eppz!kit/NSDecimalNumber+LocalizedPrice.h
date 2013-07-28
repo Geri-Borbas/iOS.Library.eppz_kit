@@ -1,8 +1,8 @@
 //
-//  EPPZAppStoreCallbacks.h
-//  eppz!tools
+//  NSDecimalNumber+LocalizedPrice.h
+//  eppz!kit
 //
-//  Created by Borbás Geri on 11/15/12.
+//  Created by Gardrobe on 7/27/13.
 //  Copyright (c) 2013 eppz! development, LLC.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -11,25 +11,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <StoreKit/StoreKit.h>
 
 
-typedef void (^EPPZAppStoreProductDetailsSuccessBlock)(SKProduct *product);
-typedef void (^EPPZAppStoreProductPurchaseSuccessBlock)(NSString *productID);
-typedef void (^EPPZAppStoreErrorBlock)(NSError *error);
-
-
-@interface EPPZAppStoreCallbacks : NSObject
-
-@property (nonatomic, strong) EPPZAppStoreProductDetailsSuccessBlock productDetailsSuccessBlock;
-@property (nonatomic, strong) EPPZAppStoreErrorBlock productDetailsErrorBlock;
-
-@property (nonatomic, strong) EPPZAppStoreProductPurchaseSuccessBlock productPurchaseSuccessBlock;
-@property (nonatomic, strong) EPPZAppStoreErrorBlock productPurchaseErrorBlock;
-
-@property (nonatomic, weak) SKProductsRequest *productsRequest;
-
-+(id)productDetailsCallbacksWithSuccess:(EPPZAppStoreProductDetailsSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock productsRequest:(SKProductsRequest*) productsRequest;
-+(id)productPurchaseCallbacksWithSuccess:(EPPZAppStoreProductPurchaseSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock;
-
+@interface NSDecimalNumber (LocalizedPrice)
+-(NSString*)stringWithPriceLocale:(NSLocale*) priceLocale;
 @end

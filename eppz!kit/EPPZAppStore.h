@@ -13,8 +13,9 @@
 #import "EPPZSingletonSubclass.h"
 #import "EPPZReachability.h"
 
-#import "SKProduct+LocalizedPrice.h"
 #import <StoreKit/StoreKit.h>
+#import "SKProduct+LocalizedPrice.h"
+#import "NSDecimalNumber+LocalizedPrice.h"
 
 
 /*
@@ -23,6 +24,7 @@
     But you can invoke multiply request at once anyway.
  
 */
+
 
 #import "EPPZAppStoreCallbacks.h"
 

@@ -15,18 +15,19 @@
 @implementation EPPZAppStoreCallbacks
 
 
-+(id)productDetailCallbacksWithSuccess:(EPPZAppStoreProductDetailsSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock
-{ return [[self alloc] initDetailCallbacksWithSuccess:successBlock error:errorBlock]; }
++(id)productDetailsCallbacksWithSuccess:(EPPZAppStoreProductDetailsSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock productsRequest:(SKProductsRequest*) productsRequest
+{ return [[self alloc] initDetailsCallbacksWithSuccess:successBlock error:errorBlock productsRequest:productsRequest]; }
 
 +(id)productPurchaseCallbacksWithSuccess:(EPPZAppStoreProductPurchaseSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock
 { return [[self alloc] initPurchaseCallbacksWithSuccess:successBlock error:errorBlock]; }
 
--(id)initDetailCallbacksWithSuccess:(EPPZAppStoreProductDetailsSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock
+-(id)initDetailsCallbacksWithSuccess:(EPPZAppStoreProductDetailsSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock productsRequest:(SKProductsRequest*) productsRequest
 {
     if (self = [super init])
     {
         self.productDetailsSuccessBlock = successBlock;
         self.productDetailsErrorBlock = errorBlock;
+        self.productsRequest = productsRequest;
     }
     return self;
 }

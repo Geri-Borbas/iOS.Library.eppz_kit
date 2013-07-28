@@ -11,10 +11,11 @@
 //
 
 #import "EPPZAppStore.h"
+#import "SKProduct+LocalizedPrice.h"
 
 
 @interface EPPZAppStore ()
-@property (nonatomic, strong) NSMutableDictionary *detailCallbacksForProductIDs;
+@property (nonatomic, strong) NSMutableArray *detailsCallbackPool;
 @property (nonatomic, strong) NSMutableDictionary *purchaseCallbacksForProductIDs;
 @property (nonatomic, strong) EPPZAppStoreRestorePurchasesSuccessBlock restorePurchasesSuccessBlock;
 @property (nonatomic, strong) EPPZAppStoreRestorePurchasesSuccessBlock restorePurchasesErrorBlock;
@@ -44,7 +45,7 @@
     NSLog(@"EPPZAppStore takeOff");
     [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     
-    self.detailCallbacksForProductIDs = [NSMutableDictionary new];
+    self.detailsCallbackPool = [NSMutableArray new];
     self.purchaseCallbacksForProductIDs = [NSMutableDictionary new];
     
     self.networkError = [NSError errorWithDomain:@"EPPZAppStore"
@@ -59,12 +60,26 @@
 }
 
 
-#pragma mark - Callback queue management
+#pragma mark - Callback pool management
 
--(EPPZAppStoreCallbacks*)detailCallbacksForProductID:(NSString*) productID
+-(void)addCallbacks:(EPPZAppStoreCallbacks*) callbacks
+{ if (callbacks != nil) [self.detailsCallbackPool addObject:callbacks]; }
+
+-(void)removeCallbacks:(EPPZAppStoreCallbacks*) callbacks
+{ if (callbacks != nil) [self.detailsCallbackPool removeObject:callbacks]; }
+
+-(EPPZAppStoreCallbacks*)detailsCallbacksForProductsRequest:(SKProductsRequest*) productsRequest
 {
-    if (productID != nil) return [self.detailCallbacksForProductIDs objectForKey:productID];
-    return nil;
+    EPPZAppStoreCallbacks *callbacks = nil;
+    for (EPPZAppStoreCallbacks *eachCallbacks in self.detailsCallbackPool)
+    {
+        if (productsRequest == eachCallbacks.productsRequest)
+        {
+            callbacks = eachCallbacks;
+            break;
+        }
+    }
+    return callbacks;
 }
 
 -(EPPZAppStoreCallbacks*)purchaseCallbacksForProductID:(NSString*) productID
@@ -88,22 +103,30 @@
 -(void)requestProductDetails:(NSString*) productID
                      success:(EPPZAppStoreProductDetailsSuccessBlock) successBlock
                        error:(EPPZAppStoreErrorBlock) errorBlock
-{
+{ [self requestProductDetails:productID tag:nil success:successBlock error:errorBlock]; }
+
+-(void)requestProductDetails:(NSString*) productID
+                         tag:(NSString*) tag
+                     success:(EPPZAppStoreProductDetailsSuccessBlock) successBlock
+                       error:(EPPZAppStoreErrorBlock) errorBlock
+{    
     [self isAppStoreReachable:^(EPPZReachability *reachability)
     {
         //Reachable iTunes.
         if (reachability.reachable)
         {
-            //Add callbacks to queue.
-            [self.detailCallbacksForProductIDs setObject:[EPPZAppStoreCallbacks productDetailCallbacksWithSuccess:successBlock
-                                                                                                            error:errorBlock]
-                                                  forKey:productID];
-            
             NSLog(@"EPPZAppStore requestProductDetails:%@", productID);
             
             NSSet *productIDsSet = [NSSet setWithObject:productID];
             SKProductsRequest *productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIDsSet];
             productsRequest.delegate = self;
+            
+            //Add callbacks to queue.
+            EPPZAppStoreCallbacks *callbacks = [EPPZAppStoreCallbacks productDetailsCallbacksWithSuccess:successBlock
+                                                                                                   error:errorBlock
+                                                                                         productsRequest:productsRequest];
+            [self addCallbacks:callbacks];
+            
             [productsRequest start];
         }
         
@@ -119,6 +142,9 @@
 {
     NSLog(@"EPPZAppStore productsRequest:didReceiveResponse:");
     
+    //Get callbacks for this ID.
+    EPPZAppStoreCallbacks *callbacks = [self detailsCallbacksForProductsRequest:request];
+    
     for (SKProduct *eachProduct in response.products)
     {
         NSLog(@"EPPZAppStore product.localizedTitle %@" , eachProduct.localizedTitle);
@@ -127,9 +153,9 @@
         NSLog(@"EPPZAppStore product.productIdentifier: %@" , eachProduct.productIdentifier);
         
         //Callback (then remove callback from queue).
-        EPPZAppStoreCallbacks *callbacksForProductID = [self.detailCallbacksForProductIDs objectForKey:eachProduct.productIdentifier];
-        if (callbacksForProductID.productDetailsSuccessBlock) callbacksForProductID.productDetailsSuccessBlock(eachProduct);
-        if (callbacksForProductID) [self.detailCallbacksForProductIDs removeObjectForKey:eachProduct.productIdentifier];
+        if (callbacks.productDetailsSuccessBlock) callbacks.productDetailsSuccessBlock(eachProduct);
+        [self removeCallbacks:callbacks];
+
     }
     
     for (NSString *eachInvalidProductId in response.invalidProductIdentifiers)
@@ -137,10 +163,10 @@
         NSLog(@"Invalid product id: %@" , eachInvalidProductId);
         
         //Callback (then remove callback from queue).
-        EPPZAppStoreCallbacks *callbacksForProductID = [self.detailCallbacksForProductIDs objectForKey:eachInvalidProductId];
-        if (callbacksForProductID.productDetailsErrorBlock) callbacksForProductID.productDetailsErrorBlock(nil);
-        if (callbacksForProductID) [self.detailCallbacksForProductIDs removeObjectForKey:eachInvalidProductId];
+        if (callbacks.productDetailsErrorBlock) callbacks.productDetailsErrorBlock(nil);
+        [self removeCallbacks:callbacks];
     }
+    
 }
 
 
