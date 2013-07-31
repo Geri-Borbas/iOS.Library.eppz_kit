@@ -68,7 +68,7 @@
 -(void)removeCallbacks:(EPPZAppStoreCallbacks*) callbacks
 { if (callbacks != nil) [self.detailsCallbackPool removeObject:callbacks]; }
 
--(EPPZAppStoreCallbacks*)detailsCallbacksForProductsRequest:(SKProductsRequest*) productsRequest
+-(EPPZAppStoreCallbacks*)detailsCallbacksForProductsRequest:(SKRequest*) productsRequest
 {
     EPPZAppStoreCallbacks *callbacks = nil;
     for (EPPZAppStoreCallbacks *eachCallbacks in self.detailsCallbackPool)
@@ -91,10 +91,14 @@
 
 #pragma mark - Network reachability
 
--(void)isAppStoreReachable:(EPPZReachabilityCompletitionBlock) completition
+-(void)request:(SKRequest*) request didFailWithError:(NSError*) error
 {
-    //Check iTunes reachability.
-    [EPPZReachability reachHost:@"www.apple.com" completition:completition];
+    //Get callbacks for this ID.
+    EPPZAppStoreCallbacks *callbacks = [self detailsCallbacksForProductsRequest:request];
+    
+    //Callback (then remove callback from queue).
+    if (callbacks.productDetailsErrorBlock) callbacks.productDetailsErrorBlock(self.networkError);
+    [self removeCallbacks:callbacks];
 }
 
 
@@ -110,32 +114,20 @@
                      success:(EPPZAppStoreProductDetailsSuccessBlock) successBlock
                        error:(EPPZAppStoreErrorBlock) errorBlock
 {    
-    [self isAppStoreReachable:^(EPPZReachability *reachability)
-    {
-        //Reachable iTunes.
-        if (reachability.reachable)
-        {
-            NSLog(@"EPPZAppStore requestProductDetails:%@", productID);
-            
-            NSSet *productIDsSet = [NSSet setWithObject:productID];
-            SKProductsRequest *productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIDsSet];
-            productsRequest.delegate = self;
-            
-            //Add callbacks to queue.
-            EPPZAppStoreCallbacks *callbacks = [EPPZAppStoreCallbacks productDetailsCallbacksWithSuccess:successBlock
-                                                                                                   error:errorBlock
-                                                                                         productsRequest:productsRequest];
-            [self addCallbacks:callbacks];
-            
-            [productsRequest start];
-        }
-        
-        //Network error.
-        else
-        {
-            if (errorBlock) errorBlock(self.networkError);
-        }
-    }];
+
+    NSLog(@"EPPZAppStore requestProductDetails:%@", productID);
+
+    NSSet *productIDsSet = [NSSet setWithObject:productID];
+    SKProductsRequest *productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIDsSet];
+    productsRequest.delegate = self;
+
+    //Add callbacks to queue.
+    EPPZAppStoreCallbacks *callbacks = [EPPZAppStoreCallbacks productDetailsCallbacksWithSuccess:successBlock
+                                                                                           error:errorBlock
+                                                                                 productsRequest:productsRequest];
+    [self addCallbacks:callbacks];
+
+    [productsRequest start];
 }
 
 -(void)productsRequest:(SKProductsRequest*) request didReceiveResponse:(SKProductsResponse*) response
@@ -176,23 +168,9 @@
                success:(EPPZAppStoreProductPurchaseSuccessBlock) successBlock
                  error:(EPPZAppStoreErrorBlock) errorBlock
 {
-    [self isAppStoreReachable:^(EPPZReachability *reachability)
-    {
-        //Reachable iTunes.
-        if (reachability.reachable)
-        {
-            
-        }
-        
-        //Network error.
-        else
-        {
-            if (errorBlock) errorBlock(self.networkError);
-        }
-    }];
     
     NSLog(@"EPPZAppStore purchaseProductForID:%@", productID);
-    
+
     //Add callbacks to queue.
     [self.purchaseCallbacksForProductIDs setObject:[EPPZAppStoreCallbacks productPurchaseCallbacksWithSuccess:successBlock
                                                                                                         error:errorBlock]
@@ -226,41 +204,28 @@
 {
     NSLog(@"EPPZAppStore restoreProducts");
     
-    [self isAppStoreReachable:^(EPPZReachability *reachability)
+    //Retain callbacks.
+    self.restorePurchasesSuccessBlock = successBlock;
+    self.restorePurchasesErrorBlock = errorBlock;
+    
+    if ([SKPaymentQueue canMakePayments])
     {
-        //Reachable iTunes.
-        if (reachability.reachable)
+        [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
+    }
+    
+    else
+    {
+        NSError *error = [NSError errorWithDomain:@"EPPZAppStore" code:0
+                                         userInfo:[NSDictionary dictionaryWithObject:@"User cannot make payements."
+                                                                              forKey:NSLocalizedDescriptionKey]];
+        
+        //Callback.
+        if (self.restorePurchasesErrorBlock)
         {
-            //Retain callbacks.
-            self.restorePurchasesSuccessBlock = successBlock;
-            self.restorePurchasesErrorBlock = errorBlock;
-            
-            if ([SKPaymentQueue canMakePayments])
-            {
-                [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
-            }
-            
-            else
-            {
-                NSError *error = [NSError errorWithDomain:@"EPPZAppStore" code:0
-                                                 userInfo:[NSDictionary dictionaryWithObject:@"User cannot make payements."
-                                                                                      forKey:NSLocalizedDescriptionKey]];
-                
-                //Callback.
-                if (self.restorePurchasesErrorBlock)
-                {
-                    self.restorePurchasesErrorBlock(error);
-                    self.restorePurchasesErrorBlock = nil;
-                }
-            }
+            self.restorePurchasesErrorBlock(error);
+            self.restorePurchasesErrorBlock = nil;
         }
-         
-        //Network error.
-        else
-        {
-            if (errorBlock) errorBlock(self.networkError);
-        }
-    }];
+    }
 }
 
 
@@ -360,7 +325,7 @@
     
     //Callback (then remove callback from queue).
     EPPZAppStoreCallbacks *callbacksForProductID = [self.purchaseCallbacksForProductIDs objectForKey:productID];
-    if (callbacksForProductID.productPurchaseSuccessBlock) callbacksForProductID.productPurchaseSuccessBlock(productID);
+    if (callbacksForProductID.productPurchaseSuccessBlock) callbacksForProductID.productPurchaseSuccessBlock(productID, transaction);
     if (callbacksForProductID) [self.purchaseCallbacksForProductIDs removeObjectForKey:productID];
     
     //StoreKit.
@@ -377,7 +342,7 @@
     
     //Callback (then remove callback from queue).
     EPPZAppStoreCallbacks *callbacksForProductID = [self.purchaseCallbacksForProductIDs objectForKey:productID];
-    if (callbacksForProductID.productPurchaseSuccessBlock) callbacksForProductID.productPurchaseSuccessBlock(productID);
+    if (callbacksForProductID.productPurchaseSuccessBlock) callbacksForProductID.productPurchaseSuccessBlock(productID, nil);
     if (callbacksForProductID) [self.purchaseCallbacksForProductIDs removeObjectForKey:productID];
     
     //StoreKit.

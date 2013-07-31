@@ -94,6 +94,11 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.2.8
+    + EPPZAppStore tuning
+        + Exposed SKPayementTransactions in callback blocks
+        + Removed reachability, use corresponding SKProduct delegate method instead
+
 * 1.2.7
     + Added NSDate+EPPZKit
 

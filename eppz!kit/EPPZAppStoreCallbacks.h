@@ -15,7 +15,7 @@
 
 
 typedef void (^EPPZAppStoreProductDetailsSuccessBlock)(SKProduct *product);
-typedef void (^EPPZAppStoreProductPurchaseSuccessBlock)(NSString *productID);
+typedef void (^EPPZAppStoreProductPurchaseSuccessBlock)(NSString *productID, SKPaymentTransaction *transaction);
 typedef void (^EPPZAppStoreErrorBlock)(NSError *error);
 
 

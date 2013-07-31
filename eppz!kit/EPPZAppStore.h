@@ -45,8 +45,6 @@ SKPaymentTransactionObserver>
 
 #pragma mark - Features
 
--(void)isAppStoreReachable:(EPPZReachabilityCompletitionBlock) completition;
-
 -(BOOL)isProductPurchased:(NSString*) productID;
 -(void)saveReceipeForProduct:(NSString*) productID;
 -(void)clearReceipeForProduct:(NSString*) productID;
