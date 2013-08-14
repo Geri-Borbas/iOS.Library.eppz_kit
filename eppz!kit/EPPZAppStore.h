@@ -30,15 +30,18 @@
 
 
 typedef void (^EPPZAppStoreRestorePurchasesSuccessBlock)();
+typedef void (^EPPZAppStoreRestorePurchasesErrorBlock)(NSError *error);
 
 
+#define EPPZ_APPSTORE_LOGGING YES
+#define EALog if (EPPZ_APPSTORE_LOGGING) NSLog
 #define APPSTORE_ [EPPZAppStore sharedInstance]
 
 
 @interface EPPZAppStore : EPPZSingleton
 
-<SKProductsRequestDelegate,
-SKPaymentTransactionObserver>
+    <SKProductsRequestDelegate,
+     SKPaymentTransactionObserver>
 
 -(void)takeOff;
 

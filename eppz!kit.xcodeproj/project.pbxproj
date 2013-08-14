@@ -35,12 +35,14 @@
 		AE9C411C1794A4D600090A82 /* EPPZUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C411B1794A4D600090A82 /* EPPZUserDefaults.m */; };
 		AE9C41431794CA4A00090A82 /* EPPZFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C41421794CA4A00090A82 /* EPPZFlatButton.m */; };
 		AEA0B27F179DF68200439EB0 /* EPPZPagingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA0B27E179DF68200439EB0 /* EPPZPagingScrollViewController.m */; };
+		AEC6888C17B313C000F2206F /* EPPZLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC6888B17B313C000F2206F /* EPPZLabel.m */; };
 		AECCD94D17A5D80E001CAAFD /* NSDate+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */; };
 		AECCD95217A5DE4C001CAAFD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95017A5DE4C001CAAFD /* StoreKit.framework */; };
 		AECCD95317A5DE4C001CAAFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */; };
 		AECCD95417A5DE90001CAAFD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95017A5DE4C001CAAFD /* StoreKit.framework */; };
 		AECCD95517A5DE90001CAAFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */; };
 		AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */; };
+		AEFC653817B81865004B5214 /* EPPZTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFC653717B81865004B5214 /* EPPZTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -107,12 +109,16 @@
 		AE9C41421794CA4A00090A82 /* EPPZFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZFlatButton.m; sourceTree = "<group>"; };
 		AEA0B27D179DF68200439EB0 /* EPPZPagingScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZPagingScrollViewController.h; sourceTree = "<group>"; };
 		AEA0B27E179DF68200439EB0 /* EPPZPagingScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZPagingScrollViewController.m; sourceTree = "<group>"; };
+		AEC6888A17B313C000F2206F /* EPPZLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZLabel.h; sourceTree = "<group>"; };
+		AEC6888B17B313C000F2206F /* EPPZLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZLabel.m; sourceTree = "<group>"; };
 		AECCD94B17A5D80E001CAAFD /* NSDate+EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+EPPZKit.h"; sourceTree = "<group>"; };
 		AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+EPPZKit.m"; sourceTree = "<group>"; };
 		AECCD95017A5DE4C001CAAFD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AED953151798B9B50000A0B6 /* EPPZAppStoreCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZAppStoreCallbacks.h; sourceTree = "<group>"; };
 		AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAppStoreCallbacks.m; sourceTree = "<group>"; };
+		AEFC653617B81865004B5214 /* EPPZTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZTimer.h; sourceTree = "<group>"; };
+		AEFC653717B81865004B5214 /* EPPZTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZTimer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,7 +232,9 @@
 		AE922F7A179381280088E5E5 /* eppz!kit */ = {
 			isa = PBXGroup;
 			children = (
+				AE922FC3179385ED0088E5E5 /* README.md */,
 				AE922F841793817C0088E5E5 /* EPPZKit.h */,
+				AEFC653917B82032004B5214 /* Timer */,
 				AECCD94717A5D7A5001CAAFD /* Dates */,
 				AE9C3D671797520600D01536 /* Owners */,
 				AE83531217963126005EE0DC /* App Store */,
@@ -244,7 +252,6 @@
 		AE922F7B179381280088E5E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AE922FC3179385ED0088E5E5 /* README.md */,
 				AE922F7C179381280088E5E5 /* eppz!kit-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -338,6 +345,8 @@
 		AE9C41401794CA3C00090A82 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				AEC6888A17B313C000F2206F /* EPPZLabel.h */,
+				AEC6888B17B313C000F2206F /* EPPZLabel.m */,
 				AEA0B27C179DF66B00439EB0 /* Paging scroll view controller */,
 				AE9C3D6B17975DAD00D01536 /* Alert */,
 				AE9C41441794CA6F00090A82 /* Flat button */,
@@ -379,6 +388,15 @@
 				AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */,
 			);
 			name = Callbacks;
+			sourceTree = "<group>";
+		};
+		AEFC653917B82032004B5214 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				AEFC653617B81865004B5214 /* EPPZTimer.h */,
+				AEFC653717B81865004B5214 /* EPPZTimer.m */,
+			);
+			name = Timer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,6 +518,8 @@
 				AEA0B27F179DF68200439EB0 /* EPPZPagingScrollViewController.m in Sources */,
 				AE0F38BA17A459C500552157 /* NSDecimalNumber+LocalizedPrice.m in Sources */,
 				AECCD94D17A5D80E001CAAFD /* NSDate+EPPZKit.m in Sources */,
+				AEC6888C17B313C000F2206F /* EPPZLabel.m in Sources */,
+				AEFC653817B81865004B5214 /* EPPZTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,8 +588,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -593,7 +613,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

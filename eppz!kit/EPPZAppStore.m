@@ -18,7 +18,7 @@
 @property (nonatomic, strong) NSMutableArray *detailsCallbackPool;
 @property (nonatomic, strong) NSMutableDictionary *purchaseCallbacksForProductIDs;
 @property (nonatomic, strong) EPPZAppStoreRestorePurchasesSuccessBlock restorePurchasesSuccessBlock;
-@property (nonatomic, strong) EPPZAppStoreRestorePurchasesSuccessBlock restorePurchasesErrorBlock;
+@property (nonatomic, strong) EPPZAppStoreRestorePurchasesErrorBlock restorePurchasesErrorBlock;
 
 @property (nonatomic, strong) NSError *networkError;
 @property (nonatomic, strong) NSError *transactionFailedError;
@@ -101,6 +101,9 @@
     [self removeCallbacks:callbacks];
 }
 
+-(void)requestDidFinish:(SKRequest*) request
+{ EALog(@"EPPZAppStore requestDidFinish:"); }
+
 
 #pragma mark - Product details request
 
@@ -115,7 +118,7 @@
                        error:(EPPZAppStoreErrorBlock) errorBlock
 {    
 
-    NSLog(@"EPPZAppStore requestProductDetails:%@", productID);
+    EALog(@"EPPZAppStore requestProductDetails:%@", productID);
 
     NSSet *productIDsSet = [NSSet setWithObject:productID];
     SKProductsRequest *productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIDsSet];
@@ -124,25 +127,36 @@
     //Add callbacks to queue.
     EPPZAppStoreCallbacks *callbacks = [EPPZAppStoreCallbacks productDetailsCallbacksWithSuccess:successBlock
                                                                                            error:errorBlock
-                                                                                 productsRequest:productsRequest];
+                                                                                 productsRequest:productsRequest
+                                                                               productIdentifier:productID];
     [self addCallbacks:callbacks];
 
     [productsRequest start];
+    
+    //Retry product request after 8 seconds if no response.
+    [callbacks retryAfterIntervalIfNeeded:8.0];
 }
 
 -(void)productsRequest:(SKProductsRequest*) request didReceiveResponse:(SKProductsResponse*) response
 {
-    NSLog(@"EPPZAppStore productsRequest:didReceiveResponse:");
+    EALog(@"EPPZAppStore productsRequest:didReceiveResponse:");
     
     //Get callbacks for this ID.
     EPPZAppStoreCallbacks *callbacks = [self detailsCallbacksForProductsRequest:request];
     
+    if (response.products.count <= 0)
+    {
+        //Retry.
+        EALog(@"EPPZAppStore retry products request.");
+        [callbacks retryProductRequest];
+    }
+    
     for (SKProduct *eachProduct in response.products)
     {
-        NSLog(@"EPPZAppStore product.localizedTitle %@" , eachProduct.localizedTitle);
-        NSLog(@"EPPZAppStore product.localizedDescription %@" , eachProduct.localizedDescription);
-        NSLog(@"EPPZAppStore product.localizedPrice %@" , eachProduct.localizedPrice);
-        NSLog(@"EPPZAppStore product.productIdentifier: %@" , eachProduct.productIdentifier);
+        EALog(@"EPPZAppStore product.localizedTitle %@" , eachProduct.localizedTitle);
+        EALog(@"EPPZAppStore product.localizedDescription %@" , eachProduct.localizedDescription);
+        EALog(@"EPPZAppStore product.localizedPrice %@" , eachProduct.localizedPrice);
+        EALog(@"EPPZAppStore product.productIdentifier: %@" , eachProduct.productIdentifier);
         
         //Callback (then remove callback from queue).
         if (callbacks.productDetailsSuccessBlock) callbacks.productDetailsSuccessBlock(eachProduct);
@@ -152,7 +166,7 @@
     
     for (NSString *eachInvalidProductId in response.invalidProductIdentifiers)
     {
-        NSLog(@"Invalid product id: %@" , eachInvalidProductId);
+        EALog(@"Invalid product id: %@" , eachInvalidProductId);
         
         //Callback (then remove callback from queue).
         if (callbacks.productDetailsErrorBlock) callbacks.productDetailsErrorBlock(nil);
@@ -169,7 +183,7 @@
                  error:(EPPZAppStoreErrorBlock) errorBlock
 {
     
-    NSLog(@"EPPZAppStore purchaseProductForID:%@", productID);
+    EALog(@"EPPZAppStore purchaseProductForID:%@", productID);
 
     //Add callbacks to queue.
     [self.purchaseCallbacksForProductIDs setObject:[EPPZAppStoreCallbacks productPurchaseCallbacksWithSuccess:successBlock
@@ -202,7 +216,7 @@
 -(void)restorePurchasesWithSuccess:(EPPZAppStoreRestorePurchasesSuccessBlock) successBlock
                              error:(EPPZAppStoreErrorBlock) errorBlock;
 {
-    NSLog(@"EPPZAppStore restoreProducts");
+    EALog(@"EPPZAppStore restoreProducts");
     
     //Retain callbacks.
     self.restorePurchasesSuccessBlock = successBlock;
@@ -233,7 +247,7 @@
 
 -(void)paymentQueue:(SKPaymentQueue*) queue updatedTransactions:(NSArray*) transactions
 {
-    NSLog(@"EPPZAppStore paymentQueue:updatedTransactions: %@", transactions);
+    EALog(@"EPPZAppStore paymentQueue:updatedTransactions: %@", transactions);
     
     BOOL anyRestorationsTookPlace = NO;
     for (SKPaymentTransaction *eachTransaction in transactions)
@@ -268,11 +282,11 @@
 
 -(void)paymentQueue:(SKPaymentQueue*)queue restoreCompletedTransactionsFailedWithError:(NSError*) error
 {
-    NSLog(@"EPPZAppStore paymentQueue:restoreCompletedTransactionsFailedWithError: %@", error);
+    EALog(@"EPPZAppStore paymentQueue:restoreCompletedTransactionsFailedWithError: %@", error);
     
     if (self.restorePurchasesSuccessBlock)
     {
-        self.restorePurchasesErrorBlock();
+        self.restorePurchasesErrorBlock(error);
         self.restorePurchasesErrorBlock = nil;
     }
 }
@@ -289,22 +303,22 @@
         switch (eachDownload.downloadState)
         {
             case SKDownloadStateWaiting:
-                NSLog(@"EPPZAppStore SKDownloadStateWaiting");
+                EALog(@"EPPZAppStore SKDownloadStateWaiting");
                 break;
             case SKDownloadStateActive:
-                NSLog(@"EPPZAppStore SKDownloadStateActive");
+                EALog(@"EPPZAppStore SKDownloadStateActive");
                 break;
             case SKDownloadStatePaused:
-                NSLog(@"EPPZAppStore SKDownloadStatePaused");
+                EALog(@"EPPZAppStore SKDownloadStatePaused");
                 break;
             case SKDownloadStateFinished:
-                NSLog(@"EPPZAppStore SKDownloadStateFinished");
+                EALog(@"EPPZAppStore SKDownloadStateFinished");
                 break;
             case SKDownloadStateFailed:
-                NSLog(@"EPPZAppStore SKDownloadStateFailed");
+                EALog(@"EPPZAppStore SKDownloadStateFailed");
                 break;
             case SKDownloadStateCancelled:
-                NSLog(@"EPPZAppStore SKDownloadStateCancelled");
+                EALog(@"EPPZAppStore SKDownloadStateCancelled");
                 break;
             default:
                 break;
@@ -318,7 +332,7 @@
 -(void)transactionPurchased:(SKPaymentTransaction*) transaction
 {
     NSString *productID = transaction.payment.productIdentifier;
-    NSLog(@"EPPZAppStore transactionPurchased:%@", productID);
+    EALog(@"EPPZAppStore transactionPurchased:%@", productID);
     
     //Save.
     [self saveReceipeForProduct:productID];
@@ -335,7 +349,7 @@
 -(void)transactionRestored:(SKPaymentTransaction*) transaction
 {
     NSString *productID = transaction.payment.productIdentifier;
-    NSLog(@"EPPZAppStore transactionRestored:%@", productID);
+    EALog(@"EPPZAppStore transactionRestored:%@", productID);
     
     //Save.
     [self saveReceipeForProduct:transaction.payment.productIdentifier];
@@ -352,7 +366,7 @@
 -(void)transactionFailed:(SKPaymentTransaction*) transaction
 {
     NSString *productID = transaction.payment.productIdentifier;
-    NSLog(@"EPPZAppStore transactionFailed:%@", productID);
+    EALog(@"EPPZAppStore transactionFailed:%@", productID);
     
     //Callback (then remove callback from queue).
     EPPZAppStoreCallbacks *callbacksForProductID = [self.purchaseCallbacksForProductIDs objectForKey:productID];
