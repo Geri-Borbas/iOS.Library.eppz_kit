@@ -2,7 +2,7 @@
 //  EPPZViewController.m
 //  eppz!kit!testbed
 //
-//  Created by Gardrobe on 7/15/13.
+//  Created by Borbás Geri on 7/15/13.
 //  Copyright (c) 2013 eppz! development, LLC.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -29,8 +29,10 @@
 
 -(void)testTagFinder
 {
-    NSString *string = @"Something really <strong>useful<strong> with tons of <strong>strong<strong> tags to be able to test this harmless <strong>tag finder<strong> snippet.";
-    [EPPZTagFinder findTags:@"<strong>" inString:string];
-}
+    self.label_1.htmlString = @"Something really <strong>useful</strong> with tons of <strong>strong</strong> tags to be able to test this harmless <strong>tag finder</strong> snippet.";
+    self.label_2.htmlString = @"<strong>Something</strong> really <strong>useful</strong> with tons of <strong>strong</strong> tags to be able to test this harmless <strong>tag finder</strong> snippet.";
+    self.label_3.htmlString = @"Something really <strong>useful</strong> with actually only one strong tags.";
+    self.label_4.htmlString = @"Something really useful without any strong tags.";
+ }
 
 @end

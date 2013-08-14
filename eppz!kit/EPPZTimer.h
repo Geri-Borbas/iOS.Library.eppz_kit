@@ -2,7 +2,7 @@
 //  EPPZTimer.h
 //  eppz!kit
 //
-//  Created by Gardrobe on 8/11/13.
+//  Created by Borbás Geri on 8/11/13.
 //  Copyright (c) 2013 eppz!. All rights reserved.
 //
 

@@ -43,6 +43,10 @@
 		AECCD95517A5DE90001CAAFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */; };
 		AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */; };
 		AEFC653817B81865004B5214 /* EPPZTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFC653717B81865004B5214 /* EPPZTimer.m */; };
+		D8302F5F17BB965800472478 /* EPPZTagFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D8302F5E17BB965800472478 /* EPPZTagFinder.m */; };
+		D8302F6617BBA5BD00472478 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8302F6217BB98F100472478 /* CoreText.framework */; };
+		D8302F6717BBA5C500472478 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8302F6417BB990F00472478 /* QuartzCore.framework */; };
+		D8302F8C17BBF15700472478 /* EPPZGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8302F8B17BBF15700472478 /* EPPZGestureRecognizer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -119,6 +123,12 @@
 		AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAppStoreCallbacks.m; sourceTree = "<group>"; };
 		AEFC653617B81865004B5214 /* EPPZTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZTimer.h; sourceTree = "<group>"; };
 		AEFC653717B81865004B5214 /* EPPZTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZTimer.m; sourceTree = "<group>"; };
+		D8302F5D17BB965800472478 /* EPPZTagFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZTagFinder.h; sourceTree = "<group>"; };
+		D8302F5E17BB965800472478 /* EPPZTagFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZTagFinder.m; sourceTree = "<group>"; };
+		D8302F6217BB98F100472478 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		D8302F6417BB990F00472478 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D8302F8A17BBF15700472478 /* EPPZGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZGestureRecognizer.h; sourceTree = "<group>"; };
+		D8302F8B17BBF15700472478 /* EPPZGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZGestureRecognizer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +146,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8302F6717BBA5C500472478 /* QuartzCore.framework in Frameworks */,
+				D8302F6617BBA5BD00472478 /* CoreText.framework in Frameworks */,
 				AECCD95417A5DE90001CAAFD /* StoreKit.framework in Frameworks */,
 				AECCD95517A5DE90001CAAFD /* SystemConfiguration.framework in Frameworks */,
 				AE922FA21793852F0088E5E5 /* UIKit.framework in Frameworks */,
@@ -192,6 +204,8 @@
 		AE922F4017937A1A0088E5E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8302F6417BB990F00472478 /* QuartzCore.framework */,
+				D8302F6217BB98F100472478 /* CoreText.framework */,
 				AECCD95017A5DE4C001CAAFD /* StoreKit.framework */,
 				AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */,
 				AE922F4117937A1A0088E5E5 /* UIKit.framework */,
@@ -345,8 +359,8 @@
 		AE9C41401794CA3C00090A82 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				AEC6888A17B313C000F2206F /* EPPZLabel.h */,
-				AEC6888B17B313C000F2206F /* EPPZLabel.m */,
+				D8302F8917BBF14700472478 /* Gesture recognizer */,
+				D8302F6017BB97E600472478 /* Label */,
 				AEA0B27C179DF66B00439EB0 /* Paging scroll view controller */,
 				AE9C3D6B17975DAD00D01536 /* Alert */,
 				AE9C41441794CA6F00090A82 /* Flat button */,
@@ -397,6 +411,34 @@
 				AEFC653717B81865004B5214 /* EPPZTimer.m */,
 			);
 			name = Timer;
+			sourceTree = "<group>";
+		};
+		D8302F6017BB97E600472478 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				D8302F6117BB97F100472478 /* Tag finder */,
+				AEC6888A17B313C000F2206F /* EPPZLabel.h */,
+				AEC6888B17B313C000F2206F /* EPPZLabel.m */,
+			);
+			name = Label;
+			sourceTree = "<group>";
+		};
+		D8302F6117BB97F100472478 /* Tag finder */ = {
+			isa = PBXGroup;
+			children = (
+				D8302F5D17BB965800472478 /* EPPZTagFinder.h */,
+				D8302F5E17BB965800472478 /* EPPZTagFinder.m */,
+			);
+			name = "Tag finder";
+			sourceTree = "<group>";
+		};
+		D8302F8917BBF14700472478 /* Gesture recognizer */ = {
+			isa = PBXGroup;
+			children = (
+				D8302F8A17BBF15700472478 /* EPPZGestureRecognizer.h */,
+				D8302F8B17BBF15700472478 /* EPPZGestureRecognizer.m */,
+			);
+			name = "Gesture recognizer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -520,6 +562,8 @@
 				AECCD94D17A5D80E001CAAFD /* NSDate+EPPZKit.m in Sources */,
 				AEC6888C17B313C000F2206F /* EPPZLabel.m in Sources */,
 				AEFC653817B81865004B5214 /* EPPZTimer.m in Sources */,
+				D8302F5F17BB965800472478 /* EPPZTagFinder.m in Sources */,
+				D8302F8C17BBF15700472478 /* EPPZGestureRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

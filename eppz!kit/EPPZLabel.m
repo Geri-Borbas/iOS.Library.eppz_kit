@@ -40,18 +40,32 @@ NSString *const CAAlignmentFromNSTextAlignment(NSTextAlignment textAlignment);
         _textLayer.frame = self.bounds;
         _textLayer.alignmentMode = CAAlignmentFromNSTextAlignment(self.textAlignment);
         
-        //Copy shadow.
-        _textLayer.shadowColor = self.shadowColor.CGColor;
-        _textLayer.shadowOffset = self.shadowOffset;
+        //Copy shadow if any.
+        NSLog(@"self.shadowColor %@", self.shadowColor);
+        BOOL shadowApplied = (self.shadowColor != nil);
+        if (shadowApplied)
+        {
+            _textLayer.shadowColor = self.shadowColor.CGColor;
+            _textLayer.shadowOffset = self.shadowOffset;
+            _textLayer.shadowRadius = 0.0;
+            _textLayer.shadowOpacity = 1.0;
+        }
+        
+        else
+        {
+            _textLayer.shadowColor = [UIColor clearColor].CGColor;
+            _textLayer.shadowOffset = CGSizeZero;
+            _textLayer.shadowRadius = 0.0;
+            _textLayer.shadowOpacity = 1.0;
+        }
 
         //Default.
-        _textLayer.shadowRadius = 0.0;
-        _textLayer.shadowOpacity = 1.0;
+
         _textLayer.wrapped = NO;
         _textLayer.contentsScale = [[UIScreen mainScreen] scale];
         
         //Hide native text.
-        self.textColor = [UIColor clearColor];
+        self.textColor = [UIColor whiteColor];
         self.shadowColor = [UIColor clearColor];
         
         //Add.
@@ -59,6 +73,12 @@ NSString *const CAAlignmentFromNSTextAlignment(NSTextAlignment textAlignment);
     }
     
     return _textLayer;
+}
+
+-(void)layoutSubviews
+{
+    [super layoutSubviews];
+    self.textLayer.frame = self.bounds;
 }
 
 NSString *const CAAlignmentFromNSTextAlignment(NSTextAlignment textAlignment)
@@ -123,6 +143,19 @@ NSString *const CAAlignmentFromNSTextAlignment(NSTextAlignment textAlignment)
 -(void)setBoldRange:(NSRange) boldRange
 {
     _boldRange = boldRange;
+    self.boldRanges = @[[NSValue valueWithRange:boldRange]];
+    
+    [self render];
+}
+
+-(void)setHtmlString:(NSString*) htmlString
+{
+    EPPZTagFinder *tagFinder = [EPPZTagFinder tagFinderForFindTags:@"strong" inString:htmlString];
+    
+    //Get results.
+    self.text = tagFinder.strippedString;
+    self.boldRanges = tagFinder.rangeValuesOfTag;
+    
     [self render];
 }
 
@@ -133,7 +166,15 @@ NSString *const CAAlignmentFromNSTextAlignment(NSTextAlignment textAlignment)
 {    
     //Compose attributed string.
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.text attributes:self.normalTextAttributes];
-    [attributedString addAttributes:self.boldTextAttributes range:self.boldRange];
+    
+    //Apply bold ranges.
+    /*
+    for (NSValue *eachRangeValue in self.boldRanges)
+    {
+        NSRange eachRange = eachRangeValue.rangeValue;
+        [attributedString addAttributes:self.boldTextAttributes range:eachRange];
+    }
+    */
     
     //Apply.
     self.textLayer.string = attributedString;

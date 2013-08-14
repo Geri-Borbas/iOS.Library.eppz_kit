@@ -2,7 +2,7 @@
 //  NSDate+EPPZKit.m
 //  eppz!kit
 //
-//  Created by Gardrobe on 7/29/13.
+//  Created by Borbás Geri on 7/29/13.
 //  Copyright (c) 2013 eppz!. All rights reserved.
 //
 

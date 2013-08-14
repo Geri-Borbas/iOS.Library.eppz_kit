@@ -13,15 +13,28 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import <CoreText/CoreText.h>
+#import "EPPZTagFinder.h"
 
 
 /*
  
-    Helvetica (system font)
+    Usage 1.
+    Simply set boldRange to have a range bold.
+ 
+    Usage 2.
+    Simply set boldRanges (NSArray of NSRange NSValues) to have the ranges bold.
+ 
+    Usage 3.
+    Even more simply assign htmlString property that uses non overlapping <strong> tags.
  
 */
 
+#warning Under construction, do not use EPPZLabel in production yet.
 @interface EPPZLabel : UILabel
+
 @property (nonatomic) NSRange boldRange;
+@property (nonatomic, strong) NSArray *boldRanges;
+@property (nonatomic, strong) NSString *htmlString;
+
 -(UIFont*)boldFont; //Override in a subclass to use custom font.
 @end
