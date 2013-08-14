@@ -1,10 +1,11 @@
 ## ![eppz!kit](http://www.eppz.eu/beacons/eppz!.png) eppz!kit
 **The collection of the usefuls. Objective-C everydayers.** You could use it like you would do with any other static library (as Apple recommends [Using Static Libraries in iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)), or just grab some individual class, they are not that coupled.
 
+#### EPPZTimer
+An NSTimer wrapper that does not retain it's target so not likely to create retain cycles.
 
 #### NSDate+EPPZKit
 With a sole feature for now that converts NSTimeInterval to something human readable. Converts `1500000.00` to `17 days 08:40:00` for example.
-```
 
 #### EPPZPagingScrollViewController
 Astonishing paging `UIScrollView` with `UIPageControl` controller. Just drop-in this controller object into an Interface Builder file, hook up `scrollView`, `contentView` and `pageControl` outlets, and wire it in as the `delegate` for the `UIScrollView`. It calculates the number of pages based on the content size. Note that you have to retain this object somehow to survive after XIB loading (I usually create a `strong` `IBOutlet` for this in the containing controller, that does the job well).
@@ -93,6 +94,12 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 
 #### Version tracking
+
+* 1.3.0
+    + EPPZTimer added
+    + EPPZAppStore retry
+        + Now retries product detail requests older than 8 seconds
+        + Or the one that returns without product (why does it such a thing at all anyway?)
 
 * 1.2.8
     + EPPZAppStore tuning

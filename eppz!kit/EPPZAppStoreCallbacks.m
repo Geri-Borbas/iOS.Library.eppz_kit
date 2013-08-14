@@ -15,22 +15,57 @@
 @implementation EPPZAppStoreCallbacks
 
 
-+(id)productDetailsCallbacksWithSuccess:(EPPZAppStoreProductDetailsSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock productsRequest:(SKProductsRequest*) productsRequest
-{ return [[self alloc] initDetailsCallbacksWithSuccess:successBlock error:errorBlock productsRequest:productsRequest]; }
+#pragma mark - Product request
 
-+(id)productPurchaseCallbacksWithSuccess:(EPPZAppStoreProductPurchaseSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock
-{ return [[self alloc] initPurchaseCallbacksWithSuccess:successBlock error:errorBlock]; }
++(id)productDetailsCallbacksWithSuccess:(EPPZAppStoreProductDetailsSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock productsRequest:(SKProductsRequest*) productsRequest productIdentifier:(NSString*) productIdentifier
+{ return [[self alloc] initDetailsCallbacksWithSuccess:successBlock error:errorBlock productsRequest:productsRequest productIdentifier:productIdentifier]; }
 
--(id)initDetailsCallbacksWithSuccess:(EPPZAppStoreProductDetailsSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock productsRequest:(SKProductsRequest*) productsRequest
+-(id)initDetailsCallbacksWithSuccess:(EPPZAppStoreProductDetailsSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock productsRequest:(SKProductsRequest*) productsRequest productIdentifier:(NSString*) productIdentifier
 {
     if (self = [super init])
     {
         self.productDetailsSuccessBlock = successBlock;
         self.productDetailsErrorBlock = errorBlock;
+        self.productIdentifier = productIdentifier;
         self.productsRequest = productsRequest;
     }
     return self;
 }
+
+-(void)retryAfterIntervalIfNeeded:(NSTimeInterval) interval
+{
+    [EPPZTimer scheduledTimerWithTimeInterval:interval
+                                       target:self
+                                     selector:@selector(retryProductRequest)
+                                     userInfo:nil
+                                      repeats:NO];
+}
+
+-(void)retryProductRequest
+{
+    NSLog(@"retryProductRequest (%@)", self.productsRequest);
+    
+    //Cancel current request if any.
+    id delegate = self.productsRequest.delegate;
+    [self.productsRequest cancel];
+    
+    //Create a new request.
+    NSSet *productIDsSet = [NSSet setWithObject:self.productIdentifier];
+    SKProductsRequest *productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIDsSet];
+    productsRequest.delegate = delegate;
+    
+    //Store new request.
+    self.productsRequest = productsRequest;
+    
+    //Start.
+    [self.productsRequest start];
+}
+
+
+#pragma mark - Purchase request
+
++(id)productPurchaseCallbacksWithSuccess:(EPPZAppStoreProductPurchaseSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock
+{ return [[self alloc] initPurchaseCallbacksWithSuccess:successBlock error:errorBlock]; }
 
 -(id)initPurchaseCallbacksWithSuccess:(EPPZAppStoreProductPurchaseSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock
 {
@@ -41,6 +76,9 @@
     }
     return self;
 }
+
+-(void)dealloc
+{ NSLog(@"EPPZAppStoreCallbacks dealloc"); }
 
 
 @end

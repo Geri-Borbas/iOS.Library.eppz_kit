@@ -12,6 +12,7 @@
 
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
+#import "EPPZTimer.h"
 
 
 typedef void (^EPPZAppStoreProductDetailsSuccessBlock)(SKProduct *product);
@@ -27,9 +28,12 @@ typedef void (^EPPZAppStoreErrorBlock)(NSError *error);
 @property (nonatomic, strong) EPPZAppStoreProductPurchaseSuccessBlock productPurchaseSuccessBlock;
 @property (nonatomic, strong) EPPZAppStoreErrorBlock productPurchaseErrorBlock;
 
+@property (nonatomic, strong) NSString *productIdentifier;
 @property (nonatomic, weak) SKProductsRequest *productsRequest;
 
-+(id)productDetailsCallbacksWithSuccess:(EPPZAppStoreProductDetailsSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock productsRequest:(SKProductsRequest*) productsRequest;
++(id)productDetailsCallbacksWithSuccess:(EPPZAppStoreProductDetailsSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock productsRequest:(SKProductsRequest*) productsRequest productIdentifier:(NSString*) productIdentifier;
 +(id)productPurchaseCallbacksWithSuccess:(EPPZAppStoreProductPurchaseSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock;
+-(void)retryAfterIntervalIfNeeded:(NSTimeInterval) interval;
+-(void)retryProductRequest;
 
 @end
