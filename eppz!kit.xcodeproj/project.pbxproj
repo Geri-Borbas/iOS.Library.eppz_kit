@@ -41,6 +41,7 @@
 		AECCD95417A5DE90001CAAFD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95017A5DE4C001CAAFD /* StoreKit.framework */; };
 		AECCD95517A5DE90001CAAFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */; };
 		AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */; };
+		D8F5142017B3FF3F00FDE089 /* EPPZTagFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F5141F17B3FF3F00FDE089 /* EPPZTagFinder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -113,6 +114,8 @@
 		AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AED953151798B9B50000A0B6 /* EPPZAppStoreCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZAppStoreCallbacks.h; sourceTree = "<group>"; };
 		AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAppStoreCallbacks.m; sourceTree = "<group>"; };
+		D8F5141E17B3FF3F00FDE089 /* EPPZTagFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZTagFinder.h; sourceTree = "<group>"; };
+		D8F5141F17B3FF3F00FDE089 /* EPPZTagFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZTagFinder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +220,8 @@
 		AE922F7017937B530088E5E5 /* NSString+EPPZKit */ = {
 			isa = PBXGroup;
 			children = (
+				D8F5141E17B3FF3F00FDE089 /* EPPZTagFinder.h */,
+				D8F5141F17B3FF3F00FDE089 /* EPPZTagFinder.m */,
 				AE922F7117937B6A0088E5E5 /* NSString+EPPZKit.h */,
 				AE922F7217937B6A0088E5E5 /* NSString+EPPZKit.m */,
 			);
@@ -500,6 +505,7 @@
 				AEA0B27F179DF68200439EB0 /* EPPZPagingScrollViewController.m in Sources */,
 				AE0F38BA17A459C500552157 /* NSDecimalNumber+LocalizedPrice.m in Sources */,
 				AECCD94D17A5D80E001CAAFD /* NSDate+EPPZKit.m in Sources */,
+				D8F5142017B3FF3F00FDE089 /* EPPZTagFinder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

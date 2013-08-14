@@ -23,6 +23,14 @@
     //Testbed seems to be implemented at a distant point in the future.
     NSLog(@"%@", FILES.documentsDirectory);
     [NSDate testDisplayStringOfInterval];
+    
+    [self testTagFinder];
+}
+
+-(void)testTagFinder
+{
+    NSString *string = @"Something really <strong>useful<strong> with tons of <strong>strong<strong> tags to be able to test this harmless <strong>tag finder<strong> snippet.";
+    [EPPZTagFinder findTags:@"<strong>" inString:string];
 }
 
 @end

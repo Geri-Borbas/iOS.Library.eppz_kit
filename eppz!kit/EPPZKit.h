@@ -27,3 +27,6 @@ static NSString *const version = @"1.2.8";
 #import "EPPZAlert.h"
 #import "EPPZPagingScrollViewController.h"
 #import "NSDate+EPPZKit.h"
+#import "EPPZLabel.h"
+#import "EPPZTimer.h"
+
