@@ -13,12 +13,12 @@
 #import "EPPZLabel.h"
 
 
+#define EPPZ_LABEL_DEBUG_MODE YES
+
+
 @interface EPPZLabel ()
-@property (nonatomic, strong) NSString *htmlText;
-@property (nonatomic, strong) CATextLayer *textLayer;
 @property (nonatomic, strong) NSDictionary *normalTextAttributes;
 @property (nonatomic, strong) NSDictionary *boldTextAttributes;
-NSString *const CAAlignmentFromNSTextAlignment(NSTextAlignment textAlignment);
 @end
 
 
@@ -28,75 +28,6 @@ NSString *const CAAlignmentFromNSTextAlignment(NSTextAlignment textAlignment);
 -(UIFont*)boldFont
 { return [UIFont boldSystemFontOfSize:self.font.pointSize]; }
 
--(CATextLayer*)textLayer
-{
-    if (_textLayer == nil)
-    {
-        _textLayer = [CATextLayer new];
-
-        //Copy.
-        _textLayer.foregroundColor = self.textColor.CGColor;
-        _textLayer.backgroundColor = self.backgroundColor.CGColor;
-        _textLayer.frame = self.bounds;
-        _textLayer.alignmentMode = CAAlignmentFromNSTextAlignment(self.textAlignment);
-        
-        //Copy shadow if any.
-        NSLog(@"self.shadowColor %@", self.shadowColor);
-        BOOL shadowApplied = (self.shadowColor != nil);
-        if (shadowApplied)
-        {
-            _textLayer.shadowColor = self.shadowColor.CGColor;
-            _textLayer.shadowOffset = self.shadowOffset;
-            _textLayer.shadowRadius = 0.0;
-            _textLayer.shadowOpacity = 1.0;
-        }
-        
-        else
-        {
-            _textLayer.shadowColor = [UIColor clearColor].CGColor;
-            _textLayer.shadowOffset = CGSizeZero;
-            _textLayer.shadowRadius = 0.0;
-            _textLayer.shadowOpacity = 1.0;
-        }
-
-        //Default.
-
-        _textLayer.wrapped = NO;
-        _textLayer.contentsScale = [[UIScreen mainScreen] scale];
-        
-        //Hide native text.
-        self.textColor = [UIColor whiteColor];
-        self.shadowColor = [UIColor clearColor];
-        
-        //Add.
-        [self.layer addSublayer:_textLayer];
-    }
-    
-    return _textLayer;
-}
-
--(void)layoutSubviews
-{
-    [super layoutSubviews];
-    self.textLayer.frame = self.bounds;
-}
-
-NSString *const CAAlignmentFromNSTextAlignment(NSTextAlignment textAlignment)
-{
-    NSString *alignmentMode;
-    switch (textAlignment)
-    {
-        case NSTextAlignmentLeft: alignmentMode = kCAAlignmentLeft; break;            
-        case NSTextAlignmentCenter: alignmentMode = kCAAlignmentCenter; break;            
-        case NSTextAlignmentRight: alignmentMode = kCAAlignmentRight; break;            
-        case NSTextAlignmentJustified: alignmentMode = kCAAlignmentJustified; break;
-        case NSTextAlignmentNatural: alignmentMode = kCAAlignmentNatural; break;
-            
-        default: alignmentMode = kCAAlignmentLeft; break;
-    }
-    return alignmentMode;
-}
-
 -(NSDictionary*)normalTextAttributes
 {
     if (_normalTextAttributes == nil)
@@ -104,7 +35,7 @@ NSString *const CAAlignmentFromNSTextAlignment(NSTextAlignment textAlignment)
         UIFont *normalFont = self.font;
         CTFontRef normalFontRef = CTFontCreateWithName((__bridge CFStringRef)normalFont.fontName, normalFont.pointSize, NULL);
         _normalTextAttributes = @{
-                                  (__bridge id)kCTFontAttributeName : (__bridge id)normalFontRef,
+                                  (__bridge id)kCTFontAttributeName : self.font,
                                   (__bridge id)kCTForegroundColorAttributeName : (__bridge id)self.textColor.CGColor
                                   };
         CFRelease(normalFontRef);
@@ -116,11 +47,11 @@ NSString *const CAAlignmentFromNSTextAlignment(NSTextAlignment textAlignment)
 {
     if (_boldTextAttributes == nil)
     {
-        UIFont *boldFont = self.boldFont;
-        CTFontRef boldFontRef = CTFontCreateWithName((__bridge CFStringRef)boldFont.fontName, boldFont.pointSize, NULL);
+        UIColor *boldColor = (EPPZ_LABEL_DEBUG_MODE) ? [UIColor blueColor] : self.textColor;
+        CTFontRef boldFontRef = CTFontCreateWithName((__bridge CFStringRef)self.boldFont.fontName, self.boldFont.pointSize, NULL);
         _boldTextAttributes = @{
-                                (__bridge id)kCTFontAttributeName : (__bridge id)boldFontRef,
-                                (__bridge id)kCTForegroundColorAttributeName : (__bridge id)self.textColor.CGColor
+                                (__bridge id)kCTFontAttributeName : self.boldFont,
+                                (__bridge id)kCTForegroundColorAttributeName : (__bridge id)boldColor.CGColor
                                 };
         CFRelease(boldFontRef);
     }
@@ -130,54 +61,43 @@ NSString *const CAAlignmentFromNSTextAlignment(NSTextAlignment textAlignment)
 
 #pragma mark - Hooks
 
--(void)setText:(NSString*) text
-{
-    //Skip assign normal text.
-    self.htmlText = text;
-    [self render];
-}
-
--(NSString*)text
-{ return self.htmlText; }
-
 -(void)setBoldRange:(NSRange) boldRange
 {
     _boldRange = boldRange;
     self.boldRanges = @[[NSValue valueWithRange:boldRange]];
     
-    [self render];
+    [self renderAttributedText];
 }
 
 -(void)setHtmlString:(NSString*) htmlString
 {
+    //Get <strong> ranges results.
     EPPZTagFinder *tagFinder = [EPPZTagFinder tagFinderForFindTags:@"strong" inString:htmlString];
-    
-    //Get results.
     self.text = tagFinder.strippedString;
     self.boldRanges = tagFinder.rangeValuesOfTag;
     
-    [self render];
+    [self renderAttributedText];
 }
 
-
-#pragma mark - Feature
-
--(void)render
-{    
-    //Compose attributed string.
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.text attributes:self.normalTextAttributes];
-    
-    //Apply bold ranges.
-    /*
-    for (NSValue *eachRangeValue in self.boldRanges)
-    {
-        NSRange eachRange = eachRangeValue.rangeValue;
-        [attributedString addAttributes:self.boldTextAttributes range:eachRange];
+-(void)renderAttributedText
+{
+    if (DEVICE.iOS6)
+    {    
+        //Adjust html or arbitary text.
+        NSString *text = (self.htmlString != nil) ? self.htmlString : self.text;
+        
+        //Compose attributed string.
+        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:text attributes:self.normalTextAttributes];
+        
+        //Apply bold ranges.
+        for (NSValue *eachRangeValue in self.boldRanges)
+        {
+            NSRange eachRange = eachRangeValue.rangeValue;
+            [attributedString addAttributes:self.boldTextAttributes range:eachRange];
+        }
+        
+        self.attributedText = attributedString;
     }
-    */
-    
-    //Apply.
-    self.textLayer.string = attributedString;
 }
 
 

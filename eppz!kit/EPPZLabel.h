@@ -13,10 +13,14 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import <CoreText/CoreText.h>
+
 #import "EPPZTagFinder.h"
+#import "EPPZDevice.h"
 
 
 /*
+ 
+    Now only iOS 6.0+ feature (iOS detection encapsulated).
  
     Usage 1.
     Simply set boldRange to have a range bold.
@@ -29,7 +33,6 @@
  
 */
 
-#warning Under construction, do not use EPPZLabel in production yet.
 @interface EPPZLabel : UILabel
 
 @property (nonatomic) NSRange boldRange;

@@ -29,10 +29,15 @@
 
 -(void)testTagFinder
 {
-    self.label_1.htmlString = @"Something really <strong>useful</strong> with tons of <strong>strong</strong> tags to be able to test this harmless <strong>tag finder</strong> snippet.";
-    self.label_2.htmlString = @"<strong>Something</strong> really <strong>useful</strong> with tons of <strong>strong</strong> tags to be able to test this harmless <strong>tag finder</strong> snippet.";
-    self.label_3.htmlString = @"Something really <strong>useful</strong> with actually only one strong tags.";
-    self.label_4.htmlString = @"Something really useful without any strong tags.";
+    if (YES)
+    {
+        self.label_1.htmlString = @"Something-really-<strong>useful</strong>-with-tons-of-<strong>strong</strong>-tags-to-be-able-to-test-this-harmless-<strong>tag-finder</strong>-snippet.";
+        self.label_2.htmlString = @"<strong>Something</strong>-really-<strong>useful</strong>-with-tons-of-<strong>strong</strong>-tags-to-be-able-to-test-this-harmless-<strong>tag-finder</strong>-snippet.";
+        self.label_3.htmlString = @"Something-really-<strong>useful</strong>-with-actually-only-one-strong-tags.";
+        self.label_4.htmlString = @"Something-really-useful-without-any-strong-tags.";
+    }
+        
+    self.labelThatMustWork.boldRange = NSMakeRange(0, 5);
  }
 
 @end

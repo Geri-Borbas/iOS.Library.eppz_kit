@@ -18,5 +18,6 @@
 @property (nonatomic, weak) IBOutlet EPPZLabel *label_2;
 @property (nonatomic, weak) IBOutlet EPPZLabel *label_3;
 @property (nonatomic, weak) IBOutlet EPPZLabel *label_4;
+@property (nonatomic, weak) IBOutlet EPPZLabel *labelThatMustWork;
 
 @end

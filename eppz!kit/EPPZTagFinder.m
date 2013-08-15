@@ -59,7 +59,7 @@
         if (closingComponents.count == 1)
         {
             //Have nothing to mark with range.
-            cursor = eachComponent.length; //so step over.
+            cursor += eachComponent.length; //so step over.
             
             //Collect string.
             [strippedString appendString:eachComponent];
@@ -70,7 +70,7 @@
         {
             //We have something to mark.
             cursorRange = NSMakeRange(cursor, [closingComponents[0] length]);
-            cursor = [closingComponents[0] length] + [closingComponents[1] length];
+            cursor += [closingComponents[0] length] + [closingComponents[1] length];
             
             //Collect range.
             [rangeValuesOfTag addObject:[NSValue valueWithRange:cursorRange]];

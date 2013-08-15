@@ -47,6 +47,7 @@
 		D8302F6617BBA5BD00472478 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8302F6217BB98F100472478 /* CoreText.framework */; };
 		D8302F6717BBA5C500472478 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8302F6417BB990F00472478 /* QuartzCore.framework */; };
 		D8302F8C17BBF15700472478 /* EPPZGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8302F8B17BBF15700472478 /* EPPZGestureRecognizer.m */; };
+		D8AD5DAC17BD0B84004BD9AF /* EPPZDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -129,6 +130,8 @@
 		D8302F6417BB990F00472478 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D8302F8A17BBF15700472478 /* EPPZGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZGestureRecognizer.h; sourceTree = "<group>"; };
 		D8302F8B17BBF15700472478 /* EPPZGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZGestureRecognizer.m; sourceTree = "<group>"; };
+		D8AD5DAA17BD0B84004BD9AF /* EPPZDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZDevice.h; sourceTree = "<group>"; };
+		D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZDevice.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,9 +251,10 @@
 			children = (
 				AE922FC3179385ED0088E5E5 /* README.md */,
 				AE922F841793817C0088E5E5 /* EPPZKit.h */,
+				D8AD5DAD17BD0E01004BD9AF /* Device */,
 				AEFC653917B82032004B5214 /* Timer */,
 				AECCD94717A5D7A5001CAAFD /* Dates */,
-				AE9C3D671797520600D01536 /* Owners */,
+				AE9C3D671797520600D01536 /* Nib owners */,
 				AE83531217963126005EE0DC /* App Store */,
 				AE9C41401794CA3C00090A82 /* UI */,
 				AE9C41191794A4C800090A82 /* User defaults */,
@@ -308,13 +312,13 @@
 			name = "eppz!kit";
 			sourceTree = "<group>";
 		};
-		AE9C3D671797520600D01536 /* Owners */ = {
+		AE9C3D671797520600D01536 /* Nib owners */ = {
 			isa = PBXGroup;
 			children = (
 				AE9C3D681797522100D01536 /* EPPZViewOwner.h */,
 				AE9C3D691797522100D01536 /* EPPZViewOwner.m */,
 			);
-			name = Owners;
+			name = "Nib owners";
 			sourceTree = "<group>";
 		};
 		AE9C3D6B17975DAD00D01536 /* Alert */ = {
@@ -441,6 +445,15 @@
 			name = "Gesture recognizer";
 			sourceTree = "<group>";
 		};
+		D8AD5DAD17BD0E01004BD9AF /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				D8AD5DAA17BD0B84004BD9AF /* EPPZDevice.h */,
+				D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */,
+			);
+			name = Device;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -564,6 +577,7 @@
 				AEFC653817B81865004B5214 /* EPPZTimer.m in Sources */,
 				D8302F5F17BB965800472478 /* EPPZTagFinder.m in Sources */,
 				D8302F8C17BBF15700472478 /* EPPZGestureRecognizer.m in Sources */,
+				D8AD5DAC17BD0B84004BD9AF /* EPPZDevice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
