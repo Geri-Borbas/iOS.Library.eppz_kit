@@ -48,6 +48,11 @@
 		D8302F6717BBA5C500472478 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8302F6417BB990F00472478 /* QuartzCore.framework */; };
 		D8302F8C17BBF15700472478 /* EPPZGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8302F8B17BBF15700472478 /* EPPZGestureRecognizer.m */; };
 		D8AD5DAC17BD0B84004BD9AF /* EPPZDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */; };
+		D8AD5DB017BD22BB004BD9AF /* EPPZRepresentable.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DAF17BD22BB004BD9AF /* EPPZRepresentable.m */; };
+		D8AD5DB817BD2711004BD9AF /* EPPZEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DB717BD2711004BD9AF /* EPPZEntity.m */; };
+		D8AD5DBB17BD28C7004BD9AF /* EPPZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DBA17BD28C7004BD9AF /* EPPZUser.m */; };
+		D8AD5DC117BD30CD004BD9AF /* EPPZGameUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DC017BD30CD004BD9AF /* EPPZGameUser.m */; };
+		D8AD5DC517BD3895004BD9AF /* EPPZGameProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DC417BD3895004BD9AF /* EPPZGameProgress.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,7 +85,6 @@
 		AE922F7117937B6A0088E5E5 /* NSString+EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+EPPZKit.h"; sourceTree = "<group>"; };
 		AE922F7217937B6A0088E5E5 /* NSString+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EPPZKit.m"; sourceTree = "<group>"; };
 		AE922F78179381270088E5E5 /* lib!eppz!kit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "lib!eppz!kit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE922F7C179381280088E5E5 /* eppz!kit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "eppz!kit-Prefix.pch"; sourceTree = "<group>"; };
 		AE922F841793817C0088E5E5 /* EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZKit.h; sourceTree = "<group>"; };
 		AE922FA11793852F0088E5E5 /* eppz!kit!testbed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eppz!kit!testbed.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE922FA71793852F0088E5E5 /* eppz!kit!testbed-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "eppz!kit!testbed-Info.plist"; sourceTree = "<group>"; };
@@ -132,6 +136,17 @@
 		D8302F8B17BBF15700472478 /* EPPZGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZGestureRecognizer.m; sourceTree = "<group>"; };
 		D8AD5DAA17BD0B84004BD9AF /* EPPZDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZDevice.h; sourceTree = "<group>"; };
 		D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZDevice.m; sourceTree = "<group>"; };
+		D8AD5DAE17BD22BB004BD9AF /* EPPZRepresentable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZRepresentable.h; sourceTree = "<group>"; };
+		D8AD5DAF17BD22BB004BD9AF /* EPPZRepresentable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZRepresentable.m; sourceTree = "<group>"; };
+		D8AD5DB617BD2711004BD9AF /* EPPZEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZEntity.h; sourceTree = "<group>"; };
+		D8AD5DB717BD2711004BD9AF /* EPPZEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZEntity.m; sourceTree = "<group>"; };
+		D8AD5DB917BD28C7004BD9AF /* EPPZUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZUser.h; sourceTree = "<group>"; };
+		D8AD5DBA17BD28C7004BD9AF /* EPPZUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZUser.m; sourceTree = "<group>"; };
+		D8AD5DBE17BD2F3C004BD9AF /* EPPZRepresentable.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = EPPZRepresentable.rtf; sourceTree = "<group>"; };
+		D8AD5DBF17BD30CD004BD9AF /* EPPZGameUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZGameUser.h; sourceTree = "<group>"; };
+		D8AD5DC017BD30CD004BD9AF /* EPPZGameUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZGameUser.m; sourceTree = "<group>"; };
+		D8AD5DC317BD3894004BD9AF /* EPPZGameProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZGameProgress.h; sourceTree = "<group>"; };
+		D8AD5DC417BD3895004BD9AF /* EPPZGameProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZGameProgress.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +178,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AE83531217963126005EE0DC /* App Store */ = {
+		AE83531217963126005EE0DC /* □ App Store */ = {
 			isa = PBXGroup;
 			children = (
 				AE8353131796317D005EE0DC /* EPPZAppStore.h */,
@@ -171,7 +186,7 @@
 				AED953181798BF900000A0B6 /* Callbacks */,
 				AE83532117963195005EE0DC /* Localized price */,
 			);
-			name = "App Store";
+			name = "□ App Store";
 			sourceTree = "<group>";
 		};
 		AE83532117963195005EE0DC /* Localized price */ = {
@@ -218,32 +233,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AE922F6717937B090088E5E5 /* File manager */ = {
+		AE922F6717937B090088E5E5 /* □ File manager */ = {
 			isa = PBXGroup;
 			children = (
 				AE922F6817937B2C0088E5E5 /* EPPZFileManager.h */,
 				AE922F6917937B2C0088E5E5 /* EPPZFileManager.m */,
 			);
-			name = "File manager";
+			name = "□ File manager";
 			sourceTree = "<group>";
 		};
-		AE922F6B17937B390088E5E5 /* Singleton (Non ARC) */ = {
+		AE922F6B17937B390088E5E5 /* □ Singleton (Non ARC) */ = {
 			isa = PBXGroup;
 			children = (
 				AE922F6C17937B4D0088E5E5 /* EPPZSingleton.h */,
 				AE922F6D17937B4D0088E5E5 /* EPPZSingleton.m */,
 				AE922F6E17937B4D0088E5E5 /* EPPZSingletonSubclass.h */,
 			);
-			name = "Singleton (Non ARC)";
+			name = "□ Singleton (Non ARC)";
 			sourceTree = "<group>";
 		};
-		AE922F7017937B530088E5E5 /* NSString+EPPZKit */ = {
+		AE922F7017937B530088E5E5 /* □ NSString+EPPZKit */ = {
 			isa = PBXGroup;
 			children = (
 				AE922F7117937B6A0088E5E5 /* NSString+EPPZKit.h */,
 				AE922F7217937B6A0088E5E5 /* NSString+EPPZKit.m */,
 			);
-			name = "NSString+EPPZKit";
+			name = "□ NSString+EPPZKit";
 			sourceTree = "<group>";
 		};
 		AE922F7A179381280088E5E5 /* eppz!kit */ = {
@@ -251,33 +266,19 @@
 			children = (
 				AE922FC3179385ED0088E5E5 /* README.md */,
 				AE922F841793817C0088E5E5 /* EPPZKit.h */,
-				D8AD5DAD17BD0E01004BD9AF /* Device */,
-				AEFC653917B82032004B5214 /* Timer */,
-				AECCD94717A5D7A5001CAAFD /* Dates */,
-				AE9C3D671797520600D01536 /* Nib owners */,
-				AE83531217963126005EE0DC /* App Store */,
-				AE9C41401794CA3C00090A82 /* UI */,
-				AE9C41191794A4C800090A82 /* User defaults */,
-				AE9C40B51794A09000090A82 /* Reachability */,
-				AE922F7017937B530088E5E5 /* NSString+EPPZKit */,
-				AE922F6B17937B390088E5E5 /* Singleton (Non ARC) */,
-				AE922F6717937B090088E5E5 /* File manager */,
-				AE922F7B179381280088E5E5 /* Supporting Files */,
+				D8AD5DB217BD2314004BD9AF /* ❑ Base classes */,
+				D8AD5DB317BD2328004BD9AF /* ❑ Wrappers */,
+				D8AD5DB417BD233E004BD9AF /* ❑ Tools */,
+				AE9C41401794CA3C00090A82 /* ❑ UIKit tools */,
+				D8AD5DB117BD22C0004BD9AF /* ❑ Model tools */,
 			);
 			path = "eppz!kit";
-			sourceTree = "<group>";
-		};
-		AE922F7B179381280088E5E5 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AE922F7C179381280088E5E5 /* eppz!kit-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		AE922FA51793852F0088E5E5 /* eppz!kit!testbed */ = {
 			isa = PBXGroup;
 			children = (
+				D8AD5DB517BD26F8004BD9AF /* Model */,
 				AE922FC617938A4F0088E5E5 /* eppz!kit */,
 				AE922FAE1793852F0088E5E5 /* EPPZAppDelegate.h */,
 				AE922FAF1793852F0088E5E5 /* EPPZAppDelegate.m */,
@@ -312,16 +313,16 @@
 			name = "eppz!kit";
 			sourceTree = "<group>";
 		};
-		AE9C3D671797520600D01536 /* Nib owners */ = {
+		AE9C3D671797520600D01536 /* □ Nib owners */ = {
 			isa = PBXGroup;
 			children = (
 				AE9C3D681797522100D01536 /* EPPZViewOwner.h */,
 				AE9C3D691797522100D01536 /* EPPZViewOwner.m */,
 			);
-			name = "Nib owners";
+			name = "□ Nib owners";
 			sourceTree = "<group>";
 		};
-		AE9C3D6B17975DAD00D01536 /* Alert */ = {
+		AE9C3D6B17975DAD00D01536 /* □ Alert */ = {
 			isa = PBXGroup;
 			children = (
 				AE9C3D6C17975DB500D01536 /* EPPZAlert.h */,
@@ -329,17 +330,17 @@
 				AE9C3D6E17975DB500D01536 /* EPPZAlert+Factory.h */,
 				AE9C3D6F17975DB500D01536 /* EPPZAlert+Factory.m */,
 			);
-			name = Alert;
+			name = "□ Alert";
 			sourceTree = "<group>";
 		};
-		AE9C40B51794A09000090A82 /* Reachability */ = {
+		AE9C40B51794A09000090A82 /* □ Reachability */ = {
 			isa = PBXGroup;
 			children = (
 				AE9C40B61794A0A700090A82 /* EPPZReachability.h */,
 				AE9C40B71794A0A700090A82 /* EPPZReachability.m */,
 				AE9C40BC1794A0CB00090A82 /* NSString+EPPZReachability */,
 			);
-			name = Reachability;
+			name = "□ Reachability";
 			sourceTree = "<group>";
 		};
 		AE9C40BC1794A0CB00090A82 /* NSString+EPPZReachability */ = {
@@ -351,52 +352,53 @@
 			name = "NSString+EPPZReachability";
 			sourceTree = "<group>";
 		};
-		AE9C41191794A4C800090A82 /* User defaults */ = {
+		AE9C41191794A4C800090A82 /* □ User defaults */ = {
 			isa = PBXGroup;
 			children = (
 				AE9C411A1794A4D600090A82 /* EPPZUserDefaults.h */,
 				AE9C411B1794A4D600090A82 /* EPPZUserDefaults.m */,
 			);
-			name = "User defaults";
+			name = "□ User defaults";
 			sourceTree = "<group>";
 		};
-		AE9C41401794CA3C00090A82 /* UI */ = {
+		AE9C41401794CA3C00090A82 /* ❑ UIKit tools */ = {
 			isa = PBXGroup;
 			children = (
-				D8302F8917BBF14700472478 /* Gesture recognizer */,
-				D8302F6017BB97E600472478 /* Label */,
-				AEA0B27C179DF66B00439EB0 /* Paging scroll view controller */,
-				AE9C3D6B17975DAD00D01536 /* Alert */,
-				AE9C41441794CA6F00090A82 /* Flat button */,
+				AE9C3D671797520600D01536 /* □ Nib owners */,
+				D8302F8917BBF14700472478 /* □ Gesture recognizer */,
+				AE9C41441794CA6F00090A82 /* □ Flat button */,
+				AE9C3D6B17975DAD00D01536 /* □ Alert */,
+				AEA0B27C179DF66B00439EB0 /* □ Paging scroll view controller */,
+				D8302F6017BB97E600472478 /* □ Label */,
 			);
-			name = UI;
+			name = "❑ UIKit tools";
 			sourceTree = "<group>";
 		};
-		AE9C41441794CA6F00090A82 /* Flat button */ = {
+		AE9C41441794CA6F00090A82 /* □ Flat button */ = {
 			isa = PBXGroup;
 			children = (
 				AE9C41411794CA4A00090A82 /* EPPZFlatButton.h */,
 				AE9C41421794CA4A00090A82 /* EPPZFlatButton.m */,
 			);
-			name = "Flat button";
+			name = "□ Flat button";
 			sourceTree = "<group>";
 		};
-		AEA0B27C179DF66B00439EB0 /* Paging scroll view controller */ = {
+		AEA0B27C179DF66B00439EB0 /* □ Paging scroll view controller */ = {
 			isa = PBXGroup;
 			children = (
 				AEA0B27D179DF68200439EB0 /* EPPZPagingScrollViewController.h */,
 				AEA0B27E179DF68200439EB0 /* EPPZPagingScrollViewController.m */,
 			);
-			name = "Paging scroll view controller";
+			name = "□ Paging scroll view controller";
 			sourceTree = "<group>";
 		};
-		AECCD94717A5D7A5001CAAFD /* Dates */ = {
+		AECCD94717A5D7A5001CAAFD /* □ NSDate+EPPZKit */ = {
 			isa = PBXGroup;
 			children = (
 				AECCD94B17A5D80E001CAAFD /* NSDate+EPPZKit.h */,
 				AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */,
 			);
-			name = Dates;
+			name = "□ NSDate+EPPZKit";
 			sourceTree = "<group>";
 		};
 		AED953181798BF900000A0B6 /* Callbacks */ = {
@@ -408,23 +410,23 @@
 			name = Callbacks;
 			sourceTree = "<group>";
 		};
-		AEFC653917B82032004B5214 /* Timer */ = {
+		AEFC653917B82032004B5214 /* □ Timer */ = {
 			isa = PBXGroup;
 			children = (
 				AEFC653617B81865004B5214 /* EPPZTimer.h */,
 				AEFC653717B81865004B5214 /* EPPZTimer.m */,
 			);
-			name = Timer;
+			name = "□ Timer";
 			sourceTree = "<group>";
 		};
-		D8302F6017BB97E600472478 /* Label */ = {
+		D8302F6017BB97E600472478 /* □ Label */ = {
 			isa = PBXGroup;
 			children = (
 				D8302F6117BB97F100472478 /* Tag finder */,
 				AEC6888A17B313C000F2206F /* EPPZLabel.h */,
 				AEC6888B17B313C000F2206F /* EPPZLabel.m */,
 			);
-			name = Label;
+			name = "□ Label";
 			sourceTree = "<group>";
 		};
 		D8302F6117BB97F100472478 /* Tag finder */ = {
@@ -436,22 +438,109 @@
 			name = "Tag finder";
 			sourceTree = "<group>";
 		};
-		D8302F8917BBF14700472478 /* Gesture recognizer */ = {
+		D8302F8917BBF14700472478 /* □ Gesture recognizer */ = {
 			isa = PBXGroup;
 			children = (
 				D8302F8A17BBF15700472478 /* EPPZGestureRecognizer.h */,
 				D8302F8B17BBF15700472478 /* EPPZGestureRecognizer.m */,
 			);
-			name = "Gesture recognizer";
+			name = "□ Gesture recognizer";
 			sourceTree = "<group>";
 		};
-		D8AD5DAD17BD0E01004BD9AF /* Device */ = {
+		D8AD5DAD17BD0E01004BD9AF /* □ Device */ = {
 			isa = PBXGroup;
 			children = (
 				D8AD5DAA17BD0B84004BD9AF /* EPPZDevice.h */,
 				D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */,
 			);
-			name = Device;
+			name = "□ Device";
+			sourceTree = "<group>";
+		};
+		D8AD5DB117BD22C0004BD9AF /* ❑ Model tools */ = {
+			isa = PBXGroup;
+			children = (
+				D8AD5DBE17BD2F3C004BD9AF /* EPPZRepresentable.rtf */,
+				D8AD5DAE17BD22BB004BD9AF /* EPPZRepresentable.h */,
+				D8AD5DAF17BD22BB004BD9AF /* EPPZRepresentable.m */,
+				AE9C41191794A4C800090A82 /* □ User defaults */,
+			);
+			name = "❑ Model tools";
+			sourceTree = "<group>";
+		};
+		D8AD5DB217BD2314004BD9AF /* ❑ Base classes */ = {
+			isa = PBXGroup;
+			children = (
+				AE922F6B17937B390088E5E5 /* □ Singleton (Non ARC) */,
+			);
+			name = "❑ Base classes";
+			sourceTree = "<group>";
+		};
+		D8AD5DB317BD2328004BD9AF /* ❑ Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				AE922F6717937B090088E5E5 /* □ File manager */,
+				D8AD5DAD17BD0E01004BD9AF /* □ Device */,
+				AE9C40B51794A09000090A82 /* □ Reachability */,
+				AE83531217963126005EE0DC /* □ App Store */,
+			);
+			name = "❑ Wrappers";
+			sourceTree = "<group>";
+		};
+		D8AD5DB417BD233E004BD9AF /* ❑ Tools */ = {
+			isa = PBXGroup;
+			children = (
+				AECCD94717A5D7A5001CAAFD /* □ NSDate+EPPZKit */,
+				AE922F7017937B530088E5E5 /* □ NSString+EPPZKit */,
+				AEFC653917B82032004B5214 /* □ Timer */,
+			);
+			name = "❑ Tools";
+			sourceTree = "<group>";
+		};
+		D8AD5DB517BD26F8004BD9AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D8AD5DBC17BD292B004BD9AF /* Entity */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D8AD5DBC17BD292B004BD9AF /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				D8AD5DB617BD2711004BD9AF /* EPPZEntity.h */,
+				D8AD5DB717BD2711004BD9AF /* EPPZEntity.m */,
+				D8AD5DBD17BD2932004BD9AF /* User */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		D8AD5DBD17BD2932004BD9AF /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D8AD5DB917BD28C7004BD9AF /* EPPZUser.h */,
+				D8AD5DBA17BD28C7004BD9AF /* EPPZUser.m */,
+				D8AD5DC217BD30D0004BD9AF /* Game user */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		D8AD5DC217BD30D0004BD9AF /* Game user */ = {
+			isa = PBXGroup;
+			children = (
+				D8AD5DBF17BD30CD004BD9AF /* EPPZGameUser.h */,
+				D8AD5DC017BD30CD004BD9AF /* EPPZGameUser.m */,
+				D8AD5DC617BD3897004BD9AF /* Game progress */,
+			);
+			name = "Game user";
+			sourceTree = "<group>";
+		};
+		D8AD5DC617BD3897004BD9AF /* Game progress */ = {
+			isa = PBXGroup;
+			children = (
+				D8AD5DC317BD3894004BD9AF /* EPPZGameProgress.h */,
+				D8AD5DC417BD3895004BD9AF /* EPPZGameProgress.m */,
+			);
+			name = "Game progress";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,6 +667,7 @@
 				D8302F5F17BB965800472478 /* EPPZTagFinder.m in Sources */,
 				D8302F8C17BBF15700472478 /* EPPZGestureRecognizer.m in Sources */,
 				D8AD5DAC17BD0B84004BD9AF /* EPPZDevice.m in Sources */,
+				D8AD5DB017BD22BB004BD9AF /* EPPZRepresentable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +678,10 @@
 				AE922FAC1793852F0088E5E5 /* main.m in Sources */,
 				AE922FB01793852F0088E5E5 /* EPPZAppDelegate.m in Sources */,
 				AE922FB9179385300088E5E5 /* EPPZViewController.m in Sources */,
+				D8AD5DB817BD2711004BD9AF /* EPPZEntity.m in Sources */,
+				D8AD5DBB17BD28C7004BD9AF /* EPPZUser.m in Sources */,
+				D8AD5DC117BD30CD004BD9AF /* EPPZGameUser.m in Sources */,
+				D8AD5DC517BD3895004BD9AF /* EPPZGameProgress.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,7 +779,7 @@
 				DSTROOT = /tmp/eppz_kit.dst;
 				EXECUTABLE_PREFIX = "lib!";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "eppz!kit/eppz!kit-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -698,7 +792,7 @@
 				DSTROOT = /tmp/eppz_kit.dst;
 				EXECUTABLE_PREFIX = "lib!";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "eppz!kit/eppz!kit-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

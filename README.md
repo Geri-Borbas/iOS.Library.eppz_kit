@@ -2,6 +2,10 @@
 **The collection of the usefuls. Objective-C everydayers.** You could use it like you would do with any other static library (as Apple recommends [Using Static Libraries in iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)), or just grab some individual class, they are not that coupled (just watch the imports at the top of .h files).
 
 
+#### EPPZRepresentable
+A solid base class for the upcoming model tools. The class is yet able to represent itself in a dictionary form that allows me to create many store implementation (Defaults, Archiver, CoreData, JSON, Plist, Keychain, whatnot). In progress.
+
+
 #### EPPZDevice
 A charming class showing running iOS version with shorties, and will include device model detection as well.
 ```Objective-C
@@ -152,6 +156,14 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 
 #### Version tracking
+
+* 1.3.4
+
+    + Removed prefix header entirely (to force import dependencies in every header)
+    + Some grouping of classes
+    + EPPZRepresentable kicked off with some tests
+        + Representing works well over class hirearchy
+        + Stores class name for restoration
 
 * 1.3.3
 

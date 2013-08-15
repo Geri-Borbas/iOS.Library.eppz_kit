@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'eppz!kit' target in the 'eppz!kit' project
-//
-
-#ifdef __OBJC__
-
-#endif

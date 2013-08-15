@@ -10,25 +10,37 @@
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-static NSString *const kEPPZKitVersion = @"1.3.3";
 
-#import <UIKit/UIKit.h>
+static NSString *const kEPPZKitVersion = @"1.3.4";
 
+
+//Base classes.
 #import "EPPZSingleton.h"
 #import "EPPZSingletonSubclass.h"
-#import "EPPZFileManager.h"
-#import "NSString+EPPZKit.h"
+
+//Wrappers.
+#import "EPPZFileManager.h" //FILES
+#import "EPPZDevice.h" //DEVICE
 #import "EPPZReachability.h"
 #import "NSString+EPPZReachability.h"
-#import "EPPZUserDefaults.h"
-#import "EPPZFlatButton.h"
-#import "EPPZAppStore.h"
+#import "EPPZAppStore.h" //APPSTORE
+
+//Tools.
+#import "NSDate+EPPZKit.h"
+#import "NSString+EPPZKit.h"
+#import "EPPZTimer.h"
+
+//UIKit tools.
 #import "EPPZViewOwner.h"
+#import "EPPZGestureRecognizer.h"
+#import "EPPZFlatButton.h"
 #import "EPPZAlert.h"
 #import "EPPZPagingScrollViewController.h"
-#import "NSDate+EPPZKit.h"
 #import "EPPZTagFinder.h"
 #import "EPPZLabel.h"
-#import "EPPZTimer.h"
-#import "EPPZGestureRecognizer.h"
+
+//Model tools.
+#import "EPPZUserDefaults.h"
+#import "EPPZRepresentable.h"
+
 
