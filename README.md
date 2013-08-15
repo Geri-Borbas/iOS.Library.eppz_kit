@@ -1,5 +1,5 @@
 ## ![eppz!kit](http://www.eppz.eu/beacons/eppz!.png) eppz!kit
-**The collection of the usefuls. Objective-C everydayers.** You could use it like you would do with any other static library (as Apple recommends [Using Static Libraries in iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)), or just grab some individual class, they are not that coupled (just watch the imports).
+**The collection of the usefuls. Objective-C everydayers.** You could use it like you would do with any other static library (as Apple recommends [Using Static Libraries in iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)), or just grab some individual class, they are not that coupled (just watch the imports at the top of .h files).
 
 
 #### EPPZDevice
@@ -158,6 +158,7 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
     + EPPZDevice added
     + EPPZLabel's <strong> feature is an iOS 6.0+ feature
         + Tired of iOS 5.0 workaround. As a fallback text is not bold on iOS 5.0, voila! Progressive enhancement.
+    + Explicit import of frameworks and dependencies of every class (removed everything from prefix.pch)
 
 * 1.3.2
 
