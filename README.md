@@ -56,11 +56,11 @@ self.label.htmlString = @"Make <strong>this range</strong> bold.";
 //Using a range.
 self.label.boldRange = NSMakeRange(15, 5);
 ```
-Prior iOS 6.0 it falls back to be an arbitary label. I did implemented a solution that uses CATextLayer to work this issue around in iOS 5.0 but it felt me too hacky, so I decided to stop support iOS 5.0 anymore.
+Prior iOS 6.0 it falls back to be an arbitary label. I did implemented a solution that uses `CATextLayer` to work this issue around in iOS 5.0 but it felt me too hacky, so I decided to stop support iOS 5.0 anymore.
 
 
 #### NSDate+EPPZKit
-With a sole feature for now that converts NSTimeInterval to something human readable. Converts `1500000.00` to `17 days 08:40:00` for example.
+With a sole feature for now that converts NSTimeInterval to something human readable. Converts `1500000.0` to `17 days 08:40:00` for example.
 ```Objective-C
 //Supposing remainingTimeInterval is 1500000.0 it sets '17 days 08:40:00' as the label text.
 self.countDownLabel.text = [NSDate diplayStringOfInterval:remainingTimeInterval];
