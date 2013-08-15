@@ -3,24 +3,64 @@
 
 
 #### EPPZDevice
-A charming class showing running iOS version with shorties, like `if (DEVICE.iOS6) { [self something]; }` and will include device model detection as well.
+A charming class showing running iOS version with shorties, and will include device model detection as well.
+```Objective-C
+//iOS version detect.
+if (DEVICE.iOS6)
+{
+    [self something];
+}
+```
 
 
 #### EPPZGestureRecognizer
 A cool compositable object that reduces boilerplate for recognizing gestures. Also arranges some undelying stuff (e.g. double tap do not block triple tap).
+```Objective-C
+//A typical setup in a view controller.
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    //Add gesture to close with.
+    self.gestureRecognizer = [EPPZGestureRecognizer gestureRecognizerWithView:self.view delegate:self];
+    [self.gestureRecognizer addSwipeDownGesture];
+}
+
+-(void)swipeDownEvent
+{ [self close]; }
+```
 
 
 #### EPPZTimer
 An `NSTimer` wrapper that does not retain it's target so not likely to create retain cycles.
+```Objective-C
+//Just you'd normally do with NSTimer but without retain cycle.
+self.timer = [EPPZTimer scheduledTimerWithTimeInterval:1.0
+                                                target:self
+                                              selector:@selector(updateClock:)
+                                              userInfo:nil
+                                               repeats:YES];
+```
+The timer will invalidate itself when the target is existing no more. A check for taget existence is invoked in every invocation of the timer.
 
 
 #### EPPZLabel
-A cool `UILabel` subclass that allows you to adjust a `boldRange` property and a `bondFont` class method. Using attributed string under the hood (in iOS 6.0+ it is useless by the way).
+A cool `UILabel` subclass that allows you to define bold ranges for a given text. It is using `EPPZTagFinder` for a feature where you can use `<strong>` tags for indicate bold ranges withing an `NSString`.
+```Objective-C
+//Using '<strong>' tags.
+self.label.htmlString = @"Make <strong>this range</strong> bold.";
+//Using a range.
+self.label.boldRange = NSMakeRange(15, 5);
+```
+Prior iOS 6.0 it falls back to be an arbitary label. I did implemented a solution that uses CATextLayer to work this issue around in iOS 5.0 but it felt me too hacky, so I decided to stop support iOS 5.0 anymore.
 
 
 #### NSDate+EPPZKit
 With a sole feature for now that converts NSTimeInterval to something human readable. Converts `1500000.00` to `17 days 08:40:00` for example.
-
+```Objective-C
+//Supposing remainingTimeInterval is 1500000.0 it sets '17 days 08:40:00' as the label text.
+self.countDownLabel.text = [NSDate diplayStringOfInterval:remainingTimeInterval];
+```
 
 #### EPPZPagingScrollViewController
 Astonishing paging `UIScrollView` with `UIPageControl` controller. Just drop-in this controller object into an Interface Builder file, hook up `scrollView`, `contentView` and `pageControl` outlets, and wire it in as the `delegate` for the `UIScrollView`. It calculates the number of pages based on the content size. Note that you have to retain this object somehow to survive after XIB loading (I usually create a `strong` `IBOutlet` for this in the containing controller, that does the job well).
