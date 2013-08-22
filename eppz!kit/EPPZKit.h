@@ -11,7 +11,7 @@
 //
 
 
-static NSString *const kEPPZKitVersion = @"1.3.4";
+static NSString *const kEPPZKitVersion = @"1.4.0";
 
 
 //Base classes.
@@ -41,6 +41,6 @@ static NSString *const kEPPZKitVersion = @"1.3.4";
 
 //Model tools.
 #import "EPPZUserDefaults.h"
-#import "EPPZRepresentable.h"
+#import "NSObject+EPPZRepresentable.h"
 
 

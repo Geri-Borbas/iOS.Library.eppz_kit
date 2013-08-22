@@ -6,9 +6,8 @@
 //  Copyright (c) 2013 eppz!. All rights reserved.
 //
 
-#import "EPPZRepresentable.h"
 
-@interface EPPZGameProgress : EPPZRepresentable
+@interface EPPZGameProgress : NSObject <EPPZRepresentable>
 
 @property (nonatomic) NSUInteger progress;
 @property (nonatomic) NSUInteger level;

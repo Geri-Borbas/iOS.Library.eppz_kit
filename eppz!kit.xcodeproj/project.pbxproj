@@ -43,12 +43,15 @@
 		AECCD95517A5DE90001CAAFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */; };
 		AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */; };
 		AEFC653817B81865004B5214 /* EPPZTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFC653717B81865004B5214 /* EPPZTimer.m */; };
+		D822ACA017C66B510076DE10 /* EPPZClassMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = D822AC9F17C66B510076DE10 /* EPPZClassMerger.m */; };
+		D822ACA917C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = D822ACA817C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m */; };
+		D822ACAC17C67D5E0076DE10 /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = D822ACAB17C67D5E0076DE10 /* user.plist */; };
 		D8302F5F17BB965800472478 /* EPPZTagFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D8302F5E17BB965800472478 /* EPPZTagFinder.m */; };
 		D8302F6617BBA5BD00472478 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8302F6217BB98F100472478 /* CoreText.framework */; };
 		D8302F6717BBA5C500472478 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8302F6417BB990F00472478 /* QuartzCore.framework */; };
 		D8302F8C17BBF15700472478 /* EPPZGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8302F8B17BBF15700472478 /* EPPZGestureRecognizer.m */; };
 		D8AD5DAC17BD0B84004BD9AF /* EPPZDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */; };
-		D8AD5DB017BD22BB004BD9AF /* EPPZRepresentable.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DAF17BD22BB004BD9AF /* EPPZRepresentable.m */; };
+		D8AD5DB017BD22BB004BD9AF /* NSObject+EPPZRepresentable.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DAF17BD22BB004BD9AF /* NSObject+EPPZRepresentable.m */; };
 		D8AD5DB817BD2711004BD9AF /* EPPZEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DB717BD2711004BD9AF /* EPPZEntity.m */; };
 		D8AD5DBB17BD28C7004BD9AF /* EPPZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DBA17BD28C7004BD9AF /* EPPZUser.m */; };
 		D8AD5DC117BD30CD004BD9AF /* EPPZGameUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DC017BD30CD004BD9AF /* EPPZGameUser.m */; };
@@ -128,6 +131,11 @@
 		AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAppStoreCallbacks.m; sourceTree = "<group>"; };
 		AEFC653617B81865004B5214 /* EPPZTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZTimer.h; sourceTree = "<group>"; };
 		AEFC653717B81865004B5214 /* EPPZTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZTimer.m; sourceTree = "<group>"; };
+		D822AC9E17C66B510076DE10 /* EPPZClassMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZClassMerger.h; sourceTree = "<group>"; };
+		D822AC9F17C66B510076DE10 /* EPPZClassMerger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZClassMerger.m; sourceTree = "<group>"; };
+		D822ACA717C671200076DE10 /* NSObject+EPPZRepresentable_Plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EPPZRepresentable_Plist.h"; sourceTree = "<group>"; };
+		D822ACA817C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EPPZRepresentable_Plist.m"; sourceTree = "<group>"; };
+		D822ACAB17C67D5E0076DE10 /* user.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = user.plist; sourceTree = "<group>"; };
 		D8302F5D17BB965800472478 /* EPPZTagFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZTagFinder.h; sourceTree = "<group>"; };
 		D8302F5E17BB965800472478 /* EPPZTagFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZTagFinder.m; sourceTree = "<group>"; };
 		D8302F6217BB98F100472478 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -136,8 +144,8 @@
 		D8302F8B17BBF15700472478 /* EPPZGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZGestureRecognizer.m; sourceTree = "<group>"; };
 		D8AD5DAA17BD0B84004BD9AF /* EPPZDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZDevice.h; sourceTree = "<group>"; };
 		D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZDevice.m; sourceTree = "<group>"; };
-		D8AD5DAE17BD22BB004BD9AF /* EPPZRepresentable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZRepresentable.h; sourceTree = "<group>"; };
-		D8AD5DAF17BD22BB004BD9AF /* EPPZRepresentable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZRepresentable.m; sourceTree = "<group>"; };
+		D8AD5DAE17BD22BB004BD9AF /* NSObject+EPPZRepresentable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EPPZRepresentable.h"; sourceTree = "<group>"; };
+		D8AD5DAF17BD22BB004BD9AF /* NSObject+EPPZRepresentable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EPPZRepresentable.m"; sourceTree = "<group>"; };
 		D8AD5DB617BD2711004BD9AF /* EPPZEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZEntity.h; sourceTree = "<group>"; };
 		D8AD5DB717BD2711004BD9AF /* EPPZEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZEntity.m; sourceTree = "<group>"; };
 		D8AD5DB917BD28C7004BD9AF /* EPPZUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZUser.h; sourceTree = "<group>"; };
@@ -460,9 +468,13 @@
 			isa = PBXGroup;
 			children = (
 				D8AD5DBE17BD2F3C004BD9AF /* EPPZRepresentable.rtf */,
-				D8AD5DAE17BD22BB004BD9AF /* EPPZRepresentable.h */,
-				D8AD5DAF17BD22BB004BD9AF /* EPPZRepresentable.m */,
+				D8AD5DAE17BD22BB004BD9AF /* NSObject+EPPZRepresentable.h */,
+				D8AD5DAF17BD22BB004BD9AF /* NSObject+EPPZRepresentable.m */,
+				D822ACA717C671200076DE10 /* NSObject+EPPZRepresentable_Plist.h */,
+				D822ACA817C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m */,
 				AE9C41191794A4C800090A82 /* □ User defaults */,
+				D822AC9E17C66B510076DE10 /* EPPZClassMerger.h */,
+				D822AC9F17C66B510076DE10 /* EPPZClassMerger.m */,
 			);
 			name = "❑ Model tools";
 			sourceTree = "<group>";
@@ -517,6 +529,7 @@
 		D8AD5DBD17BD2932004BD9AF /* User */ = {
 			isa = PBXGroup;
 			children = (
+				D822ACAB17C67D5E0076DE10 /* user.plist */,
 				D8AD5DB917BD28C7004BD9AF /* EPPZUser.h */,
 				D8AD5DBA17BD28C7004BD9AF /* EPPZUser.m */,
 				D8AD5DC217BD30D0004BD9AF /* Game user */,
@@ -620,6 +633,7 @@
 				AE922FB6179385300088E5E5 /* Default-568h@2x.png in Resources */,
 				AE922FBC179385300088E5E5 /* EPPZViewController_iPhone.xib in Resources */,
 				AE922FBF179385300088E5E5 /* EPPZViewController_iPad.xib in Resources */,
+				D822ACAC17C67D5E0076DE10 /* user.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,7 +681,9 @@
 				D8302F5F17BB965800472478 /* EPPZTagFinder.m in Sources */,
 				D8302F8C17BBF15700472478 /* EPPZGestureRecognizer.m in Sources */,
 				D8AD5DAC17BD0B84004BD9AF /* EPPZDevice.m in Sources */,
-				D8AD5DB017BD22BB004BD9AF /* EPPZRepresentable.m in Sources */,
+				D8AD5DB017BD22BB004BD9AF /* NSObject+EPPZRepresentable.m in Sources */,
+				D822ACA017C66B510076DE10 /* EPPZClassMerger.m in Sources */,
+				D822ACA917C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

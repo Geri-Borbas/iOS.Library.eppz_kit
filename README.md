@@ -3,7 +3,8 @@
 
 
 #### EPPZRepresentable
-A solid base class for the upcoming model tools. The class is yet able to represent itself in a dictionary form that allows me to create many store implementation (Defaults, Archiver, CoreData, JSON, Plist, Keychain, whatnot). In progress.
+A solid NSObject extension that makes work with models much easier. If a class conforms to the protocol than it mark that object to implement such features.
+Yet objects able to represent themselves in a dictionary form that allows me to create many store implementation (Defaults, Archiver, CoreData, JSON, Plist, Keychain, whatnot). In progress, though `plist` implementation actually works.
 
 
 #### EPPZDevice
@@ -156,6 +157,10 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 
 #### Version tracking
+
+* 1.4.0
+
+    + EPPZRepresentable changes
 
 * 1.3.4
 

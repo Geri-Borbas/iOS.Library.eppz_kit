@@ -6,10 +6,8 @@
 //  Copyright (c) 2013 eppz!. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 
-
-@interface EPPZEntity : EPPZRepresentable
+@interface EPPZEntity : NSObject <EPPZRepresentable>
 
 @property (nonatomic, strong) NSString *ID;
 @property (nonatomic) NSUInteger serialNumber;

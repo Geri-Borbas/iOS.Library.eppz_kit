@@ -11,6 +11,7 @@
 //
 
 #import "EPPZViewController.h"
+
 #import "EPPZGameUser.h"
 
 
@@ -42,25 +43,46 @@
 
 -(void)testModelTools
 {
-    //Create a model object.
-    EPPZGameUser *user = [EPPZGameUser new];
-    user.ID = @"A1FF321FED64";
-    user.serialNumber = 12;
-    user.name = @"Geri";
-    user.lastModificationDate = [NSDate new];
-    user.registrationDate = [NSDate new];
-    user.gameID = @"2";
-    user.scores = @[ @(23), @(27), @(22), @(28), @(32) ];
+    EPPZGameUser *user;
     
-    EPPZGameProgress *progress = [EPPZGameProgress new];
-    progress.progress = 5;
-    progress.level = 5;
-    user.progress = progress;
+    BOOL store = NO;
+    BOOL create = !store;
     
-    user.runtimeData = @"Awaiting";
+    if (store)
+    {
+        //Create a model object.
+        user = [EPPZGameUser new];
+        user.ID = @"A1FF321FED64";
+        user.serialNumber = 12;
+        user.name = @"Bruce";
+        user.lastModificationDate = [NSDate new];
+        user.registrationDate = [NSDate new];
+        user.gameID = @"2";
+        user.scores = @[ @(23), @(27), @(22), @(28), @(32) ];
+        
+        EPPZGameProgress *progress = [EPPZGameProgress new];
+        progress.progress = 5;
+        progress.level = 5;
+        user.progress = progress;
+        
+        user.runtimeData = @"Awaiting";
+        
+        //Save.
+        [user storeAsPlistNamed:@"user"];
+        
+        //See it represented.
+        NSLog(@"%@", user.dictionaryRepresentation);
+    }
     
-    //See it represented.
-    NSLog(@"%@", user.dictionaryRepresentation);
+    if (create)
+    {
+        //Create a model object.
+        user = [EPPZGameUser representableWithPlistNamed:@"user"];
+        
+        //See it created.
+        NSLog(@"%@", user);
+    }
+    
 }
 
 
