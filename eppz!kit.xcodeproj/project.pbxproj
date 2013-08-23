@@ -44,7 +44,6 @@
 		AECCD95517A5DE90001CAAFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */; };
 		AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */; };
 		AEFC653817B81865004B5214 /* EPPZTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFC653717B81865004B5214 /* EPPZTimer.m */; };
-		D822ACA017C66B510076DE10 /* EPPZClassMerger.m in Sources */ = {isa = PBXBuildFile; fileRef = D822AC9F17C66B510076DE10 /* EPPZClassMerger.m */; };
 		D822ACA917C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = D822ACA817C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m */; };
 		D822ACAC17C67D5E0076DE10 /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = D822ACAB17C67D5E0076DE10 /* user.plist */; };
 		D8302F5F17BB965800472478 /* EPPZTagFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D8302F5E17BB965800472478 /* EPPZTagFinder.m */; };
@@ -134,8 +133,6 @@
 		AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAppStoreCallbacks.m; sourceTree = "<group>"; };
 		AEFC653617B81865004B5214 /* EPPZTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZTimer.h; sourceTree = "<group>"; };
 		AEFC653717B81865004B5214 /* EPPZTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZTimer.m; sourceTree = "<group>"; };
-		D822AC9E17C66B510076DE10 /* EPPZClassMerger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZClassMerger.h; sourceTree = "<group>"; };
-		D822AC9F17C66B510076DE10 /* EPPZClassMerger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZClassMerger.m; sourceTree = "<group>"; };
 		D822ACA717C671200076DE10 /* NSObject+EPPZRepresentable_Plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EPPZRepresentable_Plist.h"; sourceTree = "<group>"; };
 		D822ACA817C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EPPZRepresentable_Plist.m"; sourceTree = "<group>"; };
 		D822ACAB17C67D5E0076DE10 /* user.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = user.plist; sourceTree = "<group>"; };
@@ -485,8 +482,6 @@
 				D822ACA717C671200076DE10 /* NSObject+EPPZRepresentable_Plist.h */,
 				D822ACA817C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m */,
 				AE9C41191794A4C800090A82 /* □ User defaults */,
-				D822AC9E17C66B510076DE10 /* EPPZClassMerger.h */,
-				D822AC9F17C66B510076DE10 /* EPPZClassMerger.m */,
 			);
 			name = "❑ Model tools";
 			sourceTree = "<group>";
@@ -695,7 +690,6 @@
 				D8302F8C17BBF15700472478 /* EPPZGestureRecognizer.m in Sources */,
 				D8AD5DAC17BD0B84004BD9AF /* EPPZDevice.m in Sources */,
 				D8AD5DB017BD22BB004BD9AF /* NSObject+EPPZRepresentable.m in Sources */,
-				D822ACA017C66B510076DE10 /* EPPZClassMerger.m in Sources */,
 				D822ACA917C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m in Sources */,
 				AE00588617C740990061146F /* EPPZBoolTools.m in Sources */,
 			);

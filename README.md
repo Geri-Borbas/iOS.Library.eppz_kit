@@ -170,6 +170,10 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.4.2
+
+    + Headers (MIT License, twitter donations)
+
 * 1.4.1
 
     + EPPZBoolTools added
