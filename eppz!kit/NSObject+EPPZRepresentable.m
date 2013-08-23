@@ -13,6 +13,7 @@
 //
 
 #import "NSObject+EPPZRepresentable.h"
+#import "EPPZCoreGraphicsTools.h"
 
 
 static NSString *const kEPPZRepresentableClassNameKey = @"EPPZRepresentableClassName";
@@ -38,28 +39,52 @@ static NSString *const kEPPZRepresentableClassNameKey = @"EPPZRepresentableClass
 #pragma mark - Create dictionary representation
 
 -(NSDictionary*)dictionaryRepresentation
-{
+{ _LOG
+    
     //Collection.
     NSMutableDictionary *dictionaryRepresentation = [NSMutableDictionary new];
     
     //Add class name.
     [dictionaryRepresentation setObject:NSStringFromClass([self class]) forKey:kEPPZRepresentableClassNameKey];
     
-    //Collect values.
-    for (NSString *eachPropertyName in self.propertyNames)
-    { [dictionaryRepresentation setObject:[self valueForPropertyName:eachPropertyName] forKey:eachPropertyName]; }
+    //Collect (non-nil) values.
+    for (NSString *eachPropertyName in [self.class collectRepresentablePropertyNames])
+    {
+        id value = [self representationValueForPropertyName:eachPropertyName];
+        if (value != nil)
+            [dictionaryRepresentation setObject:value
+                                         forKey:eachPropertyName];
+    }
     
     //Return immutable.
     return [NSDictionary dictionaryWithDictionary:dictionaryRepresentation];
 }
 
--(id)valueForPropertyName:(NSString*) propertyName
-{
-    //Return value or representation.
-    id value = [self valueForKeyPath:propertyName];
-    if ([value conformsToProtocol:@protocol(EPPZRepresentable)])
-        value = [(NSObject<EPPZRepresentable>*)value dictionaryRepresentation];
+-(id)representationValueForPropertyName:(NSString*) propertyName
+{   
+    ERLog(@"%@ representationValueForPropertyName:%@", NSStringFromClass(self.class), propertyName);
     
+    //Get the actual (runtime) value for this key.
+    
+        id value = [self valueForKeyPath:propertyName];
+    
+    //EPPZRepresentable.
+    
+        if ([value conformsToProtocol:@protocol(EPPZRepresentable)])
+        {
+            value = [(NSObject<EPPZRepresentable>*)value dictionaryRepresentation];
+        }
+    
+    //Core Graphics values (CGRect, CGPoint, CGSize, CGAffineTransform).
+    
+        NSString *stringValue = stringValueOfCGValue(value);
+        if (stringValue != nil)
+        {
+            NSLog(@"%@", stringValue);
+            value = stringValue;
+        }
+    
+    //The rest (NSDate, NSNumber, NSWhatever)
     return value;
 }
 
@@ -67,7 +92,7 @@ static NSString *const kEPPZRepresentableClassNameKey = @"EPPZRepresentableClass
 #pragma mark - Initialize with dictionary representation
 
 +(id)representableWithDictionaryRepresentation:(NSDictionary*) dictionaryRepresentation
-{
+{ _LOG
     
     //Determine class.
     NSString *className = [dictionaryRepresentation objectForKey:kEPPZRepresentableClassNameKey];
@@ -105,7 +130,8 @@ static NSString *const kEPPZRepresentableClassNameKey = @"EPPZRepresentableClass
 }
 
 -(id)runtimeValueFromRepresentationValue:(id) representationValue
-{
+{ _LOG
+    
     id runtimeValue;
     
     //Look for <EPPZRepresentable>
@@ -135,8 +161,7 @@ static NSString *const kEPPZRepresentableClassNameKey = @"EPPZRepresentableClass
 { return [self propertyNamesOfClass:object.class]; }
 
 +(NSArray*)propertyNamesOfClass:(Class) class
-{
-    ERLog(@"Collecting properties for %@", NSStringFromClass(self));
+{ _LOG
     
     //Collection.
     NSMutableArray *collectedPropertyNames = [NSMutableArray new];
@@ -154,15 +179,17 @@ static NSString *const kEPPZRepresentableClassNameKey = @"EPPZRepresentableClass
 }
 
 +(NSArray*)representablePropertyNames
-{
+{ _LOG
+    
     //Default behaviour is collect every property.
     return nil;
 }
 
 +(NSArray*)collectRepresentablePropertyNames
-{
+{ _LOG
+    
     //User-defined property names if any.
-    if ([self instancesRespondToSelector:@selector(representablePropertyNames)])
+    if ([self respondsToSelector:@selector(representablePropertyNames)])
         if ([self representablePropertyNames] != nil)
             return [self representablePropertyNames];
     

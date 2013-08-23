@@ -13,7 +13,7 @@
 //
 
 
-static NSString *const kEPPZKitVersion = @"1.4.2";
+static NSString *const kEPPZKitVersion = @"1.4.5";
 
 
 //Base classes.
@@ -28,6 +28,7 @@ static NSString *const kEPPZKitVersion = @"1.4.2";
 #import "EPPZAppStore.h" //APPSTORE
 
 //Tools.
+#import "EPPZTools.h"
 #import "EPPZBoolTools.h"
 #import "NSDate+EPPZKit.h"
 #import "NSString+EPPZKit.h"

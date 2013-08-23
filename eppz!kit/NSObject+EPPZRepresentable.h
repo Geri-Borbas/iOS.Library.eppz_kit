@@ -14,6 +14,8 @@
 
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
+#import "EPPZTools.h"
+#import "EPPZCoreGraphicsTools.h"
 
 
 #define EPPZ_REPRESENTABLE_LOGGING YES

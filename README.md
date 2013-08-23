@@ -4,7 +4,39 @@
 
 #### EPPZRepresentable
 A solid NSObject extension that makes work with models much easier. If a class conforms to the protocol than it mark that object to implement such features.
-Yet objects able to represent themselves in a dictionary form that allows me to create many store implementation (Defaults, Archiver, CoreData, JSON, Plist, Keychain, whatnot). In progress, though `plist` implementation actually works.
+Yet objects able to represent themselves in a dictionary form that allows me to create many store implementation (Defaults, Archiver, CoreData, JSON, Plist, Keychain, whatnot). In progress, though `plist` implementation actually works. Saving foreign classes (like UIViews for example) is also possible. Actually an archiver with much less boilerplate. Example from the testbed project:
+```Objective-C
+//A UIView extension to make it persistable
+
+@interface UIView (EPPZRepresentable) <EPPZRepresentable>
+@end
+
+@implementation UIView (EPPZRepresentable)
++(NSArray*)representablePropertyNames
+{ return @[ @"frame", @"bounds", @"center", @"transform", @"tag" ]; }
+@end
+
+
+//A model object.
+
+@interface EPPZGameProgress : NSObject <EPPZRepresentable>
+@property (nonatomic) NSUInteger progress;
+@property (nonatomic) NSUInteger level;
+@property (nonatomic, strong) UIView *view;
+@end
+
+@implementation EPPZGameProgress
+@end
+
+
+//Saving somewhere in a controller code.
+[progress storeAsPlistNamed:@"gameProgress"];
+
+
+//Restoring later on.
+progress = [EPPZGameProgress representableWithPlistNamed:@"gameProgress"];
+```
+It will be just as easy to save into NSUserDefaults/NSKeyedArchiver/JSON string or even into a self-describing CoreData archive. Still in progress.
 
 
 #### EPPZBoolTools
@@ -169,6 +201,11 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 
 #### Version tracking
+
+* 1.4.5
+
+    + EPPZRepresentable milestones achieved
+    + EPPZTools (with a neat _LOG macro)
 
 * 1.4.2
 

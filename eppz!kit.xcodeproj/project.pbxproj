@@ -56,6 +56,8 @@
 		D8AD5DBB17BD28C7004BD9AF /* EPPZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DBA17BD28C7004BD9AF /* EPPZUser.m */; };
 		D8AD5DC117BD30CD004BD9AF /* EPPZGameUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DC017BD30CD004BD9AF /* EPPZGameUser.m */; };
 		D8AD5DC517BD3895004BD9AF /* EPPZGameProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DC417BD3895004BD9AF /* EPPZGameProgress.m */; };
+		D8B1BC1B17C7A17F0071763B /* UIView+EPPZRepresentable.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B1BC1A17C7A17F0071763B /* UIView+EPPZRepresentable.m */; };
+		D8B1BC1E17C7BE030071763B /* EPPZCoreGraphicsTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B1BC1D17C7BE030071763B /* EPPZCoreGraphicsTools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -142,6 +144,7 @@
 		D8302F6417BB990F00472478 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D8302F8A17BBF15700472478 /* EPPZGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZGestureRecognizer.h; sourceTree = "<group>"; };
 		D8302F8B17BBF15700472478 /* EPPZGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZGestureRecognizer.m; sourceTree = "<group>"; };
+		D871FC8617C777F40085899F /* EPPZTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZTools.h; sourceTree = "<group>"; };
 		D8AD5DAA17BD0B84004BD9AF /* EPPZDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZDevice.h; sourceTree = "<group>"; };
 		D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZDevice.m; sourceTree = "<group>"; };
 		D8AD5DAE17BD22BB004BD9AF /* NSObject+EPPZRepresentable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EPPZRepresentable.h"; sourceTree = "<group>"; };
@@ -155,6 +158,10 @@
 		D8AD5DC017BD30CD004BD9AF /* EPPZGameUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZGameUser.m; sourceTree = "<group>"; };
 		D8AD5DC317BD3894004BD9AF /* EPPZGameProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZGameProgress.h; sourceTree = "<group>"; };
 		D8AD5DC417BD3895004BD9AF /* EPPZGameProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZGameProgress.m; sourceTree = "<group>"; };
+		D8B1BC1917C7A17F0071763B /* UIView+EPPZRepresentable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EPPZRepresentable.h"; sourceTree = "<group>"; };
+		D8B1BC1A17C7A17F0071763B /* UIView+EPPZRepresentable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EPPZRepresentable.m"; sourceTree = "<group>"; };
+		D8B1BC1C17C7BE030071763B /* EPPZCoreGraphicsTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZCoreGraphicsTools.h; sourceTree = "<group>"; };
+		D8B1BC1D17C7BE030071763B /* EPPZCoreGraphicsTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZCoreGraphicsTools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -477,6 +484,8 @@
 			isa = PBXGroup;
 			children = (
 				D8AD5DBE17BD2F3C004BD9AF /* EPPZRepresentable.rtf */,
+				D8B1BC1C17C7BE030071763B /* EPPZCoreGraphicsTools.h */,
+				D8B1BC1D17C7BE030071763B /* EPPZCoreGraphicsTools.m */,
 				D8AD5DAE17BD22BB004BD9AF /* NSObject+EPPZRepresentable.h */,
 				D8AD5DAF17BD22BB004BD9AF /* NSObject+EPPZRepresentable.m */,
 				D822ACA717C671200076DE10 /* NSObject+EPPZRepresentable_Plist.h */,
@@ -508,6 +517,7 @@
 		D8AD5DB417BD233E004BD9AF /* ❑ Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D871FC8617C777F40085899F /* EPPZTools.h */,
 				AE00588317C740840061146F /* □ Bool tools */,
 				AECCD94717A5D7A5001CAAFD /* □ NSDate+EPPZKit */,
 				AE922F7017937B530088E5E5 /* □ NSString+EPPZKit */,
@@ -558,6 +568,8 @@
 		D8AD5DC617BD3897004BD9AF /* Game progress */ = {
 			isa = PBXGroup;
 			children = (
+				D8B1BC1917C7A17F0071763B /* UIView+EPPZRepresentable.h */,
+				D8B1BC1A17C7A17F0071763B /* UIView+EPPZRepresentable.m */,
 				D8AD5DC317BD3894004BD9AF /* EPPZGameProgress.h */,
 				D8AD5DC417BD3895004BD9AF /* EPPZGameProgress.m */,
 			);
@@ -692,6 +704,7 @@
 				D8AD5DB017BD22BB004BD9AF /* NSObject+EPPZRepresentable.m in Sources */,
 				D822ACA917C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m in Sources */,
 				AE00588617C740990061146F /* EPPZBoolTools.m in Sources */,
+				D8B1BC1E17C7BE030071763B /* EPPZCoreGraphicsTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,6 +719,7 @@
 				D8AD5DBB17BD28C7004BD9AF /* EPPZUser.m in Sources */,
 				D8AD5DC117BD30CD004BD9AF /* EPPZGameUser.m in Sources */,
 				D8AD5DC517BD3895004BD9AF /* EPPZGameProgress.m in Sources */,
+				D8B1BC1B17C7A17F0071763B /* UIView+EPPZRepresentable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,7 +17,8 @@
 @implementation EPPZGameUser
 
 +(NSArray*)representablePropertyNames
-{
+{ _LOG
+    
     return @[
              @"gameID",
              @"scores",

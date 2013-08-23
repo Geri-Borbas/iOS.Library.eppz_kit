@@ -1,8 +1,8 @@
 //
-//  EPPZGameProgress.h
+//  EPPZView.m
 //  eppz!kit
 //
-//  Created by Borbás Geri on 8/22/13.
+//  Created by Borbás Geri on 8/23/13.
 //  Copyright (c) 2013 eppz! development, LLC.
 //
 //  donate! by following http://www.twitter.com/_eppz
@@ -15,10 +15,18 @@
 #import "UIView+EPPZRepresentable.h"
 
 
-@interface EPPZGameProgress : NSObject <EPPZRepresentable>
+@implementation UIView (EPPZRepresentable)
 
-@property (nonatomic) NSUInteger progress;
-@property (nonatomic) NSUInteger level;
-@property (nonatomic, strong) UIView *view;
++(NSArray*)representablePropertyNames
+{ _LOG
+    
+    return @[
+             @"frame",
+             @"bounds",
+             @"center",
+             @"transform",
+             @"tag"
+             ];
+}
 
 @end

@@ -1,5 +1,5 @@
 //
-//  EPPZGameProgress.h
+//  EPPZTools.h
 //  eppz!kit
 //
 //  Created by Borbás Geri on 8/22/13.
@@ -12,13 +12,7 @@
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "UIView+EPPZRepresentable.h"
+#import <Foundation/Foundation.h>
 
 
-@interface EPPZGameProgress : NSObject <EPPZRepresentable>
-
-@property (nonatomic) NSUInteger progress;
-@property (nonatomic) NSUInteger level;
-@property (nonatomic, strong) UIView *view;
-
-@end
+#define _LOG if (DEBUG) NSLog(@"%@ %@", NSStringFromClass(self.class), NSStringFromSelector(_cmd));

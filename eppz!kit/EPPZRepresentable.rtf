@@ -6,15 +6,21 @@
 
 \f0\fs24 \cf0 Next:\
 \
-	-Issue with not collecting representable name correctly?\
-		-Just comment EPPZViewController.m at 68\
-\
 	-Represent foreign classes\
 		-Accept keypaths in persistableProperyNames?\
-		-Implement presistablePropertyName in a category?\
-		-Both?\
 	-Cache results for class (Collect propertyNames once per runtime)\
+	-Store references\
+		-Save hash (memory address) along representable, so duplicates can be eliminated\
+		-Reconstruction could be problematic\
 \
 Done:\
 \
-	-Implement initialize from dictionary representation}
+	-Represent foreign classes\
+		-Implement presistablePropertyName in a category?\
+			-Works fine with a UIView category, see testbed UIView model\
+			-Now save four major CG type (CGRect, CGPoint, CGSize, CGAffineTransform)\
+\
+	-Implement initialize from dictionary representation\
+	-Issue with not collecting representable name correctly?\
+		-Just comment EPPZViewController.m at 68\
+		-Resolved}

@@ -13,7 +13,6 @@
 //
 
 #import "EPPZViewController.h"
-
 #import "EPPZGameUser.h"
 
 
@@ -65,12 +64,17 @@
         EPPZGameProgress *progress = [EPPZGameProgress new];
         progress.progress = 5;
         progress.level = 5;
+        UIView *view = [[UIView alloc] initWithFrame:(CGRect){0.0, 0.0, 10.0, 10.0}];
+                view.transform = CGAffineTransformMakeScale(1.2, 1.2);
+                view.tag = 21;
+        progress.view = view;
         user.progress = progress;
         
-        //user.runtimeData = @"Awaiting";
+        user.runtimeData = @"Awaiting";
         
         //Save.
-        [user storeAsPlistNamed:@"user"];
+        BOOL storeSuccess = [user storeAsPlistNamed:@"user"];
+        NSLog(@"storeSuccess: %@", stringFromBool(storeSuccess));
         
         //See it represented.
         NSLog(@"%@", user.dictionaryRepresentation);
