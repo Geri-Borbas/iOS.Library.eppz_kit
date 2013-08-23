@@ -7,6 +7,18 @@ A solid NSObject extension that makes work with models much easier. If a class c
 Yet objects able to represent themselves in a dictionary form that allows me to create many store implementation (Defaults, Archiver, CoreData, JSON, Plist, Keychain, whatnot). In progress, though `plist` implementation actually works.
 
 
+#### EPPZBoolTools
+Some helper function to make boolean works a bit more readable and spare some if statements.
+```Objective-C
+//For debugging.
+NSLog(@"Switched to %@.", stringFromBool(switch.isOn));
+
+//For UI.
+-(IBAction)switchValueChanged:(UISwitch*) switch
+{ wrapper.alpha = floatFromBool(switch.isOn); }
+```
+
+
 #### EPPZDevice
 A charming class showing running iOS version with shorties, and will include device model detection as well.
 ```Objective-C
@@ -157,6 +169,10 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 
 #### Version tracking
+
+* 1.4.1
+
+    + EPPZBoolTools added
 
 * 1.4.0
 
