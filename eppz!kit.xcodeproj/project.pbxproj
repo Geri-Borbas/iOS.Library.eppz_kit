@@ -42,6 +42,7 @@
 		AEBA295717C8339600C3DA9F /* EPPZGoogleAnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBA294C17C8339600C3DA9F /* EPPZGoogleAnalyticsService.m */; };
 		AEBA295817C8339600C3DA9F /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBA295217C8339600C3DA9F /* libGoogleAnalytics_debug.a */; };
 		AEBA295917C8339600C3DA9F /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBA295317C8339600C3DA9F /* libGoogleAnalytics.a */; };
+		AEBA296A17C85D0B00C3DA9F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBA296917C85D0B00C3DA9F /* CoreData.framework */; };
 		AEC6888C17B313C000F2206F /* EPPZLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC6888B17B313C000F2206F /* EPPZLabel.m */; };
 		AECCD94D17A5D80E001CAAFD /* NSDate+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */; };
 		AECCD95217A5DE4C001CAAFD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95017A5DE4C001CAAFD /* StoreKit.framework */; };
@@ -147,6 +148,7 @@
 		AEBA295217C8339600C3DA9F /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
 		AEBA295317C8339600C3DA9F /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		AEBA296617C85AB000C3DA9F /* iOS device model identifiers.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iOS device model identifiers.xlsx"; sourceTree = "<group>"; };
+		AEBA296917C85D0B00C3DA9F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AEC6888A17B313C000F2206F /* EPPZLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZLabel.h; sourceTree = "<group>"; };
 		AEC6888B17B313C000F2206F /* EPPZLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZLabel.m; sourceTree = "<group>"; };
 		AECCD94B17A5D80E001CAAFD /* NSDate+EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+EPPZKit.h"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEBA296A17C85D0B00C3DA9F /* CoreData.framework in Frameworks */,
 				D8302F6717BBA5C500472478 /* QuartzCore.framework in Frameworks */,
 				D8302F6617BBA5BD00472478 /* CoreText.framework in Frameworks */,
 				AECCD95417A5DE90001CAAFD /* StoreKit.framework in Frameworks */,
@@ -270,6 +273,7 @@
 		AE922F4017937A1A0088E5E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AEBA296917C85D0B00C3DA9F /* CoreData.framework */,
 				D8302F6417BB990F00472478 /* QuartzCore.framework */,
 				D8302F6217BB98F100472478 /* CoreText.framework */,
 				AECCD95017A5DE4C001CAAFD /* StoreKit.framework */,
