@@ -39,6 +39,10 @@ progress = [EPPZGameProgress representableWithPlistNamed:@"gameProgress"];
 It will be just as easy to save into NSUserDefaults/NSKeyedArchiver/JSON string or even into a self-describing CoreData archive. Still in progress.
 
 
+#### EPPZAnalytics
+A simple wrapper around Google Analytics iOS SDK (2.0). Suitable to support multiple analytics service (Flurry, GameAnalytics, etc.), thought only Google is implemented yet.
+
+
 #### EPPZBoolTools
 Some helper function to make boolean works a bit more readable and spare some if statements.
 ```Objective-C
@@ -52,13 +56,16 @@ NSLog(@"Switched to %@.", stringFromBool(switch.isOn));
 
 
 #### EPPZDevice
-A charming class showing running iOS version with shorties, and will include device model detection as well.
+A charming class showing running iOS version with shorties, and model detection as well.
 ```Objective-C
 //iOS version detect.
 if (DEVICE.iOS6)
 {
     [self something];
 }
+
+//Device model.
+NSLog(@"Running on an %@", DEVICE.platformDescription);
 ```
 
 
@@ -201,6 +208,13 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 
 #### Version tracking
+
+* 1.4.6
+
+    + EPPZAnalytics addded
+    + EPPZDevice addons
+        + machineID, platformDescription
+        + Updated device info from The iPhone Wiki
 
 * 1.4.5
 

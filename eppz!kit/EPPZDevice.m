@@ -15,14 +15,31 @@
 #import "EPPZDevice.h"
 
 
+static NSString *const kUnknownModelData = @"-";
+
+
+typedef enum
+{
+    kGenerationIndex,   //0
+    kVariantIndex,      //1
+    kModelIndex,        //2
+} EPPZDeviceModelDataIndices;
+
+
+
 @interface EPPZDevice ()
 @property (nonatomic, readonly) NSUInteger iOSversionInteger;
+@property (nonatomic, readonly) NSDictionary *deviceModelDataForMachineIDs;
+@property (nonatomic, strong) NSDictionary *deviceModelDataForMachineIDs_; //Lazy but still beauty.
+@property (nonatomic, readonly) NSString *platform;
+-(NSString*)getSysInfoByName:(char*) typeSpecifier;
 @end
 
 
 @implementation EPPZDevice
 
 +(EPPZDevice*)sharedDevice { return (EPPZDevice*)[self sharedInstance]; }
+
 
 #pragma mark - iOS version detect
 
@@ -32,5 +49,119 @@
 -(BOOL)iOS6 { return (self.iOSversionInteger == 6); }
 -(BOOL)iOS7 { return (self.iOSversionInteger == 7); }
 
+
+#pragma mark - Platform detect
+
+-(NSDictionary*)deviceModelDataForMachineIDs
+{
+    return @{
+    
+             //iPad.
+             @"iPad1,1" : @[ @"iPad 1G", @"Wi-Fi / GSM", @"A1219 / A1337" ],
+             @"iPad2,1" : @[ @"iPad 2", @"Wi-Fi", @"A1395" ],
+             @"iPad2,2" : @[ @"iPad 2", @"GSM", @"A1396" ],
+             @"iPad2,3" : @[ @"iPad 2", @"CDMA", @"A1397" ],
+             @"iPad2,4" : @[ @"iPad 2", @"Wi-Fi Rev A", @"A1395" ],
+             @"iPad2,5" : @[ @"iPad mini 1G", @"Wi-Fi", @"A1432" ],
+             @"iPad2,6" : @[ @"iPad mini 1G", @"GSM", @"A1454" ],
+             @"iPad2,7" : @[ @"iPad mini 1G", @"GSM+CDMA", @"A1455" ],
+             @"iPad3,1" : @[ @"iPad 3", @"Wi-Fi", @"A1416" ],
+             @"iPad3,2" : @[ @"iPad 3", @"GSM+CDMA", @"A1403" ],
+             @"iPad3,3" : @[ @"iPad 3", @"GSM", @"A1430" ],
+             @"iPad3,4" : @[ @"iPad 4", @"Wi-Fi", @"A1458" ],
+             @"iPad3,5" : @[ @"iPad 4", @"GSM", @"A1459" ],
+             @"iPad3,6" : @[ @"iPad 4", @"GSM+CDMA", @"A1460" ],
+             
+             //iPhone.
+             @"iPhone1,1" : @[ @"iPhone 2G", @"GSM", @"A1203" ],
+             @"iPhone1,2" : @[ @"iPhone 3G", @"GSM", @"A1241 / A13241" ],
+             @"iPhone2,1" : @[ @"iPhone 3GS", @"GSM", @"A1303 / A13251" ],
+             @"iPhone3,1" : @[ @"iPhone 4", @"GSM", @"A1332" ],
+             @"iPhone3,2" : @[ @"iPhone 4", @"GSM Rev A", @"-" ],
+             @"iPhone3,3" : @[ @"iPhone 4", @"CDMA", @"A1349" ],
+             @"iPhone4,1" : @[ @"iPhone 4S", @"GSM+CDMA", @"A1387 / A14311" ],
+             @"iPhone5,1" : @[ @"iPhone 5", @"GSM", @"A1428" ],
+             @"iPhone5,2" : @[ @"iPhone 5", @"GSM+CDMA", @"A1429 / A14421" ],
+             
+             //iPod.
+             @"iPod1,1" : @[ @"iPod touch 1G", @"-", @"A1213" ],
+             @"iPod2,1" : @[ @"iPod touch 2G", @"-", @"A1288" ],
+             @"iPod3,1" : @[ @"iPod touch 3G", @"-", @"A1318" ],
+             @"iPod4,1" : @[ @"iPod touch 4G", @"-", @"A1367" ],
+             @"iPod5,1" : @[ @"iPod touch 5G", @"-", @"A1421 / A1509" ]
+    
+    };
+}
+
+
+#pragma mark - Platform detect (human readability)
+
+-(NSString*)platform
+{ return [self getSysInfoByName:"hw.machine"]; }
+
+-(NSString*)machineID
+{ return [self platform]; }
+
+-(NSString*)generation
+{
+    NSArray *modelData = [self.deviceModelDataForMachineIDs objectForKey:self.platform];
+    if (modelData.count > kGenerationIndex)
+        return modelData[kGenerationIndex];
+    return kUnknownModelData;
+}
+
+-(NSString*)variant
+{
+    NSArray *modelData = [self.deviceModelDataForMachineIDs objectForKey:self.platform];
+    if (modelData.count > kVariantIndex)
+        return modelData[kVariantIndex];
+    return kUnknownModelData;
+}
+
+-(NSString*)model
+{
+    NSArray *modelData = [self.deviceModelDataForMachineIDs objectForKey:self.platform];
+    if (modelData.count > kModelIndex)
+        return modelData[kModelIndex];
+    return kUnknownModelData;
+}
+
+-(NSString*)platformString { return [self platformDescription]; }
+-(NSString*)platformDescription
+{
+    //Get device info and identified aliases.
+    NSArray *modelData = [self.deviceModelDataForMachineIDs objectForKey:self.platform];
+    
+    //Return raw platform string if not identified yet.
+    if (modelData == nil) return [NSString stringWithFormat:@"Unknown: %@", self.platform];
+    
+    //Return human readable platform string.
+    NSString *platformDescription = [NSString stringWithFormat:@"%@ %@ (%@)", self.generation, self.variant, self.model];
+    return platformDescription;
+}
+
+
+#pragma mark - Platform detect (lower level)
+
+-(NSDictionary*)platformStringsForMachineIDs_
+{
+    if (_deviceModelDataForMachineIDs_ == nil)
+        _deviceModelDataForMachineIDs_ = self.deviceModelDataForMachineIDs;
+    return _deviceModelDataForMachineIDs_;
+}
+
+-(NSString*)getSysInfoByName:(char*) typeSpecifier
+{
+    size_t size;
+    sysctlbyname(typeSpecifier, NULL, &size, NULL, 0);
+    
+    char *answer = malloc(size);
+    sysctlbyname(typeSpecifier, answer, &size, NULL, 0);
+    
+    NSString *results = [NSString stringWithCString:answer encoding: NSUTF8StringEncoding];
+    
+    free(answer);
+    return results;
+}
 
 @end

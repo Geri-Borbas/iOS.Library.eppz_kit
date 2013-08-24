@@ -14,9 +14,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MobileCoreServices/UTCoreTypes.h>
+#include <sys/sysctl.h>
 
 #import "EPPZSingletonSubclass.h"
-
 
 
 #define DEVICE [EPPZDevice sharedDevice]
@@ -30,5 +31,13 @@
 @property (nonatomic, readonly) BOOL iOS5;
 @property (nonatomic, readonly) BOOL iOS6;
 @property (nonatomic, readonly) BOOL iOS7;
+
+@property (nonatomic, readonly) NSString *machineID;
+@property (nonatomic, readonly) NSString *generation;
+@property (nonatomic, readonly) NSString *variant;
+@property (nonatomic, readonly) NSString *model;
+
+@property (nonatomic, readonly) NSString *platformDescription;
+@property (nonatomic, readonly) NSString *platformString; //Alias for compatibility.
 
 @end

@@ -13,7 +13,7 @@
 //
 
 
-static NSString *const kEPPZKitVersion = @"1.4.5";
+static NSString *const kEPPZKitVersion = @"1.4.6";
 
 
 //Base classes.
@@ -21,6 +21,7 @@ static NSString *const kEPPZKitVersion = @"1.4.5";
 #import "EPPZSingletonSubclass.h"
 
 //Wrappers.
+#import "EPPZAnalytics.h" //ANALYTICS_ (subclasses should define ANALYTICS)
 #import "EPPZFileManager.h" //FILES
 #import "EPPZDevice.h" //DEVICE
 #import "EPPZReachability.h"
