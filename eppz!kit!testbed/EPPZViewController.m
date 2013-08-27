@@ -46,7 +46,7 @@
 {
     EPPZGameUser *user;
     
-    BOOL store = YES;
+    BOOL store = NO;
     BOOL create = !store;
     
     if (store)
@@ -85,8 +85,13 @@
         //Create a model object.
         user = [EPPZGameUser representableWithPlistNamed:@"user"];
         
+        NSLog(@"user %@", user);
+        NSLog(@"user.progress %@", user.progress);
+        
+        [self.view addSubview:user.progress.view];
+        
         //See it created.
-        NSLog(@"%@", user);
+        //NSLog(@"%@", user.dictionaryRepresentation);
     }
     
 }

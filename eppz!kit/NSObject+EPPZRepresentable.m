@@ -84,7 +84,7 @@ static NSString *const kEPPZRepresentableClassNameKey = @"EPPZRepresentableClass
             value = stringValue;
         }
     
-    //The rest (NSDate, NSNumber, NSWhatever)
+    //The rest.
     return value;
 }
 
@@ -134,12 +134,39 @@ static NSString *const kEPPZRepresentableClassNameKey = @"EPPZRepresentableClass
     
     id runtimeValue;
     
-    //Look for <EPPZRepresentable>
+    if ([representationValue isKindOfClass:[NSString class]])
+    {
+        CGRect rectValue;
+        CGPoint pointValue;
+        CGSize sizeValue;
+        CGAffineTransform affineTransformValue;
+        
+        rectValue = CGRectFromString(representationValue);
+        pointValue = CGPointFromString(representationValue);
+        sizeValue = CGSizeFromString(representationValue);
+        //affineTransformValue = CGAffineTransformFromString(representationValue);
+        
+        NSLog(@"rectValue (%@)", NSStringFromCGRect(rectValue));
+        NSLog(@"pointValue (%@)", NSStringFromCGPoint(pointValue));
+        NSLog(@"sizeValue (%@)", NSStringFromCGSize(sizeValue));
+        NSLog(@"affineTransformValue (%@)", NSStringFromCGAffineTransform(affineTransformValue));
+    }
+        
+    //Look for <EPPZRepresentable> or NSDictionary
     if ([representationValue isKindOfClass:[NSDictionary class]])
     {
         NSDictionary *representationValueDictionary = (NSDictionary*)representationValue;
+        Class class = class = [NSDictionary class];
+        
+        //Create custom class if present.
         if ([[representationValueDictionary allKeys] containsObject:kEPPZRepresentableClassNameKey])
-            runtimeValue = [[runtimeValue class] representableWithDictionaryRepresentation:representationValueDictionary];
+        {
+            NSString *className = [representationValueDictionary objectForKey:kEPPZRepresentableClassNameKey];
+            class = NSClassFromString(className);
+        }
+        
+        //Create representable.
+        runtimeValue = [class representableWithDictionaryRepresentation:representationValueDictionary];
     }
     
     //Simply return arbitrary value.
@@ -147,6 +174,8 @@ static NSString *const kEPPZRepresentableClassNameKey = @"EPPZRepresentableClass
     {
         runtimeValue = representationValue;
     }
+    
+    ERLog(@"runtimeValue %@", runtimeValue);
     
     return representationValue;
     
