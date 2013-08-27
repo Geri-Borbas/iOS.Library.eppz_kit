@@ -25,6 +25,7 @@
              @"bounds",
              @"center",
              @"transform",
+             @"backgroundColor",
              @"tag"
              ];
 }

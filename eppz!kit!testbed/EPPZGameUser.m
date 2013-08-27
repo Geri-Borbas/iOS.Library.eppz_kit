@@ -22,6 +22,7 @@
     return @[
              @"gameID",
              @"scores",
+             @"view",
              @"progress"
              ];
 }

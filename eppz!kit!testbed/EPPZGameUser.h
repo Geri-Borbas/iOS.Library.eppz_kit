@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSString *gameID;
 @property (nonatomic, strong) NSArray *scores;
 @property (nonatomic, strong) NSString *runtimeData;
+@property (nonatomic, strong) UIView *view;
 @property (nonatomic, strong) EPPZGameProgress *progress;
 
 @end

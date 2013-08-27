@@ -209,6 +209,12 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.4.8.9
+
+    + EPPZRepresentable improvements
+        + Lovely NSStringFromUIColor extension
+        + CGRect, CGPoint, CGSize, CGAffineTransform now stored/restored in plist
+
 * 1.4.8.1
 
     + EPPZAnalytics misspelling

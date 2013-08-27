@@ -51,6 +51,9 @@
 		AECCD95517A5DE90001CAAFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */; };
 		AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */; };
 		AEFC653817B81865004B5214 /* EPPZTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFC653717B81865004B5214 /* EPPZTimer.m */; };
+		D81E3DBC17CCEC1A00B2C7A4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81E3DBB17CCEC1A00B2C7A4 /* AdSupport.framework */; };
+		D81E3DBE17CCEC1F00B2C7A4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D81E3DBD17CCEC1F00B2C7A4 /* libz.dylib */; };
+		D81E3DC217CD00AF00B2C7A4 /* UIColor+EPPZRepresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D81E3DC117CD00AF00B2C7A4 /* UIColor+EPPZRepresenter.m */; };
 		D822ACA917C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = D822ACA817C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m */; };
 		D822ACAC17C67D5E0076DE10 /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = D822ACAB17C67D5E0076DE10 /* user.plist */; };
 		D8302F5F17BB965800472478 /* EPPZTagFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D8302F5E17BB965800472478 /* EPPZTagFinder.m */; };
@@ -64,7 +67,7 @@
 		D8AD5DC117BD30CD004BD9AF /* EPPZGameUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DC017BD30CD004BD9AF /* EPPZGameUser.m */; };
 		D8AD5DC517BD3895004BD9AF /* EPPZGameProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DC417BD3895004BD9AF /* EPPZGameProgress.m */; };
 		D8B1BC1B17C7A17F0071763B /* UIView+EPPZRepresentable.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B1BC1A17C7A17F0071763B /* UIView+EPPZRepresentable.m */; };
-		D8B1BC1E17C7BE030071763B /* EPPZCoreGraphicsTools.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B1BC1D17C7BE030071763B /* EPPZCoreGraphicsTools.m */; };
+		D8B1BC1E17C7BE030071763B /* EPPZRepresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B1BC1D17C7BE030071763B /* EPPZRepresenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -160,6 +163,10 @@
 		AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAppStoreCallbacks.m; sourceTree = "<group>"; };
 		AEFC653617B81865004B5214 /* EPPZTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZTimer.h; sourceTree = "<group>"; };
 		AEFC653717B81865004B5214 /* EPPZTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZTimer.m; sourceTree = "<group>"; };
+		D81E3DBB17CCEC1A00B2C7A4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D81E3DBD17CCEC1F00B2C7A4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D81E3DC017CD00AF00B2C7A4 /* UIColor+EPPZRepresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+EPPZRepresenter.h"; sourceTree = "<group>"; };
+		D81E3DC117CD00AF00B2C7A4 /* UIColor+EPPZRepresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+EPPZRepresenter.m"; sourceTree = "<group>"; };
 		D822ACA717C671200076DE10 /* NSObject+EPPZRepresentable_Plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EPPZRepresentable_Plist.h"; sourceTree = "<group>"; };
 		D822ACA817C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EPPZRepresentable_Plist.m"; sourceTree = "<group>"; };
 		D822ACAB17C67D5E0076DE10 /* user.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = user.plist; sourceTree = "<group>"; };
@@ -185,8 +192,8 @@
 		D8AD5DC417BD3895004BD9AF /* EPPZGameProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZGameProgress.m; sourceTree = "<group>"; };
 		D8B1BC1917C7A17F0071763B /* UIView+EPPZRepresentable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EPPZRepresentable.h"; sourceTree = "<group>"; };
 		D8B1BC1A17C7A17F0071763B /* UIView+EPPZRepresentable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EPPZRepresentable.m"; sourceTree = "<group>"; };
-		D8B1BC1C17C7BE030071763B /* EPPZCoreGraphicsTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZCoreGraphicsTools.h; sourceTree = "<group>"; };
-		D8B1BC1D17C7BE030071763B /* EPPZCoreGraphicsTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZCoreGraphicsTools.m; sourceTree = "<group>"; };
+		D8B1BC1C17C7BE030071763B /* EPPZRepresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZRepresenter.h; sourceTree = "<group>"; };
+		D8B1BC1D17C7BE030071763B /* EPPZRepresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZRepresenter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +213,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D81E3DBE17CCEC1F00B2C7A4 /* libz.dylib in Frameworks */,
+				D81E3DBC17CCEC1A00B2C7A4 /* AdSupport.framework in Frameworks */,
 				AEBA296A17C85D0B00C3DA9F /* CoreData.framework in Frameworks */,
 				D8302F6717BBA5C500472478 /* QuartzCore.framework in Frameworks */,
 				D8302F6617BBA5BD00472478 /* CoreText.framework in Frameworks */,
@@ -274,6 +283,7 @@
 		AE922F4017937A1A0088E5E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D81E3DBB17CCEC1A00B2C7A4 /* AdSupport.framework */,
 				AEBA296917C85D0B00C3DA9F /* CoreData.framework */,
 				D8302F6417BB990F00472478 /* QuartzCore.framework */,
 				D8302F6217BB98F100472478 /* CoreText.framework */,
@@ -282,6 +292,7 @@
 				AE922F4117937A1A0088E5E5 /* UIKit.framework */,
 				AE922F4317937A1A0088E5E5 /* Foundation.framework */,
 				AE922F4517937A1A0088E5E5 /* CoreGraphics.framework */,
+				D81E3DBD17CCEC1F00B2C7A4 /* libz.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -527,6 +538,54 @@
 			name = "□ Timer";
 			sourceTree = "<group>";
 		};
+		D81E3DBF17CD009900B2C7A4 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				D81E3DC017CD00AF00B2C7A4 /* UIColor+EPPZRepresenter.h */,
+				D81E3DC117CD00AF00B2C7A4 /* UIColor+EPPZRepresenter.m */,
+			);
+			name = UIColor;
+			sourceTree = "<group>";
+		};
+		D81E3DC317CD052400B2C7A4 /* Representer */ = {
+			isa = PBXGroup;
+			children = (
+				D8B1BC1C17C7BE030071763B /* EPPZRepresenter.h */,
+				D8B1BC1D17C7BE030071763B /* EPPZRepresenter.m */,
+				D81E3DBF17CD009900B2C7A4 /* UIColor */,
+			);
+			name = Representer;
+			sourceTree = "<group>";
+		};
+		D81E3DC417CD058200B2C7A4 /* Representable */ = {
+			isa = PBXGroup;
+			children = (
+				D8AD5DBE17BD2F3C004BD9AF /* EPPZRepresentable.rtf */,
+				D8AD5DAE17BD22BB004BD9AF /* NSObject+EPPZRepresentable.h */,
+				D8AD5DAF17BD22BB004BD9AF /* NSObject+EPPZRepresentable.m */,
+				D81E3DC317CD052400B2C7A4 /* Representer */,
+				D81E3DC517CD058D00B2C7A4 /* Representations (stores) */,
+			);
+			name = Representable;
+			sourceTree = "<group>";
+		};
+		D81E3DC517CD058D00B2C7A4 /* Representations (stores) */ = {
+			isa = PBXGroup;
+			children = (
+				D81E3DC617CD05AD00B2C7A4 /* Plist */,
+			);
+			name = "Representations (stores)";
+			sourceTree = "<group>";
+		};
+		D81E3DC617CD05AD00B2C7A4 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				D822ACA717C671200076DE10 /* NSObject+EPPZRepresentable_Plist.h */,
+				D822ACA817C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m */,
+			);
+			name = Plist;
+			sourceTree = "<group>";
+		};
 		D8302F6017BB97E600472478 /* □ Label */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,13 +627,7 @@
 		D8AD5DB117BD22C0004BD9AF /* ❑ Model tools */ = {
 			isa = PBXGroup;
 			children = (
-				D8AD5DBE17BD2F3C004BD9AF /* EPPZRepresentable.rtf */,
-				D8B1BC1C17C7BE030071763B /* EPPZCoreGraphicsTools.h */,
-				D8B1BC1D17C7BE030071763B /* EPPZCoreGraphicsTools.m */,
-				D8AD5DAE17BD22BB004BD9AF /* NSObject+EPPZRepresentable.h */,
-				D8AD5DAF17BD22BB004BD9AF /* NSObject+EPPZRepresentable.m */,
-				D822ACA717C671200076DE10 /* NSObject+EPPZRepresentable_Plist.h */,
-				D822ACA817C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m */,
+				D81E3DC417CD058200B2C7A4 /* Representable */,
 				AE9C41191794A4C800090A82 /* □ User defaults */,
 			);
 			name = "❑ Model tools";
@@ -790,11 +843,12 @@
 				D8AD5DB017BD22BB004BD9AF /* NSObject+EPPZRepresentable.m in Sources */,
 				D822ACA917C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m in Sources */,
 				AE00588617C740990061146F /* EPPZBoolTools.m in Sources */,
-				D8B1BC1E17C7BE030071763B /* EPPZCoreGraphicsTools.m in Sources */,
+				D8B1BC1E17C7BE030071763B /* EPPZRepresenter.m in Sources */,
 				AEBA295417C8339600C3DA9F /* EPPZAnalytics.m in Sources */,
 				AEBA295517C8339600C3DA9F /* EPPZAnalyticsService.m in Sources */,
 				AEBA295617C8339600C3DA9F /* EPPZAnalyticsTimer.m in Sources */,
 				AEBA295717C8339600C3DA9F /* EPPZGoogleAnalyticsService.m in Sources */,
+				D81E3DC217CD00AF00B2C7A4 /* UIColor+EPPZRepresenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -939,6 +993,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "eppz!kit!testbed/eppz!kit!testbed-Prefix.pch";
 				INFOPLIST_FILE = "eppz!kit!testbed/eppz!kit!testbed-Info.plist";
@@ -958,6 +1014,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "eppz!kit!testbed/eppz!kit!testbed-Prefix.pch";
 				INFOPLIST_FILE = "eppz!kit!testbed/eppz!kit!testbed-Info.plist";

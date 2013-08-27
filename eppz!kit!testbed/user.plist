@@ -2,32 +2,40 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>EPPZRepresentableClassName</key>
+	<key>__eppz.representable.class</key>
 	<string>EPPZGameUser</string>
+	<key>__eppz.representable.id</key>
+	<string>130198336</string>
 	<key>gameID</key>
 	<string>2</string>
 	<key>progress</key>
 	<dict>
-		<key>EPPZRepresentableClassName</key>
+		<key>__eppz.representable.class</key>
 		<string>EPPZGameProgress</string>
+		<key>__eppz.representable.id</key>
+		<string>130198928</string>
 		<key>level</key>
 		<integer>5</integer>
 		<key>progress</key>
 		<integer>5</integer>
 		<key>view</key>
 		<dict>
-			<key>EPPZRepresentableClassName</key>
+			<key>__eppz.representable.class</key>
 			<string>UIView</string>
+			<key>__eppz.representable.id</key>
+			<string>130198800</string>
+			<key>backgroundColor</key>
+			<string>UIColor:[0.000000, 0.000000, 1.000000, 1.000000]</string>
 			<key>bounds</key>
-			<string>{{0, 0}, {10, 10}}</string>
+			<string>CGRect:{{0, 0}, {100, 100}}</string>
 			<key>center</key>
-			<string>{5, 5}</string>
+			<string>CGPoint:{50, 50}</string>
 			<key>frame</key>
-			<string>{{-1, -1}, {12, 12}}</string>
+			<string>CGRect:{{-10, -10}, {120, 120}}</string>
 			<key>tag</key>
 			<integer>21</integer>
 			<key>transform</key>
-			<string>[1.2, 0, 0, 1.2, 0, 0]</string>
+			<string>CGAffineTransform:[1.2, 0, 0, 1.2, 0, 0]</string>
 		</dict>
 	</dict>
 	<key>scores</key>

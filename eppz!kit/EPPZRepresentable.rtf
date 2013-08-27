@@ -4,20 +4,30 @@
 \margl1440\margr1440\vieww9000\viewh8400\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\f0\fs24 \cf0 Next:\
+\f0\fs24 \cf0 Doing:\
 \
-	-Reconstruct CG types\
-	-Represent foreign classes\
-		-Accept keypaths in persistableProperyNames?\
 	-Store references\
 		-Save hash (memory address) along representable, so duplicates can be eliminated\
 		-Reconstruction could be problematic\
+		-Added object pool to track represented objects\
+			-Pools are set up, recursive stuff in progress\
+\
+Next:\
+\
+	-Look into collections (NSArray, NSDictionary)\
+	-Represent foreign classes\
+		-Accept keypaths in persistableProperyNames?\
 \
 Optimizations:\
 \
 	-Cache results for class (Collect propertyNames once per runtime)\
 \
 Done:\
+\
+	-Now represents some new types\
+		-Type representation extracted\
+			-CGRect, CGPoint, CGSize, CGAffineTransform\
+			-and UIColor for now (easily extendable)\
 \
 	-Represent foreign classes\
 		-Implement presistablePropertyName in a category?\

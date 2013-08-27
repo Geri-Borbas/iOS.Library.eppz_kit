@@ -1,5 +1,5 @@
 //
-//  EPPZCoreGraphicsTools.h
+//  EPPZRepresenter.h
 //  eppz!kit
 //
 //  Created by Borbás Geri on 8/22/13.
@@ -16,16 +16,25 @@
 #import <UIKit/UIKit.h>
 #import <CoreGraphics/CoreGraphics.h>
 
+#import "UIColor+EPPZRepresenter.h"
 
-BOOL isCGRect(id value);
-BOOL isCGPoint(id value);
-BOOL isCGSize(id value);
-BOOL isCGAffineTransform(id value);
-BOOL isCGType(id value);
+/*
 
-CGRect rectValue(id value);
-CGPoint pointValue(id value);
-CGSize sizeValue(id value);
-CGAffineTransform affineTransformValue(id value);
+    Represents:
+ 
+    CGRect
+    CGPoint
+    CGSize
+    CGAffineTransform
+ 
+    UIColor
+ 
+*/
 
-NSString *stringValueOfCGValue(id value);
+
+@interface EPPZRepresenter : NSObject
+
++(id)runtimeValueFromRepresentationValue:(id) representationValue;
++(id)representationValueFromRuntimeValue:(id) runtimeValue;
+
+@end

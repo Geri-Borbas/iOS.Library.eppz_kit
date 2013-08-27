@@ -46,12 +46,20 @@
 {
     EPPZGameUser *user;
     
-    BOOL store = NO;
+    BOOL store = YES;
     BOOL create = !store;
     
     if (store)
     {
         //Create a model object.
+        
+        //A view.
+        UIView *view = [[UIView alloc] initWithFrame:(CGRect){0.0, 0.0, 100.0, 100.0}];
+        view.transform = CGAffineTransformMakeScale(1.2, 1.2);
+        view.backgroundColor = [UIColor blueColor];
+        view.tag = 21;
+        
+        //A game user.
         user = [EPPZGameUser new];
         user.ID = @"A1FF321FED64";
         user.serialNumber = 12;
@@ -60,13 +68,11 @@
         user.registrationDate = [NSDate new];
         user.gameID = @"2";
         user.scores = @[ @(23), @(27), @(22), @(28), @(32) ];
+        user.view = view;
         
         EPPZGameProgress *progress = [EPPZGameProgress new];
         progress.progress = 5;
         progress.level = 5;
-        UIView *view = [[UIView alloc] initWithFrame:(CGRect){0.0, 0.0, 10.0, 10.0}];
-                view.transform = CGAffineTransformMakeScale(1.2, 1.2);
-                view.tag = 21;
         progress.view = view;
         user.progress = progress;
         
@@ -84,14 +90,7 @@
     {
         //Create a model object.
         user = [EPPZGameUser representableWithPlistNamed:@"user"];
-        
-        NSLog(@"user %@", user);
-        NSLog(@"user.progress %@", user.progress);
-        
         [self.view addSubview:user.progress.view];
-        
-        //See it created.
-        //NSLog(@"%@", user.dictionaryRepresentation);
     }
     
 }
