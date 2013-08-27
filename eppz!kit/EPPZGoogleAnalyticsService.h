@@ -14,6 +14,9 @@
 
 
 #import "EPPZAnalyticsService.h"
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
 
 
 #define GOOGLE_ANALYTICS_LOGGING YES

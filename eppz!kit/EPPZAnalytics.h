@@ -13,7 +13,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h> //For Google Analytics iOS SDK.
+
+//For Google Analytics iOS SDK.
+#import <CoreData/CoreData.h>
+#import <AdSupport/AdSupport.h>
 
 #import "EPPZSingletonSubclass.h"
 #import "EPPZGoogleAnalyticsService.h"
@@ -37,10 +40,13 @@
 
 -(void)takeOff;
 -(void)takeOffWithPropertyList:(NSString*) propertyListName;
+-(void)applicationDidFinishLaunching;
 -(void)applicationWillEnterForeground;
 -(void)applicationDidEnterBackground;
 -(void)land;
 
+-(void)registerCustomDimensions;
+-(void)registerCustomDimension:(NSString*) dimension forIndex:(NSUInteger) index;
 -(void)setSessionDimensions;
 -(void)setUserDimensions;
 -(void)setHitDimensions;

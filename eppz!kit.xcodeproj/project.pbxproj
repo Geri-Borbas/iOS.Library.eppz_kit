@@ -41,8 +41,8 @@
 		AEBA295617C8339600C3DA9F /* EPPZAnalyticsTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBA294A17C8339600C3DA9F /* EPPZAnalyticsTimer.m */; };
 		AEBA295717C8339600C3DA9F /* EPPZGoogleAnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBA294C17C8339600C3DA9F /* EPPZGoogleAnalyticsService.m */; };
 		AEBA295817C8339600C3DA9F /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBA295217C8339600C3DA9F /* libGoogleAnalytics_debug.a */; };
-		AEBA295917C8339600C3DA9F /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBA295317C8339600C3DA9F /* libGoogleAnalytics.a */; };
 		AEBA296A17C85D0B00C3DA9F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBA296917C85D0B00C3DA9F /* CoreData.framework */; };
+		AEC4FDA917CC69720092F28C /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC4FDA817CC69720092F28C /* libGoogleAnalyticsServices.a */; };
 		AEC6888C17B313C000F2206F /* EPPZLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC6888B17B313C000F2206F /* EPPZLabel.m */; };
 		AECCD94D17A5D80E001CAAFD /* NSDate+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */; };
 		AECCD95217A5DE4C001CAAFD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95017A5DE4C001CAAFD /* StoreKit.framework */; };
@@ -143,12 +143,13 @@
 		AEBA294D17C8339600C3DA9F /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
 		AEBA294E17C8339600C3DA9F /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
 		AEBA294F17C8339600C3DA9F /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
-		AEBA295017C8339600C3DA9F /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransaction.h; sourceTree = "<group>"; };
-		AEBA295117C8339600C3DA9F /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
 		AEBA295217C8339600C3DA9F /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
-		AEBA295317C8339600C3DA9F /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		AEBA296617C85AB000C3DA9F /* iOS device model identifiers.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iOS device model identifiers.xlsx"; sourceTree = "<group>"; };
 		AEBA296917C85D0B00C3DA9F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AEC4FDA517CC690A0092F28C /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		AEC4FDA617CC690A0092F28C /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		AEC4FDA717CC690A0092F28C /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		AEC4FDA817CC69720092F28C /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		AEC6888A17B313C000F2206F /* EPPZLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZLabel.h; sourceTree = "<group>"; };
 		AEC6888B17B313C000F2206F /* EPPZLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZLabel.m; sourceTree = "<group>"; };
 		AECCD94B17A5D80E001CAAFD /* NSDate+EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+EPPZKit.h"; sourceTree = "<group>"; };
@@ -197,7 +198,7 @@
 				AECCD95217A5DE4C001CAAFD /* StoreKit.framework in Frameworks */,
 				AECCD95317A5DE4C001CAAFD /* SystemConfiguration.framework in Frameworks */,
 				AEBA295817C8339600C3DA9F /* libGoogleAnalytics_debug.a in Frameworks */,
-				AEBA295917C8339600C3DA9F /* libGoogleAnalytics.a in Frameworks */,
+				AEC4FDA917CC69720092F28C /* libGoogleAnalyticsServices.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,12 +489,13 @@
 			isa = PBXGroup;
 			children = (
 				AEBA294D17C8339600C3DA9F /* GAI.h */,
-				AEBA294E17C8339600C3DA9F /* GAITrackedViewController.h */,
 				AEBA294F17C8339600C3DA9F /* GAITracker.h */,
-				AEBA295017C8339600C3DA9F /* GAITransaction.h */,
-				AEBA295117C8339600C3DA9F /* GAITransactionItem.h */,
+				AEBA294E17C8339600C3DA9F /* GAITrackedViewController.h */,
+				AEC4FDA517CC690A0092F28C /* GAIDictionaryBuilder.h */,
+				AEC4FDA617CC690A0092F28C /* GAIFields.h */,
+				AEC4FDA717CC690A0092F28C /* GAILogger.h */,
 				AEBA295217C8339600C3DA9F /* libGoogleAnalytics_debug.a */,
-				AEBA295317C8339600C3DA9F /* libGoogleAnalytics.a */,
+				AEC4FDA817CC69720092F28C /* libGoogleAnalyticsServices.a */,
 			);
 			name = "Google Analytics iOS SDK 2.0";
 			sourceTree = "<group>";
