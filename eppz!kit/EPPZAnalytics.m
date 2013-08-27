@@ -50,15 +50,23 @@ static NSString *kGoogleAnalyticsDispatchPeriodKeyPath = @"GoogleAnalytics.dispa
     [self takeOffWithPropertyList:NSStringFromClass(self.class)];
 }
 
+-(void)applicationDidFinishLaunching
+{
+    [self.google startSession];
+    [self setUserDimensions];
+    [self setSessionDimensions];
+}
+
 -(void)applicationWillEnterForeground
 {
-    #warning Test user dimensions on Google Analytics dashboard if they sent along every hit!
+    [self.google startSession];
     [self setUserDimensions];
     [self setSessionDimensions];
 }
 
 -(void)applicationDidEnterBackground
 {
+    [self.google stopSession];
     [self removeEveryTimer];
 }
 
@@ -84,6 +92,7 @@ static NSString *kGoogleAnalyticsDispatchPeriodKeyPath = @"GoogleAnalytics.dispa
             self.google = [EPPZGoogleAnalyticsService new];
             [self.google takeOffWithPropertyID:[self.analyticsProperties valueForKeyPath:kGoogleAnalyticsPropertyIDKeyPath]
                                 dispatchPeriod:[self.analyticsProperties valueForKeyPath:kGoogleAnalyticsDispatchPeriodKeyPath]];
+            [self registerCustomDimensions];
         }
     }
 }
@@ -98,6 +107,16 @@ static NSString *kGoogleAnalyticsDispatchPeriodKeyPath = @"GoogleAnalytics.dispa
 
 
 #pragma mark - Features
+
+-(void)registerCustomDimensions { }
+
+-(void)registerCustomDimension:(NSString*) dimension forIndex:(NSUInteger) index
+{
+    if ([self isEnabled])
+    {
+        [self.google registerCustomDimension:dimension forIndex:index];
+    }
+}
 
 -(void)setSessionDimensions { }
 

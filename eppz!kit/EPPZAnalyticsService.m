@@ -26,6 +26,9 @@
 -(void)event:(NSString*) event action:(NSString*) action { }
 -(void)event:(NSString*) event action:(NSString*) action label:(NSString*) label { }
 -(void)event:(NSString*) event action:(NSString*) action label:(NSString*) label value:(int) value { }
+-(void)startSession { }
+-(void)stopSession { }
+-(void)registerCustomDimension:(NSString*) dimension forIndex:(NSUInteger) index { }
 -(void)setCustom:(NSInteger) index dimension:(NSString*) dimension { }
 -(void)setCustom:(NSInteger) index metric:(NSNumber*) metric { }
 -(void)sendTimingWithCategory:(NSString*) category

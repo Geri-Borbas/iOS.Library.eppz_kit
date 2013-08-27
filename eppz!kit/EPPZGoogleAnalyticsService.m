@@ -13,7 +13,6 @@
 //
 
 #import "EPPZGoogleAnalyticsService.h"
-#import "GAI.h"
 
 
 @interface EPPZGoogleAnalyticsService ()
@@ -50,31 +49,46 @@
 
 #pragma mark - Features
 
--(void)page:(NSString*) pageName
-{
-    GALog(@"EPPZGoogleAnalyticsService page:%@", pageName);
-    [self.tracker trackView:pageName];
-}
+-(void)startSession
+{ [self.tracker set:kGAISessionControl value:@"start"]; }
 
--(void)event:(NSString*) event action:(NSString*) action label:(NSString*) label value:(int) value;
+-(void)stopSession
+{ [self.tracker set:kGAISessionControl value:@"start"]; }
+
+-(void)registerCustomDimension:(NSString*) dimension forIndex:(NSUInteger) index
 {
-    GALog(@"EPPZGoogleAnalyticsService event:%@ action:%@ label:%@ value:%i", event, action, label, value);
-    [self.tracker trackEventWithCategory:event
-                              withAction:action
-                               withLabel:label
-                               withValue:[NSNumber numberWithInteger:value]];
+    GALog(@"EPPZGoogleAnalyticsService registerCustomDimension:%@ forIndex:%i", dimension, index);
+    [self.tracker set:[GAIFields customDimensionForIndex:index] value:dimension];
 }
 
 -(void)setCustom:(NSInteger) index dimension:(NSString*) dimension
 {
     GALog(@"EPPZGoogleAnalyticsService setCustom:%i dimension:%@", index, dimension);
-    [self.tracker setCustom:index dimension:dimension];
+    [self.tracker set:[GAIFields customDimensionForIndex:index] value:dimension];
 }
 
 -(void)setCustom:(NSInteger) index metric:(NSNumber*) metric
 {
     GALog(@"EPPZGoogleAnalyticsService setCustom:%i metric:%@", index, metric);
-    [self.tracker setCustom:index metric:metric];
+    [self.tracker set:[GAIFields customMetricForIndex:index] value:metric.stringValue];
+}
+
+
+
+-(void)page:(NSString*) pageName
+{
+    GALog(@"EPPZGoogleAnalyticsService page:%@", pageName);
+    [self.tracker set:kGAIScreenName value:pageName];
+    [self.tracker send:[[GAIDictionaryBuilder createAppView] build]];
+}
+
+-(void)event:(NSString*) event action:(NSString*) action label:(NSString*) label value:(int) value;
+{
+    GALog(@"EPPZGoogleAnalyticsService event:%@ action:%@ label:%@ value:%i", event, action, label, value);
+    [self.tracker send:[[GAIDictionaryBuilder createEventWithCategory:event
+                                                               action:action
+                                                                label:label
+                                                                value:@(value)] build]];
 }
 
 -(void)sendTimingWithCategory:(NSString*) category
@@ -83,7 +97,10 @@
                     withLabel:(NSString*) label
 {
     GALog(@"EPPZGoogleAnalyticsService sendTimingWithCategory:%@ withValue:%.2f withName:%@ withLabel:%@", category, interval, name, label);
-    [self.tracker sendTimingWithCategory:category withValue:interval withName:name withLabel:label];
+    [self.tracker send:[[GAIDictionaryBuilder createTimingWithCategory:category
+                                                              interval:@(interval)
+                                                                  name:name
+                                                                 label:label] build]];
 }
 
 

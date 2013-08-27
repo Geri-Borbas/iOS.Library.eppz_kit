@@ -40,7 +40,7 @@ It will be just as easy to save into NSUserDefaults/NSKeyedArchiver/JSON string 
 
 
 #### EPPZAnalytics
-A simple wrapper around Google Analytics iOS SDK (2.0). Suitable to support multiple analytics service (Flurry, GameAnalytics, etc.), thought only Google is implemented yet.
+A simple wrapper around Google Analytics iOS SDK (3.0). Were intended to be suitable to support multiple analytics service (Flurry, GameAnalytics, etc.), thought only Google is implemented yet.
 
 
 #### EPPZBoolTools
@@ -208,6 +208,11 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 
 #### Version tracking
+
+* 1.4.8
+
+    + EPPZAnalytics upgraded to Google Analytics iOS SDK 3.0
+        + Now registring dimensions is a must-have for subclasses
 
 * 1.4.6
 
