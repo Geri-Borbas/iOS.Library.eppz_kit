@@ -53,7 +53,7 @@
 { [self.tracker set:kGAISessionControl value:@"start"]; }
 
 -(void)stopSession
-{ [self.tracker set:kGAISessionControl value:@"start"]; }
+{ [self.tracker set:kGAISessionControl value:@"stop"]; }
 
 -(void)registerCustomDimension:(NSString*) dimension forIndex:(NSUInteger) index
 {

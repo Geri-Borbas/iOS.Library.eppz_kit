@@ -209,6 +209,10 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.4.8.1
+
+    + EPPZAnalytics misspelling
+
 * 1.4.8
 
     + EPPZAnalytics upgraded to Google Analytics iOS SDK 3.0
