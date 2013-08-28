@@ -56,7 +56,7 @@
         //A view.
         UIView *view = [[UIView alloc] initWithFrame:(CGRect){0.0, 0.0, 100.0, 100.0}];
         view.transform = CGAffineTransformMakeScale(1.2, 1.2);
-        view.backgroundColor = [UIColor blueColor];
+        view.backgroundColor = [UIColor colorWithRed:0.2 green:0.4 blue:0.8 alpha:0.6];
         view.tag = 21;
         
         //A game user.
@@ -91,6 +91,12 @@
         //Create a model object.
         user = [EPPZGameUser representableWithPlistNamed:@"user"];
         [self.view addSubview:user.progress.view];
+        
+        if ([@(user.view.hash).stringValue isEqualToString:@(user.progress.view.hash).stringValue])
+            NSLog(@"HOOOOOORRRAAAAAAAY!");
+        
+        NSLog(@"user.view %@", @(user.view.hash).stringValue);
+        NSLog(@"user.progress.view %@", @(user.progress.view.hash).stringValue);
     }
     
 }

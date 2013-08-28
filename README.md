@@ -36,7 +36,7 @@ Yet objects able to represent themselves in a dictionary form that allows me to 
 //Restoring later on.
 progress = [EPPZGameProgress representableWithPlistNamed:@"gameProgress"];
 ```
-It will be just as easy to save into NSUserDefaults/NSKeyedArchiver/JSON string or even into a self-describing CoreData archive. Still in progress.
+It will be just as easy to save into NSUserDefaults/NSKeyedArchiver/JSON string or even into a self-describing CoreData archive. In addition, it is now supports saving object references, so won't allocate duplicates on reconstruction. Still in progress.
 
 
 #### EPPZAnalytics
@@ -208,6 +208,13 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 
 #### Version tracking
+
+* 1.5.0
+
+    + EPPZRepresentable improvements
+        + Tracks references
+            + Generate IDs from memory address of each object at representing
+            + Reconstruct referenced objects properly using stored IDs
 
 * 1.4.8.9
 

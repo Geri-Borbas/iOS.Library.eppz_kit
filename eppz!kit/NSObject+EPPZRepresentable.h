@@ -14,6 +14,7 @@
 
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
+
 #import "EPPZTools.h"
 #import "EPPZRepresenter.h"
 
@@ -24,18 +25,18 @@
 
 @protocol EPPZRepresentable <NSObject>
 @optional
-@property (nonatomic, readonly) NSString *representableID;
 +(NSArray*)representablePropertyNames;
 @end
 
 
 @interface NSObject (EPPZRepresentable)
 
+
+#pragma mark - General features
+
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 +(id)representableWithDictionaryRepresentation:(NSDictionary*) dictionaryRepresentation;
 
-//Ergh, private.
-@property (nonatomic, readonly) NSString *representableID;
 
 @end
 

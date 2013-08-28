@@ -6,23 +6,24 @@
 
 \f0\fs24 \cf0 Doing:\
 \
-	-Store references\
-		-Save hash (memory address) along representable, so duplicates can be eliminated\
-		-Reconstruction could be problematic\
-		-Added object pool to track represented objects\
-			-Pools are set up, recursive stuff in progress\
+	-Represent foreign classes\
+		-Accept key paths in persistableProperyNames?\
 \
 Next:\
 \
-	-Look into collections (NSArray, NSDictionary)\
-	-Represent foreign classes\
-		-Accept keypaths in persistableProperyNames?\
+	-Look into collections (NSArray, NSDictionary) as well (not just EPPZRepresentables)\
 \
 Optimizations:\
 \
-	-Cache results for class (Collect propertyNames once per runtime)\
+	-Cache persistableProperyNames results for each class (Collect propertyNames once per runtime)\
 \
 Done:\
+\
+	-Store references\
+		-Save hash (memory address) along representable, so duplicates can be eliminated\
+		-Added object pool to track represented objects\
+		-Reconstruction tracks stored IDs\
+		-Actually awesome :)\
 \
 	-Now represents some new types\
 		-Type representation extracted\
