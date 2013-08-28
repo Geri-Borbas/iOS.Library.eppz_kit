@@ -4,21 +4,37 @@
 \margl1440\margr1440\vieww9000\viewh8400\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
-\f0\fs24 \cf0 Next:\
+\f0\fs24 \cf0 Doing:\
 \
-	-Represent foreign classes\
-		-Accept keypaths in persistableProperyNames?\
-	-Cache results for class (Collect propertyNames once per runtime)\
-	-Store references\
-		-Save hash (memory address) along representable, so duplicates can be eliminated\
-		-Reconstruction could be problematic\
+	-Create NSKeyedArchiver implementation\
+	-Look into collections (NSArray, NSDictionary) as well (not just EPPZRepresentables)\
+\
+Optimizations:\
+\
+	-Cache persistableProperyNames results for each class (Collect propertyNames once per runtime)\
 \
 Done:\
 \
+	-Store references\
+		-Save hash (memory address) along representable, so duplicates can be eliminated\
+		-Added object pool to track represented objects\
+		-Reconstruction tracks stored IDs\
+		-Actually awesome :)\
+\
 	-Represent foreign classes\
-		-Implement presistablePropertyName in a category?\
+\
+	-Now represents some new types\
+		-Type representation extracted\
+			-CGRect, CGPoint, CGSize, CGAffineTransform\
+			-and UIColor for now (easily extendable)\
+\
+	-Represent foreign classes\
+		-Implement presistablePropertyName in a category (!)\
 			-Works fine with a UIView category, see testbed UIView model\
 			-Now save four major CG type (CGRect, CGPoint, CGSize, CGAffineTransform)\
+		-Accept key paths in persistableProperyNames\
+			-Works only when the instance is created (what is referred in the key path)\
+			-Subclasses can implement willLoad to create blank objects to populate\
 \
 	-Implement initialize from dictionary representation\
 	-Issue with not collecting representable name correctly?\

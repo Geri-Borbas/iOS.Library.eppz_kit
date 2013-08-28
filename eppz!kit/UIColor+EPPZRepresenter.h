@@ -1,8 +1,8 @@
 //
-//  EPPZGameUser.h
+//  UIColor+EPPZRepresenter.h
 //  eppz!kit
 //
-//  Created by Borbás Geri on 8/22/13.
+//  Created by Borbás Geri on 8/28/13.
 //  Copyright (c) 2013 eppz! development, LLC.
 //
 //  donate! by following http://www.twitter.com/_eppz
@@ -12,17 +12,11 @@
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "EPPZUser.h"
-#import "EPPZGameProgress.h"
+#import <UIKit/UIKit.h>
 
+@interface UIColor (EPPZRepresenter)
 
-@interface EPPZGameUser : EPPZUser
-
-@property (nonatomic, strong) NSString *gameID;
-@property (nonatomic, strong) NSArray *scores;
-@property (nonatomic, strong) NSString *runtimeData;
-@property (nonatomic, strong) UIView *view;
-@property (nonatomic, strong) UILabel *label;
-@property (nonatomic, strong) EPPZGameProgress *progress;
+NSString *NSStringFromUIColor(UIColor *color);
+UIColor *UIColorFromNSString(NSString *string);
 
 @end

@@ -1,8 +1,8 @@
 //
-//  EPPZCoreGraphicsTools.h
+//  NSObject+EPPZRepresentable_Archive.h
 //  eppz!kit
 //
-//  Created by Borbás Geri on 8/22/13.
+//  Created by Borbás Geri on 8/28/13.
 //  Copyright (c) 2013 eppz! development, LLC.
 //
 //  donate! by following http://www.twitter.com/_eppz
@@ -13,19 +13,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import <CoreGraphics/CoreGraphics.h>
+#import "EPPZFileManager.h"
 
 
-BOOL isCGRect(id value);
-BOOL isCGPoint(id value);
-BOOL isCGSize(id value);
-BOOL isCGAffineTransform(id value);
-BOOL isCGType(id value);
+@interface NSObject (EPPZRepresentable_Archive)
 
-CGRect rectValue(id value);
-CGPoint pointValue(id value);
-CGSize sizeValue(id value);
-CGAffineTransform affineTransformValue(id value);
+-(BOOL)storeAsArchiveNamed:(NSString*) archiveFileName; //To Documents.
+-(BOOL)storeAsArchiveAtPath:(NSString*) archiveFilePath;
 
-NSString *stringValueOfCGValue(id value);
++(id)loadFromArchiveNamed:(NSString*) archiveFileName; //From Bundle (or from Documents if not found in Bundle).
++(id)loadFromArchiveAtPath:(NSString*) archiveFilePath;
+
+@end

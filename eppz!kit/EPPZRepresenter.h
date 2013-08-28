@@ -1,5 +1,5 @@
 //
-//  EPPZGameUser.h
+//  EPPZRepresenter.h
 //  eppz!kit
 //
 //  Created by Borbás Geri on 8/22/13.
@@ -12,17 +12,29 @@
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "EPPZUser.h"
-#import "EPPZGameProgress.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CoreGraphics/CoreGraphics.h>
+
+#import "UIColor+EPPZRepresenter.h"
+
+/*
+
+    Represents:
+ 
+    CGRect
+    CGPoint
+    CGSize
+    CGAffineTransform
+ 
+    UIColor
+ 
+*/
 
 
-@interface EPPZGameUser : EPPZUser
+@interface EPPZRepresenter : NSObject
 
-@property (nonatomic, strong) NSString *gameID;
-@property (nonatomic, strong) NSArray *scores;
-@property (nonatomic, strong) NSString *runtimeData;
-@property (nonatomic, strong) UIView *view;
-@property (nonatomic, strong) UILabel *label;
-@property (nonatomic, strong) EPPZGameProgress *progress;
++(id)runtimeValueFromRepresentationValue:(id) representationValue;
++(id)representationValueFromRuntimeValue:(id) runtimeValue;
 
 @end

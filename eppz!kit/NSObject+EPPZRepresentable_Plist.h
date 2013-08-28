@@ -18,10 +18,10 @@
 
 @interface NSObject (EPPZRepresentable_Plist)
 
--(BOOL)storeAsPlistNamed:(NSString*) plistFileName;
+-(BOOL)storeAsPlistNamed:(NSString*) plistFileName; //To Documents.
 -(BOOL)storeAsPlistAtPath:(NSString*) plistFilePath;
 
-+(id)representableWithPlistNamed:(NSString*) plistFileName;
-+(id)representableWithPlistAtPath:(NSString*) plistFilePath;
++(id)loadFromPlistNamed:(NSString*) plistFileName; //From Bundle (or from Documents if not found in Bundle).
++(id)loadFromPlistAtPath:(NSString*) plistFilePath;
 
 @end
