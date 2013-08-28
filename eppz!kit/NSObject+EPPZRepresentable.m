@@ -50,6 +50,12 @@ static NSString *const kEPPZRepresentableClassKey = @"__eppz.representable.class
 @implementation NSObject (EPPZRepresentable)
 
 
+#pragma mark - Subclass templates
+
+-(void)willStore { }
+-(void)willLoad { }
+
+
 #pragma mark - Feature management
 
 +(BOOL)isRepresentableClass { return [self conformsToProtocol:@protocol(EPPZRepresentable)]; }
@@ -119,6 +125,9 @@ static NSString *const kEPPZRepresentableClassKey = @"__eppz.representable.class
 
 -(NSDictionary*)dictionaryRepresentation
 {
+    //Subclass template.    
+    [self willStore];
+    
     //Top-level dictionary.
     NSDictionary *dictionaryRepresentation = [self dictionaryRepresentationWithObjectPool:nil];
     
@@ -261,6 +270,8 @@ static NSString *const kEPPZRepresentableClassKey = @"__eppz.representable.class
             }
         }
     
+    //Subclass template.
+    [instance willLoad];
     
     //Set values.
     for (NSString *eachPropertyName in dictionaryRepresentation.allKeys)
@@ -275,7 +286,7 @@ static NSString *const kEPPZRepresentableClassKey = @"__eppz.representable.class
         id runtimeValue = [self runtimeValueFromRepresentationValue:eachRepresentationValue objectPool:objectPool];
         
         //Try to set.
-        @try { [instance setValue:runtimeValue forKey:eachPropertyName]; }
+        @try { [instance setValue:runtimeValue forKeyPath:eachPropertyName]; }
         @catch (NSException *exception) { }
         @finally { }
     }

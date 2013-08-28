@@ -5,15 +5,17 @@
 	<key>__eppz.representable.class</key>
 	<string>EPPZGameUser</string>
 	<key>__eppz.representable.id</key>
-	<string>130540400</string>
+	<string>126060128</string>
 	<key>gameID</key>
 	<string>2</string>
+	<key>label.text</key>
+	<string>Bloomberg</string>
 	<key>progress</key>
 	<dict>
 		<key>__eppz.representable.class</key>
 		<string>EPPZGameProgress</string>
 		<key>__eppz.representable.id</key>
-		<string>130541680</string>
+		<string>126060768</string>
 		<key>level</key>
 		<integer>5</integer>
 		<key>progress</key>
@@ -23,7 +25,7 @@
 			<key>__eppz.representable.class</key>
 			<string>UIView</string>
 			<key>__eppz.representable.id</key>
-			<string>130539568</string>
+			<string>126057888</string>
 		</dict>
 	</dict>
 	<key>scores</key>
@@ -39,7 +41,7 @@
 		<key>__eppz.representable.class</key>
 		<string>UIView</string>
 		<key>__eppz.representable.id</key>
-		<string>130539568</string>
+		<string>126057888</string>
 		<key>backgroundColor</key>
 		<string>UIColor:[0.200000, 0.400000, 0.800000, 0.600000]</string>
 		<key>bounds</key>

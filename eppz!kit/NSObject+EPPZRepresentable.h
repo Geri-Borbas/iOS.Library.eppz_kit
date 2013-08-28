@@ -31,15 +31,17 @@
 
 @interface NSObject (EPPZRepresentable)
 
-
 #pragma mark - General features
-
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 +(id)representableWithDictionaryRepresentation:(NSDictionary*) dictionaryRepresentation;
 
+#pragma mark - Subclass templates
+-(void)willStore; //Before represent into a dictionary.
+-(void)willLoad; //Before populate values from a dictionary.
 
 @end
 
 
 #import "NSObject+EPPZRepresentable_Plist.h"
+#import "NSObject+EPPZRepresentable_Archive.h"
 

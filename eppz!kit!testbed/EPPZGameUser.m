@@ -23,8 +23,16 @@
              @"gameID",
              @"scores",
              @"view",
+             @"label.text",
              @"progress"
              ];
 }
+
+-(void)willLoad
+{
+    //Create a blank label.
+    self.label = [UILabel new];
+}
+
 
 @end

@@ -209,6 +209,15 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.5.0.5
+
+    + EPPZRepresentable improvements
+        + Can populate key paths not just keys
+            + Only for existing objects (of course)
+                + Subclasses can implement `-(void)willLoad;` to create blank objects to populate via keypaths
+            + Still the `(EPPZRepresentable)` category is the preferred way (since it allocates the instance as well)
+        + NSKeyedArchiver implementation just sketched up
+
 * 1.5.0
 
     + EPPZRepresentable improvements

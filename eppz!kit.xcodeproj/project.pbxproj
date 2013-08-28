@@ -68,6 +68,7 @@
 		D8AD5DC517BD3895004BD9AF /* EPPZGameProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DC417BD3895004BD9AF /* EPPZGameProgress.m */; };
 		D8B1BC1B17C7A17F0071763B /* UIView+EPPZRepresentable.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B1BC1A17C7A17F0071763B /* UIView+EPPZRepresentable.m */; };
 		D8B1BC1E17C7BE030071763B /* EPPZRepresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B1BC1D17C7BE030071763B /* EPPZRepresenter.m */; };
+		D8BD6A7A17CE48E1007640CE /* NSObject+EPPZRepresentable_Archive.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BD6A7917CE48E1007640CE /* NSObject+EPPZRepresentable_Archive.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -194,6 +195,8 @@
 		D8B1BC1A17C7A17F0071763B /* UIView+EPPZRepresentable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EPPZRepresentable.m"; sourceTree = "<group>"; };
 		D8B1BC1C17C7BE030071763B /* EPPZRepresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZRepresenter.h; sourceTree = "<group>"; };
 		D8B1BC1D17C7BE030071763B /* EPPZRepresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZRepresenter.m; sourceTree = "<group>"; };
+		D8BD6A7817CE48E1007640CE /* NSObject+EPPZRepresentable_Archive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EPPZRepresentable_Archive.h"; sourceTree = "<group>"; };
+		D8BD6A7917CE48E1007640CE /* NSObject+EPPZRepresentable_Archive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EPPZRepresentable_Archive.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -573,6 +576,7 @@
 			isa = PBXGroup;
 			children = (
 				D81E3DC617CD05AD00B2C7A4 /* Plist */,
+				D8BD6A7B17CE48E6007640CE /* Archive */,
 			);
 			name = "Representations (stores)";
 			sourceTree = "<group>";
@@ -715,6 +719,15 @@
 			name = "Game progress";
 			sourceTree = "<group>";
 		};
+		D8BD6A7B17CE48E6007640CE /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				D8BD6A7817CE48E1007640CE /* NSObject+EPPZRepresentable_Archive.h */,
+				D8BD6A7917CE48E1007640CE /* NSObject+EPPZRepresentable_Archive.m */,
+			);
+			name = Archive;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -849,6 +862,7 @@
 				AEBA295617C8339600C3DA9F /* EPPZAnalyticsTimer.m in Sources */,
 				AEBA295717C8339600C3DA9F /* EPPZGoogleAnalyticsService.m in Sources */,
 				D81E3DC217CD00AF00B2C7A4 /* UIColor+EPPZRepresenter.m in Sources */,
+				D8BD6A7A17CE48E1007640CE /* NSObject+EPPZRepresentable_Archive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

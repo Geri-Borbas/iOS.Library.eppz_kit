@@ -15,6 +15,7 @@
 #import "NSObject+EPPZRepresentable.h"
 #import "NSObject+EPPZRepresentable_Plist.h"
 
+
 @implementation NSObject (EPPZRepresentable_Plist)
 
 
@@ -33,18 +34,13 @@
 { _LOG
     
     NSDictionary *dictionaryRepresentation = self.dictionaryRepresentation;
-    
-    NSLog(@"dictionaryRepresentation %@", dictionaryRepresentation);
-    
-    BOOL success = [dictionaryRepresentation writeToFile:plistFilePath atomically:YES];
-    
-    return success;
+    return [dictionaryRepresentation writeToFile:plistFilePath atomically:YES];
 }
 
 
-#pragma mark - Create
+#pragma mark - Load
 
-+(id)representableWithPlistNamed:(NSString*) plistFileName
++(id)loadFromPlistNamed:(NSString*) plistFileName
 {
     //Look for file path in main bundle.
     NSString *fileName = [plistFileName stringByAppendingPathExtension:@"plist"];
@@ -60,10 +56,10 @@
         if (filePath == nil) return nil;
     }
     
-    return [self representableWithPlistAtPath:filePath];
+    return [self loadFromPlistAtPath:filePath];
 }
 
-+(id)representableWithPlistAtPath:(NSString*) plistFilePath;
++(id)loadFromPlistAtPath:(NSString*) plistFilePath;
 {
     NSDictionary *dictionaryRepresentation = [NSDictionary dictionaryWithContentsOfFile:plistFilePath];
     return [self representableWithDictionaryRepresentation:dictionaryRepresentation];

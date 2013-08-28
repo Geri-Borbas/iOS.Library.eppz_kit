@@ -6,11 +6,7 @@
 
 \f0\fs24 \cf0 Doing:\
 \
-	-Represent foreign classes\
-		-Accept key paths in persistableProperyNames?\
-\
-Next:\
-\
+	-Create NSKeyedArchiver implementation\
 	-Look into collections (NSArray, NSDictionary) as well (not just EPPZRepresentables)\
 \
 Optimizations:\
@@ -25,15 +21,20 @@ Done:\
 		-Reconstruction tracks stored IDs\
 		-Actually awesome :)\
 \
+	-Represent foreign classes\
+\
 	-Now represents some new types\
 		-Type representation extracted\
 			-CGRect, CGPoint, CGSize, CGAffineTransform\
 			-and UIColor for now (easily extendable)\
 \
 	-Represent foreign classes\
-		-Implement presistablePropertyName in a category?\
+		-Implement presistablePropertyName in a category (!)\
 			-Works fine with a UIView category, see testbed UIView model\
 			-Now save four major CG type (CGRect, CGPoint, CGSize, CGAffineTransform)\
+		-Accept key paths in persistableProperyNames\
+			-Works only when the instance is created (what is referred in the key path)\
+			-Subclasses can implement willLoad to create blank objects to populate\
 \
 	-Implement initialize from dictionary representation\
 	-Issue with not collecting representable name correctly?\
