@@ -1,5 +1,5 @@
 ## ![eppz!kit](http://www.eppz.eu/beacons/eppz!.png) eppz!kit
-**The collection of the usefuls. Objective-C everydayers.** You could use it like you would do with any other static library (as Apple recommends [Using Static Libraries in iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)), or just grab some individual class, they are not that coupled (just watch the imports at the top of .h files).
+**The collection of the usefuls. Objective-C everydayers.** You could use it like you would do with any other static library (as Apple recommends [Using Static Libraries in iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)), or just grab some individual class, they are not that coupled (just watch the imports at the top of .h files). Google Analytics SDK have some specific build settings (check Analytics build settings.png for details)
 
 
 #### EPPZRepresentable
@@ -40,7 +40,7 @@ It will be just as easy to save into NSUserDefaults/NSKeyedArchiver/JSON string 
 
 
 #### EPPZAnalytics
-A simple wrapper around Google Analytics iOS SDK (3.0). Were intended to be suitable to support multiple analytics service (Flurry, GameAnalytics, etc.), thought only Google is implemented yet.
+A simple wrapper around Google Analytics iOS SDK 3.0 (Check Analytics build settings.png for specific build settings constraints). Were intended to be suitable to support multiple analytics service (Flurry, GameAnalytics, etc.), thought only Google is implemented yet.
 
 
 #### EPPZBoolTools

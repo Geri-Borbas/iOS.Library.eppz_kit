@@ -150,6 +150,7 @@
 		AEC4FDA617CC690A0092F28C /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
 		AEC4FDA717CC690A0092F28C /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
 		AEC4FDA817CC69720092F28C /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		AEC4FDBF17CC90D00092F28C /* Analytics build settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Analytics build settings.png"; sourceTree = "<group>"; };
 		AEC6888A17B313C000F2206F /* EPPZLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZLabel.h; sourceTree = "<group>"; };
 		AEC6888B17B313C000F2206F /* EPPZLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZLabel.m; sourceTree = "<group>"; };
 		AECCD94B17A5D80E001CAAFD /* NSDate+EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+EPPZKit.h"; sourceTree = "<group>"; };
@@ -448,6 +449,7 @@
 		AEBA294417C8334B00C3DA9F /* □ Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				AEC4FDBF17CC90D00092F28C /* Analytics build settings.png */,
 				AEBA294517C8339600C3DA9F /* EPPZAnalytics.h */,
 				AEBA294617C8339600C3DA9F /* EPPZAnalytics.m */,
 				AEBA295A17C833A200C3DA9F /* Analytics service */,
