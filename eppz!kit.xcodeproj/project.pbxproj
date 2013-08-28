@@ -20,13 +20,13 @@
 		AE922FA41793852F0088E5E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE922F4517937A1A0088E5E5 /* CoreGraphics.framework */; };
 		AE922FAA1793852F0088E5E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE922FA81793852F0088E5E5 /* InfoPlist.strings */; };
 		AE922FAC1793852F0088E5E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE922FAB1793852F0088E5E5 /* main.m */; };
-		AE922FB01793852F0088E5E5 /* EPPZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE922FAF1793852F0088E5E5 /* EPPZAppDelegate.m */; };
+		AE922FB01793852F0088E5E5 /* TBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE922FAF1793852F0088E5E5 /* TBAppDelegate.m */; };
 		AE922FB2179385300088E5E5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AE922FB1179385300088E5E5 /* Default.png */; };
 		AE922FB4179385300088E5E5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE922FB3179385300088E5E5 /* Default@2x.png */; };
 		AE922FB6179385300088E5E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE922FB5179385300088E5E5 /* Default-568h@2x.png */; };
-		AE922FB9179385300088E5E5 /* EPPZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE922FB8179385300088E5E5 /* EPPZViewController.m */; };
-		AE922FBC179385300088E5E5 /* EPPZViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE922FBA179385300088E5E5 /* EPPZViewController_iPhone.xib */; };
-		AE922FBF179385300088E5E5 /* EPPZViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE922FBD179385300088E5E5 /* EPPZViewController_iPad.xib */; };
+		AE922FB9179385300088E5E5 /* TBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE922FB8179385300088E5E5 /* TBViewController.m */; };
+		AE922FBC179385300088E5E5 /* TBViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE922FBA179385300088E5E5 /* TBViewController_iPhone.xib */; };
+		AE922FBF179385300088E5E5 /* TBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE922FBD179385300088E5E5 /* TBViewController_iPad.xib */; };
 		AE922FC5179389D30088E5E5 /* lib!eppz!kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE922FC4179389D30088E5E5 /* lib!eppz!kit.a */; };
 		AE9C3D6A1797522100D01536 /* EPPZViewOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C3D691797522100D01536 /* EPPZViewOwner.m */; };
 		AE9C3D7017975DB500D01536 /* EPPZAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C3D6D17975DB500D01536 /* EPPZAlert.m */; };
@@ -35,6 +35,7 @@
 		AE9C40BB1794A0C800090A82 /* NSString+EPPZReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C40BA1794A0C800090A82 /* NSString+EPPZReachability.m */; };
 		AE9C411C1794A4D600090A82 /* EPPZUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C411B1794A4D600090A82 /* EPPZUserDefaults.m */; };
 		AE9C41431794CA4A00090A82 /* EPPZFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C41421794CA4A00090A82 /* EPPZFlatButton.m */; };
+		AE9FCBD817CEB5CC004C57CD /* EPPZTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9FCBD717CEB5CC004C57CD /* EPPZTools.m */; };
 		AEA0B27F179DF68200439EB0 /* EPPZPagingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA0B27E179DF68200439EB0 /* EPPZPagingScrollViewController.m */; };
 		AEBA295417C8339600C3DA9F /* EPPZAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBA294617C8339600C3DA9F /* EPPZAnalytics.m */; };
 		AEBA295517C8339600C3DA9F /* EPPZAnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBA294817C8339600C3DA9F /* EPPZAnalyticsService.m */; };
@@ -109,15 +110,15 @@
 		AE922FA91793852F0088E5E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AE922FAB1793852F0088E5E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AE922FAD1793852F0088E5E5 /* eppz!kit!testbed-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "eppz!kit!testbed-Prefix.pch"; sourceTree = "<group>"; };
-		AE922FAE1793852F0088E5E5 /* EPPZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPPZAppDelegate.h; sourceTree = "<group>"; };
-		AE922FAF1793852F0088E5E5 /* EPPZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPPZAppDelegate.m; sourceTree = "<group>"; };
+		AE922FAE1793852F0088E5E5 /* TBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBAppDelegate.h; sourceTree = "<group>"; };
+		AE922FAF1793852F0088E5E5 /* TBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBAppDelegate.m; sourceTree = "<group>"; };
 		AE922FB1179385300088E5E5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		AE922FB3179385300088E5E5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AE922FB5179385300088E5E5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		AE922FB7179385300088E5E5 /* EPPZViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPPZViewController.h; sourceTree = "<group>"; };
-		AE922FB8179385300088E5E5 /* EPPZViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPPZViewController.m; sourceTree = "<group>"; };
-		AE922FBB179385300088E5E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EPPZViewController_iPhone.xib; sourceTree = "<group>"; };
-		AE922FBE179385300088E5E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/EPPZViewController_iPad.xib; sourceTree = "<group>"; };
+		AE922FB7179385300088E5E5 /* TBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBViewController.h; sourceTree = "<group>"; };
+		AE922FB8179385300088E5E5 /* TBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBViewController.m; sourceTree = "<group>"; };
+		AE922FBB179385300088E5E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TBViewController_iPhone.xib; sourceTree = "<group>"; };
+		AE922FBE179385300088E5E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TBViewController_iPad.xib; sourceTree = "<group>"; };
 		AE922FC3179385ED0088E5E5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		AE922FC4179389D30088E5E5 /* lib!eppz!kit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "lib!eppz!kit.a"; sourceTree = SOURCE_ROOT; };
 		AE9C3D681797522100D01536 /* EPPZViewOwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZViewOwner.h; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 		AE9C411B1794A4D600090A82 /* EPPZUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZUserDefaults.m; sourceTree = "<group>"; };
 		AE9C41411794CA4A00090A82 /* EPPZFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZFlatButton.h; sourceTree = "<group>"; };
 		AE9C41421794CA4A00090A82 /* EPPZFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZFlatButton.m; sourceTree = "<group>"; };
+		AE9FCBD717CEB5CC004C57CD /* EPPZTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZTools.m; sourceTree = "<group>"; };
 		AEA0B27D179DF68200439EB0 /* EPPZPagingScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZPagingScrollViewController.h; sourceTree = "<group>"; };
 		AEA0B27E179DF68200439EB0 /* EPPZPagingScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZPagingScrollViewController.m; sourceTree = "<group>"; };
 		AEBA294517C8339600C3DA9F /* EPPZAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZAnalytics.h; sourceTree = "<group>"; };
@@ -348,12 +350,12 @@
 			children = (
 				D8AD5DB517BD26F8004BD9AF /* Model */,
 				AE922FC617938A4F0088E5E5 /* eppz!kit */,
-				AE922FAE1793852F0088E5E5 /* EPPZAppDelegate.h */,
-				AE922FAF1793852F0088E5E5 /* EPPZAppDelegate.m */,
-				AE922FB7179385300088E5E5 /* EPPZViewController.h */,
-				AE922FB8179385300088E5E5 /* EPPZViewController.m */,
-				AE922FBA179385300088E5E5 /* EPPZViewController_iPhone.xib */,
-				AE922FBD179385300088E5E5 /* EPPZViewController_iPad.xib */,
+				AE922FAE1793852F0088E5E5 /* TBAppDelegate.h */,
+				AE922FAF1793852F0088E5E5 /* TBAppDelegate.m */,
+				AE922FB7179385300088E5E5 /* TBViewController.h */,
+				AE922FB8179385300088E5E5 /* TBViewController.m */,
+				AE922FBA179385300088E5E5 /* TBViewController_iPhone.xib */,
+				AE922FBD179385300088E5E5 /* TBViewController_iPad.xib */,
 				AE922FA61793852F0088E5E5 /* Supporting Files */,
 			);
 			path = "eppz!kit!testbed";
@@ -663,6 +665,7 @@
 			isa = PBXGroup;
 			children = (
 				D871FC8617C777F40085899F /* EPPZTools.h */,
+				AE9FCBD717CEB5CC004C57CD /* EPPZTools.m */,
 				AE00588317C740840061146F /* □ Bool tools */,
 				AECCD94717A5D7A5001CAAFD /* □ NSDate+EPPZKit */,
 				AE922F7017937B530088E5E5 /* □ NSString+EPPZKit */,
@@ -805,8 +808,8 @@
 				AE922FB2179385300088E5E5 /* Default.png in Resources */,
 				AE922FB4179385300088E5E5 /* Default@2x.png in Resources */,
 				AE922FB6179385300088E5E5 /* Default-568h@2x.png in Resources */,
-				AE922FBC179385300088E5E5 /* EPPZViewController_iPhone.xib in Resources */,
-				AE922FBF179385300088E5E5 /* EPPZViewController_iPad.xib in Resources */,
+				AE922FBC179385300088E5E5 /* TBViewController_iPhone.xib in Resources */,
+				AE922FBF179385300088E5E5 /* TBViewController_iPad.xib in Resources */,
 				D822ACAC17C67D5E0076DE10 /* user.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -865,6 +868,7 @@
 				AEBA295717C8339600C3DA9F /* EPPZGoogleAnalyticsService.m in Sources */,
 				D81E3DC217CD00AF00B2C7A4 /* UIColor+EPPZRepresenter.m in Sources */,
 				D8BD6A7A17CE48E1007640CE /* NSObject+EPPZRepresentable_Archive.m in Sources */,
+				AE9FCBD817CEB5CC004C57CD /* EPPZTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,8 +877,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE922FAC1793852F0088E5E5 /* main.m in Sources */,
-				AE922FB01793852F0088E5E5 /* EPPZAppDelegate.m in Sources */,
-				AE922FB9179385300088E5E5 /* EPPZViewController.m in Sources */,
+				AE922FB01793852F0088E5E5 /* TBAppDelegate.m in Sources */,
+				AE922FB9179385300088E5E5 /* TBViewController.m in Sources */,
 				D8AD5DB817BD2711004BD9AF /* EPPZEntity.m in Sources */,
 				D8AD5DBB17BD28C7004BD9AF /* EPPZUser.m in Sources */,
 				D8AD5DC117BD30CD004BD9AF /* EPPZGameUser.m in Sources */,
@@ -894,20 +898,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		AE922FBA179385300088E5E5 /* EPPZViewController_iPhone.xib */ = {
+		AE922FBA179385300088E5E5 /* TBViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AE922FBB179385300088E5E5 /* en */,
 			);
-			name = EPPZViewController_iPhone.xib;
+			name = TBViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
-		AE922FBD179385300088E5E5 /* EPPZViewController_iPad.xib */ = {
+		AE922FBD179385300088E5E5 /* TBViewController_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AE922FBE179385300088E5E5 /* en */,
 			);
-			name = EPPZViewController_iPad.xib;
+			name = TBViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

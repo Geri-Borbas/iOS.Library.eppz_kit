@@ -1,5 +1,5 @@
 //
-//  EPPZAppDelegate.h
+//  TBAppDelegate.h
 //  eppz!kit!testbed
 //
 //  Created by Borbás Geri on 7/15/13.
@@ -15,6 +15,6 @@
 #import <UIKit/UIKit.h>
 
 
-@interface EPPZAppDelegate : UIResponder <UIApplicationDelegate>
+@interface TBAppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
 @end

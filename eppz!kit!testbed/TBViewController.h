@@ -15,7 +15,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface EPPZViewController : UIViewController
+@interface TBViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet EPPZLabel *label_1;
 @property (nonatomic, weak) IBOutlet EPPZLabel *label_2;

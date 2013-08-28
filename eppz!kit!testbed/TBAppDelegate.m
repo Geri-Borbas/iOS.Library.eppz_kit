@@ -1,5 +1,5 @@
 //
-//  EPPZAppDelegate.m
+//  TBAppDelegate.m
 //  eppz!kit!testbed
 //
 //  Created by Borbás Geri on 7/15/13.
@@ -12,11 +12,11 @@
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "EPPZAppDelegate.h"
-#import "EPPZViewController.h"
+#import "TBAppDelegate.h"
+#import "TBViewController.h"
 
 
-@implementation EPPZAppDelegate
+@implementation TBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -24,9 +24,9 @@
     
     UIViewController *viewController;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-    { viewController = [[EPPZViewController alloc] initWithNibName:@"EPPZViewController_iPhone" bundle:nil]; }
+    { viewController = [[TBViewController alloc] initWithNibName:@"EPPZViewController_iPhone" bundle:nil]; }
     else
-    { viewController = [[EPPZViewController alloc] initWithNibName:@"EPPZViewController_iPad" bundle:nil]; }
+    { viewController = [[TBViewController alloc] initWithNibName:@"EPPZViewController_iPad" bundle:nil]; }
     
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];

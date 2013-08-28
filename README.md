@@ -209,6 +209,10 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.5.0.6
+
+    + Extremely useful `crash();` function added
+
 * 1.5.0.5
 
     + EPPZRepresentable improvements
