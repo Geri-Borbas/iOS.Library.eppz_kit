@@ -2,6 +2,21 @@
 **The collection of the usefuls. Objective-C everydayers.** You could use it like you would do with any other static library (as Apple recommends [Using Static Libraries in iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)), or just grab some individual class, they are not that coupled (just watch the imports at the top of .h files). Google Analytics SDK have some specific build settings (check Analytics build settings.png for details)
 
 
+#### EPPZVersions
+Tool that tells you useful app bundle version history information.
+```Objective-C
+if ([VERSIONS isFirstRun])
+{ [self showWelcomeMessage]; }
+
+if ([VERSIONS isFirstRunCurrentVersion])
+{ [self showThanksForUpdatingMessage]; }
+
+if ([VERSIONS hasBundleVersionEverInstalled:@"1.4.5"])
+{ [self migrateSomethingIfNeeded]; }
+```
+It is effective only from the point the class has used for the first time. Do not persist between application installs (yet) since it uses NSUserDefaults.
+
+
 #### EPPZRepresentable
 A solid NSObject extension that makes work with models much easier. If a class conforms to the protocol than it mark that object to implement such features.
 Yet objects able to represent themselves in a dictionary form that allows me to create many store implementation (Defaults, Archiver, CoreData, JSON, Plist, Keychain, whatnot). In progress, though `plist` implementation actually works. Saving foreign classes (like UIViews for example) is also possible. Actually an archiver with much less boilerplate. Example from the testbed project:
@@ -208,6 +223,10 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 
 #### Version tracking
+
+* 1.5.1
+
+    + EPPZVersions added
 
 * 1.5.0.6
 

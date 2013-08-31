@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AE00588617C740990061146F /* EPPZBoolTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AE00588517C740990061146F /* EPPZBoolTools.m */; };
+		AE05144A17D1922D00F7FE5E /* EPPZVersions.m in Sources */ = {isa = PBXBuildFile; fileRef = AE05144917D1922D00F7FE5E /* EPPZVersions.m */; };
 		AE0F38BA17A459C500552157 /* NSDecimalNumber+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F38B917A459C500552157 /* NSDecimalNumber+LocalizedPrice.m */; };
 		AE83531B1796317D005EE0DC /* EPPZAppStore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8353141796317D005EE0DC /* EPPZAppStore.m */; };
 		AE83531E1796317D005EE0DC /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE83531A1796317D005EE0DC /* SKProduct+LocalizedPrice.m */; };
@@ -87,6 +88,8 @@
 /* Begin PBXFileReference section */
 		AE00588417C740990061146F /* EPPZBoolTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZBoolTools.h; sourceTree = "<group>"; };
 		AE00588517C740990061146F /* EPPZBoolTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZBoolTools.m; sourceTree = "<group>"; };
+		AE05144817D1922D00F7FE5E /* EPPZVersions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZVersions.h; sourceTree = "<group>"; };
+		AE05144917D1922D00F7FE5E /* EPPZVersions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZVersions.m; sourceTree = "<group>"; };
 		AE0F38B817A459C500552157 /* NSDecimalNumber+LocalizedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+LocalizedPrice.h"; sourceTree = "<group>"; };
 		AE0F38B917A459C500552157 /* NSDecimalNumber+LocalizedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+LocalizedPrice.m"; sourceTree = "<group>"; };
 		AE8353131796317D005EE0DC /* EPPZAppStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZAppStore.h; sourceTree = "<group>"; };
@@ -243,6 +246,15 @@
 				AE00588517C740990061146F /* EPPZBoolTools.m */,
 			);
 			name = "□ Bool tools";
+			sourceTree = "<group>";
+		};
+		AE05144717D1921C00F7FE5E /* □ Versions */ = {
+			isa = PBXGroup;
+			children = (
+				AE05144817D1922D00F7FE5E /* EPPZVersions.h */,
+				AE05144917D1922D00F7FE5E /* EPPZVersions.m */,
+			);
+			name = "□ Versions";
 			sourceTree = "<group>";
 		};
 		AE83531217963126005EE0DC /* □ App Store */ = {
@@ -670,6 +682,7 @@
 				AECCD94717A5D7A5001CAAFD /* □ NSDate+EPPZKit */,
 				AE922F7017937B530088E5E5 /* □ NSString+EPPZKit */,
 				AEFC653917B82032004B5214 /* □ Timer */,
+				AE05144717D1921C00F7FE5E /* □ Versions */,
 			);
 			name = "❑ Tools";
 			sourceTree = "<group>";
@@ -869,6 +882,7 @@
 				D81E3DC217CD00AF00B2C7A4 /* UIColor+EPPZRepresenter.m in Sources */,
 				D8BD6A7A17CE48E1007640CE /* NSObject+EPPZRepresentable_Archive.m in Sources */,
 				AE9FCBD817CEB5CC004C57CD /* EPPZTools.m in Sources */,
+				AE05144A17D1922D00F7FE5E /* EPPZVersions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
