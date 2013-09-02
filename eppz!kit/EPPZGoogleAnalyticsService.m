@@ -50,10 +50,18 @@
 #pragma mark - Features
 
 -(void)startSession
-{ [self.tracker set:kGAISessionControl value:@"start"]; }
+{
+    GALog(@"EPPZGoogleAnalyticsService startSession");
+    [self.tracker set:kGAISessionControl value:@"start"];
+    [self event:@"Session" action:@"Start"];
+}
 
 -(void)stopSession
-{ [self.tracker set:kGAISessionControl value:@"stop"]; }
+{
+    GALog(@"EPPZGoogleAnalyticsService stopSession");
+    [self.tracker set:kGAISessionControl value:@"stop"];
+    [self event:@"Session" action:@"Stop"];
+}
 
 -(void)registerCustomDimension:(NSString*) dimension forIndex:(NSUInteger) index
 {

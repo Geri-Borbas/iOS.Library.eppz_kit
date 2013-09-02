@@ -136,7 +136,7 @@
     [productsRequest start];
     
     //Retry product request after 8 seconds if no response.
-    [callbacks retryAfterIntervalIfNeeded:8.0];
+    [callbacks retryAfterIntervalIfNeeded:EPPZAppStoreProductRequestRetryTimeOut];
 }
 
 -(void)productsRequest:(SKProductsRequest*) request didReceiveResponse:(SKProductsResponse*) response
@@ -150,7 +150,17 @@
     {
         //Retry.
         EALog(@"EPPZAppStore retry products request.");
-        [callbacks retryProductRequest];
+        
+        if (callbacks.retryAttempts < EPPZAppStoreProductRequestRetryAttempts)
+        {
+            [callbacks retryProductRequest];
+        }
+        else
+        {
+            //Callback with error (then remove callback from queue).
+            if (callbacks.productDetailsErrorBlock) callbacks.productDetailsErrorBlock(nil);
+            [self removeCallbacks:callbacks];
+        }
     }
     
     for (SKProduct *eachProduct in response.products)

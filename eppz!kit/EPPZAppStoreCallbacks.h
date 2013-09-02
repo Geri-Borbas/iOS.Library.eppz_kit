@@ -17,6 +17,10 @@
 #import "EPPZTimer.h"
 
 
+static NSUInteger const EPPZAppStoreProductRequestRetryAttempts = 3;
+static NSUInteger const EPPZAppStoreProductRequestRetryTimeOut = 8.0;
+
+
 typedef void (^EPPZAppStoreProductDetailsSuccessBlock)(SKProduct *product);
 typedef void (^EPPZAppStoreProductPurchaseSuccessBlock)(NSString *productID, SKPaymentTransaction *transaction);
 typedef void (^EPPZAppStoreErrorBlock)(NSError *error);
@@ -31,6 +35,7 @@ typedef void (^EPPZAppStoreErrorBlock)(NSError *error);
 @property (nonatomic, strong) EPPZAppStoreErrorBlock productPurchaseErrorBlock;
 
 @property (nonatomic, strong) NSString *productIdentifier;
+@property (nonatomic) NSUInteger retryAttempts;
 @property (nonatomic, weak) SKProductsRequest *productsRequest;
 
 +(id)productDetailsCallbacksWithSuccess:(EPPZAppStoreProductDetailsSuccessBlock) successBlock error:(EPPZAppStoreErrorBlock) errorBlock productsRequest:(SKProductsRequest*) productsRequest productIdentifier:(NSString*) productIdentifier;

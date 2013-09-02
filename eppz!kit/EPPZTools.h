@@ -15,5 +15,5 @@
 #import <Foundation/Foundation.h>
 
 
-#define _LOG if (DEBUG) NSLog(@"%@ %@", NSStringFromClass(self.class), NSStringFromSelector(_cmd));
+#define _LOG NSLog(@"%@ %@", NSStringFromClass(self.class), NSStringFromSelector(_cmd));
 void crash();

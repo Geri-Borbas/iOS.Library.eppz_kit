@@ -224,6 +224,13 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.5.1.2
+
+    + EPPZAppStore fixes
+        + Unlimited retries when offline is gone
+    + EPPZAnalytics
+        + Session end is sent along an event hit
+
 * 1.5.1
 
     + EPPZVersions added

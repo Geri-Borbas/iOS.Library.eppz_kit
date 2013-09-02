@@ -45,7 +45,8 @@
 
 -(void)retryProductRequest
 {
-    NSLog(@"retryProductRequest (%@)", self.productsRequest);
+    self.retryAttempts++;
+    NSLog(@"retryProductRequest <%i> (%@)", self.retryAttempts, self.productsRequest);
     
     //Cancel current request if any.
     id delegate = self.productsRequest.delegate;
