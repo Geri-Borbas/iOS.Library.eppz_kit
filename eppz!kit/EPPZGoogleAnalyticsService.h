@@ -19,7 +19,7 @@
 #import "GAIFields.h"
 
 
-#define GOOGLE_ANALYTICS_LOGGING YES
+#define GOOGLE_ANALYTICS_LOGGING NO
 #define GALog if (GOOGLE_ANALYTICS_LOGGING) NSLog
 
 

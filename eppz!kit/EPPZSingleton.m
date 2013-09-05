@@ -79,7 +79,7 @@ NSMutableDictionary *_sharedEPPZSingletonInstances = nil;
 
 -(id)init
 {
-    NSLog(@"<%@> INIT.", NSStringFromClass(self.class));
+    //NSLog(@"<%@> INIT.", NSStringFromClass(self.class));
     
     if (self = [super init])
     {

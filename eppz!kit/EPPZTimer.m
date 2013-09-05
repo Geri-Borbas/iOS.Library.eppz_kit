@@ -75,5 +75,11 @@
 
 -(NSTimer*)timer { return _timer_; }
 
+-(void)invalidate
+{
+    [self.timer_ invalidate];
+    //EPPZTimer is not retined by the NSTimer anymore (will release along owner).
+}
+
 
 @end

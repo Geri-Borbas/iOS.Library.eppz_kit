@@ -16,5 +16,5 @@
                            selector:(SEL) selector
                            userInfo:(id) userInfo
                             repeats:(BOOL) repeat;
-
+-(void)invalidate;
 @end

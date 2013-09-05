@@ -79,9 +79,8 @@ static NSString *kGoogleAnalyticsDispatchPeriodKeyPath = @"GoogleAnalytics.dispa
     
     self.timers = [NSMutableArray new];
     
-    NSLog(@"EPPZAnalytics analyticsProperties: %@", self.analyticsProperties);
-    
-    NSLog(@"Analytics enabled: (%i)", [self isEnabled]);
+    //NSLog(@"EPPZAnalytics analyticsProperties: %@", self.analyticsProperties);
+    //NSLog(@"Analytics enabled: (%i)", [self isEnabled]);
     
     if ([self isEnabled])
     {

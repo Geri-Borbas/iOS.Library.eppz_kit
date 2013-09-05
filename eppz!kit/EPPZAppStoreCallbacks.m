@@ -46,7 +46,7 @@
 -(void)retryProductRequest
 {
     self.retryAttempts++;
-    NSLog(@"retryProductRequest <%i> (%@)", self.retryAttempts, self.productsRequest);
+    //NSLog(@"retryProductRequest <%i> (%@)", self.retryAttempts, self.productsRequest);
     
     //Cancel current request if any.
     id delegate = self.productsRequest.delegate;
@@ -81,7 +81,7 @@
 }
 
 -(void)dealloc
-{ NSLog(@"EPPZAppStoreCallbacks dealloc"); }
+{ /* NSLog(@"EPPZAppStoreCallbacks dealloc"); */ }
 
 
 @end

@@ -44,7 +44,7 @@
 
 -(void)takeOff
 {
-    NSLog(@"EPPZAppStore takeOff");
+    EALog(@"EPPZAppStore takeOff");
     [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     
     self.detailsCallbackPool = [NSMutableArray new];
@@ -308,7 +308,7 @@
 
 -(void)paymentQueue:(SKPaymentQueue*)queue updatedDownloads:(NSArray*) downloads
 {
-    NSLog(@"EPPZAppStore paymentQueue:updatedDownloads: %@", downloads);
+    EALog(@"EPPZAppStore paymentQueue:updatedDownloads: %@", downloads);
     
     for (SKDownload *eachDownload in downloads)
     {
