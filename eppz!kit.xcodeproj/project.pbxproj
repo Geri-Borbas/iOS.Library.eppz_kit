@@ -22,9 +22,9 @@
 		AE922FAA1793852F0088E5E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE922FA81793852F0088E5E5 /* InfoPlist.strings */; };
 		AE922FAC1793852F0088E5E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE922FAB1793852F0088E5E5 /* main.m */; };
 		AE922FB01793852F0088E5E5 /* TBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE922FAF1793852F0088E5E5 /* TBAppDelegate.m */; };
-		AE922FB2179385300088E5E5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AE922FB1179385300088E5E5 /* Default.png */; };
-		AE922FB4179385300088E5E5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE922FB3179385300088E5E5 /* Default@2x.png */; };
-		AE922FB6179385300088E5E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE922FB5179385300088E5E5 /* Default-568h@2x.png */; };
+		AE922FB2179385300088E5E5 /* _Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AE922FB1179385300088E5E5 /* _Default.png */; };
+		AE922FB4179385300088E5E5 /* _Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE922FB3179385300088E5E5 /* _Default@2x.png */; };
+		AE922FB6179385300088E5E5 /* _Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE922FB5179385300088E5E5 /* _Default-568h@2x.png */; };
 		AE922FB9179385300088E5E5 /* TBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE922FB8179385300088E5E5 /* TBViewController.m */; };
 		AE922FBC179385300088E5E5 /* TBViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE922FBA179385300088E5E5 /* TBViewController_iPhone.xib */; };
 		AE922FBF179385300088E5E5 /* TBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE922FBD179385300088E5E5 /* TBViewController_iPad.xib */; };
@@ -115,9 +115,9 @@
 		AE922FAD1793852F0088E5E5 /* eppz!kit!testbed-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "eppz!kit!testbed-Prefix.pch"; sourceTree = "<group>"; };
 		AE922FAE1793852F0088E5E5 /* TBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBAppDelegate.h; sourceTree = "<group>"; };
 		AE922FAF1793852F0088E5E5 /* TBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBAppDelegate.m; sourceTree = "<group>"; };
-		AE922FB1179385300088E5E5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		AE922FB3179385300088E5E5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		AE922FB5179385300088E5E5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AE922FB1179385300088E5E5 /* _Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _Default.png; sourceTree = "<group>"; };
+		AE922FB3179385300088E5E5 /* _Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "_Default@2x.png"; sourceTree = "<group>"; };
+		AE922FB5179385300088E5E5 /* _Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "_Default-568h@2x.png"; sourceTree = "<group>"; };
 		AE922FB7179385300088E5E5 /* TBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBViewController.h; sourceTree = "<group>"; };
 		AE922FB8179385300088E5E5 /* TBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBViewController.m; sourceTree = "<group>"; };
 		AE922FBB179385300088E5E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TBViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -380,9 +380,9 @@
 				AE922FA81793852F0088E5E5 /* InfoPlist.strings */,
 				AE922FAB1793852F0088E5E5 /* main.m */,
 				AE922FAD1793852F0088E5E5 /* eppz!kit!testbed-Prefix.pch */,
-				AE922FB1179385300088E5E5 /* Default.png */,
-				AE922FB3179385300088E5E5 /* Default@2x.png */,
-				AE922FB5179385300088E5E5 /* Default-568h@2x.png */,
+				AE922FB1179385300088E5E5 /* _Default.png */,
+				AE922FB3179385300088E5E5 /* _Default@2x.png */,
+				AE922FB5179385300088E5E5 /* _Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -791,7 +791,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = EPPZ;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "eppz!";
 			};
 			buildConfigurationList = AE922F3917937A1A0088E5E5 /* Build configuration list for PBXProject "eppz!kit" */;
@@ -818,9 +818,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE922FAA1793852F0088E5E5 /* InfoPlist.strings in Resources */,
-				AE922FB2179385300088E5E5 /* Default.png in Resources */,
-				AE922FB4179385300088E5E5 /* Default@2x.png in Resources */,
-				AE922FB6179385300088E5E5 /* Default-568h@2x.png in Resources */,
+				AE922FB2179385300088E5E5 /* _Default.png in Resources */,
+				AE922FB4179385300088E5E5 /* _Default@2x.png in Resources */,
+				AE922FB6179385300088E5E5 /* _Default-568h@2x.png in Resources */,
 				AE922FBC179385300088E5E5 /* TBViewController_iPhone.xib in Resources */,
 				AE922FBF179385300088E5E5 /* TBViewController_iPad.xib in Resources */,
 				D822ACAC17C67D5E0076DE10 /* user.plist in Resources */,
@@ -957,7 +957,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -54,6 +54,7 @@ static NSString *const kEPPZRepresentableClassKey = @"__eppz.representable.class
 
 -(void)willStore { }
 -(void)willLoad { }
+-(void)didLoad { }
 
 
 #pragma mark - Feature management
@@ -290,6 +291,8 @@ static NSString *const kEPPZRepresentableClassKey = @"__eppz.representable.class
         @catch (NSException *exception) { }
         @finally { }
     }
+    
+    [instance didLoad];
     
     return instance;
 }

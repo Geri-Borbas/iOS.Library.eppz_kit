@@ -38,6 +38,7 @@
 #pragma mark - Subclass templates
 -(void)willStore; //Before represent into a dictionary.
 -(void)willLoad; //Before populate values from a dictionary.
+-(void)didLoad; //After populated values from a dictionary.
 
 @end
 
