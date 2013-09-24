@@ -18,9 +18,14 @@
 #import "EPPZTools.h"
 #import "EPPZRepresenter.h"
 
+#import "EPPZRepresentableException.h"
 
-#define EPPZ_REPRESENTABLE_LOGGING NO
+
+#define EPPZ_REPRESENTABLE_LOGGING YES
 #define ERLog if (EPPZ_REPRESENTABLE_LOGGING) NSLog
+
+
+static NSString *const kEPPZRepresentableErrorDomain = @"__eppz.representable";
 
 
 @protocol EPPZRepresentable <NSObject>

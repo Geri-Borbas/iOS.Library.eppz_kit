@@ -224,6 +224,16 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.5.5
+
+    + EPPZAnalytics
+        + Updated SDK
+    + EPPZRepresentable
+        + Fixes
+        + Added exceptions
+        + Represent collections
+        + Attempt to represent any object
+
 * 1.5.1.2
 
     + EPPZAppStore fixes

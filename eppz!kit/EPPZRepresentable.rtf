@@ -6,14 +6,27 @@
 
 \f0\fs24 \cf0 Doing:\
 \
-	-Create NSKeyedArchiver implementation\
-	-Look into collections (NSArray, NSDictionary) as well (not just EPPZRepresentables)\
+	-Store features\
+		-Pick superclass properties (excluding NSObject itself) when dealing with unknown objects\
+	-Plist features\
+		-Background processing with blocks\
 \
 Optimizations:\
 \
 	-Cache persistableProperyNames results for each class (Collect propertyNames once per runtime)\
+	-Create NSKeyedArchiver implementation\
 \
 Done:\
+\
+	-Store improvements\
+		-Fixed reference storing endless loop\
+			-Mark object being (!) represented, instead after representation\
+		-Look into collections (NSArray, NSDictionary) as well (not just EPPZRepresentables)\
+			-NSArray members iterated\
+			-NSDictionary members iterated	\
+		-Added EPPZRepresentableException to throw rich exceptions for some given type of errors\
+			-Actually keep collect errors during development here with rich debug information\
+		-Attempt to represent unknown NSObjects\
 \
 	-Store references\
 		-Save hash (memory address) along representable, so duplicates can be eliminated\

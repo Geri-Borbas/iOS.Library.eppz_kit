@@ -34,7 +34,15 @@
 { _LOG
     
     NSDictionary *dictionaryRepresentation = self.dictionaryRepresentation;
-    return [dictionaryRepresentation writeToFile:plistFilePath atomically:YES];
+    BOOL plistWritten = [dictionaryRepresentation writeToFile:plistFilePath atomically:YES];
+    
+    ERLog(@"EPPZRepresentable storeAsPlistAtPath:'%@' %@.", plistFilePath, (plistWritten) ? @"succeeded" : @"failed");
+    
+    // Catch errors.
+    if (plistWritten == NO)
+    { [[EPPZRepresentableException object:self couldNotWriteDictionaryRepresentation:dictionaryRepresentation toPlistNamed:plistFilePath.lastPathComponent] raise]; }
+    
+    return plistWritten;
 }
 
 

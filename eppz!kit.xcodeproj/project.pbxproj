@@ -12,6 +12,7 @@
 		AE0F38BA17A459C500552157 /* NSDecimalNumber+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F38B917A459C500552157 /* NSDecimalNumber+LocalizedPrice.m */; };
 		AE83531B1796317D005EE0DC /* EPPZAppStore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8353141796317D005EE0DC /* EPPZAppStore.m */; };
 		AE83531E1796317D005EE0DC /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE83531A1796317D005EE0DC /* SKProduct+LocalizedPrice.m */; };
+		AE89108F17F13472001CC4B5 /* EPPZRepresentableException.m in Sources */ = {isa = PBXBuildFile; fileRef = AE89108E17F13472001CC4B5 /* EPPZRepresentableException.m */; };
 		AE922F79179381280088E5E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE922F4317937A1A0088E5E5 /* Foundation.framework */; };
 		AE922F87179381D60088E5E5 /* EPPZSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE922F6D17937B4D0088E5E5 /* EPPZSingleton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AE922F88179381E70088E5E5 /* EPPZFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE922F6917937B2C0088E5E5 /* EPPZFileManager.m */; };
@@ -96,6 +97,8 @@
 		AE8353141796317D005EE0DC /* EPPZAppStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAppStore.m; sourceTree = "<group>"; };
 		AE8353191796317D005EE0DC /* SKProduct+LocalizedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+LocalizedPrice.h"; sourceTree = "<group>"; };
 		AE83531A1796317D005EE0DC /* SKProduct+LocalizedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+LocalizedPrice.m"; sourceTree = "<group>"; };
+		AE89108D17F13472001CC4B5 /* EPPZRepresentableException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZRepresentableException.h; sourceTree = "<group>"; };
+		AE89108E17F13472001CC4B5 /* EPPZRepresentableException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZRepresentableException.m; sourceTree = "<group>"; };
 		AE922F4117937A1A0088E5E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE922F4317937A1A0088E5E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE922F4517937A1A0088E5E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -277,6 +280,15 @@
 				AE0F38B917A459C500552157 /* NSDecimalNumber+LocalizedPrice.m */,
 			);
 			name = "Localized price";
+			sourceTree = "<group>";
+		};
+		AE89109017F1355D001CC4B5 /* Exceptions */ = {
+			isa = PBXGroup;
+			children = (
+				AE89108D17F13472001CC4B5 /* EPPZRepresentableException.h */,
+				AE89108E17F13472001CC4B5 /* EPPZRepresentableException.m */,
+			);
+			name = Exceptions;
 			sourceTree = "<group>";
 		};
 		AE922F3517937A1A0088E5E5 = {
@@ -582,6 +594,7 @@
 				D8AD5DBE17BD2F3C004BD9AF /* EPPZRepresentable.rtf */,
 				D8AD5DAE17BD22BB004BD9AF /* NSObject+EPPZRepresentable.h */,
 				D8AD5DAF17BD22BB004BD9AF /* NSObject+EPPZRepresentable.m */,
+				AE89109017F1355D001CC4B5 /* Exceptions */,
 				D81E3DC317CD052400B2C7A4 /* Representer */,
 				D81E3DC517CD058D00B2C7A4 /* Representations (stores) */,
 			);
@@ -858,6 +871,7 @@
 				AE9C411C1794A4D600090A82 /* EPPZUserDefaults.m in Sources */,
 				AE9C41431794CA4A00090A82 /* EPPZFlatButton.m in Sources */,
 				AE83531B1796317D005EE0DC /* EPPZAppStore.m in Sources */,
+				AE89108F17F13472001CC4B5 /* EPPZRepresentableException.m in Sources */,
 				AE83531E1796317D005EE0DC /* SKProduct+LocalizedPrice.m in Sources */,
 				AE9C3D6A1797522100D01536 /* EPPZViewOwner.m in Sources */,
 				AE9C3D7017975DB500D01536 /* EPPZAlert.m in Sources */,
