@@ -43,6 +43,7 @@ static NSString *const kEPPZRepresentableReferenceType = @"reference";
 +(void)removeObjectPoolForRepresentableID:(NSString*) representableID;
 +(void)addRepresentable:(NSObject<EPPZRepresentable>*) representable toPool:(NSMutableDictionary*) objectPool;
 +(BOOL)objectPool:(NSMutableDictionary*) objectPool hasRepresentable:(NSObject*) representable;
++(NSMutableDictionary*)objectPool:(NSMutableDictionary*) objectPool representationForRepresentable:(NSObject*) representable;
 
 -(NSDictionary*)dictionaryRepresentationWithObjectPool:(NSMutableDictionary*) objectPool;
 +(id)representableWithDictionaryRepresentation:(NSDictionary*) dictionaryRepresentation objectPool:(NSMutableDictionary*) objectPool;
@@ -125,6 +126,14 @@ static NSString *const kEPPZRepresentableReferenceType = @"reference";
 +(BOOL)objectPool:(NSMutableDictionary*) objectPool hasRepresentableID:(NSString*) representableID
 { return [[objectPool allKeys] containsObject:representableID]; }
 
++(NSMutableDictionary*)objectPool:(NSMutableDictionary*) objectPool representationForRepresentable:(NSObject*) representable
+{
+    if ([self objectPool:objectPool hasRepresentable:representable])
+        return [objectPool objectForKey:representable.representableID];
+    
+    return nil;
+}
+
 
 #pragma mark - Represent
 
@@ -143,96 +152,94 @@ static NSString *const kEPPZRepresentableReferenceType = @"reference";
 {
     ERLog(@"EPPZRepresentable dictionaryRepresentation '%@'", NSStringFromClass(self.class));
     
-    ERDLog(@"Represent %@", self);
+    // 1.
     
-    //Collection.
-    NSMutableDictionary *dictionaryRepresentation = [NSMutableDictionary new];
+        // Default representation (class, id).
+        NSMutableDictionary *dictionaryRepresentation = [self dictionaryWithIdentifiers];
     
-    // Representable properties.
+        // Manage object pool instance.
+        objectPool = [self createObjectPoolIfNeeded:objectPool];
     
-        //__eppz.representable.class.
-        [dictionaryRepresentation setObject:NSStringFromClass([self class]) forKey:kEPPZRepresentableClassKey];
-    
-        //__eppz.representable.id.
-        [dictionaryRepresentation setObject:@(self.hash).stringValue forKey:kEPPZRepresentableIDKey];
-    
-    // Ensure to represent references only once.
-    
-        BOOL isTopLevelObject = (objectPool == nil);    
-        if (isTopLevelObject)
-        {
-            //Create object pool (assuming this object is the top-level object).
-            objectPool = [NSObject addObjectPoolForRepresentable:self];
-        }
-        
-        else
-        {
-            //Store only __eppz.representable.id if already represented in this run.            
-            if ([NSObject objectPool:objectPool hasRepresentable:self])
-            {
-                // Mark __eppz.representable.type as reference.
-                // Mark only instances.
-                // [dictionaryRepresentation setObject:kEPPZRepresentableReferenceType forKey:kEPPZRepresentableTypeKey];
-                
-                ERDLog(@"Already being represented, return reference only");
-                
-                // Return dictionary we have so far (without the values).
-                return [NSDictionary dictionaryWithDictionary:dictionaryRepresentation];
-            }
-        }
-    
-    ERDLog(@"Do represent.");
-    
-    // Track that this object is being represented already.
+    // 2.
 
-        // Mark __eppz.representable.type as instance.
+        //Store only identifiers if already represented in this run.
+        if ([NSObject objectPool:objectPool hasRepresentable:self])
+        {
+            // Return dictionary we have so far (without the values).
+            return [NSDictionary dictionaryWithDictionary:dictionaryRepresentation];
+        }
+    
+    // 3.
+
+        // Mark __eppz.representable.type as instance (for easier reconstruction).
         [dictionaryRepresentation setObject:kEPPZRepresentableInstanceType forKey:kEPPZRepresentableTypeKey];
     
-    // Collect represented values.
+            // Collect property representations.
+            [self collectPropertyValuesIntoDictionary:dictionaryRepresentation objectPool:objectPool];
     
-        ERLog(@"EPPZRepresentable propertyNames of '%@' %@", NSStringFromClass(self.class), [self propertyNames]);
-    
-        static NSUInteger iteration;
-        iteration++;
-        NSLog(@"%i", iteration);
-    
-        // Subclass template.
-        [self willStore];
-    
-        for (NSString *eachPropertyName in [self propertyNames])
-        {
-            // Skip if no value.
-            @try
-            {
-                // Property has no value.
-                if ([self valueForKey:eachPropertyName] == nil) continue;
-            }
-            @catch (NSException *exception)
-            {
-                // Property is not key-value coding compilant.
-                continue;
-            }
-         
-            // Get represented value.
-            id representedProperty = [self representationValueForPropertyName:eachPropertyName
-                                                     objectPool:objectPool];
-            
-            // Catch errors.
-            if (representedProperty == nil) { [EPPZRepresentableException object:self couldNotRepresentPropertyNamed:eachPropertyName]; }
-            
-            // Collect.
-            [dictionaryRepresentation setObject:representedProperty forKey:eachPropertyName];
-        }
-    
-        // Subclass hook.
-        [self didStore];
-    
-        // Broom.
+        // Track that this object is being represented already.
         [NSObject addRepresentable:(NSObject<EPPZRepresentable>*)self toPool:objectPool];
     
-    //Return immutable.
-    return [NSDictionary dictionaryWithDictionary:dictionaryRepresentation];
+    // 4.
+    
+        //Return immutable.
+        return [NSDictionary dictionaryWithDictionary:dictionaryRepresentation];
 }
+
+-(NSMutableDictionary*)createObjectPoolIfNeeded:(NSMutableDictionary*) objectPool
+{
+    if (objectPool == nil)
+    { return [NSObject addObjectPoolForRepresentable:self]; }
+    
+    return objectPool;
+}
+
+-(NSMutableDictionary*)dictionaryWithIdentifiers
+{
+    NSMutableDictionary *dictionaryRepresentation = [NSMutableDictionary new];
+    
+    //__eppz.representable.class.
+    [dictionaryRepresentation setObject:NSStringFromClass([self class]) forKey:kEPPZRepresentableClassKey];
+    
+    //__eppz.representable.id.
+    [dictionaryRepresentation setObject:@(self.hash).stringValue forKey:kEPPZRepresentableIDKey];
+    
+    return dictionaryRepresentation;
+}
+
+-(void)collectPropertyValuesIntoDictionary:(NSMutableDictionary*) dictionaryRepresentation objectPool:(NSMutableDictionary*) objectPool
+{
+    // Subclass hook.
+    [self willStore];
+    
+    for (NSString *eachPropertyName in [self propertyNames])
+    {
+        // Skip if no value.
+        @try
+        {
+            // Property has no value.
+            if ([self valueForKey:eachPropertyName] == nil) continue;
+        }
+        @catch (NSException *exception)
+        {
+            // Property is not key-value coding compilant.
+            continue;
+        }
+        
+        // Get represented value.
+        id representedProperty = [self representationValueForPropertyName:eachPropertyName objectPool:objectPool];
+        
+        // Catch errors.
+        if (representedProperty == nil) { [EPPZRepresentableException object:self couldNotRepresentPropertyNamed:eachPropertyName]; }
+        
+        // Collect.
+        [dictionaryRepresentation setObject:representedProperty forKey:eachPropertyName];
+    }
+    
+    // Subclass hook.
+    [self didStore];
+}
+
 
 -(id)representationValueForPropertyName:(NSString*) propertyName objectPool:(NSMutableDictionary*) objectPool
 {
@@ -270,12 +277,12 @@ static NSString *const kEPPZRepresentableReferenceType = @"reference";
             NSMutableArray *representationArray = [NSMutableArray new];
             
             // Enumerate members.
-            [runtimeArray enumerateObjectsUsingBlock:^(id eachRuntimeMember, NSUInteger index, BOOL *stop)
+            for (id eachRuntimeMember in runtimeArray)
             {
                 // Represent each.
                 id eachRepresentationMember = [eachRuntimeMember dictionaryRepresentationWithObjectPool:objectPool];
                 [representationArray addObject:eachRepresentationMember];
-            }];
+            }
             
             return representationArray;
         }
