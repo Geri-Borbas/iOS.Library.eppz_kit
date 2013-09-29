@@ -1006,10 +1006,12 @@
 		AE922F82179381280088E5E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/eppz_kit.dst;
 				EXECUTABLE_PREFIX = "lib!";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/eppz!kit\"",
@@ -1023,10 +1025,12 @@
 		AE922F83179381280088E5E5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/eppz_kit.dst;
 				EXECUTABLE_PREFIX = "lib!";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/eppz!kit\"",

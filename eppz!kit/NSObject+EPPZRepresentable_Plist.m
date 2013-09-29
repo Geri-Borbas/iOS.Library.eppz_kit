@@ -57,8 +57,7 @@
     //If no such plist in bundle, lookup 'Documents' directory.
     if (filePath == nil)
     {
-        NSString *fileName = [plistFileName stringByAppendingPathExtension:@"plist"];
-        NSString *filePath = [FILES pathForFileNameInDocumentsDirectory:fileName];
+        filePath = [FILES pathForFileNameInDocumentsDirectory:fileName];
         
         //If still not found, do nothing.
         if (filePath == nil) return nil;

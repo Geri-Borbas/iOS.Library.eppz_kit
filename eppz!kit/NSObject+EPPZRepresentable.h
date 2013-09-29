@@ -21,8 +21,12 @@
 #import "EPPZRepresentableException.h"
 
 
-#define EPPZ_REPRESENTABLE_LOGGING YES
+#define EPPZ_REPRESENTABLE_LOGGING NO
 #define ERLog if (EPPZ_REPRESENTABLE_LOGGING) NSLog
+
+#define EPPZ_REPRESENTABLE_DEBUG_LOGGING YES
+#define ERDLog if (EPPZ_REPRESENTABLE_DEBUG_LOGGING) NSLog
+
 
 
 static NSString *const kEPPZRepresentableErrorDomain = @"__eppz.representable";
@@ -31,6 +35,7 @@ static NSString *const kEPPZRepresentableErrorDomain = @"__eppz.representable";
 @protocol EPPZRepresentable <NSObject>
 @optional
 +(NSArray*)representablePropertyNames;
+-(id)instance;
 @end
 
 
@@ -42,6 +47,7 @@ static NSString *const kEPPZRepresentableErrorDomain = @"__eppz.representable";
 
 #pragma mark - Subclass templates
 -(void)willStore; //Before represent into a dictionary.
+-(void)didStore; //After represent into a dictionary.
 -(void)willLoad; //Before populate values from a dictionary.
 -(void)didLoad; //After populated values from a dictionary.
 
