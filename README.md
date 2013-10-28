@@ -370,3 +370,7 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 > Licensed under the [Open Source MIT license](http://en.wikipedia.org/wiki/MIT_License).
 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/005a730f8a23bffdb3ce994cc12e4e32 "githalytics.com")](http://githalytics.com/eppz/eppz-kit)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/eppz/eppz-kit/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
