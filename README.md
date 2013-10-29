@@ -1,5 +1,17 @@
 ## ![eppz!kit](http://eppz.eu/beacons/eppz!.png) eppz!kit
-**The collection of the usefuls. Objective-C everydayers.** You could use it like you would do with any other static library (as Apple recommends [Using Static Libraries in iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)), or just grab some individual class, they are not that coupled (just watch the imports at the top of .h files). Google Analytics SDK have some specific build settings (check Analytics build settings.png for details)
+**The collection of the usefuls. Objective-C everydayers.** You could use it like you would do with any other static library (as Apple recommends [Using Static Libraries in iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)), or just grab some individual class, they are not that coupled (just watch the imports at the top of .h files). Google Analytics SDK have some specific build settings (check Analytics build settings.png for details).
+Feel free to file a pull request if you spot some errors.
+
+#### EPPZGeometry
+Awesome geometry toolkit for intersecting lines, intersecting circles, whatnot.
+```Objective-C
+// Some examples.
+CGRect bigger = rectFromRectWithMargin(original, spacing);
+CGFloat radians = angleBetweenPoints(touchLocation, previousLocation);
+CGVector rotated = rotateVector(handle, angle);
+BOOL crossed = areLinesIntersecting(ray, wall);
+BOOL hit = isPointOnLineWithTolerance(touchLocation, fence);
+```
 
 
 #### EPPZVersions
@@ -223,6 +235,11 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 
 #### Version tracking
+
+* 1.6.0
+
+    + EPPZGeometry
+        + Collection of the most of the geometry functions I've used lately
 
 * 1.5.5
 

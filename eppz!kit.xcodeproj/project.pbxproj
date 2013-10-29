@@ -59,6 +59,7 @@
 		D81E3DC217CD00AF00B2C7A4 /* UIColor+EPPZRepresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D81E3DC117CD00AF00B2C7A4 /* UIColor+EPPZRepresenter.m */; };
 		D822ACA917C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = D822ACA817C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m */; };
 		D822ACAC17C67D5E0076DE10 /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = D822ACAB17C67D5E0076DE10 /* user.plist */; };
+		D825700318203BD2008A40C9 /* EPPZGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = D825700218203BD2008A40C9 /* EPPZGeometry.m */; };
 		D8302F5F17BB965800472478 /* EPPZTagFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D8302F5E17BB965800472478 /* EPPZTagFinder.m */; };
 		D8302F6617BBA5BD00472478 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8302F6217BB98F100472478 /* CoreText.framework */; };
 		D8302F6717BBA5C500472478 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8302F6417BB990F00472478 /* QuartzCore.framework */; };
@@ -180,6 +181,8 @@
 		D822ACA717C671200076DE10 /* NSObject+EPPZRepresentable_Plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EPPZRepresentable_Plist.h"; sourceTree = "<group>"; };
 		D822ACA817C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EPPZRepresentable_Plist.m"; sourceTree = "<group>"; };
 		D822ACAB17C67D5E0076DE10 /* user.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = user.plist; sourceTree = "<group>"; };
+		D825700118203BD2008A40C9 /* EPPZGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZGeometry.h; sourceTree = "<group>"; };
+		D825700218203BD2008A40C9 /* EPPZGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZGeometry.m; sourceTree = "<group>"; };
 		D8302F5D17BB965800472478 /* EPPZTagFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZTagFinder.h; sourceTree = "<group>"; };
 		D8302F5E17BB965800472478 /* EPPZTagFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZTagFinder.m; sourceTree = "<group>"; };
 		D8302F6217BB98F100472478 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -619,6 +622,15 @@
 			name = Plist;
 			sourceTree = "<group>";
 		};
+		D825700018203B93008A40C9 /* □ Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				D825700118203BD2008A40C9 /* EPPZGeometry.h */,
+				D825700218203BD2008A40C9 /* EPPZGeometry.m */,
+			);
+			name = "□ Geometry";
+			sourceTree = "<group>";
+		};
 		D8302F6017BB97E600472478 /* □ Label */ = {
 			isa = PBXGroup;
 			children = (
@@ -696,6 +708,7 @@
 				AE922F7017937B530088E5E5 /* □ NSString+EPPZKit */,
 				AEFC653917B82032004B5214 /* □ Timer */,
 				AE05144717D1921C00F7FE5E /* □ Versions */,
+				D825700018203B93008A40C9 /* □ Geometry */,
 			);
 			name = "❑ Tools";
 			sourceTree = "<group>";
@@ -880,6 +893,7 @@
 				AEA0B27F179DF68200439EB0 /* EPPZPagingScrollViewController.m in Sources */,
 				AE0F38BA17A459C500552157 /* NSDecimalNumber+LocalizedPrice.m in Sources */,
 				AECCD94D17A5D80E001CAAFD /* NSDate+EPPZKit.m in Sources */,
+				D825700318203BD2008A40C9 /* EPPZGeometry.m in Sources */,
 				AEC6888C17B313C000F2206F /* EPPZLabel.m in Sources */,
 				AEFC653817B81865004B5214 /* EPPZTimer.m in Sources */,
 				D8302F5F17BB965800472478 /* EPPZTagFinder.m in Sources */,
