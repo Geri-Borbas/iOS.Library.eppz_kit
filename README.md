@@ -2,6 +2,16 @@
 **The collection of the usefuls. Objective-C everydayers.** You could use it like you would do with any other static library (as Apple recommends [Using Static Libraries in iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)), or just grab some individual class, they are not that coupled (just watch the imports at the top of .h files). Google Analytics SDK have some specific build settings (check Analytics build settings.png for details).
 Feel free to file a pull request if you spot some errors.
 
+
+#### EPPZDiatonicScale
+This latest member is a really specific piece of class. Converts a single music interval value (expressen in semitones) into a pitch value (expressed in segments). Also can step back and forth on a diatonic major or minor scale and return pitch result for that.
+```Objective-C
+// Play effect pitched with major 5th.
+float pitch = [self.diatonicScale pitchForNote:5];
+[self.soundEngine playEffect:@"piano.wav" volume:1.0 pitch:pitch pan:1.0 loop:NO];
+```
+
+
 #### EPPZGeometry
 Awesome geometry toolkit for intersecting lines, intersecting circles, whatnot.
 ```Objective-C
@@ -235,6 +245,10 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 
 #### Version tracking
+
+* 1.6.1
+
+    + EPPZDiatonicScale
 
 * 1.6.0
 

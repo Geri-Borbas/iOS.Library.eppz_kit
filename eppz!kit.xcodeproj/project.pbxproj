@@ -64,6 +64,7 @@
 		D8302F6617BBA5BD00472478 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8302F6217BB98F100472478 /* CoreText.framework */; };
 		D8302F6717BBA5C500472478 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8302F6417BB990F00472478 /* QuartzCore.framework */; };
 		D8302F8C17BBF15700472478 /* EPPZGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8302F8B17BBF15700472478 /* EPPZGestureRecognizer.m */; };
+		D84229BA1821893500B15EC8 /* EPPZDiatonicScale.m in Sources */ = {isa = PBXBuildFile; fileRef = D84229B91821893500B15EC8 /* EPPZDiatonicScale.m */; };
 		D8AD5DAC17BD0B84004BD9AF /* EPPZDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */; };
 		D8AD5DB017BD22BB004BD9AF /* NSObject+EPPZRepresentable.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DAF17BD22BB004BD9AF /* NSObject+EPPZRepresentable.m */; };
 		D8AD5DB817BD2711004BD9AF /* EPPZEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DB717BD2711004BD9AF /* EPPZEntity.m */; };
@@ -189,6 +190,8 @@
 		D8302F6417BB990F00472478 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D8302F8A17BBF15700472478 /* EPPZGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZGestureRecognizer.h; sourceTree = "<group>"; };
 		D8302F8B17BBF15700472478 /* EPPZGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZGestureRecognizer.m; sourceTree = "<group>"; };
+		D84229B81821893500B15EC8 /* EPPZDiatonicScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZDiatonicScale.h; sourceTree = "<group>"; };
+		D84229B91821893500B15EC8 /* EPPZDiatonicScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZDiatonicScale.m; sourceTree = "<group>"; };
 		D871FC8617C777F40085899F /* EPPZTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZTools.h; sourceTree = "<group>"; };
 		D8AD5DAA17BD0B84004BD9AF /* EPPZDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZDevice.h; sourceTree = "<group>"; };
 		D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZDevice.m; sourceTree = "<group>"; };
@@ -659,6 +662,15 @@
 			name = "□ Gesture recognizer";
 			sourceTree = "<group>";
 		};
+		D84229B71821891700B15EC8 /* □ Diatonic scale */ = {
+			isa = PBXGroup;
+			children = (
+				D84229B81821893500B15EC8 /* EPPZDiatonicScale.h */,
+				D84229B91821893500B15EC8 /* EPPZDiatonicScale.m */,
+			);
+			name = "□ Diatonic scale";
+			sourceTree = "<group>";
+		};
 		D8AD5DAD17BD0E01004BD9AF /* □ Device */ = {
 			isa = PBXGroup;
 			children = (
@@ -709,6 +721,7 @@
 				AEFC653917B82032004B5214 /* □ Timer */,
 				AE05144717D1921C00F7FE5E /* □ Versions */,
 				D825700018203B93008A40C9 /* □ Geometry */,
+				D84229B71821891700B15EC8 /* □ Diatonic scale */,
 			);
 			name = "❑ Tools";
 			sourceTree = "<group>";
@@ -892,6 +905,7 @@
 				AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */,
 				AEA0B27F179DF68200439EB0 /* EPPZPagingScrollViewController.m in Sources */,
 				AE0F38BA17A459C500552157 /* NSDecimalNumber+LocalizedPrice.m in Sources */,
+				D84229BA1821893500B15EC8 /* EPPZDiatonicScale.m in Sources */,
 				AECCD94D17A5D80E001CAAFD /* NSDate+EPPZKit.m in Sources */,
 				D825700318203BD2008A40C9 /* EPPZGeometry.m in Sources */,
 				AEC6888C17B313C000F2206F /* EPPZLabel.m in Sources */,

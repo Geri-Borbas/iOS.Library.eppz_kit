@@ -1,8 +1,8 @@
 //
-//  EPPZKit.h
+//  EPPZDiatonicScale.h
 //  eppz!kit
 //
-//  Created by Borbás Geri on 7/15/13.
+//  Created by Borbás Geri on 10/30/13.
 //  Copyright (c) 2013 eppz! development, LLC.
 //
 //  donate! by following http://www.twitter.com/_eppz
@@ -12,43 +12,24 @@
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-
-static NSString *const kEPPZKitVersion = @"1.6.1";
-
-
-//Base classes.
-#import "EPPZSingleton.h"
-#import "EPPZSingletonSubclass.h"
-
-//Wrappers.
-#import "EPPZAnalytics.h" //ANALYTICS_ (subclasses should define ANALYTICS)
-#import "EPPZFileManager.h" //FILES
-#import "EPPZDevice.h" //DEVICE
-#import "EPPZReachability.h"
-#import "NSString+EPPZReachability.h"
-#import "EPPZAppStore.h" //APPSTORE_
-
-//Tools.
-#import "EPPZTools.h"
-#import "EPPZBoolTools.h"
-#import "NSDate+EPPZKit.h"
-#import "NSString+EPPZKit.h"
-#import "EPPZTimer.h"
-#import "EPPZVersions.h" //VERSIONS_
-#import "EPPZGeometry.h"
-#import "EPPZDiatonicScale.h"
-
-//UIKit tools.
-#import "EPPZViewOwner.h"
-#import "EPPZGestureRecognizer.h"
-#import "EPPZFlatButton.h"
-#import "EPPZAlert.h"
-#import "EPPZPagingScrollViewController.h"
-#import "EPPZTagFinder.h"
-#import "EPPZLabel.h"
-
-//Model tools.
-#import "EPPZUserDefaults.h"
-#import "NSObject+EPPZRepresentable.h"
+#import <Foundation/Foundation.h>
 
 
+typedef enum
+{
+    EPPZMajorKey,
+    EPPZMinorKey
+} EPPZScaleKey;
+
+
+@interface EPPZDiatonicScale : NSObject
+
+@property (nonatomic) EPPZScaleKey key;
+@property (nonatomic) NSUInteger semitone;
+@property (nonatomic) NSUInteger note;
+@property (nonatomic, readonly) float pitch;
+
+-(float)pitchForSemitone:(NSUInteger) semitone;
+-(float)pitchForNote:(NSUInteger) semitone;
+
+@end
