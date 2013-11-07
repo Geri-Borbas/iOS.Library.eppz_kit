@@ -53,14 +53,19 @@
 {
     GALog(@"EPPZGoogleAnalyticsService startSession");
     [self.tracker set:kGAISessionControl value:@"start"];
-    [self event:@"Session" action:@"Start"];
 }
 
 -(void)stopSession
 {
+    /*
+     
+    Try to use start only according http://stackoverflow.com/questions/18855490/session-control-with-google-analytics-api-v3-for-ios
+     
     GALog(@"EPPZGoogleAnalyticsService stopSession");
     [self.tracker set:kGAISessionControl value:@"stop"];
     [self event:@"Session" action:@"Stop"];
+     
+    */
 }
 
 -(void)registerCustomDimension:(NSString*) dimension forIndex:(NSUInteger) index

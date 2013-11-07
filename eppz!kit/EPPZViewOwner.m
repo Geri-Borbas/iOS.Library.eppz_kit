@@ -16,4 +16,17 @@
 
 
 @implementation EPPZViewOwner
+
+
++(UIView*)viewFromNibNamed:(NSString*) nibName
+{ return [self viewFromNibNamed:nibName bundle:[NSBundle mainBundle]]; }
+
++(UIView*)viewFromNibNamed:(NSString*) nibName bundle:(NSBundle*) bundle
+{
+    EPPZViewOwner *owner = [EPPZViewOwner new];
+    [bundle loadNibNamed:nibName owner:owner options:nil];
+    return owner.view;
+}
+
+
 @end

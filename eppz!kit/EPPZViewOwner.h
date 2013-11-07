@@ -18,5 +18,7 @@
 
 @interface EPPZViewOwner : NSObject
 @property (nonatomic, weak) IBOutlet UIView *view;
++(UIView*)viewFromNibNamed:(NSString*) nibName;
++(UIView*)viewFromNibNamed:(NSString*) nibName bundle:(NSBundle*) bundle;
 @end
 
