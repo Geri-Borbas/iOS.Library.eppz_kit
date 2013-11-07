@@ -246,6 +246,12 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.6.2
+
+    + Some Analytics fix (only session start)
+    + NSArray extensions
+    + Updates on EPPZViewOwner
+
 * 1.6.1
 
     + EPPZDiatonicScale
