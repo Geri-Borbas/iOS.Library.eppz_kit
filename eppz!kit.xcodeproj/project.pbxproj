@@ -53,6 +53,7 @@
 		AECCD95417A5DE90001CAAFD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95017A5DE4C001CAAFD /* StoreKit.framework */; };
 		AECCD95517A5DE90001CAAFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */; };
 		AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */; };
+		AEEBDE7E18008C72001A3255 /* NSArray+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEBDE7D18008C72001A3255 /* NSArray+EPPZKit.m */; };
 		AEFC653817B81865004B5214 /* EPPZTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFC653717B81865004B5214 /* EPPZTimer.m */; };
 		D81E3DBC17CCEC1A00B2C7A4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81E3DBB17CCEC1A00B2C7A4 /* AdSupport.framework */; };
 		D81E3DBE17CCEC1F00B2C7A4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D81E3DBD17CCEC1F00B2C7A4 /* libz.dylib */; };
@@ -171,6 +172,8 @@
 		AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AED953151798B9B50000A0B6 /* EPPZAppStoreCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZAppStoreCallbacks.h; sourceTree = "<group>"; };
 		AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAppStoreCallbacks.m; sourceTree = "<group>"; };
+		AEEBDE7C18008C72001A3255 /* NSArray+EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EPPZKit.h"; sourceTree = "<group>"; };
+		AEEBDE7D18008C72001A3255 /* NSArray+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EPPZKit.m"; sourceTree = "<group>"; };
 		AEFC653617B81865004B5214 /* EPPZTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZTimer.h; sourceTree = "<group>"; };
 		AEFC653717B81865004B5214 /* EPPZTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZTimer.m; sourceTree = "<group>"; };
 		D81E3DBB17CCEC1A00B2C7A4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -560,6 +563,15 @@
 			name = Callbacks;
 			sourceTree = "<group>";
 		};
+		AEEBDE7F18008C75001A3255 /* □ NSArray+EPPZKit */ = {
+			isa = PBXGroup;
+			children = (
+				AEEBDE7C18008C72001A3255 /* NSArray+EPPZKit.h */,
+				AEEBDE7D18008C72001A3255 /* NSArray+EPPZKit.m */,
+			);
+			name = "□ NSArray+EPPZKit";
+			sourceTree = "<group>";
+		};
 		AEFC653917B82032004B5214 /* □ Timer */ = {
 			isa = PBXGroup;
 			children = (
@@ -691,6 +703,7 @@
 			children = (
 				D871FC8617C777F40085899F /* EPPZTools.h */,
 				AE9FCBD717CEB5CC004C57CD /* EPPZTools.m */,
+				AEEBDE7F18008C75001A3255 /* □ NSArray+EPPZKit */,
 				AE00588317C740840061146F /* □ Bool tools */,
 				AECCD94717A5D7A5001CAAFD /* □ NSDate+EPPZKit */,
 				AE922F7017937B530088E5E5 /* □ NSString+EPPZKit */,
@@ -887,6 +900,7 @@
 				D8AD5DAC17BD0B84004BD9AF /* EPPZDevice.m in Sources */,
 				D8AD5DB017BD22BB004BD9AF /* NSObject+EPPZRepresentable.m in Sources */,
 				D822ACA917C671200076DE10 /* NSObject+EPPZRepresentable_Plist.m in Sources */,
+				AEEBDE7E18008C72001A3255 /* NSArray+EPPZKit.m in Sources */,
 				AE00588617C740990061146F /* EPPZBoolTools.m in Sources */,
 				D8B1BC1E17C7BE030071763B /* EPPZRepresenter.m in Sources */,
 				AEBA295417C8339600C3DA9F /* EPPZAnalytics.m in Sources */,

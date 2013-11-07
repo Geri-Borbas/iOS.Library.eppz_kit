@@ -33,6 +33,7 @@ static NSString *const kEPPZKitVersion = @"1.5.5";
 #import "EPPZBoolTools.h"
 #import "NSDate+EPPZKit.h"
 #import "NSString+EPPZKit.h"
+#import "NSArray+EPPZKit.h"
 #import "EPPZTimer.h"
 #import "EPPZVersions.h"
 
