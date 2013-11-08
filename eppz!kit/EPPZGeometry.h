@@ -73,32 +73,6 @@ CGPoint normalizeVectorPoint(CGPoint vectorPoint);
 CGPoint rotateVectorPoint(CGPoint vectorPoint, CGFloat radians);
 
 
-#pragma mark - CGLine features
-
-typedef struct
-{
-    CGPoint a;
-    CGPoint b;
-} CGLine;
-
-CGRect boundingBoxOfLine(CGLine line);
-
-CGFloat distanceBetweenPointAndLine(CGPoint point, CGLine line);
-BOOL isPointTriumphCCW(CGPoint first, CGPoint second, CGPoint third);
-BOOL areLineSegmentsIntersecting(CGLine one, CGLine other); // Does not evaluate endpoint overlapping.
-BOOL doLinesHaveCommonPoints(CGLine one, CGLine other);
-BOOL areLinesIntersecting(CGLine one, CGLine other);
-
-
-#pragma mark - CGLine features (with tolerance)
-
-BOOL pointsAreEqualWithTolerance(CGPoint one, CGPoint other, CGFloat tolerance);
-BOOL linesAreEqualWithTolerance(CGLine one, CGLine other, CGFloat tolerance);
-BOOL linesHaveCommonPointsWithTolerance(CGLine one, CGLine other, CGFloat tolerance);
-BOOL isPointWithinBoundingBoxOfLineWithTolerance(CGPoint point, CGLine line, CGFloat tolerance);
-BOOL isPointOnLineWithTolerance(CGPoint point, CGLine line, CGFloat tolerance);
-
-
 #pragma mark - Circle features
 
 typedef struct
@@ -107,8 +81,11 @@ typedef struct
     CGFloat radius;
 } CGCircle;
 
+CGRect boundingBoxOfCircle(CGCircle circle);
+
 CGFloat circumfenceOfCircle(CGCircle circle);
 CGFloat areaOfCircle(CGCircle circle);
+BOOL areCirclesOverlapping(CGCircle one, CGCircle other);
 
 typedef struct
 {
@@ -121,3 +98,36 @@ typedef struct
 
 CGCircleIntersection intersectionOfCircles(CGCircle one, CGCircle other);
 
+
+#pragma mark - CGLine features
+
+typedef struct
+{
+    CGPoint a;
+    CGPoint b;
+    CGFloat width;
+    
+    CGCircle circleA;
+    CGCircle circleB;
+    
+} CGLine;
+
+CGLine CGLineMake(CGFloat aX, CGFloat aY, CGFloat bX, CGFloat bY, CGFloat width);
+CGRect boundingBoxOfLine(CGLine line);
+
+CGFloat distanceBetweenPointAndLine(CGPoint point, CGLine line);
+BOOL isPointTriumphCCW(CGPoint first, CGPoint second, CGPoint third);
+BOOL areLineSegmentsIntersecting(CGLine one, CGLine other); // Does not evaluate endpoint overlapping.
+BOOL linesHaveCommonPoints(CGLine one, CGLine other);
+BOOL areLinesIntersecting(CGLine one, CGLine other);
+
+
+#pragma mark - CGLine features (considering widths)
+
+void calculateCirclesForLine(CGLine *line);
+
+BOOL areLinesOverlappingConsideringWidths(CGLine one, CGLine other);
+BOOL linesHaveCommonPointsConsideringWidths(CGLine one, CGLine other);
+
+BOOL isCircleOverlappingLineConsideringWidth(CGCircle circle, CGLine line);
+BOOL areLinesIntersectingConsideringWidth(CGLine one, CGLine other);

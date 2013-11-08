@@ -13,7 +13,7 @@
 //
 
 #import "TBAppDelegate.h"
-#import "TBViewController.h"
+#import "TBMenuViewController.h"
 
 
 @implementation TBAppDelegate
@@ -24,9 +24,9 @@
     
     UIViewController *viewController;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-    { viewController = [[TBViewController alloc] initWithNibName:@"EPPZViewController_iPhone" bundle:nil]; }
+    { viewController = [[TBMenuViewController alloc] initWithNibName:@"TBMenuViewController" bundle:nil]; }
     else
-    { viewController = [[TBViewController alloc] initWithNibName:@"EPPZViewController_iPad" bundle:nil]; }
+    { viewController = [[TBMenuViewController alloc] initWithNibName:@"TBMenuViewController" bundle:nil]; }
     
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];

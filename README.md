@@ -246,6 +246,12 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.6.3
+
+    + Testbed refactoring
+        + Some menu
+        + Testbed for test CGLine features
+
 * 1.6.2
 
     + Some Analytics fix (only session start)

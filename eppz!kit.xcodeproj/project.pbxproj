@@ -26,9 +26,8 @@
 		AE922FB2179385300088E5E5 /* _Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AE922FB1179385300088E5E5 /* _Default.png */; };
 		AE922FB4179385300088E5E5 /* _Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE922FB3179385300088E5E5 /* _Default@2x.png */; };
 		AE922FB6179385300088E5E5 /* _Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE922FB5179385300088E5E5 /* _Default-568h@2x.png */; };
-		AE922FB9179385300088E5E5 /* TBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE922FB8179385300088E5E5 /* TBViewController.m */; };
-		AE922FBC179385300088E5E5 /* TBViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE922FBA179385300088E5E5 /* TBViewController_iPhone.xib */; };
-		AE922FBF179385300088E5E5 /* TBViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE922FBD179385300088E5E5 /* TBViewController_iPad.xib */; };
+		AE922FB9179385300088E5E5 /* TBHtmlStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE922FB8179385300088E5E5 /* TBHtmlStringViewController.m */; };
+		AE922FBC179385300088E5E5 /* TBHtmlStringViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE922FBA179385300088E5E5 /* TBHtmlStringViewController.xib */; };
 		AE922FC5179389D30088E5E5 /* lib!eppz!kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE922FC4179389D30088E5E5 /* lib!eppz!kit.a */; };
 		AE9C3D6A1797522100D01536 /* EPPZViewOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C3D691797522100D01536 /* EPPZViewOwner.m */; };
 		AE9C3D7017975DB500D01536 /* EPPZAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C3D6D17975DB500D01536 /* EPPZAlert.m */; };
@@ -52,6 +51,12 @@
 		AECCD95317A5DE4C001CAAFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */; };
 		AECCD95417A5DE90001CAAFD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95017A5DE4C001CAAFD /* StoreKit.framework */; };
 		AECCD95517A5DE90001CAAFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */; };
+		AED43CA1182C7EB300E05FA6 /* TBGeometryLinesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED43C9F182C7EB300E05FA6 /* TBGeometryLinesViewController.m */; };
+		AED43CA2182C7EB300E05FA6 /* TBGeometryLinesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED43CA0182C7EB300E05FA6 /* TBGeometryLinesViewController.xib */; };
+		AED43CA8182C7EEF00E05FA6 /* TBMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED43CA6182C7EEF00E05FA6 /* TBMenuViewController.m */; };
+		AED43CA9182C7EEF00E05FA6 /* TBMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED43CA7182C7EEF00E05FA6 /* TBMenuViewController.xib */; };
+		AED43CAD182C7F6000E05FA6 /* TBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AED43CAC182C7F6000E05FA6 /* TBButton.m */; };
+		AED43CB1182C84D000E05FA6 /* TBGeometryLinesView.m in Sources */ = {isa = PBXBuildFile; fileRef = AED43CB0182C84D000E05FA6 /* TBGeometryLinesView.m */; };
 		AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */; };
 		AEEBDE7E18008C72001A3255 /* NSArray+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEBDE7D18008C72001A3255 /* NSArray+EPPZKit.m */; };
 		AEFC653817B81865004B5214 /* EPPZTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFC653717B81865004B5214 /* EPPZTimer.m */; };
@@ -124,10 +129,9 @@
 		AE922FB1179385300088E5E5 /* _Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _Default.png; sourceTree = "<group>"; };
 		AE922FB3179385300088E5E5 /* _Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "_Default@2x.png"; sourceTree = "<group>"; };
 		AE922FB5179385300088E5E5 /* _Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "_Default-568h@2x.png"; sourceTree = "<group>"; };
-		AE922FB7179385300088E5E5 /* TBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBViewController.h; sourceTree = "<group>"; };
-		AE922FB8179385300088E5E5 /* TBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBViewController.m; sourceTree = "<group>"; };
-		AE922FBB179385300088E5E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TBViewController_iPhone.xib; sourceTree = "<group>"; };
-		AE922FBE179385300088E5E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TBViewController_iPad.xib; sourceTree = "<group>"; };
+		AE922FB7179385300088E5E5 /* TBHtmlStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBHtmlStringViewController.h; sourceTree = "<group>"; };
+		AE922FB8179385300088E5E5 /* TBHtmlStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TBHtmlStringViewController.m; sourceTree = "<group>"; };
+		AE922FBB179385300088E5E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TBHtmlStringViewController.xib; sourceTree = "<group>"; };
 		AE922FC3179385ED0088E5E5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		AE922FC4179389D30088E5E5 /* lib!eppz!kit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "lib!eppz!kit.a"; sourceTree = SOURCE_ROOT; };
 		AE9C3D681797522100D01536 /* EPPZViewOwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZViewOwner.h; sourceTree = "<group>"; };
@@ -172,6 +176,16 @@
 		AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+EPPZKit.m"; sourceTree = "<group>"; };
 		AECCD95017A5DE4C001CAAFD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AED43C9E182C7EB300E05FA6 /* TBGeometryLinesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBGeometryLinesViewController.h; sourceTree = "<group>"; };
+		AED43C9F182C7EB300E05FA6 /* TBGeometryLinesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBGeometryLinesViewController.m; sourceTree = "<group>"; };
+		AED43CA0182C7EB300E05FA6 /* TBGeometryLinesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBGeometryLinesViewController.xib; sourceTree = "<group>"; };
+		AED43CA5182C7EEF00E05FA6 /* TBMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBMenuViewController.h; sourceTree = "<group>"; };
+		AED43CA6182C7EEF00E05FA6 /* TBMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBMenuViewController.m; sourceTree = "<group>"; };
+		AED43CA7182C7EEF00E05FA6 /* TBMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBMenuViewController.xib; sourceTree = "<group>"; };
+		AED43CAB182C7F6000E05FA6 /* TBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBButton.h; sourceTree = "<group>"; };
+		AED43CAC182C7F6000E05FA6 /* TBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBButton.m; sourceTree = "<group>"; };
+		AED43CAF182C84D000E05FA6 /* TBGeometryLinesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBGeometryLinesView.h; sourceTree = "<group>"; };
+		AED43CB0182C84D000E05FA6 /* TBGeometryLinesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBGeometryLinesView.m; sourceTree = "<group>"; };
 		AED953151798B9B50000A0B6 /* EPPZAppStoreCallbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZAppStoreCallbacks.h; sourceTree = "<group>"; };
 		AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAppStoreCallbacks.m; sourceTree = "<group>"; };
 		AEEBDE7C18008C72001A3255 /* NSArray+EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EPPZKit.h"; sourceTree = "<group>"; };
@@ -385,10 +399,9 @@
 				AE922FC617938A4F0088E5E5 /* eppz!kit */,
 				AE922FAE1793852F0088E5E5 /* TBAppDelegate.h */,
 				AE922FAF1793852F0088E5E5 /* TBAppDelegate.m */,
-				AE922FB7179385300088E5E5 /* TBViewController.h */,
-				AE922FB8179385300088E5E5 /* TBViewController.m */,
-				AE922FBA179385300088E5E5 /* TBViewController_iPhone.xib */,
-				AE922FBD179385300088E5E5 /* TBViewController_iPad.xib */,
+				AED43CAA182C7EF300E05FA6 /* Menu */,
+				AED43CB3182C8B7100E05FA6 /* ❑ Tools */,
+				AED43CB4182C8B8C00E05FA6 /* ❑ UIKit tools */,
 				AE922FA61793852F0088E5E5 /* Supporting Files */,
 			);
 			path = "eppz!kit!testbed";
@@ -558,6 +571,72 @@
 				AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */,
 			);
 			name = "□ NSDate+EPPZKit";
+			sourceTree = "<group>";
+		};
+		AED43CA3182C7EB700E05FA6 /* Lines */ = {
+			isa = PBXGroup;
+			children = (
+				AED43C9E182C7EB300E05FA6 /* TBGeometryLinesViewController.h */,
+				AED43C9F182C7EB300E05FA6 /* TBGeometryLinesViewController.m */,
+				AED43CA0182C7EB300E05FA6 /* TBGeometryLinesViewController.xib */,
+				AED43CAF182C84D000E05FA6 /* TBGeometryLinesView.h */,
+				AED43CB0182C84D000E05FA6 /* TBGeometryLinesView.m */,
+			);
+			name = Lines;
+			sourceTree = "<group>";
+		};
+		AED43CA4182C7EBD00E05FA6 /* □ Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				AED43CA3182C7EB700E05FA6 /* Lines */,
+			);
+			name = "□ Geometry";
+			sourceTree = "<group>";
+		};
+		AED43CAA182C7EF300E05FA6 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				AED43CAE182C816300E05FA6 /* Button */,
+				AED43CA5182C7EEF00E05FA6 /* TBMenuViewController.h */,
+				AED43CA6182C7EEF00E05FA6 /* TBMenuViewController.m */,
+				AED43CA7182C7EEF00E05FA6 /* TBMenuViewController.xib */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		AED43CAE182C816300E05FA6 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				AED43CAB182C7F6000E05FA6 /* TBButton.h */,
+				AED43CAC182C7F6000E05FA6 /* TBButton.m */,
+			);
+			name = Button;
+			sourceTree = "<group>";
+		};
+		AED43CB2182C8B6100E05FA6 /* □ Label */ = {
+			isa = PBXGroup;
+			children = (
+				AE922FB7179385300088E5E5 /* TBHtmlStringViewController.h */,
+				AE922FB8179385300088E5E5 /* TBHtmlStringViewController.m */,
+				AE922FBA179385300088E5E5 /* TBHtmlStringViewController.xib */,
+			);
+			name = "□ Label";
+			sourceTree = "<group>";
+		};
+		AED43CB3182C8B7100E05FA6 /* ❑ Tools */ = {
+			isa = PBXGroup;
+			children = (
+				AED43CA4182C7EBD00E05FA6 /* □ Geometry */,
+			);
+			name = "❑ Tools";
+			sourceTree = "<group>";
+		};
+		AED43CB4182C8B8C00E05FA6 /* ❑ UIKit tools */ = {
+			isa = PBXGroup;
+			children = (
+				AED43CB2182C8B6100E05FA6 /* □ Label */,
+			);
+			name = "❑ UIKit tools";
 			sourceTree = "<group>";
 		};
 		AED953181798BF900000A0B6 /* Callbacks */ = {
@@ -871,10 +950,11 @@
 			files = (
 				AE922FAA1793852F0088E5E5 /* InfoPlist.strings in Resources */,
 				AE922FB2179385300088E5E5 /* _Default.png in Resources */,
+				AED43CA9182C7EEF00E05FA6 /* TBMenuViewController.xib in Resources */,
+				AED43CA2182C7EB300E05FA6 /* TBGeometryLinesViewController.xib in Resources */,
 				AE922FB4179385300088E5E5 /* _Default@2x.png in Resources */,
 				AE922FB6179385300088E5E5 /* _Default-568h@2x.png in Resources */,
-				AE922FBC179385300088E5E5 /* TBViewController_iPhone.xib in Resources */,
-				AE922FBF179385300088E5E5 /* TBViewController_iPad.xib in Resources */,
+				AE922FBC179385300088E5E5 /* TBHtmlStringViewController.xib in Resources */,
 				D822ACAC17C67D5E0076DE10 /* user.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -947,10 +1027,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE922FAC1793852F0088E5E5 /* main.m in Sources */,
+				AED43CA1182C7EB300E05FA6 /* TBGeometryLinesViewController.m in Sources */,
 				AE922FB01793852F0088E5E5 /* TBAppDelegate.m in Sources */,
-				AE922FB9179385300088E5E5 /* TBViewController.m in Sources */,
+				AED43CA8182C7EEF00E05FA6 /* TBMenuViewController.m in Sources */,
+				AED43CAD182C7F6000E05FA6 /* TBButton.m in Sources */,
+				AE922FB9179385300088E5E5 /* TBHtmlStringViewController.m in Sources */,
 				D8AD5DB817BD2711004BD9AF /* EPPZEntity.m in Sources */,
 				D8AD5DBB17BD28C7004BD9AF /* EPPZUser.m in Sources */,
+				AED43CB1182C84D000E05FA6 /* TBGeometryLinesView.m in Sources */,
 				D8AD5DC117BD30CD004BD9AF /* EPPZGameUser.m in Sources */,
 				D8AD5DC517BD3895004BD9AF /* EPPZGameProgress.m in Sources */,
 				D8B1BC1B17C7A17F0071763B /* UIView+EPPZRepresentable.m in Sources */,
@@ -968,20 +1052,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		AE922FBA179385300088E5E5 /* TBViewController_iPhone.xib */ = {
+		AE922FBA179385300088E5E5 /* TBHtmlStringViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AE922FBB179385300088E5E5 /* en */,
 			);
-			name = TBViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		AE922FBD179385300088E5E5 /* TBViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AE922FBE179385300088E5E5 /* en */,
-			);
-			name = TBViewController_iPad.xib;
+			name = TBHtmlStringViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -154,94 +154,29 @@ CGPoint rotateVectorPoint(CGPoint vectorPoint, CGFloat radians)
 { return pointFromVector(rotateVector(vectorFromPoint(vectorPoint), radians)); }
 
 
-#pragma mark - CGLine features
-
-CGRect boundingBoxOfLine(CGLine line)
-{
-    CGFloat left = (line.a.x < line.b.x) ? line.a.x : line.b.x;
-    CGFloat right = (line.a.x < line.b.x) ? line.b.x : line.a.x;
-    CGFloat top = (line.a.y < line.b.y) ? line.a.y : line.b.y;
-    CGFloat bottom = (line.a.y < line.b.y) ? line.b.y : line.a.y;
-    return (CGRect){ left, top, right - left, bottom - top };
-}
-
-CGFloat distanceBetweenPointAndLine(CGPoint point, CGLine line)
-{
-    // From http://www.allegro.cc/forums/thread/589720/644831
-    CGFloat a = point.x - line.a.x;
-    CGFloat b = point.y - line.a.y;
-    CGFloat c = line.b.x - line.a.x;
-    CGFloat d = line.b.y - line.a.y;
-    return absoluteValue(a * d - c * b) / sqrt(c * c + d * d);
-}
-
-BOOL isPointTriumphCCW(CGPoint first, CGPoint second, CGPoint third)
-{ return ((third.y - first.y) * (second.x - first.x) > (second.y - first.y) * (third.x - first.x)); }
-
-BOOL areLineSegmentsIntersecting(CGLine one, CGLine other)
-{
-    // Credits to http://www.bryceboe.com
-    return ((isPointTriumphCCW(one.a, other.a, other.b) != isPointTriumphCCW(one.b, other.a, other.b)) &&
-            (isPointTriumphCCW(one.a, one.b, other.a) != isPointTriumphCCW(one.a, one.b, other.b)));
-}
-
-BOOL doLinesHaveCommonPoints(CGLine one, CGLine other)
-{
-    return (CGPointEqualToPoint(one.a, other.a) ||
-            CGPointEqualToPoint(one.a, other.b) ||
-            CGPointEqualToPoint(one.b, other.a) ||
-            CGPointEqualToPoint(one.b, other.b));
-}
-
-BOOL areLinesIntersecting(CGLine one, CGLine other)
-{
-    return (doLinesHaveCommonPoints(one, other) ||
-            areLinesIntersecting(one, other));
-}
-
-
-#pragma mark - CGLine features with tolerance
-
-BOOL pointsAreEqualWithTolerance(CGPoint one, CGPoint other, CGFloat tolerance)
-{ return distanceBetweenPoints(one, other) <= tolerance; }
-
-BOOL linesAreEqualWithTolerance(CGLine one, CGLine other, CGFloat tolerance)
-{
-    return ((pointsAreEqualWithTolerance(one.a, other.a, tolerance) && pointsAreEqualWithTolerance(one.b, other.b, tolerance)) ||
-            (pointsAreEqualWithTolerance(one.a, other.b, tolerance) && pointsAreEqualWithTolerance(one.b, other.a, tolerance)));
-}
-
-BOOL linesHaveCommonPointsWithTolerance(CGLine one, CGLine other, CGFloat tolerance)
-{
-    return (pointsAreEqualWithTolerance(one.a, other.a, tolerance) ||
-            pointsAreEqualWithTolerance(one.a, other.b, tolerance) ||
-            pointsAreEqualWithTolerance(one.b, other.a, tolerance) ||
-            pointsAreEqualWithTolerance(one.b, other.b, tolerance));
-}
-
-BOOL isPointWithinRectWithTolerance(CGPoint point, CGRect rect, CGFloat tolerance)
-{
-    CGRect rectWithTolerance = rectFromRectWithMargin(rect, tolerance);
-    return CGRectContainsPoint(rectWithTolerance, point);
-}
-
-BOOL isPointWithinBoundingBoxOfLineWithTolerance(CGPoint point, CGLine line, CGFloat tolerance)
-{ return isPointWithinRectWithTolerance(point, boundingBoxOfLine(line), tolerance); }
-
-BOOL isPointOnLineWithTolerance(CGPoint point, CGLine line, CGFloat tolerance)
-{
-    return (isPointWithinBoundingBoxOfLineWithTolerance(point, line, tolerance) &&
-            distanceBetweenPointAndLine(point, line) <= tolerance);
-}
-
-
 #pragma mark - Circle features
+
+CGRect boundingBoxOfCircle(CGCircle circle)
+{
+    return (CGRect){
+        circle.center.x - circle.radius,
+        circle.center.y - circle.radius,
+        circle.radius * 2.0,
+        circle.radius * 2.0};
+}
 
 CGFloat circumfenceOfCircle(CGCircle circle)
 { return 2.0 * circle.radius * M_PI; }
 
 CGFloat areaOfCircle(CGCircle circle)
 { return cube(circle.radius) * M_PI; }
+
+
+BOOL areCirclesOverlapping(CGCircle one, CGCircle other)
+{
+    CGFloat radiuses = one.radius + other.radius;
+    return distanceBetweenPoints(one.center, other.center) <= radiuses;
+}
 
 CGCircleIntersection intersectionOfCircles(CGCircle one, CGCircle other)
 {
@@ -277,9 +212,9 @@ CGCircleIntersection intersectionOfCircles(CGCircle one, CGCircle other)
     // Determine the distance from one circle to 'c'.
     CGFloat distanceFromOneToMiddle = (cube(one.radius) - cube(other.radius) + cube(centerDistance)) / (2.0 * centerDistance);
     
-        // Bake 'c' coordinates.
-        c.x = one.center.x + (verticalCenterDistance * distanceFromOneToMiddle / centerDistance);
-        c.y = one.center.y + (horizontalCenterDistance * distanceFromOneToMiddle / centerDistance);
+    // Bake 'c' coordinates.
+    c.x = one.center.x + (verticalCenterDistance * distanceFromOneToMiddle / centerDistance);
+    c.y = one.center.y + (horizontalCenterDistance * distanceFromOneToMiddle / centerDistance);
     
     // Distance from 'c' to intersection(s).
     CGFloat distanceFromMiddleToIntersection = sqrt(cube(one.radius) - cube(distanceFromOneToMiddle));
@@ -298,12 +233,127 @@ CGCircleIntersection intersectionOfCircles(CGCircle one, CGCircle other)
 }
 
 
+#pragma mark - CGLine features
+
+CGLine CGLineMake(CGFloat aX, CGFloat aY, CGFloat bX, CGFloat bY, CGFloat width)
+{
+    CGLine line;
+    line.a = (CGPoint){aX, aY};
+    line.b = (CGPoint){bX, bY};
+    line.width = width;
+    return line;
+}
+
+CGRect boundingBoxOfLine(CGLine line)
+{
+    CGFloat left = (line.a.x < line.b.x) ? line.a.x : line.b.x;
+    CGFloat right = (line.a.x < line.b.x) ? line.b.x : line.a.x;
+    CGFloat top = (line.a.y < line.b.y) ? line.a.y : line.b.y;
+    CGFloat bottom = (line.a.y < line.b.y) ? line.b.y : line.a.y;
+    return (CGRect){ left, top, right - left, bottom - top };
+}
+
+CGFloat distanceBetweenPointAndLine(CGPoint point, CGLine line)
+{
+    // From http://www.allegro.cc/forums/thread/589720/644831
+    CGFloat a = point.x - line.a.x;
+    CGFloat b = point.y - line.a.y;
+    CGFloat c = line.b.x - line.a.x;
+    CGFloat d = line.b.y - line.a.y;
+    return absoluteValue(a * d - c * b) / sqrt(c * c + d * d);
+}
+
+BOOL isPointTriumphCCW(CGPoint first, CGPoint second, CGPoint third)
+{ return ((third.y - first.y) * (second.x - first.x) > (second.y - first.y) * (third.x - first.x)); }
+
+BOOL areLineSegmentsIntersecting(CGLine one, CGLine other)
+{
+    // Credits to http://www.bryceboe.com
+    return ((isPointTriumphCCW(one.a, other.a, other.b) != isPointTriumphCCW(one.b, other.a, other.b)) &&
+            (isPointTriumphCCW(one.a, one.b, other.a) != isPointTriumphCCW(one.a, one.b, other.b)));
+}
+
+BOOL linesHaveCommonPoints(CGLine one, CGLine other)
+{
+    return (CGPointEqualToPoint(one.a, other.a) ||
+            CGPointEqualToPoint(one.a, other.b) ||
+            CGPointEqualToPoint(one.b, other.a) ||
+            CGPointEqualToPoint(one.b, other.b));
+}
+
+BOOL areLinesIntersecting(CGLine one, CGLine other)
+{
+    return (linesHaveCommonPoints(one, other) ||
+            areLineSegmentsIntersecting(one, other));
+}
 
 
+#pragma mark - CGLine features with tolerance
 
+void calculateCirclesForLine(CGLine *line)
+{
+    line->circleA = (CGCircle){line->a, line->width / 2.0};
+    line->circleB = (CGCircle){line->b, line->width / 2.0};
+}
 
+BOOL areLinesOverlappingConsideringWidths(CGLine one, CGLine other)
+{
+    calculateCirclesForLine(&one);
+    calculateCirclesForLine(&other);
+    
+    return ((areCirclesOverlapping(one.circleA, other.circleA) && areCirclesOverlapping(one.circleB, other.circleB)) ||
+            (areCirclesOverlapping(one.circleA, other.circleB) && areCirclesOverlapping(one.circleB, other.circleA)));
+}
 
+BOOL linesHaveCommonPointsConsideringWidths(CGLine one, CGLine other)
+{
+    calculateCirclesForLine(&one);
+    calculateCirclesForLine(&other);
+    
+    return (areCirclesOverlapping(one.circleA, other.circleA) ||
+            areCirclesOverlapping(one.circleA, other.circleB) ||
+            areCirclesOverlapping(one.circleB, other.circleA) ||
+            areCirclesOverlapping(one.circleB, other.circleB));
+}
 
+BOOL isCircleOverlappingRect(CGCircle circle, CGRect rect)
+{
+    CGRect rectWithTolerance = rectFromRectWithMargin(rect, circle.radius);
+    return CGRectContainsPoint(rectWithTolerance, circle.center);
+}
 
+BOOL isCircleOverlappingLineConsideringWidth(CGCircle circle, CGLine line)
+{
+    BOOL isOverlapping = NO;
+    BOOL withinInnerBounds = isCircleOverlappingRect(circle, boundingBoxOfLine(line));
+    if (withinInnerBounds)
+    {
+        // Within inner bounds simply measure line distance.
+        CGFloat widths = circle.radius + line.width / 2.0;
+        isOverlapping = (distanceBetweenPointAndLine(circle.center, line) <= widths);
+    }
+    else
+    {
+        // Without inner bounds endpints can still overlap.
+        calculateCirclesForLine(&line);
+        isOverlapping = areCirclesOverlapping(circle, line.circleA) ||
+                        areCirclesOverlapping(circle, line.circleB);
+    }
+    
+    return isOverlapping;
+}
 
-
+BOOL areLinesIntersectingConsideringWidth(CGLine one, CGLine other)
+{
+    // Segments are intersecting.
+    BOOL areIntersecting = areLineSegmentsIntersecting(one, other);
+    if (areIntersecting) return areIntersecting;
+    
+    // Endpoints.
+    calculateCirclesForLine(&one);
+    calculateCirclesForLine(&other);
+    return (isCircleOverlappingLineConsideringWidth(one.circleA, other) ||
+            isCircleOverlappingLineConsideringWidth(one.circleB, other) ||
+            isCircleOverlappingLineConsideringWidth(other.circleA, one) ||
+            isCircleOverlappingLineConsideringWidth(other.circleB, one));
+}
