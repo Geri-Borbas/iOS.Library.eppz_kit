@@ -41,11 +41,13 @@ CGSize sizeFromSizeWithPadding(CGSize size, CGFloat padding);
 CGRect rectFromRectWithPadding(CGRect rect, CGFloat padding);
 CGSize sizeFromSizeWithMargin(CGSize size, CGFloat margin);
 CGRect rectFromRectWithMargin(CGRect rect, CGFloat margin);
+CGSize scaleSize(CGSize size, CGFloat scalar);
 
 
 #pragma mark - Trigonometry
 
 CGVector vectorBetweenPoints(CGPoint from, CGPoint to);
+CGPoint vectorPointBetweenPoints(CGPoint from, CGPoint to);
 CGFloat distanceBetweenPoints(CGPoint from, CGPoint to);
 CGFloat angleBetweenPoints(CGPoint from, CGPoint to);
 
@@ -81,6 +83,7 @@ typedef struct
     CGFloat radius;
 } CGCircle;
 
+CGCircle CGCircleMake(CGPoint center, CGFloat radius);
 CGRect boundingBoxOfCircle(CGCircle circle);
 
 CGFloat circumfenceOfCircle(CGCircle circle);
@@ -116,9 +119,10 @@ CGLine CGLineMake(CGFloat aX, CGFloat aY, CGFloat bX, CGFloat bY, CGFloat width)
 CGRect boundingBoxOfLine(CGLine line);
 
 CGFloat distanceBetweenPointAndLine(CGPoint point, CGLine line);
+CGFloat distanceBetweenPointAndLineSegment(CGPoint point, CGLine line);
 BOOL isPointTriumphCCW(CGPoint first, CGPoint second, CGPoint third);
 BOOL areLineSegmentsIntersecting(CGLine one, CGLine other); // Does not evaluate endpoint overlapping.
-BOOL linesHaveCommonPoints(CGLine one, CGLine other);
+BOOL doLinesHaveCommonPoints(CGLine one, CGLine other);
 BOOL areLinesIntersecting(CGLine one, CGLine other);
 
 
@@ -126,7 +130,7 @@ BOOL areLinesIntersecting(CGLine one, CGLine other);
 
 void calculateCirclesForLine(CGLine *line);
 
-BOOL areLinesOverlappingConsideringWidths(CGLine one, CGLine other);
+BOOL areLineEndpointsOverlappingConsideringWidths(CGLine one, CGLine other);
 BOOL linesHaveCommonPointsConsideringWidths(CGLine one, CGLine other);
 
 BOOL isCircleOverlappingLineConsideringWidth(CGCircle circle, CGLine line);

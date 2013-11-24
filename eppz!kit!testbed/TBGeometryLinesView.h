@@ -14,6 +14,15 @@
 
 #import <UIKit/UIKit.h>
 
+
+@interface TBCircle : UICircle
+@end
+
+
 @interface TBGeometryLinesView : UIView
+
+@property (nonatomic, weak) IBOutlet TBCircle *a;
+@property (nonatomic, weak) IBOutlet TBCircle *b;
+@property (nonatomic, weak) IBOutlet TBCircle *c;
 
 @end

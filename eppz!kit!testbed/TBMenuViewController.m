@@ -17,6 +17,7 @@
 
 @implementation TBMenuViewController
 
+
 -(IBAction)buttonTouchedUp:(TBButton*) button
 {
     NSLog(@"Present <%@>", button.controllerClassName);
@@ -26,5 +27,16 @@
     UIViewController *controller = [[controllerClass alloc] initWithNibName:button.controllerClassName bundle:nil];
     [self presentModalViewController:controller animated:YES];
 }
+
+// Automatismo.
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    Class controllerClass = NSClassFromString(@"TBGeometryLinesViewController");
+    UIViewController *controller = [[controllerClass alloc] initWithNibName:@"TBGeometryLinesViewController" bundle:nil];
+    [self presentModalViewController:controller animated:YES];
+}
+
 
 @end

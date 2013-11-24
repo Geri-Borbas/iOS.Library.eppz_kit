@@ -15,10 +15,53 @@
 #import "TBGeometryLinesView.h"
 
 
+@interface TBCircle ()
+@property (nonatomic, weak) UITouch *touch;
+@property (nonatomic) CGVector touchOffset;
+-(BOOL)bindTouchIfNeeded:(UITouch*) touch;
+-(void)drag;
+-(void)unbindTouch;
+@end
+
+
+@implementation TBCircle
+
+-(BOOL)bindTouchIfNeeded:(UITouch*) touch
+{
+    // Location.
+    CGPoint location = [touch locationInView:self.superview];
+    
+    // Bind if overlap.
+    if (distanceBetweenPoints(location, self.center) < self.radius)
+    {
+        self.touchOffset = vectorBetweenPoints(location, self.center);
+        self.touch = touch;
+        return YES;
+    }
+    return NO;
+}
+
+-(void)drag
+{
+    if (self.touch == nil) return;
+    
+    // Location.
+    CGPoint location = [self.touch locationInView:self.superview];
+    self.center = addVectorPoints(pointFromVector(self.touchOffset), location);
+}
+
+-(void)unbindTouch
+{
+    self.touch = nil;
+}
+
+@end
+
+
 @interface TBGeometryLinesView ()
 {
-    CGLine _one;
-    CGLine _other;
+    CGLine _line;
+    CGPoint _point;
 }
 @end
 
@@ -26,23 +69,32 @@
 @implementation TBGeometryLinesView
 
 
--(void)awakeFromNib
-{
-    [super awakeFromNib];
-        
-    // Setup.
-    _one = CGLineMake(50, 50, 200, 200, 20);
-    _other = CGLineMake(50, 350, 200, 200, 60);
-}
+#pragma mark - Drag
 
+-(void)touchesBegan:(NSSet*) touches withEvent:(UIEvent*) event
+{
+    // Touch.
+    UITouch *touch = [touches anyObject];
+    
+    // c, b, a.
+    if ([self.c bindTouchIfNeeded:touch] == NO)
+        if ([self.b bindTouchIfNeeded:touch] == NO)
+            [self.a bindTouchIfNeeded:touch];
+}
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    // Adjust.
-    CGPoint location = [[touches anyObject] locationInView:self];
-    _other.b = location;
-    
+    [self.a drag];
+    [self.b drag];
+    [self.c drag];
     [self setNeedsDisplay];
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.a unbindTouch];
+    [self.b unbindTouch];
+    [self.c unbindTouch];
 }
 
 -(void)drawRect:(CGRect) rect
@@ -51,8 +103,14 @@
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     
+    // Geometry.
+    _line = CGLineMake(self.a.center.x, self.a.center.y, self.b.center.x, self.b.center.y, self.a.radius * 2.0);
+    _point = CGPointMake(self.c.center.x, self.c.center.y);
+    
     // Test.
-    BOOL test = areLinesIntersectingConsideringWidth(_one, _other);
+    CGFloat distance = distanceBetweenPointAndLineSegment(_point, _line);
+    CGFloat limit = _line.width / 2.0 + self.c.radius;
+    BOOL test = (distance < limit);
     UIColor *color = (test) ? [UIColor blueColor] : [UIColor blackColor];
     
     // Color.
@@ -60,29 +118,11 @@
     CGContextSetFillColorWithColor(context, color.CGColor);
     CGContextSetAlpha(context, 0.5);
     
-    // _one
-    CGContextSetLineWidth(context, _one.width);
-    CGContextMoveToPoint(context, _one.a.x, _one.a.y);
-    CGContextAddLineToPoint(context, _one.b.x, _one.b.y);
+    // _line
+    CGContextSetLineWidth(context, _line.width);
+    CGContextMoveToPoint(context, _line.a.x, _line.a.y);
+    CGContextAddLineToPoint(context, _line.b.x, _line.b.y);
     CGContextStrokePath(context);
-    
-    // _other
-    CGContextSetLineWidth(context, _other.width);
-    CGContextMoveToPoint(context, _other.a.x, _other.a.y);
-    CGContextAddLineToPoint(context, _other.b.x, _other.b.y);
-    CGContextStrokePath(context);
-    
-    // Calculate circles.
-    calculateCirclesForLine(&(_one));
-    calculateCirclesForLine(&(_other));
-    
-    // _one
-    CGContextFillEllipseInRect (context, boundingBoxOfCircle(_one.circleA));
-    CGContextFillEllipseInRect (context, boundingBoxOfCircle(_one.circleB));
-    
-    // _other
-    CGContextFillEllipseInRect (context, boundingBoxOfCircle(_other.circleA));
-    CGContextFillEllipseInRect (context, boundingBoxOfCircle(_other.circleB));
 }
 
 

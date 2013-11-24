@@ -24,12 +24,16 @@
 @interface EPPZFileManager : EPPZSingleton
 
 @property (nonatomic, readonly) NSString *documentsDirectory;
+@property (nonatomic, readonly) NSString *cacheDirectory;
 +(EPPZFileManager*)sharedFileManager;
 
 #pragma mark - File Search
 
 -(NSString*)pathForFileNameInDocumentsDirectory:(NSString*) fileName;
 -(NSString*)pathForNewFileNameInDocumentsDirectory:(NSString*) fileName;
+-(NSString*)pathForFileNameInCacheDirectory:(NSString*) fileName;
+-(NSString*)pathForNewFileNameInCacheDirectory:(NSString*) fileName;
+
 -(NSString*)pathForFileNameInBundle:(NSString*) fileName;
 -(NSString*)pathForFileNameInBundle:(NSString*) fileName inDirectory:(NSString*) directoryPath;
 -(NSString*)pathForFileName:(NSString*) fileName;

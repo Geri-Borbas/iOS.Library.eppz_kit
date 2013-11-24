@@ -15,5 +15,9 @@
 #import <Foundation/Foundation.h>
 
 
-#define _LOG NSLog(@"%@ %@", NSStringFromClass(self.class), NSStringFromSelector(_cmd));
+#define METHOD_LOGGING YES
+#define LOG_METHOD if (METHOD_LOGGING) NSLog(@"%@ %@", NSStringFromClass(self.class), NSStringFromSelector(_cmd))
+#define LOG LOG_METHOD;
+#define _LOG LOG // Alias.
+
 void crash();

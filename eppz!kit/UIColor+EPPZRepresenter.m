@@ -20,6 +20,10 @@
 
 NSString *NSStringFromUIColor(UIColor *color)
 {
+    // Checks.
+    if (color == nil)
+    { return NSStringFromUIColor([UIColor blackColor]); }
+    
     const CGFloat *components = CGColorGetComponents(color.CGColor);
     return [NSString stringWithFormat:@"[%f, %f, %f, %f]",
             components[0],

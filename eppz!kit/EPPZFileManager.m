@@ -19,13 +19,14 @@
 {
     NSFileManager *_fileManager;
     
-    NSArray *_documentDirectoryPaths;
     NSString *_documentsDirectory;
+    NSString *_cacheDirectory;
 }
 @end
 
 
 #define DOCUMENTS [self documentsDirectory]
+#define CACHE [self cacheDirectory]
 
 
 @implementation EPPZFileManager
@@ -47,11 +48,20 @@
 {
     if (_documentsDirectory == nil)
     {
-        _documentDirectoryPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        _documentsDirectory = [_documentDirectoryPaths objectAtIndex:0];
+        NSArray *documentDirectoryPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        _documentsDirectory = [documentDirectoryPaths objectAtIndex:0];
     }
-    
     return _documentsDirectory;
+}
+
+-(NSString*)cacheDirectory
+{
+    if (_cacheDirectory == nil)
+    {
+        NSArray *cacheDirectoryPaths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+        _cacheDirectory = [cacheDirectoryPaths objectAtIndex:0];
+    }
+    return _cacheDirectory;
 }
 
 -(NSString*)pathForFileNameInDocumentsDirectory:(NSString*) fileName
@@ -68,6 +78,22 @@
 {
     NSString *path = [DOCUMENTS stringByAppendingPathComponent:fileName];
     return path;
+}
+
+-(NSString*)pathForNewFileNameInCacheDirectory:(NSString*) fileName
+{
+    NSString *path = [CACHE stringByAppendingPathComponent:fileName];
+    return path;
+}
+
+-(NSString*)pathForFileNameInCacheDirectory:(NSString*) fileName
+{
+    NSString *path = [CACHE stringByAppendingPathComponent:fileName];
+    
+    if ([_fileManager fileExistsAtPath:path])
+        return path;
+    else
+        return nil;
 }
 
 -(NSString*)pathForFileNameInBundle:(NSString*) fileName

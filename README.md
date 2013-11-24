@@ -3,6 +3,11 @@
 Feel free to file a pull request if you spot some errors.
 
 
+
+#### UICircle
+A lovely `UIImage` subclass that renders as a circle. Comes handy when debug geometry.
+
+
 #### EPPZDiatonicScale
 This latest member is a really specific piece of class. Converts a single music interval value (expressen in semitones) into a pitch value (expressed in segments). Also can step back and forth on a diatonic major or minor scale and return pitch result for that.
 ```Objective-C
@@ -245,6 +250,14 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 
 #### Version tracking
+
+* 1.6.5
+
+    + Added UICircle
+    + Added some UIImage extension (save to Documents or Cache)
+    + Fixes in EPPZGeometry
+    + Testbed for geometry functions
+        + With touch bindings
 
 * 1.6.3
 

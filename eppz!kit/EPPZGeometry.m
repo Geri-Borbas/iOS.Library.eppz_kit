@@ -70,12 +70,18 @@ CGSize sizeFromSizeWithMargin(CGSize size, CGFloat margin)
     
 CGRect rectFromRectWithMargin(CGRect rect, CGFloat margin)
 { return rectFromRectWithPadding(rect, -margin); }
+
+CGSize scaleSize(CGSize size, CGFloat scalar)
+{ return (CGSize){size.width * scalar, size.height * scalar}; }
     
 
 #pragma mark - Trigonometry
 
 CGVector vectorBetweenPoints(CGPoint from, CGPoint to)
 { return (CGVector){to.x - from.x, to.y - from.y}; }
+
+CGPoint vectorPointBetweenPoints(CGPoint from, CGPoint to)
+{ return (CGPoint){to.x - from.x, to.y - from.y}; }
 
 CGFloat distanceBetweenPoints(CGPoint from, CGPoint to)
 {
@@ -155,6 +161,14 @@ CGPoint rotateVectorPoint(CGPoint vectorPoint, CGFloat radians)
 
 
 #pragma mark - Circle features
+
+CGCircle CGCircleMake(CGPoint center, CGFloat radius)
+{
+    CGCircle circle;
+    circle.center = center;
+    circle.radius = radius;
+    return circle;
+}
 
 CGRect boundingBoxOfCircle(CGCircle circle)
 {
@@ -263,6 +277,37 @@ CGFloat distanceBetweenPointAndLine(CGPoint point, CGLine line)
     return absoluteValue(a * d - c * b) / sqrt(c * c + d * d);
 }
 
+CGFloat distanceBetweenPointAndLineSegment(CGPoint point, CGLine line)
+{
+    // From http://www.allegro.cc/forums/thread/589720/644831
+    CGFloat a = point.x - line.a.x;
+    CGFloat b = point.y - line.a.y;
+    CGFloat c = line.b.x - line.a.x;
+    CGFloat d = line.b.y - line.a.y;
+    
+    CGFloat e = a * c + b * d;
+    CGFloat f = c * c + d * d;
+    CGFloat test = e / f;
+    
+    CGPoint testPoint;
+    
+    if(test < 0.0)
+    { testPoint = line.a; }
+    
+    else if (test > 1.0)
+    { testPoint = line.b; }
+    
+    else
+    {
+        testPoint = (CGPoint){
+            line.a.x + test * c,
+            line.a.y + test * d
+        };
+    }
+    
+    return distanceBetweenPoints(point, testPoint);
+}
+
 BOOL isPointTriumphCCW(CGPoint first, CGPoint second, CGPoint third)
 { return ((third.y - first.y) * (second.x - first.x) > (second.y - first.y) * (third.x - first.x)); }
 
@@ -273,7 +318,7 @@ BOOL areLineSegmentsIntersecting(CGLine one, CGLine other)
             (isPointTriumphCCW(one.a, one.b, other.a) != isPointTriumphCCW(one.a, one.b, other.b)));
 }
 
-BOOL linesHaveCommonPoints(CGLine one, CGLine other)
+BOOL doLinesHaveCommonPoints(CGLine one, CGLine other)
 {
     return (CGPointEqualToPoint(one.a, other.a) ||
             CGPointEqualToPoint(one.a, other.b) ||
@@ -283,7 +328,7 @@ BOOL linesHaveCommonPoints(CGLine one, CGLine other)
 
 BOOL areLinesIntersecting(CGLine one, CGLine other)
 {
-    return (linesHaveCommonPoints(one, other) ||
+    return (doLinesHaveCommonPoints(one, other) ||
             areLineSegmentsIntersecting(one, other));
 }
 
@@ -296,7 +341,7 @@ void calculateCirclesForLine(CGLine *line)
     line->circleB = (CGCircle){line->b, line->width / 2.0};
 }
 
-BOOL areLinesOverlappingConsideringWidths(CGLine one, CGLine other)
+BOOL areLineEndpointsOverlappingConsideringWidths(CGLine one, CGLine other)
 {
     calculateCirclesForLine(&one);
     calculateCirclesForLine(&other);
@@ -325,21 +370,8 @@ BOOL isCircleOverlappingRect(CGCircle circle, CGRect rect)
 BOOL isCircleOverlappingLineConsideringWidth(CGCircle circle, CGLine line)
 {
     BOOL isOverlapping = NO;
-    BOOL withinInnerBounds = isCircleOverlappingRect(circle, boundingBoxOfLine(line));
-    if (withinInnerBounds)
-    {
-        // Within inner bounds simply measure line distance.
-        CGFloat widths = circle.radius + line.width / 2.0;
-        isOverlapping = (distanceBetweenPointAndLine(circle.center, line) <= widths);
-    }
-    else
-    {
-        // Without inner bounds endpints can still overlap.
-        calculateCirclesForLine(&line);
-        isOverlapping = areCirclesOverlapping(circle, line.circleA) ||
-                        areCirclesOverlapping(circle, line.circleB);
-    }
-    
+    CGFloat widths = circle.radius + line.width / 2.0;
+    isOverlapping = (distanceBetweenPointAndLineSegment(circle.center, line) <= widths);
     return isOverlapping;
 }
 

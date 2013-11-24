@@ -10,6 +10,8 @@
 		AE00588617C740990061146F /* EPPZBoolTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AE00588517C740990061146F /* EPPZBoolTools.m */; };
 		AE05144A17D1922D00F7FE5E /* EPPZVersions.m in Sources */ = {isa = PBXBuildFile; fileRef = AE05144917D1922D00F7FE5E /* EPPZVersions.m */; };
 		AE0F38BA17A459C500552157 /* NSDecimalNumber+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F38B917A459C500552157 /* NSDecimalNumber+LocalizedPrice.m */; };
+		AE3511B31841282700BCC751 /* UIImage+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3511B21841282700BCC751 /* UIImage+EPPZKit.m */; };
+		AE3511B71841886000BCC751 /* UICircle.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3511B61841886000BCC751 /* UICircle.m */; };
 		AE83531B1796317D005EE0DC /* EPPZAppStore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8353141796317D005EE0DC /* EPPZAppStore.m */; };
 		AE83531E1796317D005EE0DC /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE83531A1796317D005EE0DC /* SKProduct+LocalizedPrice.m */; };
 		AE89108F17F13472001CC4B5 /* EPPZRepresentableException.m in Sources */ = {isa = PBXBuildFile; fileRef = AE89108E17F13472001CC4B5 /* EPPZRepresentableException.m */; };
@@ -101,6 +103,10 @@
 		AE05144917D1922D00F7FE5E /* EPPZVersions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZVersions.m; sourceTree = "<group>"; };
 		AE0F38B817A459C500552157 /* NSDecimalNumber+LocalizedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+LocalizedPrice.h"; sourceTree = "<group>"; };
 		AE0F38B917A459C500552157 /* NSDecimalNumber+LocalizedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+LocalizedPrice.m"; sourceTree = "<group>"; };
+		AE3511B11841282700BCC751 /* UIImage+EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EPPZKit.h"; sourceTree = "<group>"; };
+		AE3511B21841282700BCC751 /* UIImage+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EPPZKit.m"; sourceTree = "<group>"; };
+		AE3511B51841886000BCC751 /* UICircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICircle.h; sourceTree = "<group>"; };
+		AE3511B61841886000BCC751 /* UICircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICircle.m; sourceTree = "<group>"; };
 		AE8353131796317D005EE0DC /* EPPZAppStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZAppStore.h; sourceTree = "<group>"; };
 		AE8353141796317D005EE0DC /* EPPZAppStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAppStore.m; sourceTree = "<group>"; };
 		AE8353191796317D005EE0DC /* SKProduct+LocalizedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+LocalizedPrice.h"; sourceTree = "<group>"; };
@@ -281,6 +287,24 @@
 				AE05144917D1922D00F7FE5E /* EPPZVersions.m */,
 			);
 			name = "□ Versions";
+			sourceTree = "<group>";
+		};
+		AE3511B41841883A00BCC751 /* □ UIImage+EPPZKit */ = {
+			isa = PBXGroup;
+			children = (
+				AE3511B11841282700BCC751 /* UIImage+EPPZKit.h */,
+				AE3511B21841282700BCC751 /* UIImage+EPPZKit.m */,
+			);
+			name = "□ UIImage+EPPZKit";
+			sourceTree = "<group>";
+		};
+		AE3511BB1841AC4C00BCC751 /* □ Circle */ = {
+			isa = PBXGroup;
+			children = (
+				AE3511B51841886000BCC751 /* UICircle.h */,
+				AE3511B61841886000BCC751 /* UICircle.m */,
+			);
+			name = "□ Circle";
 			sourceTree = "<group>";
 		};
 		AE83531217963126005EE0DC /* □ App Store */ = {
@@ -486,6 +510,8 @@
 				AE9C3D6B17975DAD00D01536 /* □ Alert */,
 				AEA0B27C179DF66B00439EB0 /* □ Paging scroll view controller */,
 				D8302F6017BB97E600472478 /* □ Label */,
+				AE3511B41841883A00BCC751 /* □ UIImage+EPPZKit */,
+				AE3511BB1841AC4C00BCC751 /* □ Circle */,
 			);
 			name = "❑ UIKit tools";
 			sourceTree = "<group>";
@@ -989,6 +1015,7 @@
 				AE9C40BB1794A0C800090A82 /* NSString+EPPZReachability.m in Sources */,
 				AE9C411C1794A4D600090A82 /* EPPZUserDefaults.m in Sources */,
 				AE9C41431794CA4A00090A82 /* EPPZFlatButton.m in Sources */,
+				AE3511B31841282700BCC751 /* UIImage+EPPZKit.m in Sources */,
 				AE83531B1796317D005EE0DC /* EPPZAppStore.m in Sources */,
 				AE89108F17F13472001CC4B5 /* EPPZRepresentableException.m in Sources */,
 				AE83531E1796317D005EE0DC /* SKProduct+LocalizedPrice.m in Sources */,
@@ -996,6 +1023,7 @@
 				AE9C3D7017975DB500D01536 /* EPPZAlert.m in Sources */,
 				AE9C3D7117975DB500D01536 /* EPPZAlert+Factory.m in Sources */,
 				AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */,
+				AE3511B71841886000BCC751 /* UICircle.m in Sources */,
 				AEA0B27F179DF68200439EB0 /* EPPZPagingScrollViewController.m in Sources */,
 				AE0F38BA17A459C500552157 /* NSDecimalNumber+LocalizedPrice.m in Sources */,
 				D84229BA1821893500B15EC8 /* EPPZDiatonicScale.m in Sources */,
