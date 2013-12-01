@@ -277,9 +277,9 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 
 * 1.6.6
-
+    + EPPZRandom
+    + NSArray+EPPZKit
     + UIFont+EPPZKit
-        + Tool for list available font names and family names
     + EPPZDevice
         + Included new device releases
 
