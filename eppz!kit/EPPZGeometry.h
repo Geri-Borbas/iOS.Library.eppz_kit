@@ -14,6 +14,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import "EPPZRandom.h"
 
 
 static NSString *const version = @"eppz!geometry 1.0.0";
@@ -28,7 +29,6 @@ BOOL isOdd(int scalar);
 
 #pragma mark - Randomizers
 
-CGFloat randomNumberInRange(CGFloat range);
 CGPoint randomPointInFrame(CGRect frame);
 
 

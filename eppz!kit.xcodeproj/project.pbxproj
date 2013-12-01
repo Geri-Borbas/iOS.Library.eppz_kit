@@ -12,6 +12,7 @@
 		AE0F38BA17A459C500552157 /* NSDecimalNumber+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F38B917A459C500552157 /* NSDecimalNumber+LocalizedPrice.m */; };
 		AE3511B31841282700BCC751 /* UIImage+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3511B21841282700BCC751 /* UIImage+EPPZKit.m */; };
 		AE3511B71841886000BCC751 /* UICircle.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3511B61841886000BCC751 /* UICircle.m */; };
+		AE6A81AA1844140A007DACC8 /* UIFont+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6A81A91844140A007DACC8 /* UIFont+EPPZKit.m */; };
 		AE83531B1796317D005EE0DC /* EPPZAppStore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8353141796317D005EE0DC /* EPPZAppStore.m */; };
 		AE83531E1796317D005EE0DC /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE83531A1796317D005EE0DC /* SKProduct+LocalizedPrice.m */; };
 		AE89108F17F13472001CC4B5 /* EPPZRepresentableException.m in Sources */ = {isa = PBXBuildFile; fileRef = AE89108E17F13472001CC4B5 /* EPPZRepresentableException.m */; };
@@ -53,6 +54,8 @@
 		AECCD95317A5DE4C001CAAFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */; };
 		AECCD95417A5DE90001CAAFD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95017A5DE4C001CAAFD /* StoreKit.framework */; };
 		AECCD95517A5DE90001CAAFD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */; };
+		AECDE7981842F3A6004C5ACF /* UIColor+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AECDE7971842F3A6004C5ACF /* UIColor+EPPZKit.m */; };
+		AECECBED18428C0F0062250B /* EPPZRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = AECECBEC18428C0F0062250B /* EPPZRandom.m */; };
 		AED43CA1182C7EB300E05FA6 /* TBGeometryLinesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED43C9F182C7EB300E05FA6 /* TBGeometryLinesViewController.m */; };
 		AED43CA2182C7EB300E05FA6 /* TBGeometryLinesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AED43CA0182C7EB300E05FA6 /* TBGeometryLinesViewController.xib */; };
 		AED43CA8182C7EEF00E05FA6 /* TBMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AED43CA6182C7EEF00E05FA6 /* TBMenuViewController.m */; };
@@ -107,6 +110,8 @@
 		AE3511B21841282700BCC751 /* UIImage+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EPPZKit.m"; sourceTree = "<group>"; };
 		AE3511B51841886000BCC751 /* UICircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICircle.h; sourceTree = "<group>"; };
 		AE3511B61841886000BCC751 /* UICircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICircle.m; sourceTree = "<group>"; };
+		AE6A81A81844140A007DACC8 /* UIFont+EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+EPPZKit.h"; sourceTree = "<group>"; };
+		AE6A81A91844140A007DACC8 /* UIFont+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+EPPZKit.m"; sourceTree = "<group>"; };
 		AE8353131796317D005EE0DC /* EPPZAppStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZAppStore.h; sourceTree = "<group>"; };
 		AE8353141796317D005EE0DC /* EPPZAppStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAppStore.m; sourceTree = "<group>"; };
 		AE8353191796317D005EE0DC /* SKProduct+LocalizedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+LocalizedPrice.h"; sourceTree = "<group>"; };
@@ -182,6 +187,10 @@
 		AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+EPPZKit.m"; sourceTree = "<group>"; };
 		AECCD95017A5DE4C001CAAFD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AECCD95117A5DE4C001CAAFD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AECDE7961842F3A6004C5ACF /* UIColor+EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+EPPZKit.h"; sourceTree = "<group>"; };
+		AECDE7971842F3A6004C5ACF /* UIColor+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+EPPZKit.m"; sourceTree = "<group>"; };
+		AECECBEB18428C0F0062250B /* EPPZRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZRandom.h; sourceTree = "<group>"; };
+		AECECBEC18428C0F0062250B /* EPPZRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZRandom.m; sourceTree = "<group>"; };
 		AED43C9E182C7EB300E05FA6 /* TBGeometryLinesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBGeometryLinesViewController.h; sourceTree = "<group>"; };
 		AED43C9F182C7EB300E05FA6 /* TBGeometryLinesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBGeometryLinesViewController.m; sourceTree = "<group>"; };
 		AED43CA0182C7EB300E05FA6 /* TBGeometryLinesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBGeometryLinesViewController.xib; sourceTree = "<group>"; };
@@ -305,6 +314,15 @@
 				AE3511B61841886000BCC751 /* UICircle.m */,
 			);
 			name = "□ Circle";
+			sourceTree = "<group>";
+		};
+		AE6A81A7184413F3007DACC8 /* □ UIFont+EPPZKit */ = {
+			isa = PBXGroup;
+			children = (
+				AE6A81A81844140A007DACC8 /* UIFont+EPPZKit.h */,
+				AE6A81A91844140A007DACC8 /* UIFont+EPPZKit.m */,
+			);
+			name = "□ UIFont+EPPZKit";
 			sourceTree = "<group>";
 		};
 		AE83531217963126005EE0DC /* □ App Store */ = {
@@ -512,6 +530,8 @@
 				D8302F6017BB97E600472478 /* □ Label */,
 				AE3511B41841883A00BCC751 /* □ UIImage+EPPZKit */,
 				AE3511BB1841AC4C00BCC751 /* □ Circle */,
+				AECDE7991842F3A9004C5ACF /* □ UIColor+EPPZKit */,
+				AE6A81A7184413F3007DACC8 /* □ UIFont+EPPZKit */,
 			);
 			name = "❑ UIKit tools";
 			sourceTree = "<group>";
@@ -597,6 +617,24 @@
 				AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */,
 			);
 			name = "□ NSDate+EPPZKit";
+			sourceTree = "<group>";
+		};
+		AECDE7991842F3A9004C5ACF /* □ UIColor+EPPZKit */ = {
+			isa = PBXGroup;
+			children = (
+				AECDE7961842F3A6004C5ACF /* UIColor+EPPZKit.h */,
+				AECDE7971842F3A6004C5ACF /* UIColor+EPPZKit.m */,
+			);
+			name = "□ UIColor+EPPZKit";
+			sourceTree = "<group>";
+		};
+		AECECBEF18428C8B0062250B /* □ Random */ = {
+			isa = PBXGroup;
+			children = (
+				AECECBEB18428C0F0062250B /* EPPZRandom.h */,
+				AECECBEC18428C0F0062250B /* EPPZRandom.m */,
+			);
+			name = "□ Random";
 			sourceTree = "<group>";
 		};
 		AED43CA3182C7EB700E05FA6 /* Lines */ = {
@@ -840,6 +878,7 @@
 				AE05144717D1921C00F7FE5E /* □ Versions */,
 				D825700018203B93008A40C9 /* □ Geometry */,
 				D84229B71821891700B15EC8 /* □ Diatonic scale */,
+				AECECBEF18428C8B0062250B /* □ Random */,
 			);
 			name = "❑ Tools";
 			sourceTree = "<group>";
@@ -1010,10 +1049,12 @@
 			files = (
 				AE922F87179381D60088E5E5 /* EPPZSingleton.m in Sources */,
 				AE922F88179381E70088E5E5 /* EPPZFileManager.m in Sources */,
+				AE6A81AA1844140A007DACC8 /* UIFont+EPPZKit.m in Sources */,
 				AE922F89179381ED0088E5E5 /* NSString+EPPZKit.m in Sources */,
 				AE9C40B81794A0A700090A82 /* EPPZReachability.m in Sources */,
 				AE9C40BB1794A0C800090A82 /* NSString+EPPZReachability.m in Sources */,
 				AE9C411C1794A4D600090A82 /* EPPZUserDefaults.m in Sources */,
+				AECDE7981842F3A6004C5ACF /* UIColor+EPPZKit.m in Sources */,
 				AE9C41431794CA4A00090A82 /* EPPZFlatButton.m in Sources */,
 				AE3511B31841282700BCC751 /* UIImage+EPPZKit.m in Sources */,
 				AE83531B1796317D005EE0DC /* EPPZAppStore.m in Sources */,
@@ -1031,6 +1072,7 @@
 				D825700318203BD2008A40C9 /* EPPZGeometry.m in Sources */,
 				AEC6888C17B313C000F2206F /* EPPZLabel.m in Sources */,
 				AEFC653817B81865004B5214 /* EPPZTimer.m in Sources */,
+				AECECBED18428C0F0062250B /* EPPZRandom.m in Sources */,
 				D8302F5F17BB965800472478 /* EPPZTagFinder.m in Sources */,
 				D8302F8C17BBF15700472478 /* EPPZGestureRecognizer.m in Sources */,
 				D8AD5DAC17BD0B84004BD9AF /* EPPZDevice.m in Sources */,

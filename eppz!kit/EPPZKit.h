@@ -13,7 +13,7 @@
 //
 
 
-static NSString *const kEPPZKitVersion = @"1.6.5";
+static NSString *const kEPPZKitVersion = @"1.6.6";
 
 
 //Base classes.
@@ -49,6 +49,8 @@ static NSString *const kEPPZKitVersion = @"1.6.5";
 #import "EPPZLabel.h"
 #import "UIImage+EPPZKit.h"
 #import "UICircle.h"
+#import "UIColor+EPPZKit.h"
+#import "UIFont+EPPZKit.h"
 
 //Model tools.
 #import "EPPZUserDefaults.h"

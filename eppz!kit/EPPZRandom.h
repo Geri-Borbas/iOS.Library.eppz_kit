@@ -1,8 +1,8 @@
 //
-//  NSArray+EPPZKit.h
+//  EPPZRandom.h
 //  eppz!kit
 //
-//  Created by Borbás Geri on 10/5/13.
+//  Created by Borbás Geri on 11/24/13.
 //  Copyright (c) 2013 eppz! development, LLC.
 //
 //  donate! by following http://www.twitter.com/_eppz
@@ -13,10 +13,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EPPZRandom.h"
 
 
-@interface NSArray (EPPZKit)
--(id)nextObjectAfterObject:(id) object;
--(id)randomObject;
-@end
+float randomFloat();
+float randomRoundedFloatInRange(float range);
+float randomIntegerInRange(int range);

@@ -1,8 +1,8 @@
 //
-//  NSArray+EPPZKit.h
+//  EPPZRandom.m
 //  eppz!kit
 //
-//  Created by Borbás Geri on 10/5/13.
+//  Created by Borbás Geri on 11/24/13.
 //  Copyright (c) 2013 eppz! development, LLC.
 //
 //  donate! by following http://www.twitter.com/_eppz
@@ -12,11 +12,23 @@
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
 #import "EPPZRandom.h"
 
 
-@interface NSArray (EPPZKit)
--(id)nextObjectAfterObject:(id) object;
--(id)randomObject;
-@end
+float randomFloat()
+{
+    int size = NSIntegerMax;
+    return (float)(arc4random() % size) / (float)size;
+}
+
+float randomRoundedFloatInRange(float range)
+{
+    if (range <= 0) return 0.0;
+    return (float)(arc4random() % (int)range);
+}
+
+float randomIntegerInRange(int range)
+{
+    if (range <= 0) return 0;
+    return arc4random() % (int)range;
+}

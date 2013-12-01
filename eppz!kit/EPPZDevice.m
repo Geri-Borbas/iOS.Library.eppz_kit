@@ -54,6 +54,7 @@ typedef enum
 
 -(NSDictionary*)deviceModelDataForMachineIDs
 {
+    // See 'iOS device model identifiers.xlsx' for details.
     return @{
     
              //iPad.
@@ -71,6 +72,10 @@ typedef enum
              @"iPad3,4" : @[ @"iPad 4", @"Wi-Fi", @"A1458" ],
              @"iPad3,5" : @[ @"iPad 4", @"GSM", @"A1459" ],
              @"iPad3,6" : @[ @"iPad 4", @"GSM+CDMA", @"A1460" ],
+             @"iPad4,1" : @[ @"iPad Air", @"Wi‑Fi", @"A1474" ],
+             @"iPad4,2" : @[ @"iPad Air", @"Cellular", @"A1475" ],
+             @"iPad4,4" : @[ @"iPad mini 2G", @"Wi‑Fi", @"A1489" ],
+             @"iPad4,5" : @[ @"iPad mini 2G", @"Cellular", @"A1517" ],
              
              //iPhone.
              @"iPhone1,1" : @[ @"iPhone 2G", @"GSM", @"A1203" ],
@@ -82,6 +87,10 @@ typedef enum
              @"iPhone4,1" : @[ @"iPhone 4S", @"GSM+CDMA", @"A1387 / A14311" ],
              @"iPhone5,1" : @[ @"iPhone 5", @"GSM", @"A1428" ],
              @"iPhone5,2" : @[ @"iPhone 5", @"GSM+CDMA", @"A1429 / A14421" ],
+             @"iPhone5,3" : @[ @"iPhone 5C", @"GSM", @"A1456 / A1532" ],
+             @"iPhone5,4" : @[ @"iPhone 5C", @"Global", @"A1507 / A1516 / A1526 / A1529" ],
+             @"iPhone6,1" : @[ @"iPhone 5S", @"GSM", @"A1433 / A1533" ],
+             @"iPhone6,2" : @[ @"iPhone 5S", @"Global", @"A1457 / A1518 / A1528 / A1530" ],
              
              //iPod.
              @"iPod1,1" : @[ @"iPod touch 1G", @"-", @"A1213" ],

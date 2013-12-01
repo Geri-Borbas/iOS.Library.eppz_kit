@@ -29,14 +29,8 @@ BOOL isOdd(int scalar)
 
 #pragma mark - Randomizers
 
-CGFloat randomNumberInRange(CGFloat range)
-{
-    if (range <= 0) return 0.0;
-    return (float)(arc4random() % (int)range);
-}
-
 CGPoint randomPointInFrame(CGRect frame)
-{ return (CGPoint){frame.origin.x + randomNumberInRange(frame.size.width), frame.origin.y + randomNumberInRange(frame.size.height)}; }
+{ return (CGPoint){frame.origin.x + randomRoundedFloatInRange(frame.size.width), frame.origin.y + randomRoundedFloatInRange(frame.size.height)}; }
 
 
 #pragma mark CGSize, CGRect helpers

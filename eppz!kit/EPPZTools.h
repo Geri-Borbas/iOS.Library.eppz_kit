@@ -21,3 +21,4 @@
 #define _LOG LOG // Alias.
 
 void crash();
+void getFontList();

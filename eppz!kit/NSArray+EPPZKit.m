@@ -33,4 +33,13 @@
     return [self objectAtIndex:nextIndex];
 }
 
+-(id)randomObject
+{
+    // Checks.
+    if (self.count == 0) return nil;
+    
+    NSUInteger randomIndex = randomIntegerInRange(self.count);
+    return [self objectAtIndex:randomIndex];
+}
+
 @end

@@ -4,6 +4,30 @@ Feel free to file a pull request if you spot some errors.
 
 
 
+#### EPPZRandom
+Some random shortcuts.
+```Objective-C
+alpha = randomFloat();
+index = randomIntegerInRange(length);
+```
+
+
+#### NSArray extensions
+NSArray object picking.
+```Objective-C
+randomItem = [this.items randomObject];
+nextItem = [this.items nextObjectAfterObject:currentItem];
+```
+
+
+#### UIColor extensions
+Some handy `UIColor` tool to mix colors runtime.
+```Objective-C
+overlayColor = [backgroundColor colorWithAlpha:0.5];
+opaqueTextColor = [backgroundColor blendWithColor:foregroundColor amount:0.5];
+```
+
+
 #### UICircle
 A lovely `UIImage` subclass that renders as a circle. Comes handy when debug geometry.
 
@@ -250,6 +274,19 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 
 #### Version tracking
+
+
+* 1.6.6
+
+    + UIFont+EPPZKit
+        + Tool for list available font names and family names
+    + EPPZDevice
+        + Included new device releases
+
+* 1.6.6
+
+    + Added EPPZRandom
+        + Also randomObject to NSArray extensions
 
 * 1.6.5
 
