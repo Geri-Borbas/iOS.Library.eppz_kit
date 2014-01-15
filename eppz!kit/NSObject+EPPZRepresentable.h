@@ -34,8 +34,26 @@ static NSString *const kEPPZRepresentableErrorDomain = @"__eppz.representable";
 
 @protocol EPPZRepresentable <NSObject>
 @optional
+
++(id)instance;
+
 +(NSArray*)representablePropertyNames;
--(id)instance;
++(NSDictionary*)propertyNamesForRepresentedPropertyNames;
+
++(Class)classForRepresentedClassName:(NSString*) representedClassName; // Template to return classes for represented class names.
++(NSString*)representedClassNameForClass:(Class) class; // Template to return represented class names for classes.
+
++(NSString*)representedClassNameKey; // Key for value that match classes upon reconstruction / representation.
+
++(BOOL)representID;
++(BOOL)representClass;
++(BOOL)representType;
+
++(BOOL)reconstructID;
++(BOOL)reconstructClass;
++(BOOL)reconstructType;
+
+
 @end
 
 
@@ -46,10 +64,17 @@ static NSString *const kEPPZRepresentableErrorDomain = @"__eppz.representable";
 +(id)representableWithDictionaryRepresentation:(NSDictionary*) dictionaryRepresentation;
 
 #pragma mark - Subclass templates
--(void)willStore; //Before represent into a dictionary.
--(void)didStore; //After represent into a dictionary.
--(void)willLoad; //Before populate values from a dictionary.
--(void)didLoad; //After populated values from a dictionary.
+
+// Deprecated.
+-(void)willStore;
+-(void)didStore;
+-(void)willLoad;
+-(void)didLoad;
+
+-(void)willRepresented; //Before represent into a dictionary.
+-(void)didRepresented; //After represent into a dictionary.
+-(void)willReconstructed; //Before populate values from a dictionary.
+-(void)didReconstructed; //After populated values from a dictionary.
 
 @end
 
