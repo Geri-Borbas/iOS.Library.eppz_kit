@@ -244,6 +244,24 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
 
 #pragma mark - Represent
 
+-(Class)classOfPropertyNamed:(NSString*) propertyName
+{
+    // Get Class of property to be populated.
+    Class propertyClass = nil;
+    objc_property_t property = class_getProperty([self class], [propertyName UTF8String]);
+    NSString *propertyAttributes = [NSString stringWithCString:property_getAttributes(property) encoding:NSUTF8StringEncoding];
+    NSArray *splitPropertyAttributes = [propertyAttributes componentsSeparatedByString:@","];
+    if (splitPropertyAttributes.count > 0)
+    {
+        // xcdoc://ios//library/prerelease/ios/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtPropertyIntrospection.html
+        NSString *encodeType = splitPropertyAttributes[0];
+        NSArray *splitEncodeType = [encodeType componentsSeparatedByString:@"\""];
+        NSString *className = splitEncodeType[1];
+        propertyClass = NSClassFromString(className);
+    }
+    return propertyClass;
+}
+
 -(NSDictionary*)dictionaryRepresentation
 {
     //Top-level dictionary.
@@ -539,8 +557,22 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
             // Create runtime value.
             id runtimeValue = [self runtimeValueFromRepresentationValue:eachRepresentationValue objectPool:objectPool];
             
-            // Try to set.
+            // Get property name.
             NSString *runtimeKey = [self propertyNameForRepresentedPropertyName:eachRepresentedPropertyName];
+            
+                // Setting NSSet from NSArray (CoreData relationship setting workaround).
+                if ([runtimeValue isKindOfClass:[NSArray class]])
+                {
+                    // Look if the property is an NSSet.
+                    Class propertyClass = [instance classOfPropertyNamed:runtimeKey];
+                    if ([propertyClass isSubclassOfClass:[NSSet class]])
+                    {
+                        NSSet *runtimeSet = [NSSet setWithArray:runtimeValue];
+                        runtimeValue = runtimeSet;
+                    }
+                }
+
+            // Try to set.
             @try { [instance setValue:runtimeValue forKeyPath:runtimeKey]; }
             @catch (NSException *exception) { }
             @finally { }
@@ -576,9 +608,16 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
         // Create representable.
         runtimeValue = [class representableWithDictionaryRepresentation:representationValueDictionary objectPool:objectPool];
         
+        // Look for ID, create if none.
+        NSString *representableID = nil;
+        if ([[representationValueDictionary allKeys] containsObject:EPPZRepresentableIDKey])
+        { representableID = [representationValueDictionary objectForKey:EPPZRepresentableIDKey]; }
+        else
+        { representableID = @(representationValueDictionary.hash).stringValue; }
+        
         // Track that this object have reconstructed already (with the stored ID).
         [NSObject addRepresentable:runtimeValue
-                             forID:[representationValueDictionary objectForKey:EPPZRepresentableIDKey]
+                             forID:representableID
                             toPool:objectPool];
     }
     

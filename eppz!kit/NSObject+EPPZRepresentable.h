@@ -21,7 +21,7 @@
 #import "EPPZRepresentableException.h"
 
 
-#define EPPZ_REPRESENTABLE_LOGGING NO
+#define EPPZ_REPRESENTABLE_LOGGING YES
 #define ERLog if (EPPZ_REPRESENTABLE_LOGGING) NSLog
 
 #define EPPZ_REPRESENTABLE_DEBUG_LOGGING YES
@@ -65,6 +65,7 @@ static NSString *const kEPPZRepresentableErrorDomain = @"__eppz.representable";
 #pragma mark - General features
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 +(id)representableWithDictionaryRepresentation:(NSDictionary*) dictionaryRepresentation;
+-(Class)classOfPropertyNamed:(NSString*) propertyName;
 
 #pragma mark - Subclass templates
 

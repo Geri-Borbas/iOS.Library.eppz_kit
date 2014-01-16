@@ -275,6 +275,9 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.6.9
+    + EPPZRepresentable handles NSSet reconstruction
+
 * 1.6.8
     + `-(NSDate*)dateValue;` string extension
         + With some tests
