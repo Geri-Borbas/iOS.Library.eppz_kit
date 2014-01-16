@@ -13,7 +13,7 @@
 //
 
 
-static NSString *const kEPPZKitVersion = @"1.6.7";
+static NSString *const kEPPZKitVersion = @"1.6.8";
 
 
 //Base classes.

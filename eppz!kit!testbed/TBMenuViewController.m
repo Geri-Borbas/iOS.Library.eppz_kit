@@ -33,9 +33,41 @@
 {
     [super viewDidAppear:animated];
     
+    // Only dateValue test for now.
+    [self testDateValue];
+    return;
+    
     Class controllerClass = NSClassFromString(@"TBGeometryLinesViewController");
     UIViewController *controller = [[controllerClass alloc] initWithNibName:@"TBGeometryLinesViewController" bundle:nil];
     [self presentModalViewController:controller animated:YES];
+}
+
+
+#define _(dateString) [self logDateStringTest:dateString]
+-(void)logDateStringTest:(NSString*) string
+{ NSLog(@"'%@' dateValue is <%@>", string, string.dateValue); }
+
+-(void)testDateValue
+{
+    // Tested in GMT+1 (Hungary).
+    
+    _(@"2014-01-16");
+    _(@"2014.01.16");
+    _(@"2014/01/16");
+    
+    _(@"2014 Jan 16");
+    _(@"2014 Jan 16th");
+    _(@"20140116");
+    
+    _(@"01-16-2014");
+    _(@"01.16.2014");
+    _(@"01/16/2014");
+    _(@"16 January 2014");
+    
+    _(@"01-16-2014 17:05:05");
+    _(@"01-16-2014 T 17:05:05 UTC");
+    _(@"17:05, 1 January 2014 (UTC)");
+    
 }
 
 

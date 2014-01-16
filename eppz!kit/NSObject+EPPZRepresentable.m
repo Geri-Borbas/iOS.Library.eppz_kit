@@ -20,7 +20,7 @@ __strong static NSMutableDictionary *__objectPools;
 
 
 static NSString *const EPPZRepresentableIDKey = @"__eppz.representable.id";
-static NSString *const __EPPZRepresentableClassKey = @"__eppz.representable.class";
+static NSString *const EPPZRepresentableClassKey = @"__eppz.representable.class";
 static NSString *const EPPZRepresentableTypeKey = @"__eppz.representable.type";
 static NSString *const EPPZRepresentableInstanceType = @"instance";
 static NSString *const EPPZRepresentableReferenceType = @"reference";
@@ -94,7 +94,7 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
 
 
 +(NSString*)representedClassNameKey
-{ return __EPPZRepresentableClassKey; }
+{ return EPPZRepresentableClassKey; }
 
 // Alias.
 -(NSString*)representedClassNameKey
@@ -107,6 +107,12 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
 +(BOOL)reconstructID { return YES; }
 +(BOOL)reconstructClass { return YES; }
 +(BOOL)reconstructType { return YES; }
+
++(id)representedValueForValue:(id) value
+{ return nil; }
+
++(id)valueForRepresentedValue:(id) representedValue
+{ return nil; }
 
 
 #pragma mark - Feature management
@@ -364,7 +370,11 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
         }
     
         ERLog(@"EPPZRepresentable represent '%@.%@'...", NSStringFromClass(self.class), propertyName);
-        
+    
+    // Try subclass representation value.
+    
+        id subclassRepresentationValue = [self.class representedValueForValue:runtimeValue];
+    
     // EPPZRepresentable
     
         if ([runtimeValue conformsToProtocol:@protocol(EPPZRepresentable)])
@@ -416,6 +426,13 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
             }];
             
             return representationDictionary;
+        }
+    
+    // Subclass representation value
+    
+        else if (subclassRepresentationValue != nil)
+        {
+            return subclassRepresentationValue;
         }
     
     // The rest of the types goes trough representer.
@@ -540,6 +557,9 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
 {
     id runtimeValue;
     
+    // Check subclass implementation.
+    id subclassRuntimeValue = [self.class valueForRepresentedValue:representationValue];
+    
     // Look for <EPPZRepresentable> or NSDictionary
     if ([representationValue isKindOfClass:[NSDictionary class]])
     {
@@ -579,6 +599,12 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
         
         // Whoa, remains a mutable array.
         runtimeValue = runtimeArray;
+    }
+    
+    // Subclass implementation.
+    else if (subclassRuntimeValue != nil)
+    {
+        runtimeValue = subclassRuntimeValue;
     }
     
     // Simply return arbitrary value.

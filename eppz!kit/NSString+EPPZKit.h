@@ -28,5 +28,7 @@
 -(NSString*)urlEncode;
 -(NSString*)urlDecode;
 
+-(NSDate*)dateValue;
+
 
 @end
