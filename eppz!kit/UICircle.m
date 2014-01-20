@@ -2,7 +2,7 @@
 //  UICircle.m
 //  eppz!kit
 //
-//  Created by Gardrobe on 11/24/13.
+//  Created by Borbás Geri on 11/24/13.
 //  Copyright (c) 2013 eppz! development, LLC.
 //
 //  donate! by following http://www.twitter.com/_eppz

@@ -64,6 +64,7 @@
 		AED43CB1182C84D000E05FA6 /* TBGeometryLinesView.m in Sources */ = {isa = PBXBuildFile; fileRef = AED43CB0182C84D000E05FA6 /* TBGeometryLinesView.m */; };
 		AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */; };
 		AEEBDE7E18008C72001A3255 /* NSArray+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEBDE7D18008C72001A3255 /* NSArray+EPPZKit.m */; };
+		AEF1C56A188DECBC00068D4D /* EPPZColorThemeTestbed.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF1C567188DECA100068D4D /* EPPZColorThemeTestbed.m */; };
 		AEFC653817B81865004B5214 /* EPPZTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFC653717B81865004B5214 /* EPPZTimer.m */; };
 		D81E3DBC17CCEC1A00B2C7A4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81E3DBB17CCEC1A00B2C7A4 /* AdSupport.framework */; };
 		D81E3DBE17CCEC1F00B2C7A4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D81E3DBD17CCEC1F00B2C7A4 /* libz.dylib */; };
@@ -207,6 +208,8 @@
 		AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZAppStoreCallbacks.m; sourceTree = "<group>"; };
 		AEEBDE7C18008C72001A3255 /* NSArray+EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+EPPZKit.h"; sourceTree = "<group>"; };
 		AEEBDE7D18008C72001A3255 /* NSArray+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EPPZKit.m"; sourceTree = "<group>"; };
+		AEF1C566188DECA100068D4D /* EPPZColorThemeTestbed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZColorThemeTestbed.h; sourceTree = "<group>"; };
+		AEF1C567188DECA100068D4D /* EPPZColorThemeTestbed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZColorThemeTestbed.m; sourceTree = "<group>"; };
 		AEFC653617B81865004B5214 /* EPPZTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZTimer.h; sourceTree = "<group>"; };
 		AEFC653717B81865004B5214 /* EPPZTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZTimer.m; sourceTree = "<group>"; };
 		D81E3DBB17CCEC1A00B2C7A4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -666,6 +669,8 @@
 		AED43CAA182C7EF300E05FA6 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				AEF1C566188DECA100068D4D /* EPPZColorThemeTestbed.h */,
+				AEF1C567188DECA100068D4D /* EPPZColorThemeTestbed.m */,
 				AED43CAE182C816300E05FA6 /* Button */,
 				AED43CA5182C7EEF00E05FA6 /* TBMenuViewController.h */,
 				AED43CA6182C7EEF00E05FA6 /* TBMenuViewController.m */,
@@ -1135,6 +1140,7 @@
 				AED43CB1182C84D000E05FA6 /* TBGeometryLinesView.m in Sources */,
 				D8AD5DC117BD30CD004BD9AF /* EPPZGameUser.m in Sources */,
 				D8AD5DC517BD3895004BD9AF /* EPPZGameProgress.m in Sources */,
+				AEF1C56A188DECBC00068D4D /* EPPZColorThemeTestbed.m in Sources */,
 				D8B1BC1B17C7A17F0071763B /* UIView+EPPZRepresentable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

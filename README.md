@@ -295,6 +295,9 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.7.2
+    + Merge changes
+
 * 1.7.1
     + NSDictionary+EPPZKit
     + EPPZPropertySynchronizator
