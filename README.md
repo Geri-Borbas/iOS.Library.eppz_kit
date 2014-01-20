@@ -3,6 +3,26 @@
 Feel free to file a pull request if you spot some errors.
 
 
+#### EPPZPropertySynchronizator
+Keep the properties of two objects synchronized along a given property map. If any value changes, it sets (tries to set) the matching property for the other object.
+```Objective-C
+// Keep a user model object synced with the UI, and vica-versa.
+NSDictionary *map = @{
+                      @"name" : @"nameTextField.text",
+                      @"email" : @"emailTextField.text"
+                      };
+self.synchronizator = [EPPZPropertySynchronizator mapperWithInstance:self.user
+                                                            instance:self
+                                                         propertyMap:map];
+```
+
+
+#### NSDictionary extensions
+Swap NSDictionary objects with keys.
+```Objective-C
+inverse = [this.map dictionaryBySwappingKeysAndValues];
+```
+
 
 #### EPPZRandom
 Some random shortcuts.
@@ -274,6 +294,11 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 
 #### Version tracking
+
+* 1.7.1
+    + NSDictionary+EPPZKit
+    + EPPZPropertySynchronizator
+    + Tiny EPPZRepresentable hack
 
 * 1.6.9
     + EPPZRepresentable handles NSSet reconstruction

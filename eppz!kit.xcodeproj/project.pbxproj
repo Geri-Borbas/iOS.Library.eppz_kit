@@ -76,6 +76,8 @@
 		D8302F6717BBA5C500472478 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8302F6417BB990F00472478 /* QuartzCore.framework */; };
 		D8302F8C17BBF15700472478 /* EPPZGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8302F8B17BBF15700472478 /* EPPZGestureRecognizer.m */; };
 		D84229BA1821893500B15EC8 /* EPPZDiatonicScale.m in Sources */ = {isa = PBXBuildFile; fileRef = D84229B91821893500B15EC8 /* EPPZDiatonicScale.m */; };
+		D880A8B2188DA4170037A000 /* NSDictionary+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D880A8B1188DA4170037A000 /* NSDictionary+EPPZKit.m */; };
+		D880A8B6188DA6C80037A000 /* EPPZPropertySynchronizator.m in Sources */ = {isa = PBXBuildFile; fileRef = D880A8B5188DA6C80037A000 /* EPPZPropertySynchronizator.m */; };
 		D8AD5DAC17BD0B84004BD9AF /* EPPZDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */; };
 		D8AD5DB017BD22BB004BD9AF /* NSObject+EPPZRepresentable.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DAF17BD22BB004BD9AF /* NSObject+EPPZRepresentable.m */; };
 		D8AD5DB817BD2711004BD9AF /* EPPZEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DB717BD2711004BD9AF /* EPPZEntity.m */; };
@@ -225,6 +227,10 @@
 		D84229B81821893500B15EC8 /* EPPZDiatonicScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZDiatonicScale.h; sourceTree = "<group>"; };
 		D84229B91821893500B15EC8 /* EPPZDiatonicScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZDiatonicScale.m; sourceTree = "<group>"; };
 		D871FC8617C777F40085899F /* EPPZTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZTools.h; sourceTree = "<group>"; };
+		D880A8B0188DA4170037A000 /* NSDictionary+EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+EPPZKit.h"; sourceTree = "<group>"; };
+		D880A8B1188DA4170037A000 /* NSDictionary+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+EPPZKit.m"; sourceTree = "<group>"; };
+		D880A8B4188DA6C80037A000 /* EPPZPropertySynchronizator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZPropertySynchronizator.h; sourceTree = "<group>"; };
+		D880A8B5188DA6C80037A000 /* EPPZPropertySynchronizator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZPropertySynchronizator.m; sourceTree = "<group>"; };
 		D8AD5DAA17BD0B84004BD9AF /* EPPZDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZDevice.h; sourceTree = "<group>"; };
 		D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZDevice.m; sourceTree = "<group>"; };
 		D8AD5DAE17BD22BB004BD9AF /* NSObject+EPPZRepresentable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EPPZRepresentable.h"; sourceTree = "<group>"; };
@@ -826,6 +832,24 @@
 			name = "□ Diatonic scale";
 			sourceTree = "<group>";
 		};
+		D880A8AF188DA3FA0037A000 /* NSDictionary+EPPZKit */ = {
+			isa = PBXGroup;
+			children = (
+				D880A8B0188DA4170037A000 /* NSDictionary+EPPZKit.h */,
+				D880A8B1188DA4170037A000 /* NSDictionary+EPPZKit.m */,
+			);
+			name = "NSDictionary+EPPZKit";
+			sourceTree = "<group>";
+		};
+		D880A8B3188DA6AA0037A000 /* □ Property synchronizator */ = {
+			isa = PBXGroup;
+			children = (
+				D880A8B4188DA6C80037A000 /* EPPZPropertySynchronizator.h */,
+				D880A8B5188DA6C80037A000 /* EPPZPropertySynchronizator.m */,
+			);
+			name = "□ Property synchronizator";
+			sourceTree = "<group>";
+		};
 		D8AD5DAD17BD0E01004BD9AF /* □ Device */ = {
 			isa = PBXGroup;
 			children = (
@@ -879,6 +903,8 @@
 				D825700018203B93008A40C9 /* □ Geometry */,
 				D84229B71821891700B15EC8 /* □ Diatonic scale */,
 				AECECBEF18428C8B0062250B /* □ Random */,
+				D880A8AF188DA3FA0037A000 /* NSDictionary+EPPZKit */,
+				D880A8B3188DA6AA0037A000 /* □ Property synchronizator */,
 			);
 			name = "❑ Tools";
 			sourceTree = "<group>";
@@ -1067,6 +1093,7 @@
 				AE3511B71841886000BCC751 /* UICircle.m in Sources */,
 				AEA0B27F179DF68200439EB0 /* EPPZPagingScrollViewController.m in Sources */,
 				AE0F38BA17A459C500552157 /* NSDecimalNumber+LocalizedPrice.m in Sources */,
+				D880A8B6188DA6C80037A000 /* EPPZPropertySynchronizator.m in Sources */,
 				D84229BA1821893500B15EC8 /* EPPZDiatonicScale.m in Sources */,
 				AECCD94D17A5D80E001CAAFD /* NSDate+EPPZKit.m in Sources */,
 				D825700318203BD2008A40C9 /* EPPZGeometry.m in Sources */,
@@ -1083,6 +1110,7 @@
 				D8B1BC1E17C7BE030071763B /* EPPZRepresenter.m in Sources */,
 				AEBA295417C8339600C3DA9F /* EPPZAnalytics.m in Sources */,
 				AEBA295517C8339600C3DA9F /* EPPZAnalyticsService.m in Sources */,
+				D880A8B2188DA4170037A000 /* NSDictionary+EPPZKit.m in Sources */,
 				AEBA295617C8339600C3DA9F /* EPPZAnalyticsTimer.m in Sources */,
 				AEBA295717C8339600C3DA9F /* EPPZGoogleAnalyticsService.m in Sources */,
 				D81E3DC217CD00AF00B2C7A4 /* UIColor+EPPZRepresenter.m in Sources */,

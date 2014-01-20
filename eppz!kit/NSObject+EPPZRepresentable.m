@@ -462,6 +462,9 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
 
 +(id)representableWithDictionaryRepresentation:(NSDictionary*) dictionaryRepresentation
 {
+    // Checks.
+    if (dictionaryRepresentation.count == 0) return nil;
+    
     //Reconstruct.
     id representable = [self representableWithDictionaryRepresentation:dictionaryRepresentation objectPool:nil];
 
