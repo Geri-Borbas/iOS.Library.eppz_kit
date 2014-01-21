@@ -1,5 +1,6 @@
 ## ![eppz!kit](http://eppz.eu/beacons/eppz!.png) eppz!kit
 [![Build Status](https://travis-ci.org/eppz/eppz-kit.png?branch=master)](https://travis-ci.org/eppz/eppz-kit) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/eppz/eppz-kit/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 **The collection of the usefuls. Objective-C everydayers.** You could use it like you would do with any other static library (as Apple recommends [Using Static Libraries in iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)), or just grab some individual class, they are not that coupled (just watch the imports at the top of .h files). Google Analytics SDK have some specific build settings (check Analytics build settings.png for details).
 Feel free to file a pull request if you spot some errors.
 
