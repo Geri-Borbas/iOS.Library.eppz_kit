@@ -78,4 +78,39 @@
 }
 
 
+#pragma mark - (NSStringDrawing) compatibility
+
+-(CGSize)_sizeWithFont:(UIFont*) font
+{
+    // Checks.
+    if (font == nil) return CGSizeZero;
+    
+    #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_7_0
+        return [self sizeWithAttributes:@{ NSFontAttributeName : font}];
+    #else
+        return [self sizeWithFont:font];
+    #endif
+}
+
+
+#pragma mark - (UIStringDrawing) compatibility
+
+-(void)_drawAtPoint:(CGPoint) point withFont:(UIFont*) font foregroundColor:(UIColor*) color
+{
+    // Checks.
+    if (font == nil) return;
+    if (color == nil) color = [UIColor clearColor];
+    
+    #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_7_0
+        [self drawAtPoint:point withAttributes:@{
+                                                 NSFontAttributeName : font,
+                                                 NSForegroundColorAttributeName : color
+                                                 }];
+    #else
+        [color setFill];
+        [self drawAtPoint:point withFont:font];
+    #endif
+}
+
+
 @end

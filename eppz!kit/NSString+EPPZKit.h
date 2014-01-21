@@ -13,6 +13,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CoreGraphics/CoreGraphics.h>
 #import <CommonCrypto/CommonDigest.h>
 #import <CoreFoundation/CoreFoundation.h>
 
@@ -29,6 +31,12 @@
 -(NSString*)urlDecode;
 
 -(NSDate*)dateValue;
+
+#pragma mark - (NSStringDrawing) compatibility
+-(CGSize)_sizeWithFont:(UIFont*) font;
+
+#pragma mark - (UIStringDrawing) compatibility
+-(void)_drawAtPoint:(CGPoint) point withFont:(UIFont*) font foregroundColor:(UIColor*) color;
 
 
 @end

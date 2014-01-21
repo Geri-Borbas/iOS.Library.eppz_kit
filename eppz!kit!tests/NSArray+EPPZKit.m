@@ -15,11 +15,11 @@
 #import <XCTest/XCTest.h>
 
 
-@interface NSArray_EPPZKit : XCTestCase
+@interface _NSArray_EPPZKit : XCTestCase
 @end
 
 
-@implementation NSArray_EPPZKit
+@implementation _NSArray_EPPZKit
 
 
 -(void)testNSArray_EPPZKit

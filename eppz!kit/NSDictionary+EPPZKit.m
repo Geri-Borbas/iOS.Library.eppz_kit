@@ -1,6 +1,6 @@
 //
 //  NSDictionary+EPPZKit.m
-//  Totoya parenting
+//  eppz!kit
 //
 //  Created by Borbás Geri on 20/01/14.
 //  Copyright (c) 2014 eppz! development, LLC.

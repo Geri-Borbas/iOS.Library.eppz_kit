@@ -15,11 +15,11 @@
 #import <XCTest/XCTest.h>
 
 
-@interface EPPZBoolTools : XCTestCase
+@interface _EPPZBoolTools : XCTestCase
 @end
 
 
-@implementation EPPZBoolTools
+@implementation _EPPZBoolTools
 
 
 -(void)test
