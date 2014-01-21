@@ -51,6 +51,7 @@
 		AEBD4714188DF74400BAD7A8 /* NSArray+EPPZKit_tests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD4713188DF74400BAD7A8 /* NSArray+EPPZKit_tests.m */; };
 		AEBD4718188DF77000BAD7A8 /* TTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD4717188DF77000BAD7A8 /* TTools.m */; };
 		AEBD471B188DFDFF00BAD7A8 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = AEBD471A188DFDFF00BAD7A8 /* .travis.yml */; };
+		AEBD4721188E018800BAD7A8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AEBD4720188E018800BAD7A8 /* .gitignore */; };
 		AEC4FDA917CC69720092F28C /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC4FDA817CC69720092F28C /* libGoogleAnalyticsServices.a */; };
 		AEC6888C17B313C000F2206F /* EPPZLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC6888B17B313C000F2206F /* EPPZLabel.m */; };
 		AECCD94D17A5D80E001CAAFD /* NSDate+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */; };
@@ -215,6 +216,7 @@
 		AEBD4716188DF77000BAD7A8 /* TTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTools.h; sourceTree = "<group>"; };
 		AEBD4717188DF77000BAD7A8 /* TTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTools.m; sourceTree = "<group>"; };
 		AEBD471A188DFDFF00BAD7A8 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
+		AEBD4720188E018800BAD7A8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		AEC4FDA517CC690A0092F28C /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
 		AEC4FDA617CC690A0092F28C /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
 		AEC4FDA717CC690A0092F28C /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 			children = (
 				AE922FC3179385ED0088E5E5 /* README.md */,
 				AEBD471A188DFDFF00BAD7A8 /* .travis.yml */,
+				AEBD4720188E018800BAD7A8 /* .gitignore */,
 				AE922F841793817C0088E5E5 /* EPPZKit.h */,
 				D8AD5DB217BD2314004BD9AF /* ❑ Base classes */,
 				D8AD5DB317BD2328004BD9AF /* ❑ Wrappers */,
@@ -1162,6 +1165,7 @@
 				AE922FB4179385300088E5E5 /* _Default@2x.png in Resources */,
 				AE922FB6179385300088E5E5 /* _Default-568h@2x.png in Resources */,
 				AE922FBC179385300088E5E5 /* TBHtmlStringViewController.xib in Resources */,
+				AEBD4721188E018800BAD7A8 /* .gitignore in Resources */,
 				D822ACAC17C67D5E0076DE10 /* user.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
