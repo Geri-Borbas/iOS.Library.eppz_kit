@@ -47,6 +47,9 @@
 		AEBA295717C8339600C3DA9F /* EPPZGoogleAnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBA294C17C8339600C3DA9F /* EPPZGoogleAnalyticsService.m */; };
 		AEBA295817C8339600C3DA9F /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBA295217C8339600C3DA9F /* libGoogleAnalytics_debug.a */; };
 		AEBA296A17C85D0B00C3DA9F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBA296917C85D0B00C3DA9F /* CoreData.framework */; };
+		AEBD4712188DF36600BAD7A8 /* lib!eppz!kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE922F78179381270088E5E5 /* lib!eppz!kit.a */; };
+		AEBD4714188DF74400BAD7A8 /* NSArray+EPPZKit_tests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD4713188DF74400BAD7A8 /* NSArray+EPPZKit_tests.m */; };
+		AEBD4718188DF77000BAD7A8 /* TTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD4717188DF77000BAD7A8 /* TTools.m */; };
 		AEC4FDA917CC69720092F28C /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC4FDA817CC69720092F28C /* libGoogleAnalyticsServices.a */; };
 		AEC6888C17B313C000F2206F /* EPPZLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC6888B17B313C000F2206F /* EPPZLabel.m */; };
 		AECCD94D17A5D80E001CAAFD /* NSDate+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */; };
@@ -65,6 +68,10 @@
 		AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = AED953161798B9B50000A0B6 /* EPPZAppStoreCallbacks.m */; };
 		AEEBDE7E18008C72001A3255 /* NSArray+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEBDE7D18008C72001A3255 /* NSArray+EPPZKit.m */; };
 		AEF1C56A188DECBC00068D4D /* EPPZColorThemeTestbed.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF1C567188DECA100068D4D /* EPPZColorThemeTestbed.m */; };
+		AEF1C58B188DF29200068D4D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF1C570188DEF4500068D4D /* XCTest.framework */; };
+		AEF1C58C188DF29200068D4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE922F4317937A1A0088E5E5 /* Foundation.framework */; };
+		AEF1C58D188DF29200068D4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE922F4117937A1A0088E5E5 /* UIKit.framework */; };
+		AEF1C593188DF29200068D4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AEF1C591188DF29200068D4D /* InfoPlist.strings */; };
 		AEFC653817B81865004B5214 /* EPPZTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFC653717B81865004B5214 /* EPPZTimer.m */; };
 		D81E3DBC17CCEC1A00B2C7A4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81E3DBB17CCEC1A00B2C7A4 /* AdSupport.framework */; };
 		D81E3DBE17CCEC1F00B2C7A4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D81E3DBD17CCEC1F00B2C7A4 /* libz.dylib */; };
@@ -89,6 +96,30 @@
 		D8B1BC1E17C7BE030071763B /* EPPZRepresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B1BC1D17C7BE030071763B /* EPPZRepresenter.m */; };
 		D8BD6A7A17CE48E1007640CE /* NSObject+EPPZRepresentable_Archive.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BD6A7917CE48E1007640CE /* NSObject+EPPZRepresentable_Archive.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AEBD4710188DF36000BAD7A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE922F3617937A1A0088E5E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE922F77179381270088E5E5;
+			remoteInfo = "eppz!kit";
+		};
+		AEF1C597188DF29200068D4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE922F3617937A1A0088E5E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE922FA01793852F0088E5E5;
+			remoteInfo = "eppz!kit!testbed";
+		};
+		AEF1C59C188DF2D700068D4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE922F3617937A1A0088E5E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE922F77179381270088E5E5;
+			remoteInfo = "eppz!kit";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		AE922F76179381270088E5E5 /* CopyFiles */ = {
@@ -179,6 +210,10 @@
 		AEBA295217C8339600C3DA9F /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
 		AEBA296617C85AB000C3DA9F /* iOS device model identifiers.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iOS device model identifiers.xlsx"; sourceTree = "<group>"; };
 		AEBA296917C85D0B00C3DA9F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AEBD4713188DF74400BAD7A8 /* NSArray+EPPZKit_tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EPPZKit_tests.m"; sourceTree = "<group>"; };
+		AEBD4716188DF77000BAD7A8 /* TTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTools.h; sourceTree = "<group>"; };
+		AEBD4717188DF77000BAD7A8 /* TTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTools.m; sourceTree = "<group>"; };
+		AEBD4719188DF9E800BAD7A8 /* travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = travis.yml; sourceTree = "<group>"; };
 		AEC4FDA517CC690A0092F28C /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
 		AEC4FDA617CC690A0092F28C /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
 		AEC4FDA717CC690A0092F28C /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
@@ -210,6 +245,11 @@
 		AEEBDE7D18008C72001A3255 /* NSArray+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EPPZKit.m"; sourceTree = "<group>"; };
 		AEF1C566188DECA100068D4D /* EPPZColorThemeTestbed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZColorThemeTestbed.h; sourceTree = "<group>"; };
 		AEF1C567188DECA100068D4D /* EPPZColorThemeTestbed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZColorThemeTestbed.m; sourceTree = "<group>"; };
+		AEF1C570188DEF4500068D4D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AEF1C58A188DF29200068D4D /* eppz!kit!tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "eppz!kit!tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEF1C590188DF29200068D4D /* eppz!kit!tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "eppz!kit!tests-Info.plist"; sourceTree = "<group>"; };
+		AEF1C592188DF29200068D4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AEF1C596188DF29200068D4D /* eppz!kit!tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "eppz!kit!tests-Prefix.pch"; sourceTree = "<group>"; };
 		AEFC653617B81865004B5214 /* EPPZTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZTimer.h; sourceTree = "<group>"; };
 		AEFC653717B81865004B5214 /* EPPZTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZTimer.m; sourceTree = "<group>"; };
 		D81E3DBB17CCEC1A00B2C7A4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -283,6 +323,17 @@
 				AE922FA31793852F0088E5E5 /* Foundation.framework in Frameworks */,
 				AE922FA41793852F0088E5E5 /* CoreGraphics.framework in Frameworks */,
 				AE922FC5179389D30088E5E5 /* lib!eppz!kit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEF1C587188DF29200068D4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEBD4712188DF36600BAD7A8 /* lib!eppz!kit.a in Frameworks */,
+				AEF1C58B188DF29200068D4D /* XCTest.framework in Frameworks */,
+				AEF1C58D188DF29200068D4D /* UIKit.framework in Frameworks */,
+				AEF1C58C188DF29200068D4D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,8 +419,10 @@
 		AE922F3517937A1A0088E5E5 = {
 			isa = PBXGroup;
 			children = (
+				AEBD4719188DF9E800BAD7A8 /* travis.yml */,
 				AE922F7A179381280088E5E5 /* eppz!kit */,
 				AE922FA51793852F0088E5E5 /* eppz!kit!testbed */,
+				AEF1C58E188DF29200068D4D /* eppz!kit!tests */,
 				AE922F4017937A1A0088E5E5 /* Frameworks */,
 				AE922F3F17937A1A0088E5E5 /* Products */,
 			);
@@ -380,6 +433,7 @@
 			children = (
 				AE922F78179381270088E5E5 /* lib!eppz!kit.a */,
 				AE922FA11793852F0088E5E5 /* eppz!kit!testbed.app */,
+				AEF1C58A188DF29200068D4D /* eppz!kit!tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -397,6 +451,7 @@
 				AE922F4317937A1A0088E5E5 /* Foundation.framework */,
 				AE922F4517937A1A0088E5E5 /* CoreGraphics.framework */,
 				D81E3DBD17CCEC1F00B2C7A4 /* libz.dylib */,
+				AEF1C570188DEF4500068D4D /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -619,6 +674,15 @@
 			name = "Google Analytics iOS SDK 2.0";
 			sourceTree = "<group>";
 		};
+		AEBD4715188DF75500BAD7A8 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				AEBD4716188DF77000BAD7A8 /* TTools.h */,
+				AEBD4717188DF77000BAD7A8 /* TTools.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 		AECCD94717A5D7A5001CAAFD /* □ NSDate+EPPZKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -732,6 +796,26 @@
 			name = "□ NSArray+EPPZKit";
 			sourceTree = "<group>";
 		};
+		AEF1C58E188DF29200068D4D /* eppz!kit!tests */ = {
+			isa = PBXGroup;
+			children = (
+				AEBD4715188DF75500BAD7A8 /* Tools */,
+				AEBD4713188DF74400BAD7A8 /* NSArray+EPPZKit_tests.m */,
+				AEF1C58F188DF29200068D4D /* Supporting Files */,
+			);
+			path = "eppz!kit!tests";
+			sourceTree = "<group>";
+		};
+		AEF1C58F188DF29200068D4D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AEF1C590188DF29200068D4D /* eppz!kit!tests-Info.plist */,
+				AEF1C591188DF29200068D4D /* InfoPlist.strings */,
+				AEF1C596188DF29200068D4D /* eppz!kit!tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		AEFC653917B82032004B5214 /* □ Timer */ = {
 			isa = PBXGroup;
 			children = (
@@ -760,7 +844,7 @@
 			name = Representer;
 			sourceTree = "<group>";
 		};
-		D81E3DC417CD058200B2C7A4 /* Representable */ = {
+		D81E3DC417CD058200B2C7A4 /* □ Representable */ = {
 			isa = PBXGroup;
 			children = (
 				D8AD5DBE17BD2F3C004BD9AF /* EPPZRepresentable.rtf */,
@@ -770,7 +854,7 @@
 				D81E3DC317CD052400B2C7A4 /* Representer */,
 				D81E3DC517CD058D00B2C7A4 /* Representations (stores) */,
 			);
-			name = Representable;
+			name = "□ Representable";
 			sourceTree = "<group>";
 		};
 		D81E3DC517CD058D00B2C7A4 /* Representations (stores) */ = {
@@ -837,13 +921,13 @@
 			name = "□ Diatonic scale";
 			sourceTree = "<group>";
 		};
-		D880A8AF188DA3FA0037A000 /* NSDictionary+EPPZKit */ = {
+		D880A8AF188DA3FA0037A000 /* □ NSDictionary+EPPZKit */ = {
 			isa = PBXGroup;
 			children = (
 				D880A8B0188DA4170037A000 /* NSDictionary+EPPZKit.h */,
 				D880A8B1188DA4170037A000 /* NSDictionary+EPPZKit.m */,
 			);
-			name = "NSDictionary+EPPZKit";
+			name = "□ NSDictionary+EPPZKit";
 			sourceTree = "<group>";
 		};
 		D880A8B3188DA6AA0037A000 /* □ Property synchronizator */ = {
@@ -868,7 +952,7 @@
 		D8AD5DB117BD22C0004BD9AF /* ❑ Model tools */ = {
 			isa = PBXGroup;
 			children = (
-				D81E3DC417CD058200B2C7A4 /* Representable */,
+				D81E3DC417CD058200B2C7A4 /* □ Representable */,
 				AE9C41191794A4C800090A82 /* □ User defaults */,
 			);
 			name = "❑ Model tools";
@@ -908,7 +992,7 @@
 				D825700018203B93008A40C9 /* □ Geometry */,
 				D84229B71821891700B15EC8 /* □ Diatonic scale */,
 				AECECBEF18428C8B0062250B /* □ Random */,
-				D880A8AF188DA3FA0037A000 /* NSDictionary+EPPZKit */,
+				D880A8AF188DA3FA0037A000 /* □ NSDictionary+EPPZKit */,
 				D880A8B3188DA6AA0037A000 /* □ Property synchronizator */,
 			);
 			name = "❑ Tools";
@@ -1005,11 +1089,31 @@
 			buildRules = (
 			);
 			dependencies = (
+				AEF1C59D188DF2D700068D4D /* PBXTargetDependency */,
 			);
 			name = "eppz!kit!testbed";
 			productName = "eppz!kit!testbed";
 			productReference = AE922FA11793852F0088E5E5 /* eppz!kit!testbed.app */;
 			productType = "com.apple.product-type.application";
+		};
+		AEF1C589188DF29200068D4D /* eppz!kit!tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEF1C599188DF29200068D4D /* Build configuration list for PBXNativeTarget "eppz!kit!tests" */;
+			buildPhases = (
+				AEF1C586188DF29200068D4D /* Sources */,
+				AEF1C587188DF29200068D4D /* Frameworks */,
+				AEF1C588188DF29200068D4D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AEBD4711188DF36000BAD7A8 /* PBXTargetDependency */,
+				AEF1C598188DF29200068D4D /* PBXTargetDependency */,
+			);
+			name = "eppz!kit!tests";
+			productName = "eppz!kit!tests";
+			productReference = AEF1C58A188DF29200068D4D /* eppz!kit!tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -1020,6 +1124,11 @@
 				CLASSPREFIX = EPPZ;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "eppz!";
+				TargetAttributes = {
+					AEF1C589188DF29200068D4D = {
+						TestTargetID = AE922FA01793852F0088E5E5;
+					};
+				};
 			};
 			buildConfigurationList = AE922F3917937A1A0088E5E5 /* Build configuration list for PBXProject "eppz!kit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1035,6 +1144,7 @@
 			targets = (
 				AE922F77179381270088E5E5 /* eppz!kit */,
 				AE922FA01793852F0088E5E5 /* eppz!kit!testbed */,
+				AEF1C589188DF29200068D4D /* eppz!kit!tests */,
 			);
 		};
 /* End PBXProject section */
@@ -1052,6 +1162,14 @@
 				AE922FB6179385300088E5E5 /* _Default-568h@2x.png in Resources */,
 				AE922FBC179385300088E5E5 /* TBHtmlStringViewController.xib in Resources */,
 				D822ACAC17C67D5E0076DE10 /* user.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEF1C588188DF29200068D4D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEF1C593188DF29200068D4D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1145,7 +1263,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AEF1C586188DF29200068D4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEBD4714188DF74400BAD7A8 /* NSArray+EPPZKit_tests.m in Sources */,
+				AEBD4718188DF77000BAD7A8 /* TTools.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AEBD4711188DF36000BAD7A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE922F77179381270088E5E5 /* eppz!kit */;
+			targetProxy = AEBD4710188DF36000BAD7A8 /* PBXContainerItemProxy */;
+		};
+		AEF1C598188DF29200068D4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE922FA01793852F0088E5E5 /* eppz!kit!testbed */;
+			targetProxy = AEF1C597188DF29200068D4D /* PBXContainerItemProxy */;
+		};
+		AEF1C59D188DF2D700068D4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE922F77179381270088E5E5 /* eppz!kit */;
+			targetProxy = AEF1C59C188DF2D700068D4D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AE922FA81793852F0088E5E5 /* InfoPlist.strings */ = {
@@ -1162,6 +1307,14 @@
 				AE922FBB179385300088E5E5 /* en */,
 			);
 			name = TBHtmlStringViewController.xib;
+			sourceTree = "<group>";
+		};
+		AEF1C591188DF29200068D4D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AEF1C592188DF29200068D4D /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1314,6 +1467,67 @@
 			};
 			name = Release;
 		};
+		AEF1C59A188DF29200068D4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/eppz!kit!testbed.app/eppz!kit!testbed";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "eppz!kit!tests/eppz!kit!tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "eppz!kit!tests/eppz!kit!tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		AEF1C59B188DF29200068D4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/eppz!kit!testbed.app/eppz!kit!testbed";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "eppz!kit!tests/eppz!kit!tests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "eppz!kit!tests/eppz!kit!tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1340,6 +1554,15 @@
 			buildConfigurations = (
 				AE922FC0179385300088E5E5 /* Debug */,
 				AE922FC1179385300088E5E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEF1C599188DF29200068D4D /* Build configuration list for PBXNativeTarget "eppz!kit!tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEF1C59A188DF29200068D4D /* Debug */,
+				AEF1C59B188DF29200068D4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

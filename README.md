@@ -295,6 +295,10 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.7.4
+    + Created unit test target
+    + Added NSArray+EPPZKit tests
+
 * 1.7.2 - 1.7.3
     + Merge changes
 
