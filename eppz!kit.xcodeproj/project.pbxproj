@@ -50,6 +50,7 @@
 		AEBD4712188DF36600BAD7A8 /* lib!eppz!kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE922F78179381270088E5E5 /* lib!eppz!kit.a */; };
 		AEBD4714188DF74400BAD7A8 /* NSArray+EPPZKit_tests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD4713188DF74400BAD7A8 /* NSArray+EPPZKit_tests.m */; };
 		AEBD4718188DF77000BAD7A8 /* TTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD4717188DF77000BAD7A8 /* TTools.m */; };
+		AEBD471B188DFDFF00BAD7A8 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = AEBD471A188DFDFF00BAD7A8 /* .travis.yml */; };
 		AEC4FDA917CC69720092F28C /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC4FDA817CC69720092F28C /* libGoogleAnalyticsServices.a */; };
 		AEC6888C17B313C000F2206F /* EPPZLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC6888B17B313C000F2206F /* EPPZLabel.m */; };
 		AECCD94D17A5D80E001CAAFD /* NSDate+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */; };
@@ -213,7 +214,7 @@
 		AEBD4713188DF74400BAD7A8 /* NSArray+EPPZKit_tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EPPZKit_tests.m"; sourceTree = "<group>"; };
 		AEBD4716188DF77000BAD7A8 /* TTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTools.h; sourceTree = "<group>"; };
 		AEBD4717188DF77000BAD7A8 /* TTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTools.m; sourceTree = "<group>"; };
-		AEBD4719188DF9E800BAD7A8 /* travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = travis.yml; sourceTree = "<group>"; };
+		AEBD471A188DFDFF00BAD7A8 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		AEC4FDA517CC690A0092F28C /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
 		AEC4FDA617CC690A0092F28C /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
 		AEC4FDA717CC690A0092F28C /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
@@ -419,7 +420,6 @@
 		AE922F3517937A1A0088E5E5 = {
 			isa = PBXGroup;
 			children = (
-				AEBD4719188DF9E800BAD7A8 /* travis.yml */,
 				AE922F7A179381280088E5E5 /* eppz!kit */,
 				AE922FA51793852F0088E5E5 /* eppz!kit!testbed */,
 				AEF1C58E188DF29200068D4D /* eppz!kit!tests */,
@@ -488,6 +488,7 @@
 			isa = PBXGroup;
 			children = (
 				AE922FC3179385ED0088E5E5 /* README.md */,
+				AEBD471A188DFDFF00BAD7A8 /* .travis.yml */,
 				AE922F841793817C0088E5E5 /* EPPZKit.h */,
 				D8AD5DB217BD2314004BD9AF /* ❑ Base classes */,
 				D8AD5DB317BD2328004BD9AF /* ❑ Wrappers */,
@@ -1169,6 +1170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEBD471B188DFDFF00BAD7A8 /* .travis.yml in Resources */,
 				AEF1C593188DF29200068D4D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
