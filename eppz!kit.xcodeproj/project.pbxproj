@@ -48,10 +48,12 @@
 		AEBA295817C8339600C3DA9F /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBA295217C8339600C3DA9F /* libGoogleAnalytics_debug.a */; };
 		AEBA296A17C85D0B00C3DA9F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEBA296917C85D0B00C3DA9F /* CoreData.framework */; };
 		AEBD4712188DF36600BAD7A8 /* lib!eppz!kit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE922F78179381270088E5E5 /* lib!eppz!kit.a */; };
-		AEBD4714188DF74400BAD7A8 /* NSArray+EPPZKit_tests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD4713188DF74400BAD7A8 /* NSArray+EPPZKit_tests.m */; };
+		AEBD4714188DF74400BAD7A8 /* NSArray+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD4713188DF74400BAD7A8 /* NSArray+EPPZKit.m */; };
 		AEBD4718188DF77000BAD7A8 /* TTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD4717188DF77000BAD7A8 /* TTools.m */; };
 		AEBD471B188DFDFF00BAD7A8 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = AEBD471A188DFDFF00BAD7A8 /* .travis.yml */; };
 		AEBD4721188E018800BAD7A8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AEBD4720188E018800BAD7A8 /* .gitignore */; };
+		AEBD4723188E029400BAD7A8 /* NSDictionary+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD4722188E029400BAD7A8 /* NSDictionary+EPPZKit.m */; };
+		AEBD4726188E03DA00BAD7A8 /* EPPZBoolTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBD4725188E03DA00BAD7A8 /* EPPZBoolTools.m */; };
 		AEC4FDA917CC69720092F28C /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC4FDA817CC69720092F28C /* libGoogleAnalyticsServices.a */; };
 		AEC6888C17B313C000F2206F /* EPPZLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEC6888B17B313C000F2206F /* EPPZLabel.m */; };
 		AECCD94D17A5D80E001CAAFD /* NSDate+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */; };
@@ -212,11 +214,13 @@
 		AEBA295217C8339600C3DA9F /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
 		AEBA296617C85AB000C3DA9F /* iOS device model identifiers.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iOS device model identifiers.xlsx"; sourceTree = "<group>"; };
 		AEBA296917C85D0B00C3DA9F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		AEBD4713188DF74400BAD7A8 /* NSArray+EPPZKit_tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EPPZKit_tests.m"; sourceTree = "<group>"; };
+		AEBD4713188DF74400BAD7A8 /* NSArray+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+EPPZKit.m"; sourceTree = "<group>"; };
 		AEBD4716188DF77000BAD7A8 /* TTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTools.h; sourceTree = "<group>"; };
 		AEBD4717188DF77000BAD7A8 /* TTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTools.m; sourceTree = "<group>"; };
 		AEBD471A188DFDFF00BAD7A8 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		AEBD4720188E018800BAD7A8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		AEBD4722188E029400BAD7A8 /* NSDictionary+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+EPPZKit.m"; sourceTree = "<group>"; };
+		AEBD4725188E03DA00BAD7A8 /* EPPZBoolTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZBoolTools.m; sourceTree = "<group>"; };
 		AEC4FDA517CC690A0092F28C /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
 		AEC4FDA617CC690A0092F28C /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
 		AEC4FDA717CC690A0092F28C /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
@@ -678,13 +682,23 @@
 			name = "Google Analytics iOS SDK 2.0";
 			sourceTree = "<group>";
 		};
-		AEBD4715188DF75500BAD7A8 /* Tools */ = {
+		AEBD4715188DF75500BAD7A8 /* Test tools */ = {
 			isa = PBXGroup;
 			children = (
 				AEBD4716188DF77000BAD7A8 /* TTools.h */,
 				AEBD4717188DF77000BAD7A8 /* TTools.m */,
 			);
-			name = Tools;
+			name = "Test tools";
+			sourceTree = "<group>";
+		};
+		AEBD4724188E03AA00BAD7A8 /* ❑ Tools */ = {
+			isa = PBXGroup;
+			children = (
+				AEBD4713188DF74400BAD7A8 /* NSArray+EPPZKit.m */,
+				AEBD4725188E03DA00BAD7A8 /* EPPZBoolTools.m */,
+				AEBD4722188E029400BAD7A8 /* NSDictionary+EPPZKit.m */,
+			);
+			name = "❑ Tools";
 			sourceTree = "<group>";
 		};
 		AECCD94717A5D7A5001CAAFD /* □ NSDate+EPPZKit */ = {
@@ -803,8 +817,8 @@
 		AEF1C58E188DF29200068D4D /* eppz!kit!tests */ = {
 			isa = PBXGroup;
 			children = (
-				AEBD4715188DF75500BAD7A8 /* Tools */,
-				AEBD4713188DF74400BAD7A8 /* NSArray+EPPZKit_tests.m */,
+				AEBD4715188DF75500BAD7A8 /* Test tools */,
+				AEBD4724188E03AA00BAD7A8 /* ❑ Tools */,
 				AEF1C58F188DF29200068D4D /* Supporting Files */,
 			);
 			path = "eppz!kit!tests";
@@ -1273,7 +1287,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEBD4714188DF74400BAD7A8 /* NSArray+EPPZKit_tests.m in Sources */,
+				AEBD4714188DF74400BAD7A8 /* NSArray+EPPZKit.m in Sources */,
+				AEBD4723188E029400BAD7A8 /* NSDictionary+EPPZKit.m in Sources */,
+				AEBD4726188E03DA00BAD7A8 /* EPPZBoolTools.m in Sources */,
 				AEBD4718188DF77000BAD7A8 /* TTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -297,6 +297,9 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.7.6
+    + More test cases
+
 * 1.7.5
     + Travis Ci setup
 
