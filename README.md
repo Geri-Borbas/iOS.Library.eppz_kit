@@ -297,6 +297,10 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.7.8
+    + EPPZPropertySynchronizator fixes
+    + Tests for dateValue (NSString+EPPZKit)
+
 * 1.7.7
     + NSString+EPPZKit
         + Some drawing compatibility helper

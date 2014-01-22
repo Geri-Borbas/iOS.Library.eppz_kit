@@ -1,5 +1,5 @@
 //
-//  NSDictionary+EPPZKit.m
+//  _NSDictionary+EPPZKit.m
 //  eppz!kit
 //
 //  Created by Borbás Geri on 1/21/14.

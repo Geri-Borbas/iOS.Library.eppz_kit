@@ -1,5 +1,5 @@
 //
-//  EPPZBoolTools.m
+//  _EPPZBoolTools.m
 //  eppz!kit
 //
 //  Created by Borbás Geri on 1/21/14.

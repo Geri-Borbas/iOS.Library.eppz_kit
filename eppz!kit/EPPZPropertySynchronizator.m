@@ -17,10 +17,10 @@
 
 @interface EPPZPropertySynchronizator ()
 
-@property (nonatomic, weak) NSObject *one;
-@property (nonatomic, weak) NSObject *other;
-@property (nonatomic, weak) NSDictionary *otherKeyPathsForOneKeyPaths;
-@property (nonatomic, weak) NSDictionary *oneKeyPathsForOtherKeyPaths;
+@property (nonatomic, strong) NSObject *one; // Strong references ensures proper dealloc order (synchronizator, observers, then objects).
+@property (nonatomic, strong) NSObject *other;
+@property (nonatomic, strong) NSDictionary *otherKeyPathsForOneKeyPaths;
+@property (nonatomic, strong) NSDictionary *oneKeyPathsForOtherKeyPaths;
 
 @end
 
@@ -30,14 +30,14 @@
 
 #pragma mark - Creation
 
-+(id)mapperWithInstance:(NSObject*) one
-               instance:(NSObject*) other
-            propertyMap:(NSDictionary*) propertyMap
-{ return [[self alloc] initWithInstance:one instance:other propertyMap:propertyMap]; }
++(id)synchronizatorWithObject:(NSObject*) one
+                       object:(NSObject*) other
+                  propertyMap:(NSDictionary*) propertyMap
+{ return [[self alloc] initWithObject:one object:other propertyMap:propertyMap]; }
 
--(id)initWithInstance:(NSObject*) one
-             instance:(NSObject*) other
-          propertyMap:(NSDictionary*) propertyMap
+-(id)initWithObject:(NSObject*) one
+             object:(NSObject*) other
+        propertyMap:(NSDictionary*) propertyMap
 {
     if (self = [super init])
     {
@@ -81,6 +81,11 @@
                       context:NULL];
     }];
     
+    [self.one addObserver:self
+               forKeyPath:@"dealloc"
+                  options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
+                  context:NULL];
+    
     // Observe other.
     [[self.oneKeyPathsForOtherKeyPaths allKeys] enumerateObjectsUsingBlock:^(id eachKeyPath, NSUInteger index, BOOL *stop)
     {
@@ -110,25 +115,50 @@
                        change:(NSDictionary*) change
                       context:(void*) context
 {
+    NSLog(@"Observe %@", keyPath);
+    
     id value = [change objectForKey:NSKeyValueChangeNewKey];
     
+    static NSString *skipOneKeyPath = nil;
+    static NSString *skipOtherKeyPath = nil;
+    
     BOOL forward = (object == self.one);
+    
+    // One.
     if (forward)
     {
+        // Skip if set during a synchronizing set.
+        if ([keyPath isEqualToString:skipOneKeyPath])
+        {
+            skipOneKeyPath = nil;
+            return;
+        }
+        
         // Get keyPath.
         NSString *otherKeyPath = [self otherKeyPathForOneKeypath:keyPath];
         
         // Set value on other.
+        skipOtherKeyPath = otherKeyPath; // Skip this set.
         @try { [self.other setValue:value forKey:otherKeyPath]; }
         @catch (NSException *exception) { }
         @finally { }
     }
+    
+    // Other.
     else
     {
+        // Skip if set during a synchronizing set.
+        if ([keyPath isEqualToString:skipOtherKeyPath])
+        {
+            skipOtherKeyPath = nil;
+            return;
+        }
+        
         // Get keyPath.
         NSString *oneKeyPath = [self oneKeyPathForOtherKeypath:keyPath];
         
-        // Set value on other.
+        // Set value on one.
+        skipOneKeyPath = keyPath; // Skip this set.
         @try { [self.one setValue:value forKey:oneKeyPath]; }
         @catch (NSException *exception) { }
         @finally { }

@@ -1,5 +1,5 @@
 //
-//  ;
+//  _EPPZPropertySynchronizator.m
 //  eppz!kit
 //
 //  Created by Borbás Geri on 21/01/14.
@@ -24,6 +24,7 @@
 
 
 @interface _EPPZPropertySynchronizator : XCTestCase
+@property (nonatomic, strong) EPPZPropertySynchronizator *synchronizator;
 @end
 
 
@@ -33,11 +34,22 @@
 -(void)test
 {
     _Model *model = [_Model new];
-    UILabel *label = [UILabel new];
+    UITextField *textField = [UITextField new];
+    NSDictionary *propertyMap = @{
+                                  @"name" : @"text"
+                                  };
     
-    EPPZPropertySynchronizator *mapper = [EPPZPropertySynchronizator mapperWithInstance:model
-                                                                               instance:label
-                                                                            propertyMap:@""];
+    self.synchronizator = [EPPZPropertySynchronizator synchronizatorWithObject:model
+                                                                        object:textField
+                                                                   propertyMap:propertyMap];
+    
+    // Sync model change.
+    model.name = @"John Doe";
+    XCTAssertEqualObjects(textField.text, @"John Doe", @"Property `textField.text` should be synchronized.");
+    
+    // Sync UI change.
+    textField.text = @"Uma Thurman";
+    XCTAssertEqualObjects(model.name, @"Uma Thurman", @"Property `model.name` should be synchronized.");
 
 }
 

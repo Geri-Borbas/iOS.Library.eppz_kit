@@ -1,5 +1,5 @@
 //
-//  NSArray+EPPZKit.m
+//  _NSArray+EPPZKit.m
 //  eppz!kit
 //
 //  Created by Borbás Geri on 1/21/14.
@@ -46,7 +46,6 @@
          pick = [array randomObject];
          comparison = (pick.integerValue < array.count);
          XCTAssertTrue(comparison, @"Random pick %i should be in range 0-5.", pick.integerValue);
-         NSLog(@"%@", pick);
      }];
 }
 

@@ -19,8 +19,8 @@
 
 @interface EPPZPropertySynchronizator : NSObject
 
-+(id)mapperWithInstance:(NSObject*) one
-               instance:(NSObject*) other
-            propertyMap:(NSDictionary*) propertyMap;
++(id)synchronizatorWithObject:(NSObject*) one
+                       object:(NSObject*) other
+                  propertyMap:(NSDictionary*) propertyMap;
 
 @end
