@@ -297,6 +297,13 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.7.9
+    + NSDictionary+EPPZKit
+        + dictionaryByRemovingValueForKey (with tests)
+    + EPPZRepresentable 
+        + New template `+(BOOL)representEmptyValues`
+        + Represent / reconstruct NSSets (handy with CoreData)
+
 * 1.7.8
     + EPPZPropertySynchronizator fixes
     + Tests for dateValue (NSString+EPPZKit)

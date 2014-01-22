@@ -36,5 +36,16 @@
     return [NSDictionary dictionaryWithDictionary:mutable];
 }
 
+-(NSDictionary*)dictionaryByRemovingValueForKey:(id<NSCopying>) key
+{
+    // Checks.
+    if (key == nil) return self;
+    if ([[self allKeys] containsObject:key] == NO) return self;
+    
+    NSMutableDictionary *mutable = [NSMutableDictionary dictionaryWithDictionary:self];
+    [mutable removeObjectForKey:key];
+    return [NSDictionary dictionaryWithDictionary:mutable];
+}
+
 
 @end

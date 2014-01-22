@@ -22,7 +22,7 @@
 @implementation _NSDictionary_EPPZKit
 
 
--(void)test
+-(void)testDictionaryBySwappingKeysAndValues
 {
     NSDictionary *dictionary = @{
                                  @"this" : @"that",
@@ -39,6 +39,24 @@
     XCTAssertEqualObjects([dictionary dictionaryBySwappingKeysAndValues],
                           inverse,
                           @"Directory an swapped inverse should be equal.");
+}
+
+-(void)testSomething
+{
+    NSDictionary *dictionary = @{
+                                 @"this" : @"that",
+                                 @"here" : @"there",
+                                 @1 : @2,
+                                 };
+    
+    NSDictionary *removed = @{
+                              @"here" : @"there",
+                              @1 : @2,
+                              };
+    
+    XCTAssertEqualObjects([dictionary dictionaryByRemovingValueForKey:@"this"],
+                          removed,
+                          @"Directory should not contain removed value.");
 }
 
 

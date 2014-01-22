@@ -48,6 +48,7 @@ static NSString *const kEPPZRepresentableErrorDomain = @"__eppz.representable";
 +(BOOL)representID;
 +(BOOL)representClass;
 +(BOOL)representType;
++(BOOL)representEmptyValues;
 
 +(BOOL)reconstructID;
 +(BOOL)reconstructClass;

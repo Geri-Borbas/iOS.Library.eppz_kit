@@ -103,6 +103,7 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
 +(BOOL)representID { return YES; }
 +(BOOL)representClass { return YES; }
 +(BOOL)representType { return YES; }
++(BOOL)representEmptyValues { return YES; }
 
 +(BOOL)reconstructID { return YES; }
 +(BOOL)reconstructClass { return YES; }
@@ -364,11 +365,16 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
         id representedProperty = [self representationValueForPropertyName:eachPropertyName objectPool:objectPool];
         
         // Catch errors.
-        if (representedProperty == nil) { [EPPZRepresentableException object:self couldNotRepresentPropertyNamed:eachPropertyName]; }
+        if (representedProperty == nil &&
+            [self.class representEmptyValues])
+        { [EPPZRepresentableException object:self couldNotRepresentPropertyNamed:eachPropertyName]; }
         
-        // Collect.
-        NSString *key = [self.class representedPropertyNameForPropertyName:eachPropertyName];
-        [dictionaryRepresentation setObject:representedProperty forKey:key];
+        // Collect if any.
+        if (representedProperty != nil)
+        {
+            NSString *key = [self.class representedPropertyNameForPropertyName:eachPropertyName];
+            [dictionaryRepresentation setObject:representedProperty forKey:key];
+        }
     }
     
     // Subclass hook.
@@ -415,8 +421,38 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
             
             NSMutableArray *representationArray = [NSMutableArray new];
             
+            // Check if empty.
+            if (runtimeArray.count == 0 &&
+                [self.class representEmptyValues] == NO)
+                representationArray = nil;
+            
             // Enumerate members.
             for (id eachRuntimeMember in runtimeArray)
+            {
+                // Represent each.
+                id eachRepresentationMember = [eachRuntimeMember dictionaryRepresentationWithObjectPool:objectPool];
+                [representationArray addObject:eachRepresentationMember];
+            }
+            
+            return representationArray;
+        }
+    
+    // NSSet (represent as array to stay JSON compilant)
+    
+        else if ([runtimeValue isKindOfClass:[NSSet class]])
+        {
+            NSSet *runtimeSet = (NSSet*)runtimeSet;
+            ERLog(@"...an NSSet.");
+            
+            NSMutableArray *representationArray = [NSMutableArray new];
+            
+            // Check if empty.
+            if (runtimeSet.count == 0 &&
+                [self.class representEmptyValues] == NO)
+                representationArray = nil;
+            
+            // Enumerate members.
+            for (id eachRuntimeMember in runtimeSet)
             {
                 // Represent each.
                 id eachRepresentationMember = [eachRuntimeMember dictionaryRepresentationWithObjectPool:objectPool];
@@ -435,6 +471,11 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
             
             NSMutableDictionary *representationDictionary = [NSMutableDictionary new];
             
+            // Check if empty.
+            if (runtimeDictionary.count == 0 &&
+                [self.class representEmptyValues] == NO)
+                representationDictionary = nil;
+            
             // Enumerate members.
             [runtimeDictionary enumerateKeysAndObjectsUsingBlock:^(id eachKey, id eachRuntimeMember, BOOL *stop)
             {
@@ -444,6 +485,23 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
             }];
             
             return representationDictionary;
+        }
+    
+    // NSNumber
+    
+        else if ([runtimeValue isKindOfClass:[NSNumber class]])
+        {
+            NSNumber *runtimeNumber = (NSNumber*)runtimeValue;
+            ERLog(@"...an NSNumber.");
+            
+            NSNumber *representationNumber = runtimeNumber; // No conversion needed.
+            
+            // Check if empty.
+            if (runtimeNumber.floatValue == 0.0 &&
+                [self.class representEmptyValues] == NO)
+                representationNumber = nil;
+            
+            return representationNumber; // No change.
         }
     
     // Subclass representation value
