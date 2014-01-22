@@ -13,9 +13,9 @@ NSDictionary *map = @{
                       @"name" : @"nameTextField.text",
                       @"email" : @"emailTextField.text"
                       };
-self.synchronizator = [EPPZPropertySynchronizator mapperWithInstance:self.user
-                                                            instance:self
-                                                         propertyMap:map];
+self.synchronizator = [EPPZPropertySynchronizator synchronizerWithObject:self.user
+                                                                  object:self
+                                                             propertyMap:map];
 ```
 
 
