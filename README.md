@@ -297,6 +297,11 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.8.0
+
+    + More Tests
+        + See Project/eppz!kit!tests/❑ Tools ✔
+
 * 1.7.9
     + NSDictionary+EPPZKit
         + dictionaryByRemovingValueForKey (with tests)

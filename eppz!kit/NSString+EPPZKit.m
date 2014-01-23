@@ -18,9 +18,12 @@
 @implementation NSString (EPPZKit)
 
 
+-(BOOL)isEqualToStringIgnoringCase:(NSString*) string
+{ return [self.lowercaseString isEqualToString:string.lowercaseString]; }
+
 +(NSString*)md5HashFromString:(NSString*) string
 {
-	const char *source = [[string lowercaseString] UTF8String];
+	const char *source = [string UTF8String];
 	unsigned char result[CC_MD5_DIGEST_LENGTH];
 	CC_MD5(source, strlen(source), result);
 	NSString *returnString = [[NSString alloc] initWithFormat:@"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X", 
@@ -36,7 +39,7 @@
 {
     const char *cStr = [self UTF8String];
     unsigned char result[16];
-    CC_MD5( cStr, strlen(cStr), result ); // This is the md5 call
+    CC_MD5(cStr, strlen(cStr), result); // This is the md5 call.
     return [NSString stringWithFormat:
             @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
             result[0], result[1], result[2], result[3],

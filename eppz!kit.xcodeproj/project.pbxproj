@@ -39,6 +39,7 @@
 		AE9C40BB1794A0C800090A82 /* NSString+EPPZReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C40BA1794A0C800090A82 /* NSString+EPPZReachability.m */; };
 		AE9C411C1794A4D600090A82 /* EPPZUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C411B1794A4D600090A82 /* EPPZUserDefaults.m */; };
 		AE9C41431794CA4A00090A82 /* EPPZFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9C41421794CA4A00090A82 /* EPPZFlatButton.m */; };
+		AE9E939D1890939700968317 /* UIColor+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9E939C1890939700968317 /* UIColor+EPPZKit.m */; };
 		AE9FCBD817CEB5CC004C57CD /* EPPZTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9FCBD717CEB5CC004C57CD /* EPPZTools.m */; };
 		AEA0B27F179DF68200439EB0 /* EPPZPagingScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA0B27E179DF68200439EB0 /* EPPZPagingScrollViewController.m */; };
 		AEBA295417C8339600C3DA9F /* EPPZAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = AEBA294617C8339600C3DA9F /* EPPZAnalytics.m */; };
@@ -199,6 +200,7 @@
 		AE9C411B1794A4D600090A82 /* EPPZUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZUserDefaults.m; sourceTree = "<group>"; };
 		AE9C41411794CA4A00090A82 /* EPPZFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZFlatButton.h; sourceTree = "<group>"; };
 		AE9C41421794CA4A00090A82 /* EPPZFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZFlatButton.m; sourceTree = "<group>"; };
+		AE9E939C1890939700968317 /* UIColor+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+EPPZKit.m"; sourceTree = "<group>"; };
 		AE9FCBD717CEB5CC004C57CD /* EPPZTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZTools.m; sourceTree = "<group>"; };
 		AEA0B27D179DF68200439EB0 /* EPPZPagingScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZPagingScrollViewController.h; sourceTree = "<group>"; };
 		AEA0B27E179DF68200439EB0 /* EPPZPagingScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZPagingScrollViewController.m; sourceTree = "<group>"; };
@@ -351,13 +353,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AE00588317C740840061146F /* □ Bool tools */ = {
+		AE00588317C740840061146F /* □ Bool tools ✔ */ = {
 			isa = PBXGroup;
 			children = (
 				AE00588417C740990061146F /* EPPZBoolTools.h */,
 				AE00588517C740990061146F /* EPPZBoolTools.m */,
 			);
-			name = "□ Bool tools";
+			name = "□ Bool tools ✔";
 			sourceTree = "<group>";
 		};
 		AE05144717D1921C00F7FE5E /* □ Versions */ = {
@@ -485,13 +487,13 @@
 			name = "□ Singleton (Non ARC)";
 			sourceTree = "<group>";
 		};
-		AE922F7017937B530088E5E5 /* □ NSString+EPPZKit */ = {
+		AE922F7017937B530088E5E5 /* □ NSString+EPPZKit ✔ */ = {
 			isa = PBXGroup;
 			children = (
 				AE922F7117937B6A0088E5E5 /* NSString+EPPZKit.h */,
 				AE922F7217937B6A0088E5E5 /* NSString+EPPZKit.m */,
 			);
-			name = "□ NSString+EPPZKit";
+			name = "□ NSString+EPPZKit ✔";
 			sourceTree = "<group>";
 		};
 		AE922F7A179381280088E5E5 /* eppz!kit */ = {
@@ -606,7 +608,7 @@
 				D8302F6017BB97E600472478 /* □ Label */,
 				AE3511B41841883A00BCC751 /* □ UIImage+EPPZKit */,
 				AE3511BB1841AC4C00BCC751 /* □ Circle */,
-				AECDE7991842F3A9004C5ACF /* □ UIColor+EPPZKit */,
+				AECDE7991842F3A9004C5ACF /* □ UIColor+EPPZKit  ✔ */,
 				AE6A81A7184413F3007DACC8 /* □ UIFont+EPPZKit */,
 			);
 			name = "❑ UIKit tools";
@@ -619,6 +621,13 @@
 				AE9C41421794CA4A00090A82 /* EPPZFlatButton.m */,
 			);
 			name = "□ Flat button";
+			sourceTree = "<group>";
+		};
+		AE9E939B18908A7B00968317 /* Representable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Representable;
 			sourceTree = "<group>";
 		};
 		AEA0B27C179DF66B00439EB0 /* □ Paging scroll view controller */ = {
@@ -695,34 +704,36 @@
 			name = "Test tools";
 			sourceTree = "<group>";
 		};
-		AEBD4724188E03AA00BAD7A8 /* ❑ Tools */ = {
+		AEBD4724188E03AA00BAD7A8 /* ❑ Tools ✔ */ = {
 			isa = PBXGroup;
 			children = (
+				AE9E939B18908A7B00968317 /* Representable */,
 				AEBD4713188DF74400BAD7A8 /* NSArray+EPPZKit.m */,
 				D834B39C188EF30600CF82E8 /* EPPZPropertySynchronizator.m */,
 				AEBD4725188E03DA00BAD7A8 /* EPPZBoolTools.m */,
 				AEBD4722188E029400BAD7A8 /* NSDictionary+EPPZKit.m */,
 				D889D821188FE6DD00D8B6CC /* NSString+EPPZKit.m */,
+				AE9E939C1890939700968317 /* UIColor+EPPZKit.m */,
 			);
-			name = "❑ Tools";
+			name = "❑ Tools ✔";
 			sourceTree = "<group>";
 		};
-		AECCD94717A5D7A5001CAAFD /* □ NSDate+EPPZKit */ = {
+		AECCD94717A5D7A5001CAAFD /* □ NSDate+EPPZKit ✔ */ = {
 			isa = PBXGroup;
 			children = (
 				AECCD94B17A5D80E001CAAFD /* NSDate+EPPZKit.h */,
 				AECCD94C17A5D80E001CAAFD /* NSDate+EPPZKit.m */,
 			);
-			name = "□ NSDate+EPPZKit";
+			name = "□ NSDate+EPPZKit ✔";
 			sourceTree = "<group>";
 		};
-		AECDE7991842F3A9004C5ACF /* □ UIColor+EPPZKit */ = {
+		AECDE7991842F3A9004C5ACF /* □ UIColor+EPPZKit  ✔ */ = {
 			isa = PBXGroup;
 			children = (
 				AECDE7961842F3A6004C5ACF /* UIColor+EPPZKit.h */,
 				AECDE7971842F3A6004C5ACF /* UIColor+EPPZKit.m */,
 			);
-			name = "□ UIColor+EPPZKit";
+			name = "□ UIColor+EPPZKit  ✔";
 			sourceTree = "<group>";
 		};
 		AECECBEF18428C8B0062250B /* □ Random */ = {
@@ -811,20 +822,20 @@
 			name = Callbacks;
 			sourceTree = "<group>";
 		};
-		AEEBDE7F18008C75001A3255 /* □ NSArray+EPPZKit */ = {
+		AEEBDE7F18008C75001A3255 /* □ NSArray+EPPZKit ✔ */ = {
 			isa = PBXGroup;
 			children = (
 				AEEBDE7C18008C72001A3255 /* NSArray+EPPZKit.h */,
 				AEEBDE7D18008C72001A3255 /* NSArray+EPPZKit.m */,
 			);
-			name = "□ NSArray+EPPZKit";
+			name = "□ NSArray+EPPZKit ✔";
 			sourceTree = "<group>";
 		};
 		AEF1C58E188DF29200068D4D /* eppz!kit!tests */ = {
 			isa = PBXGroup;
 			children = (
 				AEBD4715188DF75500BAD7A8 /* Test tools */,
-				AEBD4724188E03AA00BAD7A8 /* ❑ Tools */,
+				AEBD4724188E03AA00BAD7A8 /* ❑ Tools ✔ */,
 				AEF1C58F188DF29200068D4D /* Supporting Files */,
 			);
 			path = "eppz!kit!tests";
@@ -945,22 +956,22 @@
 			name = "□ Diatonic scale";
 			sourceTree = "<group>";
 		};
-		D880A8AF188DA3FA0037A000 /* □ NSDictionary+EPPZKit */ = {
+		D880A8AF188DA3FA0037A000 /* □ NSDictionary+EPPZKit ✔ */ = {
 			isa = PBXGroup;
 			children = (
 				D880A8B0188DA4170037A000 /* NSDictionary+EPPZKit.h */,
 				D880A8B1188DA4170037A000 /* NSDictionary+EPPZKit.m */,
 			);
-			name = "□ NSDictionary+EPPZKit";
+			name = "□ NSDictionary+EPPZKit ✔";
 			sourceTree = "<group>";
 		};
-		D880A8B3188DA6AA0037A000 /* □ Property synchronizator */ = {
+		D880A8B3188DA6AA0037A000 /* □ Property synchronizator ✔ */ = {
 			isa = PBXGroup;
 			children = (
 				D880A8B4188DA6C80037A000 /* EPPZPropertySynchronizator.h */,
 				D880A8B5188DA6C80037A000 /* EPPZPropertySynchronizator.m */,
 			);
-			name = "□ Property synchronizator";
+			name = "□ Property synchronizator ✔";
 			sourceTree = "<group>";
 		};
 		D8AD5DAD17BD0E01004BD9AF /* □ Device */ = {
@@ -1007,17 +1018,17 @@
 			children = (
 				D871FC8617C777F40085899F /* EPPZTools.h */,
 				AE9FCBD717CEB5CC004C57CD /* EPPZTools.m */,
-				AEEBDE7F18008C75001A3255 /* □ NSArray+EPPZKit */,
-				AE00588317C740840061146F /* □ Bool tools */,
-				AECCD94717A5D7A5001CAAFD /* □ NSDate+EPPZKit */,
-				AE922F7017937B530088E5E5 /* □ NSString+EPPZKit */,
+				AEEBDE7F18008C75001A3255 /* □ NSArray+EPPZKit ✔ */,
+				AE00588317C740840061146F /* □ Bool tools ✔ */,
+				AECCD94717A5D7A5001CAAFD /* □ NSDate+EPPZKit ✔ */,
+				AE922F7017937B530088E5E5 /* □ NSString+EPPZKit ✔ */,
 				AEFC653917B82032004B5214 /* □ Timer */,
 				AE05144717D1921C00F7FE5E /* □ Versions */,
 				D825700018203B93008A40C9 /* □ Geometry */,
 				D84229B71821891700B15EC8 /* □ Diatonic scale */,
 				AECECBEF18428C8B0062250B /* □ Random */,
-				D880A8AF188DA3FA0037A000 /* □ NSDictionary+EPPZKit */,
-				D880A8B3188DA6AA0037A000 /* □ Property synchronizator */,
+				D880A8AF188DA3FA0037A000 /* □ NSDictionary+EPPZKit ✔ */,
+				D880A8B3188DA6AA0037A000 /* □ Property synchronizator ✔ */,
 			);
 			name = "❑ Tools";
 			sourceTree = "<group>";
@@ -1293,6 +1304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE9E939D1890939700968317 /* UIColor+EPPZKit.m in Sources */,
 				AEBD4714188DF74400BAD7A8 /* NSArray+EPPZKit.m in Sources */,
 				D889D823188FEB3400D8B6CC /* NSString+EPPZKit.m in Sources */,
 				AEBD4723188E029400BAD7A8 /* NSDictionary+EPPZKit.m in Sources */,

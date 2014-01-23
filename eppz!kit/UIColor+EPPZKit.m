@@ -15,44 +15,59 @@
 #import "UIColor+EPPZKit.h"
 
 
+typedef enum { R, G, B, A } UIColorComponentIndices;
+
+
 @implementation UIColor (EPPZKit)
 
+
+-(CGFloat)red
+{ return CGColorGetComponents(self.CGColor)[R]; }
+
+-(CGFloat)green
+{ return CGColorGetComponents(self.CGColor)[G]; }
+
+-(CGFloat)blue
+{ return CGColorGetComponents(self.CGColor)[B]; }
+
+-(CGFloat)alpha
+{ return CGColorGetComponents(self.CGColor)[A]; }
 
 -(UIColor*)colorWithAlpha:(CGFloat) alpha
 {
     const CGFloat *components = CGColorGetComponents(self.CGColor);
-    CGFloat R, G, B, A;
-    R = components[0];
-    G = components[1];
-    B = components[2];
-    A = components[3];
+    CGFloat _R, _G, _B, _A;
+    _R = components[R];
+    _G = components[G];
+    _B = components[B];
+    _A = components[A];
     
-    return RGBA_(R, G, B, alpha);
+    return RGBA_(_R, _G, _B, alpha);
 }
 
 -(UIColor*)blendWithColor:(UIColor*) color amount:(CGFloat) amount
 {
     const CGFloat *components = CGColorGetComponents(self.CGColor);
-    CGFloat R, G, B, A;
-    R = components[0];
-    G = components[1];
-    B = components[2];
-    A = components[3];
+    CGFloat _R, _G, _B, _A;
+    _R = components[R];
+    _G = components[G];
+    _B = components[B];
+    _A = components[A];
     
     const CGFloat *otherComponents = CGColorGetComponents(color.CGColor);
-    CGFloat r, g, b, a;
-    r = otherComponents[0];
-    g = otherComponents[1];
-    b = otherComponents[2];
-    a = otherComponents[3];
+    CGFloat _r, _g, _b, _a;
+    _r = otherComponents[R];
+    _g = otherComponents[G];
+    _b = otherComponents[B];
+    _a = otherComponents[A];
     
     CGFloat i = (fabsf(amount) > 1.0) ? 1.0 : fabsf(amount); // Clamp to 0.0 - 1.0
     CGFloat j = 1.0 - amount;
     
-    return RGBA_(R * j + r * i,
-                 G * j + g * i,
-                 B * j + b * i,
-                 A * j + a * i);
+    return RGBA_(_R * j + _r * i,
+                 _G * j + _g * i,
+                 _B * j + _b * i,
+                 _A * j + _a * i);
 }
 
 

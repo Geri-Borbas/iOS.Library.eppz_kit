@@ -23,19 +23,34 @@
 @interface NSString (EPPZKit)
 
 
-//From http://snipplr.com/view/18192/md5-string-hash/
-+(NSString*)md5HashFromString:(NSString*) source;
--(NSString*)md5;
-+(NSString*)uniqueIDFromString:(NSString*) source; //Alias for +md5HashFromString:.
+-(BOOL)isEqualToStringIgnoringCase:(NSString*) string;
+
+
+#pragma mark - MD5
+
+-(NSString*)md5; // lowercase result
++(NSString*)md5HashFromString:(NSString*) source; // UPPERCASE result
++(NSString*)uniqueIDFromString:(NSString*) source; //Alias for the above
+
+
+#pragma mark - URL encoding
+
 -(NSString*)urlEncode;
 -(NSString*)urlDecode;
 
+
+#pragma mark - Date detector
+
 -(NSDate*)dateValue;
 
+
 #pragma mark - (NSStringDrawing) compatibility
+
 -(CGSize)_sizeWithFont:(UIFont*) font;
 
+
 #pragma mark - (UIStringDrawing) compatibility
+
 -(void)_drawAtPoint:(CGPoint) point withFont:(UIFont*) font foregroundColor:(UIColor*) color;
 
 

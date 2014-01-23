@@ -25,6 +25,11 @@
 
 @interface UIColor (EPPZKit)
 
+@property (nonatomic, readonly) CGFloat red;
+@property (nonatomic, readonly) CGFloat green;
+@property (nonatomic, readonly) CGFloat blue;
+@property (nonatomic, readonly) CGFloat alpha;
+
 -(UIColor*)colorWithAlpha:(CGFloat) alpha;
 -(UIColor*)blendWithColor:(UIColor*) color amount:(CGFloat) amount;
 
