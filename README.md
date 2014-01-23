@@ -5,7 +5,7 @@
 Feel free to file a pull request if you spot some errors.
 
 
-#### EPPZPropertySynchronizator
+#### EPPZBinding
 Keep the properties of two objects synchronized along a given property map. If any value changes, it sets (tries to set) the matching property for the other object.
 ```Objective-C
 // Keep a user model object synced with the UI, and vica-versa.
@@ -13,9 +13,9 @@ NSDictionary *map = @{
                       @"name" : @"nameTextField.text",
                       @"email" : @"emailTextField.text"
                       };
-self.synchronizator = [EPPZPropertySynchronizator synchronizerWithObject:self.user
-                                                                  object:self
-                                                             propertyMap:map];
+self.binding = [EPPZBinding bindObject:self.user
+                            withObject:self
+                           propertyMap:map];
 ```
 
 
@@ -297,7 +297,7 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
-* 1.8.01
+* 1.8.01 - 1.8.02
 
     + Wording
 

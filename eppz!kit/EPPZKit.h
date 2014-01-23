@@ -13,7 +13,7 @@
 //
 
 
-static NSString *const kEPPZKitVersion = @"1.8.01";
+static NSString *const kEPPZKitVersion = @"1.8.02";
 
 
 //Base classes.
@@ -39,7 +39,7 @@ static NSString *const kEPPZKitVersion = @"1.8.01";
 #import "EPPZGeometry.h"
 #import "EPPZDiatonicScale.h"
 #import "NSDictionary+EPPZKit.h"
-#import "EPPZPropertySynchronizator.h"
+#import "EPPZBinding.h"
 
 //UIKit tools.
 #import "EPPZViewOwner.h"

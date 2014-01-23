@@ -50,6 +50,7 @@
     // Sync UI change.
     textField.text = @"Uma Thurman";
     XCTAssertEqualObjects(model.name, @"Uma Thurman", @"Property `model.name` should be synchronized.");
+
 }
 
 
