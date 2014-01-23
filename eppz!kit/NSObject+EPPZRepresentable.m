@@ -381,7 +381,6 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
     [self didRepresented];
 }
 
-
 -(id)representationValueForPropertyName:(NSString*) propertyName objectPool:(NSMutableDictionary*) objectPool
 {
     // Get the actual (runtime) value for this key.

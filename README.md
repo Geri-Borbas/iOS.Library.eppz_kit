@@ -297,6 +297,17 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.8.3
+
+    + EPPZRepresentableInspectorViewController
+        + A really lovely way to inspect representable objects at runtime
+
+* 1.8.2
+
+    + EPPZBinding
+        + Wording (left, right)
+        + Can create binding with formatter blocks for values (undocumented yet)
+
 * 1.8.01 - 1.8.03
 
     + Wording

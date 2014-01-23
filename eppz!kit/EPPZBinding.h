@@ -17,13 +17,27 @@
 #import "NSDictionary+EPPZKit.h"
 
 
+#define EPPZ_BINDING_LOGGING YES
+#define EBLog if (EPPZ_BINDING_LOGGING) NSLog
+
+
+typedef id (^EPPZBindingRightValueFormatterBlock)(id leftValue); // Should return right value.
+typedef id (^EPPZBindingLeftValueFormatterBlock)(id rightValue); // Should return left value.
+
+
 @interface EPPZBinding : NSObject
 
-@property (nonatomic, strong) NSObject *one; // Strong references ensures proper dealloc order (synchronizator, observers, then objects).
-@property (nonatomic, strong) NSObject *other;
+@property (nonatomic, strong) NSObject *left; // Strong references ensures proper dealloc order (synchronizator, observers, then objects).
+@property (nonatomic, strong) NSObject *right;
 
-+(id)bindObject:(NSObject*) one
-     withObject:(NSObject*) other
++(id)bindObject:(NSObject*) left
+     withObject:(NSObject*) right
     propertyMap:(NSDictionary*) propertyMap;
+
++(id)bindObject:(NSObject*) left
+     withObject:(NSObject*) right
+    propertyMap:(NSDictionary*) propertyMap
+ leftFormatters:(NSDictionary*) leftFormatters
+rightFormatters:(NSDictionary*) rightFormatters;
 
 @end

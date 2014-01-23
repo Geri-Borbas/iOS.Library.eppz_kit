@@ -15,10 +15,17 @@
 #import "EPPZBinding.h"
 
 
+
 @interface EPPZBinding ()
 
-@property (nonatomic, strong) NSDictionary *otherKeyPathsForOneKeyPaths;
-@property (nonatomic, strong) NSDictionary *oneKeyPathsForOtherKeyPaths;
+@property (nonatomic) BOOL leftIsObserved;
+@property (nonatomic) BOOL rightIsObserved;
+
+@property (nonatomic, strong) NSDictionary *rightKeyPathsForLeftKeyPaths;
+@property (nonatomic, strong) NSDictionary *leftKeyPathsForRightKeyPaths;
+
+@property (nonatomic, strong) NSDictionary *leftFormattersForLeftKeyPaths;
+@property (nonatomic, strong) NSDictionary *rightFormattersForRightKeyPaths;
 
 @end
 
@@ -28,21 +35,35 @@
 
 #pragma mark - Creation
 
-+(id)bindObject:(NSObject*) one
-     withObject:(NSObject*) other
++(id)bindObject:(NSObject*) left
+     withObject:(NSObject*) right
     propertyMap:(NSDictionary*) propertyMap
-{ return [[self alloc] initWithObject:one object:other propertyMap:propertyMap]; }
+{ return [self bindObject:left withObject:right propertyMap:propertyMap leftFormatters:nil rightFormatters:nil]; }
 
--(id)initWithObject:(NSObject*) one
-             object:(NSObject*) other
-        propertyMap:(NSDictionary*) propertyMap
++(id)bindObject:(NSObject*) left
+     withObject:(NSObject*) right
+    propertyMap:(NSDictionary*) propertyMap
+ leftFormatters:(NSDictionary*) leftFormatters
+rightFormatters:(NSDictionary*) rightFormatters
+{ return [[self alloc] initWithLeft:left right:right propertyMap:propertyMap leftFormatters:leftFormatters rightFormatters:rightFormatters]; }
+
+-(id)initWithLeft:(NSObject*) left
+            right:(NSObject*) right
+      propertyMap:(NSDictionary*) propertyMap
+   leftFormatters:(NSDictionary*) leftFormatters
+  rightFormatters:(NSDictionary*) rightFormatters
 {
     if (self = [super init])
     {
-        self.one = one;
-        self.other = other;
-        self.otherKeyPathsForOneKeyPaths = propertyMap;
-        self.oneKeyPathsForOtherKeyPaths = [propertyMap dictionaryBySwappingKeysAndValues];
+        self.left = left;
+        self.right = right;
+        
+        self.rightKeyPathsForLeftKeyPaths = propertyMap;
+        self.leftKeyPathsForRightKeyPaths = [propertyMap dictionaryBySwappingKeysAndValues];
+        
+        self.leftFormattersForLeftKeyPaths = leftFormatters;
+        self.rightFormattersForRightKeyPaths = rightFormatters;
+        
         [self setupObservers];
     }
     return self;
@@ -51,130 +72,235 @@
 
 #pragma mark - KeyPath mapping
 
--(NSString*)otherKeyPathForOneKeypath:(NSString*) oneKeyPath
+-(NSString*)rightKeyPathForLeftKeypath:(NSString*) oneKeyPath
 {
     if (oneKeyPath == nil) return nil;
-    if ([[self.otherKeyPathsForOneKeyPaths allKeys] containsObject:oneKeyPath] == NO) return nil;
-    return [self.otherKeyPathsForOneKeyPaths objectForKey:oneKeyPath];
+    if ([[self.rightKeyPathsForLeftKeyPaths allKeys] containsObject:oneKeyPath] == NO) return nil;
+    return [self.rightKeyPathsForLeftKeyPaths objectForKey:oneKeyPath];
 }
 
--(NSString*)oneKeyPathForOtherKeypath:(NSString*) otherKeyPath
+-(NSString*)leftKeyPathForRightKeypath:(NSString*) otherKeyPath
 {
     if (otherKeyPath == nil) return nil;
-    if ([[self.oneKeyPathsForOtherKeyPaths allKeys] containsObject:otherKeyPath] == NO) return nil;
-    return [self.oneKeyPathsForOtherKeyPaths objectForKey:otherKeyPath];
+    if ([[self.leftKeyPathsForRightKeyPaths allKeys] containsObject:otherKeyPath] == NO) return nil;
+    return [self.leftKeyPathsForRightKeyPaths objectForKey:otherKeyPath];
 }
 
 
-#pragma mark - Observe / sync
+#pragma mark - Value formatting
+
+-(id)rightValueForKeyPath:(NSString*) keyPath leftValue:(id) leftValue
+{
+    // Default.
+    id rightValue = leftValue;
+    
+    // Look for formatter.
+    EPPZBindingRightValueFormatterBlock formatterBlock;
+    if (self.rightFormattersForRightKeyPaths != nil)
+        if ([[self.rightFormattersForRightKeyPaths allKeys] containsObject:keyPath])
+        {
+            // Get formatted value.
+            formatterBlock = [self.rightFormattersForRightKeyPaths objectForKey:keyPath];
+            rightValue = formatterBlock(leftValue);
+        }
+    
+    // Spit out.
+    return rightValue;
+}
+
+-(id)leftValueForKeyPath:(NSString*) keyPath rightValue:(id) rightValue
+{
+    // Default.
+    id leftValue = rightValue;
+    
+    // Look for formatter.
+    EPPZBindingLeftValueFormatterBlock formatterBlock;
+    if (self.leftFormattersForLeftKeyPaths != nil)
+        if ([[self.leftFormattersForLeftKeyPaths allKeys] containsObject:keyPath])
+        {
+            // Get formatted value.
+            formatterBlock = [self.leftFormattersForLeftKeyPaths objectForKey:keyPath];
+            leftValue = formatterBlock(rightValue);
+        }
+    
+    // Spit out.
+    return leftValue;
+}
+
+
+#pragma mark - Observers
 
 -(void)setupObservers
 {
-    // Observe one.
-    [[self.otherKeyPathsForOneKeyPaths allKeys] enumerateObjectsUsingBlock:^(id eachKeyPath, NSUInteger index, BOOL *stop)
+    // Observe left.
+    [[self.rightKeyPathsForLeftKeyPaths allKeys] enumerateObjectsUsingBlock:^(id eachKeyPath, NSUInteger index, BOOL *stop)
     {
-        [self.one addObserver:self
-                   forKeyPath:eachKeyPath
-                      options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
-                      context:NULL];
+        [self.left addObserver:self
+                    forKeyPath:eachKeyPath
+                       options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
+                       context:NULL];
     }];
+
+    self.leftIsObserved = YES; // Flag.
     
-    [self.one addObserver:self
-               forKeyPath:@"dealloc"
-                  options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
-                  context:NULL];
-    
-    // Observe other.
-    [[self.oneKeyPathsForOtherKeyPaths allKeys] enumerateObjectsUsingBlock:^(id eachKeyPath, NSUInteger index, BOOL *stop)
+    // Observe right.
+    [[self.leftKeyPathsForRightKeyPaths allKeys] enumerateObjectsUsingBlock:^(id eachKeyPath, NSUInteger index, BOOL *stop)
     {
-        [self.other addObserver:self
+        [self.right addObserver:self
                      forKeyPath:eachKeyPath
                         options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
                         context:NULL];
     }];
+    
+    self.rightIsObserved = YES; // Flag.
 }
 
 -(void)tearDownObservers
 {
-    // Observe one.
-    [[self.otherKeyPathsForOneKeyPaths allKeys] enumerateObjectsUsingBlock:^(id eachKeyPath, NSUInteger index, BOOL *stop)
-    { [self.one removeObserver:self forKeyPath:eachKeyPath]; }];
+    // Remove observers for left if any.
+    if (self.leftIsObserved)
+    {
+        [[self.rightKeyPathsForLeftKeyPaths allKeys] enumerateObjectsUsingBlock:^(id eachKeyPath, NSUInteger index, BOOL *stop)
+        { [self.left removeObserver:self forKeyPath:eachKeyPath]; }];
+        self.leftIsObserved = NO;
+    }
     
-    // Observe other.
-    [[self.oneKeyPathsForOtherKeyPaths allKeys] enumerateObjectsUsingBlock:^(id eachKeyPath, NSUInteger index, BOOL *stop)
-    { [self.other removeObserver:self forKeyPath:eachKeyPath]; }];
+    // Remove osbservers for right if any.
+    if (self.rightIsObserved)
+    {
+        [[self.leftKeyPathsForRightKeyPaths allKeys] enumerateObjectsUsingBlock:^(id eachKeyPath, NSUInteger index, BOOL *stop)
+        { [self.right removeObserver:self forKeyPath:eachKeyPath]; }];
+        self.rightIsObserved = NO;
+    }
 }
 
 -(void)dealloc
 { [self tearDownObservers]; }
 
--(void)setOne:(NSObject*) one
+
+#pragma mark - Target object setters
+
+-(void)setLeft:(NSObject*) left
 {
-    _one = one;
     [self tearDownObservers];
+    _left = left;
+    [self updateRight];
     [self setupObservers];
 }
 
--(void)setOther:(NSObject*) other
+-(void)setRight:(NSObject*) right
 {
-    _other = other;
     [self tearDownObservers];
+    _right = right;
+    [self updateLeft];
     [self setupObservers];
 }
+
+
+#pragma mark - Bindings
 
 -(void)observeValueForKeyPath:(NSString*) keyPath
                      ofObject:(id) object
                        change:(NSDictionary*) change
                       context:(void*) context
-{
-    NSLog(@"Observe %@", keyPath);
-    
+{    
     id value = [change objectForKey:NSKeyValueChangeNewKey];
     
-    static NSString *skipOneKeyPath = nil;
-    static NSString *skipOtherKeyPath = nil;
+    // Work around redundant (endless) settings with these flags.
+    static NSString *skipLeftKeyPath = nil;
+    static NSString *skipRightKeyPath = nil;
     
-    BOOL forward = (object == self.one);
+    BOOL leftChanged = (object == self.left);
     
-    // One.
-    if (forward)
+    // Left changed, set right.
+    if (leftChanged)
     {
         // Skip if set during a synchronizing set.
-        if ([keyPath isEqualToString:skipOneKeyPath])
+        if ([keyPath isEqualToString:skipLeftKeyPath])
         {
-            skipOneKeyPath = nil;
+            skipLeftKeyPath = nil;
             return;
         }
         
         // Get keyPath.
-        NSString *otherKeyPath = [self otherKeyPathForOneKeypath:keyPath];
+        NSString *rightKeyPath = [self rightKeyPathForLeftKeypath:keyPath];
+        
+        // Get value.
+        id rightValue = [self rightValueForKeyPath:rightKeyPath leftValue:value];
         
         // Set value on other.
-        skipOtherKeyPath = otherKeyPath; // Skip this set.
-        @try { [self.other setValue:value forKey:otherKeyPath]; }
+        skipRightKeyPath = rightKeyPath; // Skip this set.
+        @try
+        {
+            dispatch_async(dispatch_get_main_queue(),^
+            {
+                EBLog(@"Set <%@> on right `%@` for `%@`", rightValue, self.right, rightKeyPath);
+                [self.right setValue:rightValue forKeyPath:rightKeyPath];
+            });
+        }
         @catch (NSException *exception) { }
         @finally { }
     }
     
-    // Other.
+    // Right changed, set left.
     else
     {
         // Skip if set during a synchronizing set.
-        if ([keyPath isEqualToString:skipOtherKeyPath])
+        if ([keyPath isEqualToString:skipRightKeyPath])
         {
-            skipOtherKeyPath = nil;
+            skipRightKeyPath = nil;
             return;
         }
         
         // Get keyPath.
-        NSString *oneKeyPath = [self oneKeyPathForOtherKeypath:keyPath];
+        NSString *leftKeyPath = [self leftKeyPathForRightKeypath:keyPath];
         
-        // Set value on one.
-        skipOneKeyPath = keyPath; // Skip this set.
-        @try { [self.one setValue:value forKey:oneKeyPath]; }
+        // Get value.
+        id leftValue = [self leftValueForKeyPath:leftKeyPath rightValue:value];
+        
+        // Set value on left.
+        skipLeftKeyPath = keyPath; // Skip this set.
+        @try
+        {
+            dispatch_async(dispatch_get_main_queue(),^
+            {
+                EBLog(@"Set <%@> on left `%@` for `%@`", leftValue, self.left, leftKeyPath);
+                [self.left setValue:leftValue forKeyPath:leftKeyPath];
+            });
+        }
         @catch (NSException *exception) { }
         @finally { }
     }
+}
+
+-(void)updateLeft
+{
+    [self.leftKeyPathsForRightKeyPaths enumerateKeysAndObjectsUsingBlock:^(id rightKeyPath, id leftKeyPath, BOOL *stop)
+    {
+        id rightValue = [self.right valueForKeyPath:rightKeyPath];
+        @try
+        {
+            dispatch_async(dispatch_get_main_queue(),^
+            { [self.left setValue:rightValue forKeyPath:leftKeyPath]; });
+        }
+        @catch (NSException *exception) { }
+        @finally { }
+    }];
+}
+
+-(void)updateRight
+{
+    [self.rightKeyPathsForLeftKeyPaths enumerateKeysAndObjectsUsingBlock:^(id leftKeyPath, id rightKeyPath, BOOL *stop)
+    {
+        id leftValue = [self.left valueForKeyPath:leftKeyPath];
+        @try
+        {
+            dispatch_async(dispatch_get_main_queue(),^
+            { [self.right setValue:leftValue forKeyPath:rightKeyPath]; });
+        }
+        @catch (NSException *exception) { }
+        @finally { }
+    }];
 }
 
 

@@ -78,6 +78,7 @@
 		AEF1C58D188DF29200068D4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE922F4117937A1A0088E5E5 /* UIKit.framework */; };
 		AEF1C593188DF29200068D4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AEF1C591188DF29200068D4D /* InfoPlist.strings */; };
 		AEFC653817B81865004B5214 /* EPPZTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFC653717B81865004B5214 /* EPPZTimer.m */; };
+		D804A39E18919D8F00082290 /* EPPZRepresentableInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D804A39D18919D8F00082290 /* EPPZRepresentableInspectorViewController.m */; };
 		D81E3DBC17CCEC1A00B2C7A4 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81E3DBB17CCEC1A00B2C7A4 /* AdSupport.framework */; };
 		D81E3DBE17CCEC1F00B2C7A4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D81E3DBD17CCEC1F00B2C7A4 /* libz.dylib */; };
 		D81E3DC217CD00AF00B2C7A4 /* UIColor+EPPZRepresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D81E3DC117CD00AF00B2C7A4 /* UIColor+EPPZRepresenter.m */; };
@@ -263,6 +264,8 @@
 		AEF1C596188DF29200068D4D /* eppz!kit!tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "eppz!kit!tests-Prefix.pch"; sourceTree = "<group>"; };
 		AEFC653617B81865004B5214 /* EPPZTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZTimer.h; sourceTree = "<group>"; };
 		AEFC653717B81865004B5214 /* EPPZTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZTimer.m; sourceTree = "<group>"; };
+		D804A39C18919D8F00082290 /* EPPZRepresentableInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZRepresentableInspectorViewController.h; sourceTree = "<group>"; };
+		D804A39D18919D8F00082290 /* EPPZRepresentableInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZRepresentableInspectorViewController.m; sourceTree = "<group>"; };
 		D81E3DBB17CCEC1A00B2C7A4 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		D81E3DBD17CCEC1F00B2C7A4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D81E3DC017CD00AF00B2C7A4 /* UIColor+EPPZRepresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+EPPZRepresenter.h"; sourceTree = "<group>"; };
@@ -852,6 +855,15 @@
 			name = "□ Timer";
 			sourceTree = "<group>";
 		};
+		D804A39B18919D7A00082290 /* Inspector view */ = {
+			isa = PBXGroup;
+			children = (
+				D804A39C18919D8F00082290 /* EPPZRepresentableInspectorViewController.h */,
+				D804A39D18919D8F00082290 /* EPPZRepresentableInspectorViewController.m */,
+			);
+			name = "Inspector view";
+			sourceTree = "<group>";
+		};
 		D81E3DBF17CD009900B2C7A4 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
@@ -874,6 +886,7 @@
 		D81E3DC417CD058200B2C7A4 /* □ Representable */ = {
 			isa = PBXGroup;
 			children = (
+				D804A39B18919D7A00082290 /* Inspector view */,
 				D8AD5DBE17BD2F3C004BD9AF /* EPPZRepresentable.rtf */,
 				D8AD5DAE17BD22BB004BD9AF /* NSObject+EPPZRepresentable.h */,
 				D8AD5DAF17BD22BB004BD9AF /* NSObject+EPPZRepresentable.m */,
@@ -1231,6 +1244,7 @@
 				AE922F89179381ED0088E5E5 /* NSString+EPPZKit.m in Sources */,
 				AE9C40B81794A0A700090A82 /* EPPZReachability.m in Sources */,
 				AE9C40BB1794A0C800090A82 /* NSString+EPPZReachability.m in Sources */,
+				D804A39E18919D8F00082290 /* EPPZRepresentableInspectorViewController.m in Sources */,
 				AE9C411C1794A4D600090A82 /* EPPZUserDefaults.m in Sources */,
 				AECDE7981842F3A6004C5ACF /* UIColor+EPPZKit.m in Sources */,
 				AE9C41431794CA4A00090A82 /* EPPZFlatButton.m in Sources */,
