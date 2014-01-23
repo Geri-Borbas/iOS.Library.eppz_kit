@@ -1,5 +1,5 @@
 //
-//  EPPZPropertyMapper.h
+//  EPPZBinding.h
 //  eppz!kit
 //
 //  Created by Borbás Geri on 20/01/14.
@@ -17,10 +17,13 @@
 #import "NSDictionary+EPPZKit.h"
 
 
-@interface EPPZPropertySynchronizator : NSObject
+@interface EPPZBinding : NSObject
 
-+(id)synchronizatorWithObject:(NSObject*) one
-                       object:(NSObject*) other
-                  propertyMap:(NSDictionary*) propertyMap;
+@property (nonatomic, strong) NSObject *one; // Strong references ensures proper dealloc order (synchronizator, observers, then objects).
+@property (nonatomic, strong) NSObject *other;
+
++(id)bindObject:(NSObject*) one
+     withObject:(NSObject*) other
+    propertyMap:(NSDictionary*) propertyMap;
 
 @end

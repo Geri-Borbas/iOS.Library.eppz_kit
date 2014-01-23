@@ -1,5 +1,5 @@
 //
-//  _EPPZPropertySynchronizator.m
+//  _EPPZBinding.m
 //  eppz!kit
 //
 //  Created by Borbás Geri on 21/01/14.
@@ -23,12 +23,12 @@
 @end
 
 
-@interface _EPPZPropertySynchronizator : XCTestCase
-@property (nonatomic, strong) EPPZPropertySynchronizator *synchronizator;
+@interface _EPPZBinding : XCTestCase
+@property (nonatomic, strong) EPPZBinding *binding;
 @end
 
 
-@implementation _EPPZPropertySynchronizator
+@implementation _EPPZBinding
 
 
 -(void)test
@@ -39,9 +39,9 @@
                                   @"name" : @"text"
                                   };
     
-    self.synchronizator = [EPPZPropertySynchronizator synchronizatorWithObject:model
-                                                                        object:textField
-                                                                   propertyMap:propertyMap];
+    self.binding = [EPPZBinding bindObject:model
+                                withObject:textField
+                               propertyMap:propertyMap];
     
     // Sync model change.
     model.name = @"John Doe";

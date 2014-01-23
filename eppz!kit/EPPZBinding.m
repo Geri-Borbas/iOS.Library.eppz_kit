@@ -12,27 +12,25 @@
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "EPPZPropertySynchronizator.h"
+#import "EPPZBinding.h"
 
 
-@interface EPPZPropertySynchronizator ()
+@interface EPPZBinding ()
 
-@property (nonatomic, strong) NSObject *one; // Strong references ensures proper dealloc order (synchronizator, observers, then objects).
-@property (nonatomic, strong) NSObject *other;
 @property (nonatomic, strong) NSDictionary *otherKeyPathsForOneKeyPaths;
 @property (nonatomic, strong) NSDictionary *oneKeyPathsForOtherKeyPaths;
 
 @end
 
 
-@implementation EPPZPropertySynchronizator
+@implementation EPPZBinding
 
 
 #pragma mark - Creation
 
-+(id)synchronizatorWithObject:(NSObject*) one
-                       object:(NSObject*) other
-                  propertyMap:(NSDictionary*) propertyMap
++(id)bindObject:(NSObject*) one
+     withObject:(NSObject*) other
+    propertyMap:(NSDictionary*) propertyMap
 { return [[self alloc] initWithObject:one object:other propertyMap:propertyMap]; }
 
 -(id)initWithObject:(NSObject*) one
@@ -45,7 +43,7 @@
         self.other = other;
         self.otherKeyPathsForOneKeyPaths = propertyMap;
         self.oneKeyPathsForOtherKeyPaths = [propertyMap dictionaryBySwappingKeysAndValues];
-        [self setupInstanceObservers];
+        [self setupObservers];
     }
     return self;
 }
@@ -70,7 +68,7 @@
 
 #pragma mark - Observe / sync
 
--(void)setupInstanceObservers
+-(void)setupObservers
 {
     // Observe one.
     [[self.otherKeyPathsForOneKeyPaths allKeys] enumerateObjectsUsingBlock:^(id eachKeyPath, NSUInteger index, BOOL *stop)
@@ -96,7 +94,7 @@
     }];
 }
 
--(void)tearDownInstanceObservers
+-(void)tearDownObservers
 {
     // Observe one.
     [[self.otherKeyPathsForOneKeyPaths allKeys] enumerateObjectsUsingBlock:^(id eachKeyPath, NSUInteger index, BOOL *stop)
@@ -108,7 +106,21 @@
 }
 
 -(void)dealloc
-{ [self tearDownInstanceObservers]; }
+{ [self tearDownObservers]; }
+
+-(void)setOne:(NSObject*) one
+{
+    _one = one;
+    [self tearDownObservers];
+    [self setupObservers];
+}
+
+-(void)setOther:(NSObject*) other
+{
+    _other = other;
+    [self tearDownObservers];
+    [self setupObservers];
+}
 
 -(void)observeValueForKeyPath:(NSString*) keyPath
                      ofObject:(id) object
