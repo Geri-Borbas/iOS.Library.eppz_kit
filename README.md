@@ -297,6 +297,10 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.8.01
+
+    + Wording
+
 * 1.8.0
 
     + More Tests
