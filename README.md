@@ -297,6 +297,11 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.8.45
+
+    + Attempt to swizzle bound object's dealloc
+        + Won't use in production
+
 * 1.8.3 - 1.8.4
 
     + EPPZRepresentableInspectorViewController

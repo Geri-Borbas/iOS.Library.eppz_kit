@@ -17,6 +17,15 @@
 #import "NSDictionary+EPPZKit.h"
 
 
+@class EPPZBinding;
+@interface NSObject (EPPZBinding)
+@property (nonatomic, strong) NSNumber *swizzled;
+@property (nonatomic, weak) EPPZBinding *binding;
+-(void)originalDealloc;
+-(void)injectedDealloc;
+@end
+
+
 #define EPPZ_BINDING_LOGGING NO
 #define EBLog if (EPPZ_BINDING_LOGGING) NSLog
 
@@ -27,8 +36,8 @@ typedef id (^EPPZBindingLeftValueFormatterBlock)(id rightValue); // Should retur
 
 @interface EPPZBinding : NSObject
 
-@property (nonatomic, strong) NSObject *left; // Strong references ensures proper dealloc order (synchronizator, observers, then objects).
-@property (nonatomic, strong) NSObject *right;
+@property (nonatomic, weak) NSObject *left; // Strong references ensures proper dealloc order (synchronizator, observers, then objects).
+@property (nonatomic, weak) NSObject *right;
 
 +(id)bindObject:(NSObject*) left
      withObject:(NSObject*) right
@@ -39,5 +48,7 @@ typedef id (^EPPZBindingLeftValueFormatterBlock)(id rightValue); // Should retur
     propertyMap:(NSDictionary*) propertyMap
  leftFormatters:(NSDictionary*) leftFormatters
 rightFormatters:(NSDictionary*) rightFormatters;
+
+-(void)cut; // Cut bindings (tear down observers).
 
 @end

@@ -13,7 +13,10 @@
 //
 
 #import "EPPZBinding.h"
+#import <objc/runtime.h>
 
+
+#define SWIZZLE NO
 
 
 @interface EPPZBinding ()
@@ -26,6 +29,39 @@
 
 @property (nonatomic, strong) NSDictionary *leftFormattersForLeftKeyPaths;
 @property (nonatomic, strong) NSDictionary *rightFormattersForRightKeyPaths;
+
+-(void)objectWillBeDeallocated:(NSObject*) object;
+
+@end
+
+
+#pragma mark - Inject `binding` property to NSObject
+
+static char bindingKey;
+static char sizzledKey;
+@implementation NSObject (EPPZBinding)
+
+-(NSString*)binding
+{ return objc_getAssociatedObject(self, &bindingKey); }
+
+-(void)setBinding:(NSString*) binding
+{ objc_setAssociatedObject(self, &bindingKey, binding, OBJC_ASSOCIATION_ASSIGN); }
+
+-(NSNumber*)swizzled
+{ return objc_getAssociatedObject(self, &sizzledKey); }
+
+-(void)setSwizzled:(NSNumber*) swizzled
+{ objc_setAssociatedObject(self, &sizzledKey, swizzled, OBJC_ASSOCIATION_RETAIN); }
+
+-(void)originalDealloc
+{ /* to be populated trought swizzling */ }
+
+-(void)injectedDealloc
+{
+    NSLog(@"%@ injectedDealloc", NSStringFromClass(self.class));
+    [self.binding objectWillBeDeallocated:self];
+    [self originalDealloc];
+}
 
 @end
 
@@ -57,6 +93,12 @@ rightFormatters:(NSDictionary*) rightFormatters
     {
         self.left = left;
         self.right = right;
+        
+        if (SWIZZLE)
+        {
+            left.binding = self;
+            right.binding = self;
+        }
         
         self.rightKeyPathsForLeftKeyPaths = propertyMap;
         self.leftKeyPathsForRightKeyPaths = [propertyMap dictionaryBySwappingKeysAndValues];
@@ -157,24 +199,33 @@ rightFormatters:(NSDictionary*) rightFormatters
 
 -(void)tearDownObservers
 {
+    [self tearDownLeftObserversIfNeeded];
+    [self tearDownRightObserversIfNeeded];
+}
+
+-(void)tearDownLeftObserversIfNeeded
+{
     // Remove observers for left if any.
     if (self.leftIsObserved)
     {
         [[self.rightKeyPathsForLeftKeyPaths allKeys] enumerateObjectsUsingBlock:^(id eachKeyPath, NSUInteger index, BOOL *stop)
-        { [self.left removeObserver:self forKeyPath:eachKeyPath]; }];
+         { [self.left removeObserver:self forKeyPath:eachKeyPath]; }];
         self.leftIsObserved = NO;
     }
-    
+}
+
+-(void)tearDownRightObserversIfNeeded
+{
     // Remove osbservers for right if any.
     if (self.rightIsObserved)
     {
         [[self.leftKeyPathsForRightKeyPaths allKeys] enumerateObjectsUsingBlock:^(id eachKeyPath, NSUInteger index, BOOL *stop)
-        { [self.right removeObserver:self forKeyPath:eachKeyPath]; }];
+         { [self.right removeObserver:self forKeyPath:eachKeyPath]; }];
         self.rightIsObserved = NO;
     }
 }
 
--(void)dealloc
+-(void)cut
 { [self tearDownObservers]; }
 
 
@@ -184,6 +235,14 @@ rightFormatters:(NSDictionary*) rightFormatters
 {
     [self tearDownObservers];
     _left = left;
+    if (left == nil) return;
+    
+    if (SWIZZLE)
+    {
+        left.binding = self;
+        [self injectDeallocCallbackToObject:left];
+    }
+    
     [self updateRight];
     [self setupObservers];
 }
@@ -192,8 +251,55 @@ rightFormatters:(NSDictionary*) rightFormatters
 {
     [self tearDownObservers];
     _right = right;
+    if (right == nil) return;
+    
+    if (SWIZZLE)
+    {
+        right.binding = self;
+        [self injectDeallocCallbackToObject:right];
+    }
+    
     [self updateLeft];
     [self setupObservers];
+}
+
+
+#pragma mark - Dealloc swizzling
+
+-(void)injectDeallocCallbackToObject:(NSObject*) object
+{
+    // Checks.
+    if (object.swizzled.boolValue == YES) return;
+    object.swizzled = @1;
+    
+    NSLog(@"injectDeallocCallbackToObject %@", NSStringFromClass(object.class));
+    
+    Method dealloc, originalDealloc;
+    dealloc = class_getInstanceMethod(object.class, NSSelectorFromString(@"dealloc"));
+    originalDealloc = class_getInstanceMethod(object.class, @selector(originalDealloc));
+    method_exchangeImplementations(dealloc, originalDealloc);
+    
+    Method injectedDealloc;
+    dealloc = class_getInstanceMethod(object.class, NSSelectorFromString(@"dealloc"));
+    injectedDealloc = class_getInstanceMethod(object.class, @selector(injectedDealloc));
+    method_exchangeImplementations(dealloc, injectedDealloc);
+}
+
+-(void)objectWillBeDeallocated:(NSObject*) object
+{
+    NSLog(@"EPPZBinding objectWillBeDeallocated:<%@>", NSStringFromClass(object.class));
+    
+    if (object == self.left)
+    { self.left = nil; }
+    
+    if (object == self.right)
+    { self.right = nil; }
+}
+
+-(void)dealloc
+{
+    [self tearDownObservers];
+    NSLog(@"EPPZBindings dealloc");
 }
 
 
