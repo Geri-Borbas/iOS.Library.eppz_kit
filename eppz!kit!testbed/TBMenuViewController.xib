@@ -30,6 +30,21 @@
                         <action selector="buttonTouchedUp:" destination="-1" eventType="touchUpInside" id="0lf-VZ-tC1"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="k7S-RH-Urk" customClass="TBButton">
+                    <rect key="frame" x="20" y="186" width="280" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Representable">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="controller" value="TBRepresentableViewController"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonTouchedUp:" destination="-1" eventType="touchUpInside" id="ghZ-73-EQa"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kHE-2b-jly" customClass="TBButton">
                     <rect key="frame" x="20" y="322" width="280" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>

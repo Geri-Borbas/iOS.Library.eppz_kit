@@ -66,6 +66,8 @@ static NSString *const kEPPZRepresentableErrorDomain = @"__eppz.representable";
 #pragma mark - General features
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 +(id)representableWithDictionaryRepresentation:(NSDictionary*) dictionaryRepresentation;
+
+-(NSString*)typeOfPropertyNamed:(NSString*) propertyName;
 -(Class)classOfPropertyNamed:(NSString*) propertyName;
 
 #pragma mark - Subclass templates

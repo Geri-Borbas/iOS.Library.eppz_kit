@@ -297,10 +297,12 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
-* 1.8.3
+* 1.8.3 - 1.8.4
 
     + EPPZRepresentableInspectorViewController
         + A really lovely way to inspect representable objects at runtime
+        + Cell implementation (a bit rough, but does the job for now)
+        + Testbed scene for representables
 
 * 1.8.2
 

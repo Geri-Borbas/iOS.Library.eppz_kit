@@ -15,7 +15,7 @@
 
 #import "NSObject+EPPZRepresentable.h"
 #import <UIKit/UIKit.h>
-
+#import "EPPZRepresentablePropertyCell.h"
 
 
 @interface EPPZRepresentableInspectorViewController : UIViewController
@@ -23,6 +23,6 @@
     <UITableViewDataSource, UITableViewDelegate>
 
 +(void)presentInViewController:(UIViewController*) viewController
-             withRepresentable:(NSObject<EPPZRepresentable>*) model;
+             withRepresentable:(NSObject<EPPZRepresentable>*) representable;
 
 @end

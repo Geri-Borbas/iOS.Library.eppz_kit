@@ -10,12 +10,15 @@
 		AE00588617C740990061146F /* EPPZBoolTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AE00588517C740990061146F /* EPPZBoolTools.m */; };
 		AE05144A17D1922D00F7FE5E /* EPPZVersions.m in Sources */ = {isa = PBXBuildFile; fileRef = AE05144917D1922D00F7FE5E /* EPPZVersions.m */; };
 		AE0F38BA17A459C500552157 /* NSDecimalNumber+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F38B917A459C500552157 /* NSDecimalNumber+LocalizedPrice.m */; };
+		AE17942B1891E4BA00954D38 /* EPPZRepresentablePropertyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE17942A1891E4BA00954D38 /* EPPZRepresentablePropertyCell.m */; };
 		AE3511B31841282700BCC751 /* UIImage+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3511B21841282700BCC751 /* UIImage+EPPZKit.m */; };
 		AE3511B71841886000BCC751 /* UICircle.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3511B61841886000BCC751 /* UICircle.m */; };
 		AE6A81AA1844140A007DACC8 /* UIFont+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6A81A91844140A007DACC8 /* UIFont+EPPZKit.m */; };
 		AE83531B1796317D005EE0DC /* EPPZAppStore.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8353141796317D005EE0DC /* EPPZAppStore.m */; };
 		AE83531E1796317D005EE0DC /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE83531A1796317D005EE0DC /* SKProduct+LocalizedPrice.m */; };
 		AE89108F17F13472001CC4B5 /* EPPZRepresentableException.m in Sources */ = {isa = PBXBuildFile; fileRef = AE89108E17F13472001CC4B5 /* EPPZRepresentableException.m */; };
+		AE9206B41891CF070072C02C /* TBRepresentableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9206B31891CF070072C02C /* TBRepresentableViewController.m */; };
+		AE9206B61891CF1E0072C02C /* TBRepresentableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE9206B51891CF1E0072C02C /* TBRepresentableViewController.xib */; };
 		AE922F79179381280088E5E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE922F4317937A1A0088E5E5 /* Foundation.framework */; };
 		AE922F87179381D60088E5E5 /* EPPZSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE922F6D17937B4D0088E5E5 /* EPPZSingleton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AE922F88179381E70088E5E5 /* EPPZFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE922F6917937B2C0088E5E5 /* EPPZFileManager.m */; };
@@ -94,10 +97,10 @@
 		D889D823188FEB3400D8B6CC /* NSString+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D889D821188FE6DD00D8B6CC /* NSString+EPPZKit.m */; };
 		D8AD5DAC17BD0B84004BD9AF /* EPPZDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */; };
 		D8AD5DB017BD22BB004BD9AF /* NSObject+EPPZRepresentable.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DAF17BD22BB004BD9AF /* NSObject+EPPZRepresentable.m */; };
-		D8AD5DB817BD2711004BD9AF /* EPPZEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DB717BD2711004BD9AF /* EPPZEntity.m */; };
-		D8AD5DBB17BD28C7004BD9AF /* EPPZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DBA17BD28C7004BD9AF /* EPPZUser.m */; };
-		D8AD5DC117BD30CD004BD9AF /* EPPZGameUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DC017BD30CD004BD9AF /* EPPZGameUser.m */; };
-		D8AD5DC517BD3895004BD9AF /* EPPZGameProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DC417BD3895004BD9AF /* EPPZGameProgress.m */; };
+		D8AD5DB817BD2711004BD9AF /* TBEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DB717BD2711004BD9AF /* TBEntity.m */; };
+		D8AD5DBB17BD28C7004BD9AF /* TBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DBA17BD28C7004BD9AF /* TBUser.m */; };
+		D8AD5DC117BD30CD004BD9AF /* TBGameUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DC017BD30CD004BD9AF /* TBGameUser.m */; };
+		D8AD5DC517BD3895004BD9AF /* TBGameProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AD5DC417BD3895004BD9AF /* TBGameProgress.m */; };
 		D8B1BC1B17C7A17F0071763B /* UIView+EPPZRepresentable.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B1BC1A17C7A17F0071763B /* UIView+EPPZRepresentable.m */; };
 		D8B1BC1E17C7BE030071763B /* EPPZRepresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B1BC1D17C7BE030071763B /* EPPZRepresenter.m */; };
 		D8BD6A7A17CE48E1007640CE /* NSObject+EPPZRepresentable_Archive.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BD6A7917CE48E1007640CE /* NSObject+EPPZRepresentable_Archive.m */; };
@@ -148,6 +151,8 @@
 		AE05144917D1922D00F7FE5E /* EPPZVersions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZVersions.m; sourceTree = "<group>"; };
 		AE0F38B817A459C500552157 /* NSDecimalNumber+LocalizedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+LocalizedPrice.h"; sourceTree = "<group>"; };
 		AE0F38B917A459C500552157 /* NSDecimalNumber+LocalizedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+LocalizedPrice.m"; sourceTree = "<group>"; };
+		AE1794291891E4BA00954D38 /* EPPZRepresentablePropertyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZRepresentablePropertyCell.h; sourceTree = "<group>"; };
+		AE17942A1891E4BA00954D38 /* EPPZRepresentablePropertyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZRepresentablePropertyCell.m; sourceTree = "<group>"; };
 		AE3511B11841282700BCC751 /* UIImage+EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EPPZKit.h"; sourceTree = "<group>"; };
 		AE3511B21841282700BCC751 /* UIImage+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EPPZKit.m"; sourceTree = "<group>"; };
 		AE3511B51841886000BCC751 /* UICircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICircle.h; sourceTree = "<group>"; };
@@ -160,6 +165,9 @@
 		AE83531A1796317D005EE0DC /* SKProduct+LocalizedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+LocalizedPrice.m"; sourceTree = "<group>"; };
 		AE89108D17F13472001CC4B5 /* EPPZRepresentableException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZRepresentableException.h; sourceTree = "<group>"; };
 		AE89108E17F13472001CC4B5 /* EPPZRepresentableException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZRepresentableException.m; sourceTree = "<group>"; };
+		AE9206B21891CF070072C02C /* TBRepresentableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBRepresentableViewController.h; sourceTree = "<group>"; };
+		AE9206B31891CF070072C02C /* TBRepresentableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBRepresentableViewController.m; sourceTree = "<group>"; };
+		AE9206B51891CF1E0072C02C /* TBRepresentableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TBRepresentableViewController.xib; sourceTree = "<group>"; };
 		AE922F4117937A1A0088E5E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE922F4317937A1A0088E5E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AE922F4517937A1A0088E5E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -291,15 +299,15 @@
 		D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZDevice.m; sourceTree = "<group>"; };
 		D8AD5DAE17BD22BB004BD9AF /* NSObject+EPPZRepresentable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EPPZRepresentable.h"; sourceTree = "<group>"; };
 		D8AD5DAF17BD22BB004BD9AF /* NSObject+EPPZRepresentable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EPPZRepresentable.m"; sourceTree = "<group>"; };
-		D8AD5DB617BD2711004BD9AF /* EPPZEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZEntity.h; sourceTree = "<group>"; };
-		D8AD5DB717BD2711004BD9AF /* EPPZEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZEntity.m; sourceTree = "<group>"; };
-		D8AD5DB917BD28C7004BD9AF /* EPPZUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZUser.h; sourceTree = "<group>"; };
-		D8AD5DBA17BD28C7004BD9AF /* EPPZUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZUser.m; sourceTree = "<group>"; };
+		D8AD5DB617BD2711004BD9AF /* TBEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBEntity.h; sourceTree = "<group>"; };
+		D8AD5DB717BD2711004BD9AF /* TBEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBEntity.m; sourceTree = "<group>"; };
+		D8AD5DB917BD28C7004BD9AF /* TBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBUser.h; sourceTree = "<group>"; };
+		D8AD5DBA17BD28C7004BD9AF /* TBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBUser.m; sourceTree = "<group>"; };
 		D8AD5DBE17BD2F3C004BD9AF /* EPPZRepresentable.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = EPPZRepresentable.rtf; sourceTree = "<group>"; };
-		D8AD5DBF17BD30CD004BD9AF /* EPPZGameUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZGameUser.h; sourceTree = "<group>"; };
-		D8AD5DC017BD30CD004BD9AF /* EPPZGameUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZGameUser.m; sourceTree = "<group>"; };
-		D8AD5DC317BD3894004BD9AF /* EPPZGameProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZGameProgress.h; sourceTree = "<group>"; };
-		D8AD5DC417BD3895004BD9AF /* EPPZGameProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZGameProgress.m; sourceTree = "<group>"; };
+		D8AD5DBF17BD30CD004BD9AF /* TBGameUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBGameUser.h; sourceTree = "<group>"; };
+		D8AD5DC017BD30CD004BD9AF /* TBGameUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBGameUser.m; sourceTree = "<group>"; };
+		D8AD5DC317BD3894004BD9AF /* TBGameProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBGameProgress.h; sourceTree = "<group>"; };
+		D8AD5DC417BD3895004BD9AF /* TBGameProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBGameProgress.m; sourceTree = "<group>"; };
 		D8B1BC1917C7A17F0071763B /* UIView+EPPZRepresentable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EPPZRepresentable.h"; sourceTree = "<group>"; };
 		D8B1BC1A17C7A17F0071763B /* UIView+EPPZRepresentable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EPPZRepresentable.m"; sourceTree = "<group>"; };
 		D8B1BC1C17C7BE030071763B /* EPPZRepresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZRepresenter.h; sourceTree = "<group>"; };
@@ -374,6 +382,15 @@
 			name = "□ Versions";
 			sourceTree = "<group>";
 		};
+		AE17942C1891E78800954D38 /* Property cell */ = {
+			isa = PBXGroup;
+			children = (
+				AE1794291891E4BA00954D38 /* EPPZRepresentablePropertyCell.h */,
+				AE17942A1891E4BA00954D38 /* EPPZRepresentablePropertyCell.m */,
+			);
+			name = "Property cell";
+			sourceTree = "<group>";
+		};
 		AE3511B41841883A00BCC751 /* □ UIImage+EPPZKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +447,34 @@
 				AE89108E17F13472001CC4B5 /* EPPZRepresentableException.m */,
 			);
 			name = Exceptions;
+			sourceTree = "<group>";
+		};
+		AE9206AF1891CE940072C02C /* Color theme */ = {
+			isa = PBXGroup;
+			children = (
+				AEF1C566188DECA100068D4D /* EPPZColorThemeTestbed.h */,
+				AEF1C567188DECA100068D4D /* EPPZColorThemeTestbed.m */,
+			);
+			name = "Color theme";
+			sourceTree = "<group>";
+		};
+		AE9206B01891CEB50072C02C /* ❑ Model tools */ = {
+			isa = PBXGroup;
+			children = (
+				AE9206B11891CED90072C02C /* □ Representable */,
+			);
+			name = "❑ Model tools";
+			sourceTree = "<group>";
+		};
+		AE9206B11891CED90072C02C /* □ Representable */ = {
+			isa = PBXGroup;
+			children = (
+				D8AD5DBC17BD292B004BD9AF /* Entity */,
+				AE9206B21891CF070072C02C /* TBRepresentableViewController.h */,
+				AE9206B31891CF070072C02C /* TBRepresentableViewController.m */,
+				AE9206B51891CF1E0072C02C /* TBRepresentableViewController.xib */,
+			);
+			name = "□ Representable";
 			sourceTree = "<group>";
 		};
 		AE922F3517937A1A0088E5E5 = {
@@ -522,8 +567,10 @@
 				AE922FC617938A4F0088E5E5 /* eppz!kit */,
 				AE922FAE1793852F0088E5E5 /* TBAppDelegate.h */,
 				AE922FAF1793852F0088E5E5 /* TBAppDelegate.m */,
+				AE9206AF1891CE940072C02C /* Color theme */,
 				AED43CAA182C7EF300E05FA6 /* Menu */,
 				AED43CB3182C8B7100E05FA6 /* ❑ Tools */,
+				AE9206B01891CEB50072C02C /* ❑ Model tools */,
 				AED43CB4182C8B8C00E05FA6 /* ❑ UIKit tools */,
 				AE922FA61793852F0088E5E5 /* Supporting Files */,
 			);
@@ -763,8 +810,6 @@
 		AED43CAA182C7EF300E05FA6 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				AEF1C566188DECA100068D4D /* EPPZColorThemeTestbed.h */,
-				AEF1C567188DECA100068D4D /* EPPZColorThemeTestbed.m */,
 				AED43CAE182C816300E05FA6 /* Button */,
 				AED43CA5182C7EEF00E05FA6 /* TBMenuViewController.h */,
 				AED43CA6182C7EEF00E05FA6 /* TBMenuViewController.m */,
@@ -858,6 +903,7 @@
 		D804A39B18919D7A00082290 /* Inspector view */ = {
 			isa = PBXGroup;
 			children = (
+				AE17942C1891E78800954D38 /* Property cell */,
 				D804A39C18919D8F00082290 /* EPPZRepresentableInspectorViewController.h */,
 				D804A39D18919D8F00082290 /* EPPZRepresentableInspectorViewController.m */,
 			);
@@ -1041,7 +1087,6 @@
 		D8AD5DB517BD26F8004BD9AF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D8AD5DBC17BD292B004BD9AF /* Entity */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1049,8 +1094,8 @@
 		D8AD5DBC17BD292B004BD9AF /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				D8AD5DB617BD2711004BD9AF /* EPPZEntity.h */,
-				D8AD5DB717BD2711004BD9AF /* EPPZEntity.m */,
+				D8AD5DB617BD2711004BD9AF /* TBEntity.h */,
+				D8AD5DB717BD2711004BD9AF /* TBEntity.m */,
 				D8AD5DBD17BD2932004BD9AF /* User */,
 			);
 			name = Entity;
@@ -1060,8 +1105,8 @@
 			isa = PBXGroup;
 			children = (
 				D822ACAB17C67D5E0076DE10 /* user.plist */,
-				D8AD5DB917BD28C7004BD9AF /* EPPZUser.h */,
-				D8AD5DBA17BD28C7004BD9AF /* EPPZUser.m */,
+				D8AD5DB917BD28C7004BD9AF /* TBUser.h */,
+				D8AD5DBA17BD28C7004BD9AF /* TBUser.m */,
 				D8AD5DC217BD30D0004BD9AF /* Game user */,
 			);
 			name = User;
@@ -1070,8 +1115,8 @@
 		D8AD5DC217BD30D0004BD9AF /* Game user */ = {
 			isa = PBXGroup;
 			children = (
-				D8AD5DBF17BD30CD004BD9AF /* EPPZGameUser.h */,
-				D8AD5DC017BD30CD004BD9AF /* EPPZGameUser.m */,
+				D8AD5DBF17BD30CD004BD9AF /* TBGameUser.h */,
+				D8AD5DC017BD30CD004BD9AF /* TBGameUser.m */,
 				D8AD5DC617BD3897004BD9AF /* Game progress */,
 			);
 			name = "Game user";
@@ -1082,8 +1127,8 @@
 			children = (
 				D8B1BC1917C7A17F0071763B /* UIView+EPPZRepresentable.h */,
 				D8B1BC1A17C7A17F0071763B /* UIView+EPPZRepresentable.m */,
-				D8AD5DC317BD3894004BD9AF /* EPPZGameProgress.h */,
-				D8AD5DC417BD3895004BD9AF /* EPPZGameProgress.m */,
+				D8AD5DC317BD3894004BD9AF /* TBGameProgress.h */,
+				D8AD5DC417BD3895004BD9AF /* TBGameProgress.m */,
 			);
 			name = "Game progress";
 			sourceTree = "<group>";
@@ -1199,6 +1244,7 @@
 				AED43CA9182C7EEF00E05FA6 /* TBMenuViewController.xib in Resources */,
 				AED43CA2182C7EB300E05FA6 /* TBGeometryLinesViewController.xib in Resources */,
 				AE922FB4179385300088E5E5 /* _Default@2x.png in Resources */,
+				AE9206B61891CF1E0072C02C /* TBRepresentableViewController.xib in Resources */,
 				AE922FB6179385300088E5E5 /* _Default-568h@2x.png in Resources */,
 				AE922FBC179385300088E5E5 /* TBHtmlStringViewController.xib in Resources */,
 				AEBD4721188E018800BAD7A8 /* .gitignore in Resources */,
@@ -1240,6 +1286,7 @@
 			files = (
 				AE922F87179381D60088E5E5 /* EPPZSingleton.m in Sources */,
 				AE922F88179381E70088E5E5 /* EPPZFileManager.m in Sources */,
+				AE17942B1891E4BA00954D38 /* EPPZRepresentablePropertyCell.m in Sources */,
 				AE6A81AA1844140A007DACC8 /* UIFont+EPPZKit.m in Sources */,
 				AE922F89179381ED0088E5E5 /* NSString+EPPZKit.m in Sources */,
 				AE9C40B81794A0A700090A82 /* EPPZReachability.m in Sources */,
@@ -1296,13 +1343,14 @@
 				AED43CA8182C7EEF00E05FA6 /* TBMenuViewController.m in Sources */,
 				AED43CAD182C7F6000E05FA6 /* TBButton.m in Sources */,
 				AE922FB9179385300088E5E5 /* TBHtmlStringViewController.m in Sources */,
-				D8AD5DB817BD2711004BD9AF /* EPPZEntity.m in Sources */,
-				D8AD5DBB17BD28C7004BD9AF /* EPPZUser.m in Sources */,
+				D8AD5DB817BD2711004BD9AF /* TBEntity.m in Sources */,
+				D8AD5DBB17BD28C7004BD9AF /* TBUser.m in Sources */,
 				AED43CB1182C84D000E05FA6 /* TBGeometryLinesView.m in Sources */,
-				D8AD5DC117BD30CD004BD9AF /* EPPZGameUser.m in Sources */,
-				D8AD5DC517BD3895004BD9AF /* EPPZGameProgress.m in Sources */,
+				D8AD5DC117BD30CD004BD9AF /* TBGameUser.m in Sources */,
+				D8AD5DC517BD3895004BD9AF /* TBGameProgress.m in Sources */,
 				AEF1C56A188DECBC00068D4D /* EPPZColorThemeTestbed.m in Sources */,
 				D8B1BC1B17C7A17F0071763B /* UIView+EPPZRepresentable.m in Sources */,
+				AE9206B41891CF070072C02C /* TBRepresentableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@
 @property (nonatomic, strong) UINavigationController *navigationController_;
 @property (nonatomic, strong) UIViewController *superViewController;
 @property (nonatomic, strong) NSObject <EPPZRepresentable> *representable;
-@property (nonatomic, strong) NSDictionary *model;
+@property (nonatomic, strong) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly) BOOL isTopLevelController;
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -43,10 +43,12 @@
 {
     if (self = [super init])
     {
+        NSLog(@"%@", representable);
+        
         // Save.
         self.superViewController = viewController;
         self.representable = representable;
-        self.model = representable.dictionaryRepresentation;
+        self.dictionaryRepresentation = representable.dictionaryRepresentation;
         
         // Build.
         [self build];
@@ -79,7 +81,7 @@
 }
 
 
-#pragma mark - Navigation
+#pragma mark - Transitions
 
 -(void)present
 {
@@ -104,48 +106,40 @@
 { [self.superViewController dismissViewControllerAnimated:YES completion:nil]; }
 
 
-#pragma mark - Accessors
-
--(NSString*)propertyNameForIndex:(NSUInteger) index
-{ return self.model.allKeys[index]; }
-
--(NSString*)valueForIndex:(NSUInteger) index
-{ return [self.model objectForKey:[self propertyNameForIndex:index]]; }
-
--(BOOL)isLeafValue:(id) value
-{
-    return (
-            ([value isKindOfClass:[NSArray class]] == NO) &&
-            ([value isKindOfClass:[NSDictionary class]] == NO) &&
-            ([value isKindOfClass:[NSSet class]] == NO) &&
-            ([value conformsToProtocol:@protocol(EPPZRepresentable)] == NO)
-            );
-}
-
 #pragma mark - Table view
 
 -(NSInteger)tableView:(UITableView*) tableView numberOfRowsInSection:(NSInteger) section
-{ return self.model.count; }
+{
+    if ([self.representable isKindOfClass:[NSArray class]])
+    { return [(NSArray*)self.representable count]; }
+    
+    return self.dictionaryRepresentation.count;
+}
 
 -(UITableViewCell*)tableView:(UITableView*) tableView cellForRowAtIndexPath:(NSIndexPath*) indexPath
 {
-    UITableViewCell *cell;
-    
-    // Cell instance.
-    cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    if (cell == nil)
-    { cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"]; }
+    return [EPPZRepresentablePropertyCell configuredCellInTableView:tableView
+                                                              index:indexPath.row
+                                                      representable:self.representable
+                                           dictionaryRepresentation:self.dictionaryRepresentation];
+}
+
+
+#pragma mark - Navigation
+
+-(void)tableView:(UITableView*) tableView didSelectRowAtIndexPath:(NSIndexPath*) indexPath
+{
+    EPPZRepresentablePropertyCell *cell = (EPPZRepresentablePropertyCell*)[tableView cellForRowAtIndexPath:indexPath];
+    if (cell.isDisclosing == NO) return;
     
     // Model.
-    id value = [self valueForIndex:indexPath.row];
+    NSObject <EPPZRepresentable> *representable = [self.representable valueForKey:cell.propertyName];
     
-    // Configure.
-    cell.textLabel.text = [self propertyNameForIndex:indexPath.row];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@", stringFromBool([self isLeafValue:value]), value];
-    cell.accessoryType = ([self isLeafValue:value]) ? UITableViewCellAccessoryNone : UITableViewCellAccessoryDisclosureIndicator;
-    
-    return cell;
+    // Present (push).
+    [EPPZRepresentableInspectorViewController presentInViewController:self
+                                                    withRepresentable:representable];
 }
+
 
 
 @end

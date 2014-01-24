@@ -33,8 +33,9 @@
 {
     [super viewDidAppear:animated];
     
-    Class controllerClass = NSClassFromString(@"TBGeometryLinesViewController");
-    UIViewController *controller = [[controllerClass alloc] initWithNibName:@"TBGeometryLinesViewController" bundle:nil];
+    NSString *autoLoadControllerName = @"TBRepresentableViewController";
+    Class controllerClass = NSClassFromString(autoLoadControllerName);
+    UIViewController *controller = [[controllerClass alloc] initWithNibName:autoLoadControllerName bundle:nil];
     [self presentModalViewController:controller animated:YES];
 }
 

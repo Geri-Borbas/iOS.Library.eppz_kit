@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>__eppz.representable.class</key>
-	<string>EPPZGameUser</string>
+	<string>TBGameUser</string>
 	<key>__eppz.representable.id</key>
 	<string>126060128</string>
 	<key>gameID</key>
@@ -13,7 +13,7 @@
 	<key>progress</key>
 	<dict>
 		<key>__eppz.representable.class</key>
-		<string>EPPZGameProgress</string>
+		<string>TBGameProgress</string>
 		<key>__eppz.representable.id</key>
 		<string>126060768</string>
 		<key>level</key>
