@@ -42,9 +42,7 @@
 -(id)initWithViewController:(UIViewController*) viewController representable:(NSObject<EPPZRepresentable>*) representable
 {
     if (self = [super init])
-    {
-        NSLog(@"%@", representable);
-        
+    {        
         // Save.
         self.superViewController = viewController;
         self.representable = representable;
