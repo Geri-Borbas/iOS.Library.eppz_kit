@@ -17,9 +17,6 @@
 
 void crash()
 {
-    NSString *nilObject = nil;
-    NSMutableArray *array = [NSMutableArray new];
-    
-    NSLog(@"Crashing by intention by insert %@ to an array.", nilObject);
-    [array addObject:nilObject];
+    NSLog(@"Crashing by intention by insert nil to a mutable array.");
+    [[NSMutableArray new] addObject:NSStringFromClass(nil)];
 }

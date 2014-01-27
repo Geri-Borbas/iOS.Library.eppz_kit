@@ -26,7 +26,7 @@
 @end
 
 
-#define EPPZ_BINDING_LOGGING NO
+#define EPPZ_BINDING_LOGGING YES
 #define EBLog if (EPPZ_BINDING_LOGGING) NSLog
 
 
@@ -49,6 +49,8 @@ typedef id (^EPPZBindingLeftValueFormatterBlock)(id rightValue); // Should retur
  leftFormatters:(NSDictionary*) leftFormatters
 rightFormatters:(NSDictionary*) rightFormatters;
 
+-(void)updateLeft; // Force update left object.
+-(void)updateRight; // Force update right object.
 -(void)cut; // Cut bindings (tear down observers).
 
 @end

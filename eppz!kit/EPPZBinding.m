@@ -312,6 +312,15 @@ rightFormatters:(NSDictionary*) rightFormatters
 {    
     id value = [change objectForKey:NSKeyValueChangeNewKey];
     
+    // See if value has changed.
+    id oldValue = [change objectForKey:NSKeyValueChangeOldKey];
+    BOOL notChanged = (value == oldValue) || [value isEqual:oldValue];
+    if ([value isKindOfClass:[NSString class]] && [oldValue isKindOfClass:[NSString class]])
+    { notChanged = [(NSString*)value isEqualToString:(NSString*)oldValue]; }
+    
+        // Do nothing if changed.
+        // if (notChanged) return;
+    
     // Work around redundant (endless) settings with these flags.
     static NSString *skipLeftKeyPath = nil;
     static NSString *skipRightKeyPath = nil;

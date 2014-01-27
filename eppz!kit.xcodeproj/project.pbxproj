@@ -480,9 +480,9 @@
 		AE922F3517937A1A0088E5E5 = {
 			isa = PBXGroup;
 			children = (
-				AE922F7A179381280088E5E5 /* eppz!kit */,
-				AE922FA51793852F0088E5E5 /* eppz!kit!testbed */,
-				AEF1C58E188DF29200068D4D /* eppz!kit!tests */,
+				AE922F7A179381280088E5E5 /* ❑ eppz!kit */,
+				AE922FA51793852F0088E5E5 /*  ✔ eppz!kit!testbed */,
+				AEF1C58E188DF29200068D4D /*  ✔ eppz!kit!tests */,
 				AE922F4017937A1A0088E5E5 /* Frameworks */,
 				AE922F3F17937A1A0088E5E5 /* Products */,
 			);
@@ -511,7 +511,6 @@
 				AE922F4317937A1A0088E5E5 /* Foundation.framework */,
 				AE922F4517937A1A0088E5E5 /* CoreGraphics.framework */,
 				D81E3DBD17CCEC1F00B2C7A4 /* libz.dylib */,
-				AEF1C570188DEF4500068D4D /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -544,7 +543,7 @@
 			name = "□ NSString+EPPZKit ✔";
 			sourceTree = "<group>";
 		};
-		AE922F7A179381280088E5E5 /* eppz!kit */ = {
+		AE922F7A179381280088E5E5 /* ❑ eppz!kit */ = {
 			isa = PBXGroup;
 			children = (
 				AE922F841793817C0088E5E5 /* EPPZKit.h */,
@@ -557,10 +556,11 @@
 				AE9C41401794CA3C00090A82 /* ❑ UIKit tools */,
 				D8AD5DB117BD22C0004BD9AF /* ❑ Model tools */,
 			);
+			name = "❑ eppz!kit";
 			path = "eppz!kit";
 			sourceTree = "<group>";
 		};
-		AE922FA51793852F0088E5E5 /* eppz!kit!testbed */ = {
+		AE922FA51793852F0088E5E5 /*  ✔ eppz!kit!testbed */ = {
 			isa = PBXGroup;
 			children = (
 				D8AD5DB517BD26F8004BD9AF /* Model */,
@@ -574,6 +574,7 @@
 				AED43CB4182C8B8C00E05FA6 /* ❑ UIKit tools */,
 				AE922FA61793852F0088E5E5 /* Supporting Files */,
 			);
+			name = " ✔ eppz!kit!testbed";
 			path = "eppz!kit!testbed";
 			sourceTree = "<group>";
 		};
@@ -718,24 +719,24 @@
 			children = (
 				AEBA294B17C8339600C3DA9F /* EPPZGoogleAnalyticsService.h */,
 				AEBA294C17C8339600C3DA9F /* EPPZGoogleAnalyticsService.m */,
-				AEBA295D17C8341100C3DA9F /* Google Analytics iOS SDK 2.0 */,
+				AEBA295D17C8341100C3DA9F /* Google Analytics iOS SDK 3.03 */,
 			);
 			name = Google;
 			sourceTree = "<group>";
 		};
-		AEBA295D17C8341100C3DA9F /* Google Analytics iOS SDK 2.0 */ = {
+		AEBA295D17C8341100C3DA9F /* Google Analytics iOS SDK 3.03 */ = {
 			isa = PBXGroup;
 			children = (
 				AEBA294D17C8339600C3DA9F /* GAI.h */,
-				AEBA294F17C8339600C3DA9F /* GAITracker.h */,
-				AEBA294E17C8339600C3DA9F /* GAITrackedViewController.h */,
 				AEC4FDA517CC690A0092F28C /* GAIDictionaryBuilder.h */,
 				AEC4FDA617CC690A0092F28C /* GAIFields.h */,
 				AEC4FDA717CC690A0092F28C /* GAILogger.h */,
+				AEBA294E17C8339600C3DA9F /* GAITrackedViewController.h */,
+				AEBA294F17C8339600C3DA9F /* GAITracker.h */,
 				AEBA295217C8339600C3DA9F /* libGoogleAnalytics_debug.a */,
 				AEC4FDA817CC69720092F28C /* libGoogleAnalyticsServices.a */,
 			);
-			name = "Google Analytics iOS SDK 2.0";
+			name = "Google Analytics iOS SDK 3.03";
 			sourceTree = "<group>";
 		};
 		AEBD4715188DF75500BAD7A8 /* Test tools */ = {
@@ -871,13 +872,15 @@
 			name = "□ NSArray+EPPZKit ✔";
 			sourceTree = "<group>";
 		};
-		AEF1C58E188DF29200068D4D /* eppz!kit!tests */ = {
+		AEF1C58E188DF29200068D4D /*  ✔ eppz!kit!tests */ = {
 			isa = PBXGroup;
 			children = (
 				AEBD4715188DF75500BAD7A8 /* Test tools */,
 				AEBD4724188E03AA00BAD7A8 /* ❑ Tools ✔ */,
 				AEF1C58F188DF29200068D4D /* Supporting Files */,
+				D8795D3E18969455009C0D21 /* Frameworks */,
 			);
+			name = " ✔ eppz!kit!tests";
 			path = "eppz!kit!tests";
 			sourceTree = "<group>";
 		};
@@ -1005,6 +1008,14 @@
 				D84229B91821893500B15EC8 /* EPPZDiatonicScale.m */,
 			);
 			name = "□ Diatonic scale";
+			sourceTree = "<group>";
+		};
+		D8795D3E18969455009C0D21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AEF1C570188DEF4500068D4D /* XCTest.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D880A8AF188DA3FA0037A000 /* □ NSDictionary+EPPZKit ✔ */ = {
@@ -1420,6 +1431,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1441,7 +1453,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1452,6 +1464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1466,7 +1479,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1477,7 +1490,7 @@
 		AE922F82179381280088E5E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DSTROOT = /tmp/eppz_kit.dst;
 				EXECUTABLE_PREFIX = "lib!";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1500,7 +1513,7 @@
 		AE922F83179381280088E5E5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				DSTROOT = /tmp/eppz_kit.dst;
 				EXECUTABLE_PREFIX = "lib!";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1566,7 +1579,7 @@
 		AEF1C59A188DF29200068D4D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/eppz!kit!testbed.app/eppz!kit!testbed";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -1598,7 +1611,7 @@
 		AEF1C59B188DF29200068D4D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/eppz!kit!testbed.app/eppz!kit!testbed";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
