@@ -297,12 +297,13 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
-* 1.8.5
+* 1.8.5 - 1.8.51
 
     + Updated Google Analytics SDK to 3.03
         + armv64 compilant
     + EPPZBinding
         + Attempt to eliminate redundant bindings
+        + Suspended test for a while
 
 * 1.8.45
 

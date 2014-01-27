@@ -105,7 +105,6 @@
 		D8B1BC1E17C7BE030071763B /* EPPZRepresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B1BC1D17C7BE030071763B /* EPPZRepresenter.m */; };
 		D8BD6A7A17CE48E1007640CE /* NSObject+EPPZRepresentable_Archive.m in Sources */ = {isa = PBXBuildFile; fileRef = D8BD6A7917CE48E1007640CE /* NSObject+EPPZRepresentable_Archive.m */; };
 		D8EDD5C918914AFA003820FC /* EPPZBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDD5C818914AFA003820FC /* EPPZBinding.m */; };
-		D8EDD5CB18914B03003820FC /* EPPZBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = D8EDD5CA18914B03003820FC /* EPPZBinding.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1371,7 +1370,6 @@
 			files = (
 				AE9E939D1890939700968317 /* UIColor+EPPZKit.m in Sources */,
 				AEBD4714188DF74400BAD7A8 /* NSArray+EPPZKit.m in Sources */,
-				D8EDD5CB18914B03003820FC /* EPPZBinding.m in Sources */,
 				D889D823188FEB3400D8B6CC /* NSString+EPPZKit.m in Sources */,
 				AEBD4723188E029400BAD7A8 /* NSDictionary+EPPZKit.m in Sources */,
 				AEBD4726188E03DA00BAD7A8 /* EPPZBoolTools.m in Sources */,

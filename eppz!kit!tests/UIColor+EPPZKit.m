@@ -26,10 +26,10 @@
 {
     UIColor *color = [UIColor colorWithRed:0.1 green:0.2 blue:0.3 alpha:0.4];
     
-    XCTAssertEqual(color.red, 0.1f, @"Red shoud match.");
-    XCTAssertEqual(color.green, 0.2f, @"Green shoud match.");
-    XCTAssertEqual(color.blue, 0.3f, @"Blue shoud match.");
-    XCTAssertEqual(color.alpha, 0.4f, @"Alpha shoud match.");
+    XCTAssertEqual((float)color.red, 0.1f, @"Red shoud match.");
+    XCTAssertEqual((float)color.green, 0.2f, @"Green shoud match.");
+    XCTAssertEqual((float)color.blue, 0.3f, @"Blue shoud match.");
+    XCTAssertEqual((float)color.alpha, 0.4f, @"Alpha shoud match.");
 }
 
 -(void)testAlpha
@@ -47,8 +47,8 @@
     UIColor *other = [UIColor colorWithRed:0.3 green:0.4 blue:0.5 alpha:0.6];
     UIColor *blended =[ UIColor colorWithRed:0.2 green:0.3 blue:0.4 alpha:0.5];
     
-    XCTAssertEqualObjects([one blendWithColor:other amount:0.5],
-                          blended,
+    XCTAssertEqualObjects(NSStringFromUIColor([one blendWithColor:other amount:0.5]),
+                          NSStringFromUIColor(blended),
                           @"Blended color should match.");
 }
 

@@ -26,7 +26,7 @@
 @end
 
 
-#define EPPZ_BINDING_LOGGING YES
+#define EPPZ_BINDING_LOGGING NO
 #define EBLog if (EPPZ_BINDING_LOGGING) NSLog
 
 

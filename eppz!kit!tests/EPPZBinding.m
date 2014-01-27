@@ -24,32 +24,47 @@
 
 
 @interface _EPPZBinding : XCTestCase
+@property (nonatomic, strong) _Model *model;
+@property (nonatomic, strong) UITextField *textField;
 @property (nonatomic, strong) EPPZBinding *binding;
 @end
 
 
 @implementation _EPPZBinding
 
+-(void)setUp
+{
+    self.model = [_Model new];
+    self.textField = [UITextField new];
+}
+
+-(void)tearDown
+{
+    self.model = nil;
+    self.textField = nil;
+}
 
 -(void)test
 {
-    _Model *model = [_Model new];
-    UITextField *textField = [UITextField new];
     NSDictionary *propertyMap = @{
                                   @"name" : @"text"
                                   };
     
-    self.binding = [EPPZBinding bindObject:model
-                                withObject:textField
+    self.binding = [EPPZBinding bindObject:self.model
+                                withObject:self.textField
                                propertyMap:propertyMap];
     
     // Sync model change.
-    model.name = @"John Doe";
-    XCTAssertEqualObjects(textField.text, @"John Doe", @"Property `textField.text` should be synchronized.");
+    self.model.name = @"John Doe";
+    XCTAssertEqualObjects(self.textField.text,
+                          @"John Doe",
+                          @"Property `textField.text` should be synchronized.");
     
     // Sync UI change.
-    textField.text = @"Uma Thurman";
-    XCTAssertEqualObjects(model.name, @"Uma Thurman", @"Property `model.name` should be synchronized.");
+    self.textField.text = @"Uma Thurman";
+    XCTAssertEqualObjects(self.model.name,
+                          @"Uma Thurman",
+                          @"Property `model.name` should be synchronized.");
 
 }
 
