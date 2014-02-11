@@ -47,5 +47,28 @@
     return [NSDictionary dictionaryWithDictionary:mutable];
 }
 
+-(id)valueForKeyOrNil:(NSString*) key
+{
+    // Checks.
+    if (self.count == 0) return nil;
+    if ([self.allKeys containsObject:key] == NO) return nil;
+    
+    return [self objectForKey:key];
+}
+
+-(id)valueForKeyPathOrNil:(NSString*) keyPath
+{
+    // Checks.
+    if (self.count == 0) return nil;
+
+    // Try to get.
+    id value = nil;
+    @try { value = [self valueForKeyPath:keyPath]; }
+    @catch (NSException *exception) { }
+    @finally { }
+    
+    return value;
+}
+
 
 @end

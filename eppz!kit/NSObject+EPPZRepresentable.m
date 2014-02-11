@@ -344,11 +344,11 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
         if ([self.class representType])
         { [dictionaryRepresentation setObject:EPPZRepresentableInstanceType forKey:EPPZRepresentableTypeKey]; }
     
+            // Track that this object is being represented already.
+            [NSObject addRepresentable:(NSObject<EPPZRepresentable>*)self toPool:objectPool];
+    
             // Collect property representations.
             [self collectPropertyValuesIntoDictionary:dictionaryRepresentation objectPool:objectPool];
-    
-        // Track that this object is being represented already.
-        [NSObject addRepresentable:(NSObject<EPPZRepresentable>*)self toPool:objectPool];
     
     // 4.
     
@@ -483,7 +483,7 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
     
         else if ([runtimeValue isKindOfClass:[NSSet class]])
         {
-            NSSet *runtimeSet = (NSSet*)runtimeSet;
+            NSSet *runtimeSet = (NSSet*)runtimeValue;
             ERLog(@"...an NSSet.");
             
             NSMutableArray *representationArray = [NSMutableArray new];

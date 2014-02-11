@@ -173,4 +173,20 @@ typedef enum
     return results;
 }
 
+
+#pragma mark - Identifiers
+
+-(NSString*)vendorIdentifier
+{ return [UIDevice currentDevice].identifierForVendor.UUIDString; }
+
+
+#pragma mark - Battery
+
+-(float)batteryPercentage
+{
+    [[UIDevice currentDevice] setBatteryMonitoringEnabled:YES];
+    return [[UIDevice currentDevice] batteryLevel];
+}
+
+
 @end

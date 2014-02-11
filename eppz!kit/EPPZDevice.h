@@ -40,4 +40,7 @@
 @property (nonatomic, readonly) NSString *platformDescription;
 @property (nonatomic, readonly) NSString *platformString; //Alias for compatibility.
 
+@property (nonatomic, readonly) NSString *vendorIdentifier; //Alias for compatibility.
+@property (nonatomic, readonly) float batteryPercentage;
+
 @end

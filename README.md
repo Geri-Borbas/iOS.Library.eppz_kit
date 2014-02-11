@@ -297,6 +297,13 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.8.8
+
+    + EPPZDevice.batteryPercentage
+    + EPPZGeometry
+    + NSString, NSDictionary helpers
+    + EPPZRepresentable representation order (tracking of already represented objects)    
+
 * 1.8.5 - 1.8.51
 
     + Updated Google Analytics SDK to 3.03

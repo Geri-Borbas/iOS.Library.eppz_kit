@@ -24,6 +24,8 @@
 
 
 -(BOOL)isEqualToStringIgnoringCase:(NSString*) string;
+-(NSString*)firstFiveCharacter;
+-(NSString*)firstTenCharacter;
 
 
 #pragma mark - MD5

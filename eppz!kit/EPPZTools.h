@@ -20,5 +20,8 @@
 #define LOG LOG_METHOD;
 #define _LOG LOG // Alias.
 
+// Fake literal for NSSet.
+#define $(...) [NSSet setWithObjects:__VA_ARGS__, nil]
+
 void crash();
 void getFontList();

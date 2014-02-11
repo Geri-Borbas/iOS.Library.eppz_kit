@@ -37,10 +37,17 @@ CGPoint randomPointInFrame(CGRect frame);
 CG_EXTERN const CGSize CGSizeOne;
 CG_EXTERN const CGVector CGVectorZero;
 CGPoint incrementPoint(CGPoint point);
+
+CGPoint centerOfRect(CGRect rect);
+CGPoint centerOfSize(CGSize size);
+CGFloat halfHeightOfRect(CGRect rect);
+
 CGSize sizeFromSizeWithPadding(CGSize size, CGFloat padding);
 CGRect rectFromRectWithPadding(CGRect rect, CGFloat padding);
+
 CGSize sizeFromSizeWithMargin(CGSize size, CGFloat margin);
 CGRect rectFromRectWithMargin(CGRect rect, CGFloat margin);
+
 CGSize scaleSize(CGSize size, CGFloat scalar);
 
 

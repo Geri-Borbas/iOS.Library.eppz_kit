@@ -16,6 +16,11 @@
 
 
 @interface NSDictionary (EPPZKit)
+
 -(NSDictionary*)dictionaryBySwappingKeysAndValues;
 -(NSDictionary*)dictionaryByRemovingValueForKey:(id<NSCopying>) key;
+
+-(id)valueForKeyOrNil:(NSString*) keyPath;
+-(id)valueForKeyPathOrNil:(NSString*) keyPath;
+
 @end

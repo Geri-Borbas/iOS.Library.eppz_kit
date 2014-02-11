@@ -21,6 +21,18 @@
 -(BOOL)isEqualToStringIgnoringCase:(NSString*) string
 { return [self.lowercaseString isEqualToString:string.lowercaseString]; }
 
+-(NSString*)firstFiveCharacter
+{
+    if (self.length <= 5) return self;
+    return [NSString stringWithFormat:@"%@...", [self substringWithRange:NSMakeRange(0, 5)]];
+}
+
+-(NSString*)firstTenCharacter
+{
+    if (self.length <= 10) return self;
+    return [NSString stringWithFormat:@"%@...", [self substringWithRange:NSMakeRange(0, 10)]];
+}
+
 +(NSString*)md5HashFromString:(NSString*) string
 {
 	const char *source = [string UTF8String];

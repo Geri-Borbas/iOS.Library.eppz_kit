@@ -41,6 +41,15 @@ const CGVector CGVectorZero = (CGVector){1.0f, 1.0f};
 CGPoint incrementPoint(CGPoint point)
 { return (CGPoint){point.x + 1.0f, point.y + 1.0f}; }
 
+CGPoint centerOfRect(CGRect rect)
+{ return (CGPoint){rect.size.width / 2.0, rect.size.height / 2.0}; }
+
+CGPoint centerOfSize(CGSize size)
+{ return (CGPoint){size.width / 2.0, size.height / 2.0}; }
+
+CGFloat halfHeightOfRect(CGRect rect)
+{ return rect.size.height / 2.0; }
+
 CGSize sizeFromSizeWithPadding(CGSize size, CGFloat padding)
 {
     return (CGSize){
