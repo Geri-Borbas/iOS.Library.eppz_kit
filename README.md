@@ -297,6 +297,15 @@ A singleton base class from the pre-ARC era. Main feature is that this class is 
 
 #### Version tracking
 
+* 1.8.9
+
+    + UIColor NSString conversion imporvements
+        + Tests
+    + EPPZConfiguration
+        + Tools to configure objects with plist
+    + EPPZTools
+        + count / repeat
+
 * 1.8.8
 
     + EPPZDevice.batteryPercentage

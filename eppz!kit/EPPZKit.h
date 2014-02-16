@@ -13,7 +13,7 @@
 //
 
 
-static NSString *const kEPPZKitVersion = @"1.8.8";
+static NSString *const kEPPZKitVersion = @"1.8.9";
 
 
 //Base classes.
@@ -58,5 +58,6 @@ static NSString *const kEPPZKitVersion = @"1.8.8";
 #import "EPPZUserDefaults.h"
 #import "NSObject+EPPZRepresentable.h"
 #import "EPPZRepresentableInspectorViewController.h"
+#import "EPPZConfiguration.h"
 
 

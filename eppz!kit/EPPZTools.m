@@ -20,3 +20,15 @@ void crash()
     NSLog(@"Crashing by intention by insert nil to a mutable array.");
     [[NSMutableArray new] addObject:NSStringFromClass(nil)];
 }
+
+void repeat(NSUInteger until, EPPZRepeatBlock repeatBlock)
+{
+    for (NSUInteger index = 0; index <= until; index++)
+    { repeatBlock(); }
+}
+
+void count(NSUInteger until, EPPZCounterBlock counterBlock)
+{
+    for (NSUInteger index = 0; index <= until; index++)
+    { counterBlock(index); }
+}

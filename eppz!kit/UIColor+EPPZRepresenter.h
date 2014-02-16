@@ -16,7 +16,26 @@
 
 @interface UIColor (EPPZRepresenter)
 
+/*!
+ 
+ Return with the string representation of the given color.
+ 
+ @discussion
+ [UIColor whiteColor] converts to @"[1.000000, 1.000000, 1.000000, 1.000000]".
+ 
+ */
 NSString *NSStringFromUIColor(UIColor *color);
+
+/*!
+ 
+ Returns a UIColor instance configured with the given string representation.
+ 
+ @discussion
+ If the string is given in a components format, function returns [UIColor whiteColor] for "[1, 1, 1, 1]".
+ Alternatively you can reconstruct colors from class factory method names.
+ Function returns [UIColor whiteColor] for both "whiteColor" and "white".
+ 
+ */
 UIColor *UIColorFromNSString(NSString *string);
 
 @end

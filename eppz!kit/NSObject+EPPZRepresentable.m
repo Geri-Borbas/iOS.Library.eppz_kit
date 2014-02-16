@@ -19,9 +19,9 @@
 __strong static NSMutableDictionary *__objectPools;
 
 
-static NSString *const EPPZRepresentableIDKey = @"__eppz.representable.id";
-static NSString *const EPPZRepresentableClassKey = @"__eppz.representable.class";
-static NSString *const EPPZRepresentableTypeKey = @"__eppz.representable.type";
+static NSString *const EPPZRepresentableIDKey = @"__id";
+static NSString *const EPPZRepresentableClassKey = @"__class";
+static NSString *const EPPZRepresentableTypeKey = @"__type";
 static NSString *const EPPZRepresentableInstanceType = @"instance";
 static NSString *const EPPZRepresentableReferenceType = @"reference";
 
@@ -61,7 +61,7 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
 #pragma mark - Subclass templates
 
 +(id)instance
-{ return nil; }
+{ return [self new]; }
 
 +(NSArray*)representablePropertyNames
 { return nil; }
@@ -761,6 +761,9 @@ static NSString *const EPPZRepresentableReferenceType = @"reference";
 
 
 #pragma mark - Property names
+
+-(NSArray*)representedPropertyNames
+{ return self.propertyNames; }
 
 -(NSArray*)propertyNames
 { return [self.class propertyNamesOfObject:self]; }

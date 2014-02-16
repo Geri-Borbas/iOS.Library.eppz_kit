@@ -24,4 +24,10 @@
 #define $(...) [NSSet setWithObjects:__VA_ARGS__, nil]
 
 void crash();
+
+typedef void (^EPPZRepeatBlock)();
+typedef void (^EPPZCounterBlock)(NSUInteger index);
+void repeat(NSUInteger until, EPPZRepeatBlock repeatBlock);
+void count(NSUInteger until, EPPZCounterBlock counterBlock);
+
 void getFontList();

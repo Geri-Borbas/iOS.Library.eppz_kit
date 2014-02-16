@@ -10,7 +10,10 @@
 		AE00588617C740990061146F /* EPPZBoolTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AE00588517C740990061146F /* EPPZBoolTools.m */; };
 		AE05144A17D1922D00F7FE5E /* EPPZVersions.m in Sources */ = {isa = PBXBuildFile; fileRef = AE05144917D1922D00F7FE5E /* EPPZVersions.m */; };
 		AE0F38BA17A459C500552157 /* NSDecimalNumber+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F38B917A459C500552157 /* NSDecimalNumber+LocalizedPrice.m */; };
+		AE0F9FE718B1487200AACFA1 /* EPPZConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F9FE418B1487200AACFA1 /* EPPZConfiguration.m */; };
+		AE0F9FE818B1487200AACFA1 /* NSObject+EPPZConfigurable.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0F9FE618B1487200AACFA1 /* NSObject+EPPZConfigurable.m */; };
 		AE17942B1891E4BA00954D38 /* EPPZRepresentablePropertyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE17942A1891E4BA00954D38 /* EPPZRepresentablePropertyCell.m */; };
+		AE2E947018B0218A007104F7 /* UIColor+EPPZRepresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2E946F18B0218A007104F7 /* UIColor+EPPZRepresenter.m */; };
 		AE3511B31841282700BCC751 /* UIImage+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3511B21841282700BCC751 /* UIImage+EPPZKit.m */; };
 		AE3511B71841886000BCC751 /* UICircle.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3511B61841886000BCC751 /* UICircle.m */; };
 		AE6A81AA1844140A007DACC8 /* UIFont+EPPZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6A81A91844140A007DACC8 /* UIFont+EPPZKit.m */; };
@@ -150,8 +153,13 @@
 		AE05144917D1922D00F7FE5E /* EPPZVersions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZVersions.m; sourceTree = "<group>"; };
 		AE0F38B817A459C500552157 /* NSDecimalNumber+LocalizedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+LocalizedPrice.h"; sourceTree = "<group>"; };
 		AE0F38B917A459C500552157 /* NSDecimalNumber+LocalizedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+LocalizedPrice.m"; sourceTree = "<group>"; };
+		AE0F9FE318B1487200AACFA1 /* EPPZConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZConfiguration.h; sourceTree = "<group>"; };
+		AE0F9FE418B1487200AACFA1 /* EPPZConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZConfiguration.m; sourceTree = "<group>"; };
+		AE0F9FE518B1487200AACFA1 /* NSObject+EPPZConfigurable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EPPZConfigurable.h"; sourceTree = "<group>"; };
+		AE0F9FE618B1487200AACFA1 /* NSObject+EPPZConfigurable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EPPZConfigurable.m"; sourceTree = "<group>"; };
 		AE1794291891E4BA00954D38 /* EPPZRepresentablePropertyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZRepresentablePropertyCell.h; sourceTree = "<group>"; };
 		AE17942A1891E4BA00954D38 /* EPPZRepresentablePropertyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZRepresentablePropertyCell.m; sourceTree = "<group>"; };
+		AE2E946F18B0218A007104F7 /* UIColor+EPPZRepresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+EPPZRepresenter.m"; sourceTree = "<group>"; };
 		AE3511B11841282700BCC751 /* UIImage+EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EPPZKit.h"; sourceTree = "<group>"; };
 		AE3511B21841282700BCC751 /* UIImage+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EPPZKit.m"; sourceTree = "<group>"; };
 		AE3511B51841886000BCC751 /* UICircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICircle.h; sourceTree = "<group>"; };
@@ -379,6 +387,17 @@
 				AE05144917D1922D00F7FE5E /* EPPZVersions.m */,
 			);
 			name = "□ Versions";
+			sourceTree = "<group>";
+		};
+		AE0F9FE218B1484B00AACFA1 /* Configurable */ = {
+			isa = PBXGroup;
+			children = (
+				AE0F9FE318B1487200AACFA1 /* EPPZConfiguration.h */,
+				AE0F9FE418B1487200AACFA1 /* EPPZConfiguration.m */,
+				AE0F9FE518B1487200AACFA1 /* NSObject+EPPZConfigurable.h */,
+				AE0F9FE618B1487200AACFA1 /* NSObject+EPPZConfigurable.m */,
+			);
+			name = Configurable;
 			sourceTree = "<group>";
 		};
 		AE17942C1891E78800954D38 /* Property cell */ = {
@@ -756,6 +775,7 @@
 				AEBD4722188E029400BAD7A8 /* NSDictionary+EPPZKit.m */,
 				D889D821188FE6DD00D8B6CC /* NSString+EPPZKit.m */,
 				AE9E939C1890939700968317 /* UIColor+EPPZKit.m */,
+				AE2E946F18B0218A007104F7 /* UIColor+EPPZRepresenter.m */,
 			);
 			name = "❑ Tools ✔";
 			sourceTree = "<group>";
@@ -1049,6 +1069,7 @@
 			isa = PBXGroup;
 			children = (
 				D81E3DC417CD058200B2C7A4 /* □ Representable */,
+				AE0F9FE218B1484B00AACFA1 /* Configurable */,
 				AE9C41191794A4C800090A82 /* □ User defaults */,
 			);
 			name = "❑ Model tools";
@@ -1297,10 +1318,12 @@
 				AE9C3D7117975DB500D01536 /* EPPZAlert+Factory.m in Sources */,
 				AED953171798B9B50000A0B6 /* EPPZAppStoreCallbacks.m in Sources */,
 				AE3511B71841886000BCC751 /* UICircle.m in Sources */,
+				AE0F9FE718B1487200AACFA1 /* EPPZConfiguration.m in Sources */,
 				AEA0B27F179DF68200439EB0 /* EPPZPagingScrollViewController.m in Sources */,
 				AE0F38BA17A459C500552157 /* NSDecimalNumber+LocalizedPrice.m in Sources */,
 				D84229BA1821893500B15EC8 /* EPPZDiatonicScale.m in Sources */,
 				AECCD94D17A5D80E001CAAFD /* NSDate+EPPZKit.m in Sources */,
+				AE0F9FE818B1487200AACFA1 /* NSObject+EPPZConfigurable.m in Sources */,
 				D825700318203BD2008A40C9 /* EPPZGeometry.m in Sources */,
 				AEC6888C17B313C000F2206F /* EPPZLabel.m in Sources */,
 				AEFC653817B81865004B5214 /* EPPZTimer.m in Sources */,
@@ -1356,6 +1379,7 @@
 				D889D823188FEB3400D8B6CC /* NSString+EPPZKit.m in Sources */,
 				AEBD4723188E029400BAD7A8 /* NSDictionary+EPPZKit.m in Sources */,
 				AEBD4726188E03DA00BAD7A8 /* EPPZBoolTools.m in Sources */,
+				AE2E947018B0218A007104F7 /* UIColor+EPPZRepresenter.m in Sources */,
 				AEBD4718188DF77000BAD7A8 /* TTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -29,7 +29,7 @@
 
 
 
-static NSString *const kEPPZRepresentableErrorDomain = @"__eppz.representable";
+static NSString *const kEPPZRepresentableErrorDomain = @"com.eppz.representable";
 
 
 @protocol EPPZRepresentable <NSObject>
@@ -65,6 +65,7 @@ static NSString *const kEPPZRepresentableErrorDomain = @"__eppz.representable";
 
 #pragma mark - General features
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, readonly) NSArray *representedPropertyNames;
 +(id)representableWithDictionaryRepresentation:(NSDictionary*) dictionaryRepresentation;
 
 -(NSString*)typeOfPropertyNamed:(NSString*) propertyName;

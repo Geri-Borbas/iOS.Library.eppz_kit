@@ -36,6 +36,23 @@ UIColor *UIColorFromNSString(NSString *string)
 {
     NSString *componentsString = [[string stringByReplacingOccurrencesOfString:@"[" withString:@""] stringByReplacingOccurrencesOfString:@"]" withString:@""];
     NSArray *components = [componentsString componentsSeparatedByString:@", "];
+    
+    // Return with class methods.
+    if ([string hasPrefix:@"["] == NO)
+    {
+        // Append `Color` if not already.
+        NSString *classMehtodName = string;
+        if ([string hasSuffix:@"Color"] == NO) classMehtodName = [NSString stringWithFormat:@"%@Color", string];
+        
+        SEL factoryMethod = NSSelectorFromString(classMehtodName);
+        UIColor *color;
+        @try { color = [UIColor performSelector:factoryMethod]; }
+        @catch (NSException *exception) { }
+        @finally {}
+        
+        return color;
+    }
+    
     return [UIColor colorWithRed:[(NSString*)components[0] floatValue]
                            green:[(NSString*)components[1] floatValue]
                             blue:[(NSString*)components[2] floatValue]
