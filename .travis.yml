@@ -1,2 +1,2 @@
 language: objective-c
-script: xcodebuild -project eppz!kit.xcodeproj -target eppz!kit!tests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+script: xcodebuild -project eppz!kit.xcodeproj -target eppz!kit!tests -sdk iphonesimulator ONLY_ACTIVE_ARCH=YES
