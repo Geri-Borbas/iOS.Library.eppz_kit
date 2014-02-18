@@ -1,2 +1,2 @@
 language: objective-c
-script: xctool -workspace eppz!kit.xcworkspace -scheme eppz!kit!tests test
+script: xctool -workspace eppz!kit.xcworkspace -scheme eppz!kit test
