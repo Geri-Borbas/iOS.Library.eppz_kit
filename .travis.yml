@@ -1,2 +1,5 @@
 language: objective-c
-script: xcodebuild -project eppz!kit.xcodeproj -target eppz!kit!tests -sdk iphonesimulator ONLY_ACTIVE_ARCH=YES
+before_install:
+    - brew update
+    - brew install xctool
+script: xctool -workspace eppz!kit.xcworkspace -scheme eppz!kit!tests test
