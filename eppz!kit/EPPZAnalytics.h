@@ -38,18 +38,52 @@
 
 +(EPPZAnalytics*)sharedAnalytics;
 
+/*!
+ 
+ Should be called at the top of `application:didFinishLaunchingWithOptions:`.
+ Initializes engine, starts session, sets session dimensions implemented
+ in subclass.
+ 
+ */
 -(void)takeOff;
+
+/*! For subclass use */
 -(void)takeOffWithPropertyList:(NSString*) propertyListName;
--(void)applicationDidFinishLaunching;
+
+/*!
+ 
+ Should be called at the bottom of  `application:didFinishLaunchingWithOptions:`.
+ You probably use some kind of user object that has to be initialized at the time
+ you call this method.
+ 
+ */
+-(void)setUserDimensions;
+
+/*! To be called from `application:willEnterForeground:`. */
 -(void)applicationWillEnterForeground;
+
+/*! To be called from `application:didEnterBackground:`. */
 -(void)applicationDidEnterBackground;
+
 -(void)land;
 
+
+#pragma mark - Dimensions
+
+/*! Subclasses implements this, engine calls automatically when needed. */
 -(void)registerCustomDimensions;
+
+/*! To be used in the method implementation above. */
 -(void)registerCustomDimension:(NSString*) dimension forIndex:(NSUInteger) index;
+
+/*! Subclasses implements this, engine calls automatically when needed. */
 -(void)setSessionDimensions;
--(void)setUserDimensions;
+
+/*! Subclasses implements this, engine calls automatically when needed. */
 -(void)setHitDimensions;
+
+
+#pragma mark - Hits (for client use)
 
 -(void)page:(NSString*) pageName;
 -(void)event:(NSString*) event;

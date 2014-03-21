@@ -48,20 +48,20 @@ static NSString *kGoogleAnalyticsDispatchPeriodKeyPath = @"GoogleAnalytics.dispa
 -(void)takeOff
 {
     [self takeOffWithPropertyList:NSStringFromClass(self.class)];
+    [self start];
 }
 
--(void)applicationDidFinishLaunching
+-(void)start
 {
     [self.google startSession];
-    [self setUserDimensions];
     [self setSessionDimensions];
 }
 
 -(void)applicationWillEnterForeground
 {
     [self.google startSession];
-    [self setUserDimensions];
     [self setSessionDimensions];
+    [self setUserDimensions];
 }
 
 -(void)applicationDidEnterBackground
@@ -99,9 +99,7 @@ static NSString *kGoogleAnalyticsDispatchPeriodKeyPath = @"GoogleAnalytics.dispa
 -(void)land
 {
     if ([self isEnabled])
-    {
-        [self.google land];
-    }
+    { [self.google land]; }
 }
 
 
@@ -112,9 +110,7 @@ static NSString *kGoogleAnalyticsDispatchPeriodKeyPath = @"GoogleAnalytics.dispa
 -(void)registerCustomDimension:(NSString*) dimension forIndex:(NSUInteger) index
 {
     if ([self isEnabled])
-    {
-        [self.google registerCustomDimension:dimension forIndex:index];
-    }
+    { [self.google registerCustomDimension:dimension forIndex:index]; }
 }
 
 -(void)setSessionDimensions { }

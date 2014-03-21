@@ -132,6 +132,20 @@
 			remoteGlobalIDString = AE922F77179381270088E5E5;
 			remoteInfo = "eppz!kit";
 		};
+		D8A10EFE18DC5CE90003981B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8A10EF918DC5CE90003981B /* eppz!swizzler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE68DB6F18CCA66900164B40;
+			remoteInfo = "eppz!swizzler";
+		};
+		D8A10F0018DC5CE90003981B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8A10EF918DC5CE90003981B /* eppz!swizzler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE68DB7C18CCA66900164B40;
+			remoteInfo = "eppz!swizzlerTests";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -302,6 +316,9 @@
 		D880A8B0188DA4170037A000 /* NSDictionary+EPPZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+EPPZKit.h"; sourceTree = "<group>"; };
 		D880A8B1188DA4170037A000 /* NSDictionary+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+EPPZKit.m"; sourceTree = "<group>"; };
 		D889D821188FE6DD00D8B6CC /* NSString+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EPPZKit.m"; sourceTree = "<group>"; };
+		D8A10EF918DC5CE90003981B /* eppz!swizzler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "eppz!swizzler.xcodeproj"; path = "eppz!swizzler/eppz!swizzler.xcodeproj"; sourceTree = "<group>"; };
+		D8A10F0518DC5D700003981B /* VERSIONS.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = VERSIONS.md; sourceTree = "<group>"; };
+		D8A10F0618DC5DB80003981B /* .gitmodules */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitmodules; sourceTree = SOURCE_ROOT; };
 		D8AD5DAA17BD0B84004BD9AF /* EPPZDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZDevice.h; sourceTree = "<group>"; };
 		D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZDevice.m; sourceTree = "<group>"; };
 		D8AD5DAE17BD22BB004BD9AF /* NSObject+EPPZRepresentable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EPPZRepresentable.h"; sourceTree = "<group>"; };
@@ -501,6 +518,7 @@
 				AE922F7A179381280088E5E5 /* ❑ eppz!kit */,
 				AE922FA51793852F0088E5E5 /* ✔ eppz!kit!testbed */,
 				AEF1C58E188DF29200068D4D /* ✔ eppz!kit!tests */,
+				D8A10EF918DC5CE90003981B /* eppz!swizzler.xcodeproj */,
 				AE922F4017937A1A0088E5E5 /* Frameworks */,
 				AE922F3F17937A1A0088E5E5 /* Products */,
 			);
@@ -566,8 +584,10 @@
 			children = (
 				AE922F841793817C0088E5E5 /* EPPZKit.h */,
 				AE922FC3179385ED0088E5E5 /* README.md */,
+				D8A10F0518DC5D700003981B /* VERSIONS.md */,
 				AEBD471A188DFDFF00BAD7A8 /* .travis.yml */,
 				AEBD4720188E018800BAD7A8 /* .gitignore */,
+				D8A10F0618DC5DB80003981B /* .gitmodules */,
 				D8AD5DB217BD2314004BD9AF /* ❑ Base classes */,
 				D8AD5DB317BD2328004BD9AF /* ❑ Wrappers */,
 				D8AD5DB417BD233E004BD9AF /* ❑ Tools */,
@@ -594,7 +614,7 @@
 			);
 			name = "✔ eppz!kit!testbed";
 			path = "eppz!kit!testbed";
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		AE922FA61793852F0088E5E5 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -901,7 +921,7 @@
 			);
 			name = "✔ eppz!kit!tests";
 			path = "eppz!kit!tests";
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		AEF1C58F188DF29200068D4D /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -1053,6 +1073,15 @@
 				D8EDD5C818914AFA003820FC /* EPPZBinding.m */,
 			);
 			name = "□ Binding ✔";
+			sourceTree = "<group>";
+		};
+		D8A10EFA18DC5CE90003981B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8A10EFF18DC5CE90003981B /* libeppz!swizzler.a */,
+				D8A10F0118DC5CE90003981B /* eppz!swizzlerTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		D8AD5DAD17BD0E01004BD9AF /* □ Device */ = {
@@ -1255,6 +1284,12 @@
 			mainGroup = AE922F3517937A1A0088E5E5;
 			productRefGroup = AE922F3F17937A1A0088E5E5 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D8A10EFA18DC5CE90003981B /* Products */;
+					ProjectRef = D8A10EF918DC5CE90003981B /* eppz!swizzler.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				AE922F77179381270088E5E5 /* eppz!kit */,
@@ -1263,6 +1298,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D8A10EFF18DC5CE90003981B /* libeppz!swizzler.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libeppz!swizzler.a";
+			remoteRef = D8A10EFE18DC5CE90003981B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D8A10F0118DC5CE90003981B /* eppz!swizzlerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "eppz!swizzlerTests.xctest";
+			remoteRef = D8A10F0018DC5CE90003981B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		AE922F9F1793852F0088E5E5 /* Resources */ = {

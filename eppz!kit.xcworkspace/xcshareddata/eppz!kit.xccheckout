@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4C25D7A4-8C49-4929-B8AD-BA494F7FB359</string>
+	<key>IDESourceControlProjectName</key>
+	<string>eppz!kit</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>35F9FA50-A705-46A6-8034-01D3B82DEDFB</key>
+		<string>https://github.com/eppz/eppz-kit.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>eppz!kit.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>35F9FA50-A705-46A6-8034-01D3B82DEDFB</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/eppz/eppz-kit.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>35F9FA50-A705-46A6-8034-01D3B82DEDFB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>35F9FA50-A705-46A6-8034-01D3B82DEDFB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>eppz!kit</string>
+		</dict>
+	</array>
+</dict>
+</plist>

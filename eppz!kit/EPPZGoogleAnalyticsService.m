@@ -18,6 +18,7 @@
 @interface EPPZGoogleAnalyticsService ()
 @property (nonatomic, strong) NSString *googleAnalitycsPropertyID;
 @property (nonatomic, strong) id <GAITracker> tracker;
+@property (nonatomic) BOOL sessionStarted;
 @end
 
 
@@ -51,21 +52,24 @@
 
 -(void)startSession
 {
+    // Make sure to call this once.
+    if (self.sessionStarted) return;
+    self.sessionStarted = YES;
+    
     GALog(@"EPPZGoogleAnalyticsService startSession");
     [self.tracker set:kGAISessionControl value:@"start"];
+    
+    // Suggestion from http://stackoverflow.com/questions/18855490/session-control-with-google-analytics-api-v3-for-ios
+    [self.tracker set:kGAISessionControl value:nil];
 }
 
 -(void)stopSession
 {
-    /*
-     
-    Try to use start only according http://stackoverflow.com/questions/18855490/session-control-with-google-analytics-api-v3-for-ios
-     
     GALog(@"EPPZGoogleAnalyticsService stopSession");
     [self.tracker set:kGAISessionControl value:@"stop"];
-    [self event:@"Session" action:@"Stop"];
-     
-    */
+    
+    // Flag.
+    self.sessionStarted = NO;
 }
 
 -(void)registerCustomDimension:(NSString*) dimension forIndex:(NSUInteger) index
@@ -85,8 +89,6 @@
     GALog(@"EPPZGoogleAnalyticsService setCustom:%i metric:%@", index, metric);
     [self.tracker set:[GAIFields customMetricForIndex:index] value:metric.stringValue];
 }
-
-
 
 -(void)page:(NSString*) pageName
 {
