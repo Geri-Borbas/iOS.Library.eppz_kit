@@ -10,6 +10,7 @@ Feel free to file a pull request if you spot some errors.
 
 > ### [eppz!swizzler](https://github.com/eppz/eppz.swizzler)
 > Basic swizzling wrapped up into an Objective-C interface.
+> `pod 'eppz!swizzler', '~> 0.1.1'`
 > ### [eppz!reachability](https://github.com/eppz/eppz.reachability)
 > A block-based extraction of Apple's Reachability sample.
 > ### [eppz!alert](https://github.com/eppz/eppz.alert)
