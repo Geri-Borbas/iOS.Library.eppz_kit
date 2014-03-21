@@ -1,5 +1,5 @@
 ## ![eppz!kit](http://eppz.eu/beacons/eppz!.png) eppz!kit
-[![Build Status](https://travis-ci.org/eppz/eppz-kit.png?branch=master)](https://travis-ci.org/eppz/eppz-kit) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/eppz/eppz-kit/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Build Status](https://travis-ci.org/eppz/eppz.kit.svg?branch=master)](https://travis-ci.org/eppz/eppz.kit) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/eppz/eppz-kit/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 **The collection of the usefuls. Objective-C everydayers.** You could use it like
 you would do with any other static library (as Apple recommends [Using Static Libraries
