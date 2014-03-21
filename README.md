@@ -1,8 +1,25 @@
 ## ![eppz!kit](http://eppz.eu/beacons/eppz!.png) eppz!kit
 [![Build Status](https://travis-ci.org/eppz/eppz-kit.png?branch=master)](https://travis-ci.org/eppz/eppz-kit) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/eppz/eppz-kit/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-**The collection of the usefuls. Objective-C everydayers.** You could use it like you would do with any other static library (as Apple recommends [Using Static Libraries in iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)), or just grab some individual class, they are not that coupled (just watch the imports at the top of .h files). Google Analytics SDK have some specific build settings (check Analytics build settings.png for details).
+**The collection of the usefuls. Objective-C everydayers.** You could use it like
+you would do with any other static library (as Apple recommends [Using Static Libraries
+in iOS][url_static_libraries]), or just grab some individual class, they are not that
+coupled (just watch the imports at the top of .h files). Gonna put the whole library to
+[CocoaPods][[url_cocoa_pods]] with submodules where appropriate. Google Analytics SDK
+have some specific build settings (check Analytics build settings.png for details).
 Feel free to file a pull request if you spot some errors.
+
+[url_static_libraries]: (http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)
+[url_cocoa_pods]: (http://cocoapods.org/)
+
+#### Modules
+
+> ### [eppz!swizzler](https://github.com/eppz/eppz.swizzler)
+> Basic swizzling wrapped up into an Objective-C interface.
+> ### [eppz!reachability](https://github.com/eppz/eppz.reachability)
+> A block-based extraction of Apple's Reachability sample.
+> ### [eppz!alert](https://github.com/eppz/eppz.alert)
+> Simplest UIAlertView wrapper ever.
 
 
 #### EPPZBinding
