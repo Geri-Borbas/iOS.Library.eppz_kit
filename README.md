@@ -5,7 +5,7 @@
 you would do with any other static library (as Apple recommends [Using Static Libraries
 in iOS][111]), or just grab some individual class, they are not that
 coupled (just watch the imports at the top of .h files). Gonna put the whole library to
-[CocoaPods][[url-cocoa-pods] with submodules where appropriate. Google Analytics SDK
+[CocoaPods][url-cocoa-pods] with submodules where appropriate. Google Analytics SDK
 have some specific build settings (check Analytics build settings.png for details).
 Feel free to file a pull request if you spot some errors.
 
