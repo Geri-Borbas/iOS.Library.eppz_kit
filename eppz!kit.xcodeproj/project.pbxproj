@@ -146,6 +146,20 @@
 			remoteGlobalIDString = AE68DB7C18CCA66900164B40;
 			remoteInfo = "eppz!swizzlerTests";
 		};
+		D8A10F0C18DC655B0003981B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8A10F0818DC655A0003981B /* eppz!reachability.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AE1D57C6176CEB8F003699F7;
+			remoteInfo = "eppz!reachability";
+		};
+		D8A10F1D18DC65820003981B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8A10F1918DC65810003981B /* eppz!alert.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D8E0A575176B747B006F2B28;
+			remoteInfo = "eppz!alert";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -317,8 +331,10 @@
 		D880A8B1188DA4170037A000 /* NSDictionary+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+EPPZKit.m"; sourceTree = "<group>"; };
 		D889D821188FE6DD00D8B6CC /* NSString+EPPZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+EPPZKit.m"; sourceTree = "<group>"; };
 		D8A10EF918DC5CE90003981B /* eppz!swizzler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "eppz!swizzler.xcodeproj"; path = "eppz!swizzler/eppz!swizzler.xcodeproj"; sourceTree = "<group>"; };
-		D8A10F0518DC5D700003981B /* VERSIONS.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = VERSIONS.md; sourceTree = "<group>"; };
+		D8A10F0518DC5D700003981B /* VERSIONS.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = VERSIONS.md; path = ../VERSIONS.md; sourceTree = "<group>"; };
 		D8A10F0618DC5DB80003981B /* .gitmodules */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitmodules; sourceTree = SOURCE_ROOT; };
+		D8A10F0818DC655A0003981B /* eppz!reachability.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "eppz!reachability.xcodeproj"; path = "eppz!reachability/eppz!reachability.xcodeproj"; sourceTree = "<group>"; };
+		D8A10F1918DC65810003981B /* eppz!alert.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "eppz!alert.xcodeproj"; path = "eppz!alert/eppz!alert.xcodeproj"; sourceTree = "<group>"; };
 		D8AD5DAA17BD0B84004BD9AF /* EPPZDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPPZDevice.h; sourceTree = "<group>"; };
 		D8AD5DAB17BD0B84004BD9AF /* EPPZDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPPZDevice.m; sourceTree = "<group>"; };
 		D8AD5DAE17BD22BB004BD9AF /* NSObject+EPPZRepresentable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+EPPZRepresentable.h"; sourceTree = "<group>"; };
@@ -519,6 +535,8 @@
 				AE922FA51793852F0088E5E5 /* ✔ eppz!kit!testbed */,
 				AEF1C58E188DF29200068D4D /* ✔ eppz!kit!tests */,
 				D8A10EF918DC5CE90003981B /* eppz!swizzler.xcodeproj */,
+				D8A10F0818DC655A0003981B /* eppz!reachability.xcodeproj */,
+				D8A10F1918DC65810003981B /* eppz!alert.xcodeproj */,
 				AE922F4017937A1A0088E5E5 /* Frameworks */,
 				AE922F3F17937A1A0088E5E5 /* Products */,
 			);
@@ -1084,6 +1102,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D8A10F0918DC655A0003981B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8A10F0D18DC655B0003981B /* eppz!reachability.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8A10F1A18DC65810003981B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8A10F1E18DC65820003981B /* eppz!alert.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D8AD5DAD17BD0E01004BD9AF /* □ Device */ = {
 			isa = PBXGroup;
 			children = (
@@ -1286,6 +1320,14 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = D8A10F1A18DC65810003981B /* Products */;
+					ProjectRef = D8A10F1918DC65810003981B /* eppz!alert.xcodeproj */;
+				},
+				{
+					ProductGroup = D8A10F0918DC655A0003981B /* Products */;
+					ProjectRef = D8A10F0818DC655A0003981B /* eppz!reachability.xcodeproj */;
+				},
+				{
 					ProductGroup = D8A10EFA18DC5CE90003981B /* Products */;
 					ProjectRef = D8A10EF918DC5CE90003981B /* eppz!swizzler.xcodeproj */;
 				},
@@ -1312,6 +1354,20 @@
 			fileType = wrapper.cfbundle;
 			path = "eppz!swizzlerTests.xctest";
 			remoteRef = D8A10F0018DC5CE90003981B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D8A10F0D18DC655B0003981B /* eppz!reachability.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "eppz!reachability.app";
+			remoteRef = D8A10F0C18DC655B0003981B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D8A10F1E18DC65820003981B /* eppz!alert.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "eppz!alert.app";
+			remoteRef = D8A10F1D18DC65820003981B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

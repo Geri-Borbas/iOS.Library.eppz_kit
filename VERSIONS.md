@@ -1,9 +1,11 @@
 
 #### Version tracking
 
-* 1.9.0
+* 1.9.0 - 1.9.01
 
     + Added `eppz!swizzler` as git submodule
+    + Added `eppz!reachability` as git submodule
+    + Added `eppz!alert` as git submodule
 
 * 1.8.9
 

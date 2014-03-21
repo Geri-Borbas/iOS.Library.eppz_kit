@@ -1,3 +1,9 @@
 [submodule "eppz!swizzler"]
 	path = eppz!swizzler
 	url = https://github.com/eppz/eppz.swizzler
+[submodule "eppz!reachability"]
+	path = eppz!reachability
+	url = https://github.com/eppz/eppz.reachability
+[submodule "eppz!alert"]
+	path = eppz!alert
+	url = https://github.com/eppz/eppz.alert
