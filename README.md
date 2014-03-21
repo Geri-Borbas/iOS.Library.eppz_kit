@@ -12,8 +12,6 @@ Feel free to file a pull request if you spot some errors.
 [url_static_libraries]: (http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)
 [url_cocoa_pods]: (http://cocoapods.org/)
 
-#### Modules
-
 > ### [eppz!swizzler](https://github.com/eppz/eppz.swizzler)
 > Basic swizzling wrapped up into an Objective-C interface.
 > ### [eppz!reachability](https://github.com/eppz/eppz.reachability)
