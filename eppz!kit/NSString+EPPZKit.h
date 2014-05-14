@@ -54,6 +54,7 @@
 #pragma mark - (UIStringDrawing) compatibility
 
 -(void)_drawAtPoint:(CGPoint) point withFont:(UIFont*) font foregroundColor:(UIColor*) color;
+-(void)_drawInRect:(CGRect) frame withFont:(UIFont*) font foregroundColor:(UIColor*) color;
 
 
 @end

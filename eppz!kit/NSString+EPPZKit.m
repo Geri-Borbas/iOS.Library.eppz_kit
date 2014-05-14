@@ -117,14 +117,42 @@
     if (color == nil) color = [UIColor clearColor];
     
     #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_7_0
+    
         [self drawAtPoint:point withAttributes:@{
                                                  NSFontAttributeName : font,
                                                  NSForegroundColorAttributeName : color
                                                  }];
+    
     #else
+    
         [color setFill];
         [self drawAtPoint:point withFont:font];
+    
     #endif
+}
+
+-(void)_drawInRect:(CGRect) frame withFont:(UIFont*) font foregroundColor:(UIColor*) color
+{
+    // Checks.
+    if (font == nil) return;
+    if (color == nil) color = [UIColor clearColor];
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_7_0
+    
+    NSMutableParagraphStyle *truncate = [NSMutableParagraphStyle new];
+    [truncate setLineBreakMode:NSLineBreakByTruncatingTail];
+    [self drawInRect:frame withAttributes:@{
+                                            NSFontAttributeName : font,
+                                            NSForegroundColorAttributeName : color,
+                                            NSParagraphStyleAttributeName : truncate
+                                            }];
+    
+#else
+    
+    [color setFill];
+    [self drawInRect:frame withFont:font lineBreakMode:NSLineBreakByTruncatingTail];
+    
+#endif
 }
 
 

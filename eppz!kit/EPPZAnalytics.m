@@ -19,7 +19,7 @@
 @interface EPPZAnalytics ()
 @property (nonatomic, strong) NSString *analyticsPropertyListPath;
 @property (nonatomic, strong) NSDictionary *analyticsProperties;
-@property (nonatomic, strong) NSMutableArray *timers;
+@property (nonatomic, strong) NSMutableDictionary *timers;
 @end
 
 
@@ -77,7 +77,7 @@ static NSString *kGoogleAnalyticsDispatchPeriodKeyPath = @"GoogleAnalytics.dispa
     self.analyticsPropertyListPath = [bundle pathForResource:propertyListName ofType:@"plist"];
     self.analyticsProperties = [NSDictionary dictionaryWithContentsOfFile:self.analyticsPropertyListPath];
     
-    self.timers = [NSMutableArray new];
+    self.timers = [NSMutableDictionary new];
     
     //NSLog(@"EPPZAnalytics analyticsProperties: %@", self.analyticsProperties);
     //NSLog(@"Analytics enabled: (%i)", [self isEnabled]);
@@ -173,15 +173,22 @@ static NSString *kGoogleAnalyticsDispatchPeriodKeyPath = @"GoogleAnalytics.dispa
 
 -(void)startTimerForCategory:(NSString *)category name:(NSString *)name label:(NSString *)label
 {
+    
+    GALog(@"EPPZAnalytics startTimerForCategory:%@ name:%@ label:%@", category, name, label);
     EPPZAnalyticsTimer *timer = [EPPZAnalyticsTimer timerWithCategory:category
                                                                  name:name
                                                                 label:label];
-    [self.timers addObject:timer];
+    
+    NSString *key = [NSString stringWithFormat:@"%@.%@.%@", category, name, label];
+    [self.timers setObject:timer
+                    forKey:key];
 }
 
 -(void)stopTimerForCategory:(NSString *)category name:(NSString *)name label:(NSString *)label
 {
     GALog(@"EPPZAnalytics stopTimerForCategory:%@ name:%@ label:%@", category, name, label);
+    
+    NSString *key = [NSString stringWithFormat:@"%@.%@.%@", category, name, label];
     EPPZAnalyticsTimer *timer = [self timerForCategory:category name:name label:label];
     
     if (timer != nil)
@@ -189,18 +196,14 @@ static NSString *kGoogleAnalyticsDispatchPeriodKeyPath = @"GoogleAnalytics.dispa
         [timer stop];
         
         //Send hit.
-        GALog(@"EPPZAnalytics timer found. interval:(%f)", timer.interval);
+        NSLog(@"EPPZAnalytics timer found. interval:(%f)", timer.interval);
         [self.google sendTimingWithCategory:timer.category
                                   withValue:timer.interval
                                    withName:timer.name
                                   withLabel:timer.label];
         
-        [self.timers removeObject:timer];
-    }
-    
-    else
-    {
-        GALog(@"EPPZAnalytics timer not found.");
+
+        [self.timers removeObjectForKey:key];
     }
 }
 
@@ -211,16 +214,14 @@ static NSString *kGoogleAnalyticsDispatchPeriodKeyPath = @"GoogleAnalytics.dispa
 
 -(EPPZAnalyticsTimer*)timerForCategory:(NSString*) category name:(NSString*) name label:(NSString*) label
 {
-    EPPZAnalyticsTimer *timerLookingFor = [EPPZAnalyticsTimer timerWithCategory:category name:name label:label];
-    EPPZAnalyticsTimer *timerFound;
-    
-    for (EPPZAnalyticsTimer *eachTimer in self.timers)
+    NSString *key = [NSString stringWithFormat:@"%@.%@.%@", category, name, label];
+    if ([[self.timers allKeys] containsObject:key] == NO)
     {
-        if ([eachTimer isEqual:timerLookingFor])
-            timerFound = eachTimer;
+        GALog(@"EPPZAnalytics timer not found (may be stopped already before).");
+        return nil;
     }
     
-    return timerFound;
+    return [self.timers objectForKey:key];
 }
 
 

@@ -1,6 +1,11 @@
 
 #### Version tracking
 
+* 1.9.2
+
+    + `NSString` drawing progress (`_drawInRect`)
+    + `EPPZAnalytics` timer pool fixed
+
 * 1.9.0 - 1.9.01
 
     + Added `eppz!swizzler` as git submodule
