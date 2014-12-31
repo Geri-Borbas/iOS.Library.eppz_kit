@@ -32,3 +32,9 @@ void count(NSUInteger until, EPPZCounterBlock counterBlock)
     for (NSUInteger index = 0; index <= until; index++)
     { counterBlock(index); }
 }
+
+void waitFor(NSTimeInterval duration, WaitCompletionBlock completion)
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, duration * NSEC_PER_SEC),
+                   dispatch_get_main_queue(), ^{ completion(); });
+}

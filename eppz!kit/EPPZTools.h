@@ -26,8 +26,12 @@
 void crash();
 
 typedef void (^EPPZRepeatBlock)();
-typedef void (^EPPZCounterBlock)(NSUInteger index);
 void repeat(NSUInteger until, EPPZRepeatBlock repeatBlock);
+
+typedef void (^EPPZCounterBlock)(NSUInteger index);
 void count(NSUInteger until, EPPZCounterBlock counterBlock);
+
+typedef void (^WaitCompletionBlock)();
+void waitFor(NSTimeInterval duration, WaitCompletionBlock completion);
 
 void getFontList();
