@@ -63,9 +63,9 @@ typedef enum
              @"iPad2,2" : @[ @"iPad 2", @"GSM", @"A1396" ],
              @"iPad2,3" : @[ @"iPad 2", @"CDMA", @"A1397" ],
              @"iPad2,4" : @[ @"iPad 2", @"Wi-Fi Rev A", @"A1395" ],
-             @"iPad2,5" : @[ @"iPad mini 1G", @"Wi-Fi", @"A1432" ],
-             @"iPad2,6" : @[ @"iPad mini 1G", @"GSM", @"A1454" ],
-             @"iPad2,7" : @[ @"iPad mini 1G", @"GSM+CDMA", @"A1455" ],
+             @"iPad2,5" : @[ @"iPad mini", @"Wi-Fi", @"A1432" ],
+             @"iPad2,6" : @[ @"iPad mini", @"GSM", @"A1454" ],
+             @"iPad2,7" : @[ @"iPad mini", @"GSM+CDMA", @"A1455" ],
              @"iPad3,1" : @[ @"iPad 3", @"Wi-Fi", @"A1416" ],
              @"iPad3,2" : @[ @"iPad 3", @"GSM+CDMA", @"A1403" ],
              @"iPad3,3" : @[ @"iPad 3", @"GSM", @"A1430" ],
@@ -74,8 +74,14 @@ typedef enum
              @"iPad3,6" : @[ @"iPad 4", @"GSM+CDMA", @"A1460" ],
              @"iPad4,1" : @[ @"iPad Air", @"Wi‑Fi", @"A1474" ],
              @"iPad4,2" : @[ @"iPad Air", @"Cellular", @"A1475" ],
-             @"iPad4,4" : @[ @"iPad mini 2G", @"Wi‑Fi", @"A1489" ],
-             @"iPad4,5" : @[ @"iPad mini 2G", @"Cellular", @"A1517" ],
+             @"iPad4,4" : @[ @"iPad mini 2", @"Wi‑Fi", @"A1489" ],
+             @"iPad4,5" : @[ @"iPad mini 2", @"Cellular", @"A1517" ],
+             @"iPad4,6" : @[ @"iPad mini 2", @"N/A", @"A1491" ],
+             @"iPad4,7" : @[ @"iPad mini 3", @"N/A", @"A1599" ],
+             @"iPad4,8" : @[ @"iPad mini 3", @"N/A", @"A1600" ],
+             @"iPad4,9" : @[ @"iPad mini 3", @"N/A", @"A1601" ],
+             @"iPad5,3" : @[ @"iPad Air 2", @"N/A", @"A1566" ],
+             @"iPad5,4" : @[ @"iPad Air 2", @"N/A", @"A1567" ],
              
              //iPhone.
              @"iPhone1,1" : @[ @"iPhone 2G", @"GSM", @"A1203" ],
@@ -91,6 +97,8 @@ typedef enum
              @"iPhone5,4" : @[ @"iPhone 5C", @"Global", @"A1507 / A1516 / A1526 / A1529" ],
              @"iPhone6,1" : @[ @"iPhone 5S", @"GSM", @"A1433 / A1533" ],
              @"iPhone6,2" : @[ @"iPhone 5S", @"Global", @"A1457 / A1518 / A1528 / A1530" ],
+             @"iPhone7,2" : @[ @"iPhone 6", @"N/A", @"A1549 / A1586" ],
+             @"iPhone7,1" : @[ @"iPhone 6 Plus", @"N/A", @"A1522 / A1524" ],
              
              //iPod.
              @"iPod1,1" : @[ @"iPod touch 1G", @"-", @"A1213" ],

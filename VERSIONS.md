@@ -1,6 +1,11 @@
 
 #### Version tracking
 
+* 1.9.3
+
+    + `EPPZDevice`
+        + Updated device model list
+
 * 1.9.2
 
     + `NSString` drawing progress (`_drawInRect`)
