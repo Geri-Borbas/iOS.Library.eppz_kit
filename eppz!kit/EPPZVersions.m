@@ -145,7 +145,7 @@ static NSString *kLaunchCountKey = @"__eppz.launchCount";
 
 -(NSString*)sessionNumber
 {
-    NSString *sessionNumber = [NSString stringWithFormat:@"%i", [[self.userDefaults objectForKey:kLaunchCountKey] integerValue]];
+    NSString *sessionNumber = [NSString stringWithFormat:@"%li", (long)[[self.userDefaults objectForKey:kLaunchCountKey] integerValue]];
     if (sessionNumber) return sessionNumber;
     return @"0";
 }
@@ -156,7 +156,7 @@ static NSString *kLaunchCountKey = @"__eppz.launchCount";
 -(void)incrementLaunchCount
 {
     NSNumber *launchCount = [self.userDefaults objectForKey:kLaunchCountKey];
-    int launchCountInteger = launchCount.integerValue + 1;
+    int launchCountInteger = (int)launchCount.integerValue + 1;
     [self.userDefaults setObject:[NSNumber numberWithInteger:launchCountInteger] forKey:kLaunchCountKey];
     [self.userDefaults synchronize];
 }

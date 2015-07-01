@@ -26,17 +26,17 @@
     NSDateComponents *components = [calendar components:units fromDate:from toDate:to options:0];
     
     NSString *dayUnitString = (components.day > 1) ? @"days" : @"day";
-    NSString *daysString = (components.day > 0) ? [NSString stringWithFormat:@"%i %@ ", components.day, dayUnitString] : @"";
+    NSString *daysString = (components.day > 0) ? [NSString stringWithFormat:@"%li %@ ", (long)components.day, dayUnitString] : @"";
     
     NSString *hourLeadingZero = (components.hour < 10) ? @"0" : @"";
     NSString *minuteLeadingZero = (components.minute < 10) ? @"0" : @"";
     NSString *secondLeadingZero = (components.second < 10) ? @"0" : @"";
     
-    NSString *displayString = [NSString stringWithFormat:@"%@%@%i:%@%i:%@%i",
+    NSString *displayString = [NSString stringWithFormat:@"%@%@%li:%@%li:%@%li",
                                daysString,
-                               hourLeadingZero, components.hour,
-                               minuteLeadingZero, components.minute,
-                               secondLeadingZero, components.second];
+                               hourLeadingZero, (long)components.hour,
+                               minuteLeadingZero, (long)components.minute,
+                               secondLeadingZero, (long)components.second];
     
     return displayString;
 }

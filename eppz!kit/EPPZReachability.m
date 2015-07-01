@@ -260,7 +260,7 @@ __strong static NSMutableArray *_reachabilityIndex = nil;
         [[self reachabilityIndex] addObject:reachability];
     }
     
-    EPPZRLog(@"EPPZReachability reachabilityCount: <%i>", [[self reachabilityIndex] count]);
+    EPPZRLog(@"EPPZReachability reachabilityCount: <%i>", (unsigned int)[[self reachabilityIndex] count]);
 }
 
 +(void)removeReachabilityFromIndex:(EPPZReachability*) reachability
@@ -271,7 +271,7 @@ __strong static NSMutableArray *_reachabilityIndex = nil;
         if ([[self reachabilityIndex] containsObject:reachability])
                 [[self reachabilityIndex] removeObject:reachability];
     
-    EPPZRLog(@"EPPZReachability reachabilityCount: <%i>", [[self reachabilityIndex] count]);        
+    EPPZRLog(@"EPPZReachability reachabilityCount: <%i>", (unsigned int)[[self reachabilityIndex] count]);        
 }
 
 +(void)stopListeningHost:(NSString*) hostNameOrAddress delegate:(id<EPPZReachabilityDelegate>) delegate

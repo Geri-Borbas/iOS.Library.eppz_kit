@@ -61,7 +61,7 @@ typedef enum { R, G, B, A } UIColorComponentIndices;
     _b = otherComponents[B];
     _a = otherComponents[A];
     
-    CGFloat i = (fabsf(amount) > 1.0) ? 1.0 : fabsf(amount); // Clamp to 0.0 - 1.0
+    CGFloat i = (fabsf((float)amount) > 1.0) ? 1.0 : fabsf((float)amount); // Clamp to 0.0 - 1.0
     CGFloat j = 1.0 - amount;
     
     return RGBA_(_R * j + _r * i,

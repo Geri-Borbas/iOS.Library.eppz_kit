@@ -38,7 +38,7 @@
     // Checks.
     if (self.count == 0) return nil;
     
-    NSUInteger randomIndex = randomIntegerInRange(self.count);
+    int randomIndex = randomIntegerInRange((int)self.count);
     return [self objectAtIndex:randomIndex];
 }
 

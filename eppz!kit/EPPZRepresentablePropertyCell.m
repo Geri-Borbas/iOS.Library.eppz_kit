@@ -47,7 +47,7 @@
 {
     // Show index for countables.
     if ([self.representable isKindOfClass:[NSArray class]])
-    { return [NSString stringWithFormat:@"[%i]", index]; }
+    { return [NSString stringWithFormat:@"[%i]", (unsigned int)index]; }
     
     return self.dictionaryRepresentation.allKeys[index];
 }
@@ -86,7 +86,7 @@
     // Display item count for countables.
     if ([value isKindOfClass:[NSArray class]] ||
         [value isKindOfClass:[NSSet class]])
-    { value = [NSString stringWithFormat:@"%i item(s)", [value count]]; }
+    { value = [NSString stringWithFormat:@"%lu item(s)", (unsigned long)[value count]]; }
     
     // Display fixed type for representable.
     if ([value conformsToProtocol:@protocol(EPPZRepresentable)])

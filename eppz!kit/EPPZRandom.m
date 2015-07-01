@@ -17,7 +17,7 @@
 
 float randomFloat()
 {
-    int size = NSIntegerMax;
+    int size = 2147483647;
     return (float)(arc4random() % size) / (float)size;
 }
 

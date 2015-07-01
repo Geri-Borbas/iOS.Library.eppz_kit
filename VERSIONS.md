@@ -1,6 +1,23 @@
 
 #### Version tracking
 
+* 1.9.4
+
+    + Supress typecast warnings
+        + `EPPZGeometry`
+        + `EPPZGoogleAnalyticsService`
+        + `EPPZRandom`
+        + `EPPZReachability`
+        + `EPPZRepresentablePropertyCell`
+        + `EPPZUserDefaults`
+        + `EPPZVersions`
+        + `NSArray+EPPZKit`
+        + `NSDate+EPPZKit`
+        + `NSString+EPPZKit`
+        + `UIColor+EPPZKit`
+    + `NSObject+EPPZRepresentable`
+        + Put back property inspection
+
 * 1.9.3
 
     + `EPPZDevice`

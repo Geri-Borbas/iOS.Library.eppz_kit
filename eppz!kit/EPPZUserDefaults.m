@@ -123,7 +123,7 @@
 {
     NSMutableArray *propertyNamesArray = [NSMutableArray new];
     
-    NSUInteger propertyCount;
+    unsigned int propertyCount;
     objc_property_t *properties = class_copyPropertyList(class, &propertyCount);
     
     for (int index = 0; index < propertyCount; index++)

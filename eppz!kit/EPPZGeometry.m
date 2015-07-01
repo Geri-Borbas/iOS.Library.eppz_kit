@@ -21,7 +21,7 @@ CGFloat cube(CGFloat scalar)
 { return scalar * scalar; }
 
 CGFloat absoluteValue(CGFloat scalar)
-{ return fabsf(scalar); }
+{ return fabsf((float)scalar); }
 
 BOOL isOdd(int scalar)
 { return (scalar % 2 != 0) ? YES : NO; }

@@ -74,19 +74,19 @@
 
 -(void)registerCustomDimension:(NSString*) dimension forIndex:(NSUInteger) index
 {
-    GALog(@"EPPZGoogleAnalyticsService registerCustomDimension:%@ forIndex:%i", dimension, index);
+    GALog(@"EPPZGoogleAnalyticsService registerCustomDimension:%@ forIndex:%lu", dimension, (unsigned long)index);
     [self.tracker set:[GAIFields customDimensionForIndex:index] value:dimension];
 }
 
 -(void)setCustom:(NSInteger) index dimension:(NSString*) dimension
 {
-    GALog(@"EPPZGoogleAnalyticsService setCustom:%i dimension:%@", index, dimension);
+    GALog(@"EPPZGoogleAnalyticsService setCustom:%li dimension:%@", (long)index, dimension);
     [self.tracker set:[GAIFields customDimensionForIndex:index] value:dimension];
 }
 
 -(void)setCustom:(NSInteger) index metric:(NSNumber*) metric
 {
-    GALog(@"EPPZGoogleAnalyticsService setCustom:%i metric:%@", index, metric);
+    GALog(@"EPPZGoogleAnalyticsService setCustom:%li metric:%@", (long)index, metric);
     [self.tracker set:[GAIFields customMetricForIndex:index] value:metric.stringValue];
 }
 
