@@ -2,10 +2,10 @@
 [![Build Status](https://travis-ci.org/eppz/eppz.kit.svg?branch=master)](https://travis-ci.org/eppz/eppz.kit)
 
 **The collection of the usefuls. Objective-C everydayers.** You could use it like
-you would do with any other static library - as Apple recommends [Using Static Librariesin iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)) -, or just grab some individual class, they are not that
-coupled (just watch the imports at the top of .h files). Gonna put the whole library to
+you would do with any other static library - as Apple recommends [Using Static Libraries in iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)) -, or just grab some individual class that is not that tightly
+coupled (just look at the imports at the top of .h files). Gonna put the whole library up on
 [CocoaPods](http://cocoapods.org/) with submodules where appropriate. Google Analytics SDK
-have some specific build settings (check Analytics build settings.png for details).
+has some specific build settings (check the Analytics build settings.png for details).
 Feel free to file a pull request if you spot some errors.
 
 > ### [eppz!swizzler](https://github.com/eppz/eppz.swizzler)
@@ -20,7 +20,7 @@ Feel free to file a pull request if you spot some errors.
 
 
 #### EPPZBinding
-Keep the properties of two objects synchronized along a given property map. If any value changes, it sets (tries to set) the matching property for the other object.
+Keeps the properties of two objects synchronized along a given property map. If either value changes, it tries to set its matching property to the other object.
 ```Objective-C
 // Keep a user model object synced with the UI, and vica-versa.
 NSDictionary *map = @{
@@ -57,7 +57,7 @@ nextItem = [this.items nextObjectAfterObject:currentItem];
 
 
 #### UIColor extensions
-Some handy `UIColor` tool to mix colors runtime.
+Some handy `UIColor` tools to mix colors at runtime.
 ```Objective-C
 overlayColor = [backgroundColor colorWithAlpha:0.5];
 opaqueTextColor = [backgroundColor blendWithColor:foregroundColor amount:0.5];
@@ -65,11 +65,11 @@ opaqueTextColor = [backgroundColor blendWithColor:foregroundColor amount:0.5];
 
 
 #### UICircle
-A lovely `UIImage` subclass that renders as a circle. Comes handy when debug geometry.
+A lovely `UIImage` subclass that renders a circle. Comes in handy when debugging geometry.
 
 
 #### EPPZDiatonicScale
-This latest member is a really specific piece of class. Converts a single music interval value (expressen in semitones) into a pitch value (expressed in segments). Also can step back and forth on a diatonic major or minor scale and return pitch result for that.
+This latest member is a really a specific piece of a class. Converts a single music interval value (expressed in semitones) into a pitch value (expressed in segments). Also can step back and forth on a diatonic major or minor scale and return pitch result for that.
 ```Objective-C
 // Play effect pitched with major 5th.
 float pitch = [self.diatonicScale pitchForNote:5];
@@ -105,7 +105,7 @@ It is effective only from the point the class has used for the first time. Do no
 
 
 #### EPPZRepresentable
-A solid NSObject extension that makes work with models much easier. If a class conforms to the protocol than it mark that object to implement such features.
+A solid NSObject extension that makes work with models much easier. If a class conforms to the protocol, it marks that object to implement those features.
 Yet objects able to represent themselves in a dictionary form that allows me to create many store implementation (Defaults, Archiver, CoreData, JSON, Plist, Keychain, whatnot). In progress, though `plist` implementation actually works. Saving foreign classes (like UIViews for example) is also possible. Actually an archiver with much less boilerplate. Example from the testbed project:
 ```Objective-C
 //A UIView extension to make it persistable
@@ -138,15 +138,15 @@ Yet objects able to represent themselves in a dictionary form that allows me to 
 //Restoring later on.
 progress = [EPPZGameProgress representableWithPlistNamed:@"gameProgress"];
 ```
-It will be just as easy to save into NSUserDefaults/NSKeyedArchiver/JSON string or even into a self-describing CoreData archive. In addition, it is now supports saving object references, so won't allocate duplicates on reconstruction. Still in progress.
+It will be just as easy to save into NSUserDefaults/NSKeyedArchiver/JSON string or even into a self-describing CoreData archive. In addition, it now supports saving object references, so it won't allocate duplicates on reconstruction. Still in progress.
 
 
 #### EPPZAnalytics
-A simple wrapper around Google Analytics iOS SDK 3.0 (Check Analytics build settings.png for specific build settings constraints). Were intended to be suitable to support multiple analytics service (Flurry, GameAnalytics, etc.), thought only Google is implemented yet.
+A simple wrapper around Google Analytics iOS SDK 3.0 (Check Analytics build settings.png for specific build settings constraints). Were intended to be suitable to support multiple analytics service (Flurry, GameAnalytics, etc.), though only Google is implemented yet.
 
 
 #### EPPZBoolTools
-Some helper function to make boolean works a bit more readable and spare some if statements.
+A helper function to make boolean syntax a bit more readable, and spare you some if statements.
 ```Objective-C
 //For debugging.
 NSLog(@"Switched to %@.", stringFromBool(switch.isOn));
@@ -172,7 +172,7 @@ NSLog(@"Running on an %@", DEVICE.platformDescription);
 
 
 #### EPPZGestureRecognizer
-A cool compositable object that reduces boilerplate for recognizing gestures. Also arranges some undelying stuff (e.g. double tap do not block triple tap).
+A cool compositable object that reduces boilerplate for recognizing gestures. Also arranges some underlying stuff (e.g. double-tap does not block triple-tap).
 ```Objective-C
 //A typical setup in a view controller.
 -(void)viewDidLoad
@@ -190,7 +190,7 @@ A cool compositable object that reduces boilerplate for recognizing gestures. Al
 
 
 #### EPPZTimer
-An `NSTimer` wrapper that does not retain it's target so not likely to create retain cycles.
+An `NSTimer` wrapper that does not retain its target, and so unlikely to create retain cycles.
 ```Objective-C
 //Just you'd normally do with NSTimer but without retain cycle.
 self.timer = [EPPZTimer scheduledTimerWithTimeInterval:1.0
@@ -199,7 +199,7 @@ self.timer = [EPPZTimer scheduledTimerWithTimeInterval:1.0
                                               userInfo:nil
                                                repeats:YES];
 ```
-The timer will invalidate itself when the target is existing no more. A check for taget existence is invoked in every invocation of the timer.
+The timer will invalidate itself when the target no longer exists. A check for taget existence is invoked in every invocation of the timer.
 
 
 #### EPPZLabel
