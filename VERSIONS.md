@@ -1,6 +1,11 @@
 
 #### Version tracking
 
+* 1.9.5
+
+    + Updated Google Analytics SDK to 3.17
+        + bitcode compilant
+
 * 1.9.4
 
     + Supress typecast warnings

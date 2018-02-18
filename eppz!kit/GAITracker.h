@@ -1,7 +1,6 @@
 /*!
  @header    GAITracker.h
  @abstract  Google Analytics iOS SDK Tracker Header
- @version   3.0
  @copyright Copyright 2013 Google Inc. All rights reserved.
 */
 
@@ -20,6 +19,11 @@
  Name of this tracker.
  */
 @property(nonatomic, readonly) NSString *name;
+
+/*!
+ Allow collection of IDFA and related fields if set to true.  Default is false.
+ */
+@property(nonatomic) BOOL allowIDFACollection;
 
 /*!
  Set a tracking parameter.

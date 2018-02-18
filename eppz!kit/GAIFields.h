@@ -16,8 +16,10 @@ extern NSString *const kGAIUseSecure;
 extern NSString *const kGAIHitType;
 extern NSString *const kGAITrackingId;
 extern NSString *const kGAIClientId;
+extern NSString *const kGAIDataSource;
 extern NSString *const kGAIAnonymizeIp;
 extern NSString *const kGAISessionControl;
+extern NSString *const kGAIDeviceModelVersion;
 extern NSString *const kGAIScreenResolution;
 extern NSString *const kGAIViewportSize;
 extern NSString *const kGAIEncoding;
@@ -33,10 +35,12 @@ extern NSString *const kGAIPage;
 extern NSString *const kGAIDescription;  // synonym for kGAIScreenName
 extern NSString *const kGAIScreenName;   // synonym for kGAIDescription
 extern NSString *const kGAITitle;
+extern NSString *const kGAIAdMobHitId;
 extern NSString *const kGAIAppName;
 extern NSString *const kGAIAppVersion;
 extern NSString *const kGAIAppId;
 extern NSString *const kGAIAppInstallerId;
+extern NSString *const kGAIUserId;
 
 extern NSString *const kGAIEventCategory;
 extern NSString *const kGAIEventAction;
@@ -66,6 +70,8 @@ extern NSString *const kGAICampaignName;
 extern NSString *const kGAICampaignKeyword;
 extern NSString *const kGAICampaignContent;
 extern NSString *const kGAICampaignId;
+extern NSString *const kGAICampaignAdNetworkClickId;
+extern NSString *const kGAICampaignAdNetworkId;
 
 extern NSString *const kGAITimingCategory;
 extern NSString *const kGAITimingVar;
@@ -81,7 +87,8 @@ extern NSString *const kGAIIdfa;
 extern NSString *const kGAIAdTargetingEnabled;
 
 // hit types
-extern NSString *const kGAIAppView;
+extern NSString *const kGAIAppView DEPRECATED_MSG_ATTRIBUTE("Use kGAIScreenView instead.");
+extern NSString *const kGAIScreenView;
 extern NSString *const kGAIEvent;
 extern NSString *const kGAISocial;
 extern NSString *const kGAITransaction;
