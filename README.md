@@ -1,5 +1,4 @@
 ## eppz!kit
-[![Build Status](https://travis-ci.org/eppz/eppz.kit.svg?branch=master)](https://travis-ci.org/eppz/eppz.kit)
 
 **The collection of the usefuls. Objective-C everydayers.** You could use it like
 you would do with any other static library - as Apple recommends [Using Static Librariesin iOS](http://developer.apple.com/library/ios/#technotes/iOSStaticLibraries/Articles/configuration.html#//apple_ref/doc/uid/TP40012554-CH3-SW1)) -, or just grab some individual class, they are not that
